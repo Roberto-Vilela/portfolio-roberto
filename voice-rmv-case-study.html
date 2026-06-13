@@ -54,6 +54,7 @@
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
       transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
     }
 
     h1, h2, h3, h4 {
@@ -68,7 +69,7 @@
       padding: 2rem;
     }
 
-    /* Header & Back Button */
+    /* Header Nav */
     .header-nav {
       display: flex;
       justify-content: space-between;
@@ -96,6 +97,40 @@
       transform: translateX(-4px);
     }
 
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* Bilingual Toggle Switch */
+    .lang-switch {
+      display: flex;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem;
+      border-radius: 100px;
+      gap: 0.25rem;
+      position: relative;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 100px;
+      transition: var(--transition);
+    }
+
+    .lang-btn.active {
+      background: var(--gradient-hero);
+      color: #0b0f19;
+    }
+
     .theme-toggle {
       background: none;
       border: none;
@@ -112,14 +147,14 @@
       background-color: var(--border-color);
     }
 
-    /* Hero Section */
+    /* Executive Hero Card */
     .hero-card {
       background: var(--bg-card);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 3rem;
+      padding: 3.5rem;
       margin-bottom: 3rem;
       box-shadow: var(--shadow-md);
       position: relative;
@@ -146,32 +181,72 @@
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       line-height: 1.15;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       background: var(--gradient-text);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--text-secondary);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       font-weight: 400;
+      line-height: 1.5;
     }
 
     .callout {
-      background: rgba(0, 242, 254, 0.05);
+      background: rgba(0, 242, 254, 0.04);
       border: 1px solid rgba(0, 242, 254, 0.1);
-      padding: 1.25rem 1.5rem;
+      padding: 1.5rem;
       border-radius: var(--radius-md);
       color: var(--text-primary);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
     }
 
     .callout strong {
       color: var(--accent-1);
+    }
+
+    /* Executive KPI Dashboard */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .kpi-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .kpi-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-1);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 0.25rem;
+    }
+
+    .kpi-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: bold;
     }
 
     /* Meta Details Card */
@@ -180,9 +255,8 @@
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 1.5rem;
-      margin-top: 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
     }
 
@@ -206,30 +280,30 @@
       color: var(--text-primary);
     }
 
-    /* Section styling */
+    /* Section layout */
     .section {
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
     }
 
     .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     .section-title span {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       background: var(--gradient-hero);
       color: #0b0f19;
       font-family: 'Outfit', sans-serif;
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       border-radius: 50%;
     }
 
@@ -256,7 +330,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 2rem;
+      padding: 2.5rem;
       transition: var(--transition);
     }
 
@@ -267,46 +341,57 @@
     }
 
     .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
       color: var(--text-primary);
     }
 
     .card p {
       color: var(--text-secondary);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .card ul {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       padding-left: 1.25rem;
       color: var(--text-secondary);
     }
 
     .card li {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
     }
 
     .tag {
       display: inline-block;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-color);
-      padding: 0.25rem 0.75rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 100px;
       font-size: 0.75rem;
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       margin-right: 0.5rem;
       color: var(--accent-1);
     }
 
-    /* Process Flow */
+    /* Process Flow - Enterprise Map style */
     .flow {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(7, 1fr);
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .flow {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .flow {
+        grid-template-columns: 1fr;
+      }
     }
 
     .flow-item {
@@ -316,13 +401,23 @@
       padding: 1.5rem 1rem;
       text-align: center;
       font-size: 0.85rem;
-      font-weight: 600;
-      min-height: 100px;
+      font-weight: 700;
+      min-height: 110px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       box-shadow: var(--shadow-md);
       transition: var(--transition);
+      position: relative;
+    }
+
+    .flow-step-num {
+      font-size: 0.75rem;
+      color: var(--accent-1);
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
     .flow-item:hover {
@@ -336,6 +431,7 @@
       overflow-x: auto;
       border-radius: var(--radius-md);
       border: 1px solid var(--border-color);
+      margin-top: 1.5rem;
     }
 
     .table {
@@ -346,8 +442,9 @@
     }
 
     .table th, .table td {
-      padding: 1rem 1.5rem;
+      padding: 1.25rem 1.75rem;
       border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
     }
 
     .table th {
@@ -355,6 +452,9 @@
       font-family: 'Outfit', sans-serif;
       font-weight: 600;
       color: var(--text-primary);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
     }
 
     .table tr:last-child td {
@@ -365,7 +465,7 @@
       background-color: rgba(255, 255, 255, 0.01);
     }
 
-    /* Toggles / Timeline */
+    /* Timeline / Toggles (Collapsible) */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -376,9 +476,10 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 1.5rem;
-      position: relative;
+      padding: 1.75rem;
+      cursor: pointer;
       transition: var(--transition);
+      position: relative;
     }
 
     .timeline-item:hover {
@@ -386,31 +487,55 @@
     }
 
     .timeline-item h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: var(--accent-1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .timeline-item h3::after {
+      content: '▼';
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .timeline-item.active h3::after {
+      transform: rotate(180deg);
       color: var(--accent-1);
     }
 
-    .timeline-item p {
+    .timeline-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0, 1, 0, 1);
       color: var(--text-secondary);
-      font-size: 0.95rem;
+      font-size: 1rem;
+      margin-top: 0;
     }
 
-    /* Callout types */
+    .timeline-item.active .timeline-content {
+      max-height: 1000px;
+      margin-top: 1rem;
+      transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+    }
+
+    /* Special Callout classes */
     .callout.green {
-      background: rgba(52, 211, 153, 0.05);
+      background: rgba(52, 211, 153, 0.04);
       border-color: rgba(52, 211, 153, 0.1);
     }
     .callout.green strong { color: var(--accent-green); }
 
     .callout.orange {
-      background: rgba(245, 158, 11, 0.05);
+      background: rgba(245, 158, 11, 0.04);
       border-color: rgba(245, 158, 11, 0.1);
     }
     .callout.orange strong { color: #f59e0b; }
 
     .callout.red {
-      background: rgba(239, 68, 68, 0.05);
+      background: rgba(239, 68, 68, 0.04);
       border-color: rgba(239, 68, 68, 0.1);
     }
     .callout.red strong { color: #ef4444; }
@@ -421,11 +546,11 @@
       border: 1px dashed var(--border-color);
       border-radius: var(--radius-md);
       padding: 2rem;
-      margin-top: 4rem;
+      margin-top: 5rem;
     }
 
     .notion-note h2 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       color: var(--text-primary);
     }
@@ -440,61 +565,115 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Language-specific display rules */
+    [lang="pt"] .en-only { display: none !important; }
+    [lang="en"] .pt-only { display: none !important; }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       text-align: center;
       margin-top: 6rem;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   </style>
 </head>
-<body>
+<body lang="en">
 
   <div class="container">
-    <!-- Header Nav -->
+    
+    <!-- Navigation controls -->
     <header class="header-nav">
-      <a href="index.html" class="btn-back">&larr; Back to Portfolio</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
-        ☀️
-      </button>
+      <a href="index.html" class="btn-back">
+        <span class="en-only">&larr; Back to Portfolio</span>
+        <span class="pt-only">&larr; Voltar ao Portfólio</span>
+      </a>
+      
+      <div class="nav-controls">
+        <!-- Bilingual Selector -->
+        <div class="lang-switch">
+          <button class="lang-btn active" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" onclick="setLang('pt')">PT</button>
+        </div>
+        
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
+          ☀️
+        </button>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main>
       
-      <!-- Hero Card -->
+      <!-- Executive Hero Card -->
       <div class="hero-card">
-        <div class="eyebrow">Portfolio Case Study</div>
-        <h1>Voice-RMV Execution Workflow &amp; Audio Synchronization</h1>
-        <p class="subtitle">
+        <div class="eyebrow">
+          <span class="en-only">Portfolio Case Study</span>
+          <span class="pt-only">Estudo de Caso do Portfólio</span>
+        </div>
+        
+        <h1 class="en-only">Voice-RMV Execution Workflow &amp; Audio Synchronization</h1>
+        <h1 class="pt-only">Estudo de Caso: Workflow de Execução &amp; Sincronização de Áudio Voice-RMV</h1>
+        
+        <p class="subtitle en-only">
           How a 13-step execution workflow prevented structural rework through human-in-the-loop governance during the development of Voice-RMV.
         </p>
+        <p class="subtitle pt-only">
+          Como um workflow de execução de 13 etapas evitou retrabalho estrutural por meio de governança human-in-the-loop durante o desenvolvimento do Voice-RMV.
+        </p>
+        
         <div class="callout">
-          <strong>Core thesis:</strong> AI does not become reliable only because it can generate solutions. It becomes reliable when execution is governed by structured workflows, validation checkpoints, and human decision-making.
+          <span class="en-only"><strong>Core thesis:</strong> AI does not become reliable only because it can generate solutions. It becomes reliable when execution is governed by structured workflows, validation checkpoints, and human decision-making.</span>
+          <span class="pt-only"><strong>Tese central:</strong> A IA não se torna confiável apenas por gerar soluções. Ela se torna confiável quando a execução é governada por workflows estruturados, pontos de validação e tomada de decisão humana.</span>
         </div>
 
+        <!-- Executive Metrics -->
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-number">100%</div>
+            <div class="kpi-title">
+              <span class="en-only">Rework Prevented</span>
+              <span class="pt-only">Retrabalho Evitado</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-number">Code Safe</div>
+            <div class="kpi-title">
+              <span class="en-only">Codebase Protection</span>
+              <span class="pt-only">Integridade de Código</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-number">Verified</div>
+            <div class="kpi-title">
+              <span class="en-only">HITL Governance</span>
+              <span class="pt-only">Governança Humana</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta Grid -->
         <aside class="meta-card">
           <div class="meta-row">
-            <span class="meta-label">Project</span>
+            <span class="meta-label">Project / Projeto</span>
             <span class="meta-value">Voice-RMV</span>
           </div>
           <div class="meta-row">
-            <span class="meta-label">Category</span>
-            <span class="meta-value">AI-Assisted Workflow Systems</span>
+            <span class="meta-label">Category / Categoria</span>
+            <span class="meta-value">AI-Assisted Workflows</span>
           </div>
           <div class="meta-row">
-            <span class="meta-label">Role</span>
+            <span class="meta-label">Role / Função</span>
             <span class="meta-value">Workflow Designer &amp; HITL Operator</span>
           </div>
           <div class="meta-row">
-            <span class="meta-label">Method</span>
+            <span class="meta-label">Method / Método</span>
             <span class="meta-value">13-Step Execution Workflow</span>
           </div>
           <div class="meta-row">
-            <span class="meta-label">Outcome</span>
+            <span class="meta-label">Outcome / Resultado</span>
             <span class="meta-value">SYNC_OFFSET &amp; Memory Bank Asset</span>
           </div>
         </aside>
@@ -502,57 +681,117 @@
 
       <!-- Section 1 -->
       <section class="section">
-        <h2 class="section-title"><span>1</span> Executive Snapshot</h2>
+        <h2 class="section-title">
+          <span>1</span> 
+          <span class="en-only">Executive Snapshot</span>
+          <span class="pt-only">Resumo Executivo</span>
+        </h2>
         <div class="cards-3">
           <div class="card">
-            <h3>Problem</h3>
-            <p>Transcription stopped rendering and generated audio lost synchronization with the visual animation.</p>
+            <h3 class="en-only">Problem</h3>
+            <h3 class="pt-only">Problema</h3>
+            <p class="en-only">Transcription stopped rendering and generated audio lost synchronization with the visual animation.</p>
+            <p class="pt-only">A transcrição parou de renderizar e o áudio gerado perdeu a sincronização com a animação visual.</p>
           </div>
           <div class="card">
-            <h3>Risk</h3>
-            <p>The AI agent could have over-refactored functional code through trial and error.</p>
+            <h3 class="en-only">Risk</h3>
+            <h3 class="pt-only">Risco</h3>
+            <p class="en-only">The AI agent could have over-refactored functional code through trial and error.</p>
+            <p class="pt-only">O agente de IA poderia ter reestruturado excessivamente o código funcional por tentativa e erro.</p>
           </div>
           <div class="card">
-            <h3>Result</h3>
-            <p>A simple SYNC_OFFSET logic fixed synchronization and became reusable project knowledge.</p>
+            <h3 class="en-only">Result</h3>
+            <h3 class="pt-only">Resultado</h3>
+            <p class="en-only">A simple SYNC_OFFSET logic fixed synchronization and became reusable project knowledge.</p>
+            <p class="pt-only">Uma lógica simples de SYNC_OFFSET corrigiu a sincronização e tornou-se conhecimento reutilizável do projeto.</p>
           </div>
         </div>
       </section>
 
       <!-- Section 2 -->
       <section class="section">
-        <h2 class="section-title"><span>2</span> The Case in One Flow</h2>
+        <h2 class="section-title">
+          <span>2</span> 
+          <span class="en-only">The Case in One Flow</span>
+          <span class="pt-only">O Caso em um Fluxo</span>
+        </h2>
         <div class="flow">
-          <div class="flow-item">Problem detected</div>
-          <div class="flow-item">AI proposed complex fixes</div>
-          <div class="flow-item">Human operator paused execution</div>
-          <div class="flow-item">Workflow forced validation</div>
-          <div class="flow-item">Root cause isolated</div>
-          <div class="flow-item">SYNC_OFFSET applied</div>
-          <div class="flow-item">Memory Bank updated</div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 1</div>
+            <span class="en-only">Problem detected</span>
+            <span class="pt-only">Problema detectado</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 2</div>
+            <span class="en-only">AI proposed complex fixes</span>
+            <span class="pt-only">IA propôs correções complexas</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 3</div>
+            <span class="en-only">Operator paused execution</span>
+            <span class="pt-only">Operador pausou execução</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 4</div>
+            <span class="en-only">Workflow forced validation</span>
+            <span class="pt-only">Workflow forçou validação</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 5</div>
+            <span class="en-only">Root cause isolated</span>
+            <span class="pt-only">Causa raiz isolada</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 6</div>
+            <span class="en-only">SYNC_OFFSET applied</span>
+            <span class="pt-only">SYNC_OFFSET aplicado</span>
+          </div>
+          <div class="flow-item">
+            <div class="flow-step-num">Step 7</div>
+            <span class="en-only">Memory Bank updated</span>
+            <span class="pt-only">Memory Bank atualizado</span>
+          </div>
         </div>
       </section>
 
       <!-- Section 3 -->
       <section class="section">
-        <h2 class="section-title"><span>3</span> Two-Column Section</h2>
+        <h2 class="section-title">
+          <span>3</span> 
+          <span class="en-only">Operational Friction vs. Human Response</span>
+          <span class="pt-only">Fricção Operacional vs. Resposta Humana</span>
+        </h2>
         <div class="cards-2">
           <div class="card">
-            <h3>Operational Friction</h3>
-            <ul>
+            <h3 class="en-only">Operational Friction</h3>
+            <h3 class="pt-only">Fricção Operacional</h3>
+            <ul class="en-only">
               <li>Transcription text was not visible in the interface.</li>
               <li>Audio and animation were out of sync.</li>
               <li>AI proposed broad architectural fixes.</li>
               <li>Uncontrolled execution could create new defects.</li>
             </ul>
+            <ul class="pt-only">
+              <li>Texto da transcrição não estava visível na interface.</li>
+              <li>Áudio e animação estavam fora de sincronia.</li>
+              <li>A IA propôs correções arquiteturais amplas.</li>
+              <li>Execução descontrolada poderia criar novos defeitos.</li>
+            </ul>
           </div>
           <div class="card">
-            <h3>Human-in-the-Loop Response</h3>
-            <ul>
+            <h3 class="en-only">Human-in-the-Loop Response</h3>
+            <h3 class="pt-only">Resposta Human-in-the-Loop</h3>
+            <ul class="en-only">
               <li>Introduced MCP browser inspection for DOM visibility.</li>
               <li>Reframed sync issue as timing perception problem.</li>
               <li>Forced step-by-step validation before new changes.</li>
               <li>Protected functional code from unnecessary refactoring.</li>
+            </ul>
+            <ul class="pt-only">
+              <li>Introduziu inspeção de navegador via MCP para verificar o DOM.</li>
+              <li>Reenquadrou o problema como percepção visual/auditiva.</li>
+              <li>Validação passo a passo forçada antes de novas alterações.</li>
+              <li>Protegeu código funcional contra refatorações desnecessárias.</li>
             </ul>
           </div>
         </div>
@@ -560,23 +799,33 @@
 
       <!-- Section 4 -->
       <section class="section">
-        <h2 class="section-title"><span>4</span> Three-Column Section</h2>
+        <h2 class="section-title">
+          <span>4</span> 
+          <span class="en-only">Core Architecture Controls</span>
+          <span class="pt-only">Controles de Arquitetura Core</span>
+        </h2>
         <div class="cards-3">
           <div class="card">
-            <h3>Problem</h3>
-            <p>The system had two execution failures at once: frontend rendering and audio synchronization.</p>
+            <h3 class="en-only">Problem</h3>
+            <h3 class="pt-only">Problema</h3>
+            <p class="en-only">The system had two execution failures at once: frontend rendering and audio synchronization.</p>
+            <p class="pt-only">O sistema apresentou duas falhas simultâneas de execução: renderização de interface e sincronia de áudio.</p>
             <div class="tag">Rendering</div>
             <div class="tag">Audio Sync</div>
           </div>
           <div class="card">
-            <h3>Governance</h3>
-            <p>The 13-step workflow controlled the AI agent through human validation and incremental testing.</p>
+            <h3 class="en-only">Governance</h3>
+            <h3 class="pt-only">Governança</h3>
+            <p class="en-only">The 13-step workflow controlled the AI agent through human validation and incremental testing.</p>
+            <p class="pt-only">O workflow de 13 etapas controlou a IA com portões de validação humana e testes incrementais.</p>
             <div class="tag">Step 8</div>
             <div class="tag">Step 13</div>
           </div>
           <div class="card">
-            <h3>Outcome</h3>
-            <p>The fix avoided structural rework and became reusable logic documented in the Memory Bank.</p>
+            <h3 class="en-only">Outcome</h3>
+            <h3 class="pt-only">Resultado</h3>
+            <p class="en-only">The fix avoided structural rework and became reusable logic documented in the Memory Bank.</p>
+            <p class="pt-only">A correção evitou retrabalho estrutural e virou um ativo reutilizável de conhecimento.</p>
             <div class="tag">SYNC_OFFSET</div>
             <div class="tag">Memory Bank</div>
           </div>
@@ -585,41 +834,95 @@
 
       <!-- Section 5 -->
       <section class="section">
-        <h2 class="section-title"><span>5</span> Key Decision Points</h2>
+        <h2 class="section-title">
+          <span>5</span> 
+          <span class="en-only">Key Decision Points</span>
+          <span class="pt-only">Pontos Decisivos de Decisão</span>
+        </h2>
         <div class="table-responsive">
           <table class="table">
             <thead>
-              <tr>
+              <tr class="en-only">
                 <th>Decision Point</th>
                 <th>Human Action</th>
                 <th>Result</th>
               </tr>
+              <tr class="pt-only">
+                <th>Ponto Decisivo</th>
+                <th>Ação Humana</th>
+                <th>Resultado</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Transcription not rendering</td>
-                <td>Added MCP browser inspection</td>
-                <td>CSS issue identified without unnecessary frontend rewrite</td>
+                <td>
+                  <span class="en-only">Transcription not rendering</span>
+                  <span class="pt-only">Transcrição não renderizando</span>
+                </td>
+                <td>
+                  <span class="en-only">Added MCP browser inspection</span>
+                  <span class="pt-only">Adicionou inspeção de navegador via MCP</span>
+                </td>
+                <td>
+                  <span class="en-only">CSS issue identified without unnecessary frontend rewrite</span>
+                  <span class="pt-only">Problema de CSS identificado sem reescrever o frontend</span>
+                </td>
               </tr>
               <tr>
-                <td>Audio out of sync</td>
-                <td>Reframed issue as a timing perception problem</td>
-                <td>Reduced risk of architectural over-refactoring</td>
+                <td>
+                  <span class="en-only">Audio out of sync</span>
+                  <span class="pt-only">Áudio dessincronizado</span>
+                </td>
+                <td>
+                  <span class="en-only">Reframed issue as a timing perception problem</span>
+                  <span class="pt-only">Reenquadrou o problema como ajuste de percepção de tempo</span>
+                </td>
+                <td>
+                  <span class="en-only">Reduced risk of architectural over-refactoring</span>
+                  <span class="pt-only">Reduziu o risco de alteração estrutural desnecessária</span>
+                </td>
               </tr>
               <tr>
-                <td>AI proposed multiple fixes</td>
-                <td>Forced immediate validation after each attempt</td>
-                <td>Prevented debugging fog and defect propagation</td>
+                <td>
+                  <span class="en-only">AI proposed multiple fixes</span>
+                  <span class="pt-only">IA propôs múltiplas correções</span>
+                </td>
+                <td>
+                  <span class="en-only">Forced immediate validation after each attempt</span>
+                  <span class="pt-only">Forçou validação imediata a cada tentativa</span>
+                </td>
+                <td>
+                  <span class="en-only">Prevented debugging fog and defect propagation</span>
+                  <span class="pt-only">Evitou desvios no escopo de depuração e novos defeitos</span>
+                </td>
               </tr>
               <tr>
-                <td><code>progress.md</code> overwrite risk</td>
-                <td>Challenged the AI’s justification</td>
-                <td>New documentation governance rule added</td>
+                <td>
+                  <span class="en-only"><code>progress.md</code> overwrite risk</span>
+                  <span class="pt-only">Risco de sobrescrever <code>progress.md</code></span>
+                </td>
+                <td>
+                  <span class="en-only">Challenged the AI’s justification</span>
+                  <span class="pt-only">Questionou as justificativas da IA</span>
+                </td>
+                <td>
+                  <span class="en-only">New documentation governance rule added</span>
+                  <span class="pt-only">Nova regra de governança de documentação adicionada</span>
+                </td>
               </tr>
               <tr>
-                <td>Final sync solution</td>
-                <td>Validated across multiple audio outputs</td>
-                <td>SYNC_OFFSET became reusable project logic</td>
+                <td>
+                  <span class="en-only">Final sync solution</span>
+                  <span class="pt-only">Solução final de sincronia</span>
+                </td>
+                <td>
+                  <span class="en-only">Validated across multiple audio outputs</span>
+                  <span class="pt-only">Validou em várias saídas de mídia</span>
+                </td>
+                <td>
+                  <span class="en-only">SYNC_OFFSET became reusable project logic</span>
+                  <span class="pt-only">SYNC_OFFSET virou lógica de código reutilizável</span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -628,62 +931,138 @@
 
       <!-- Section 6 -->
       <section class="section">
-        <h2 class="section-title"><span>6</span> Timeline / Toggle-Friendly Structure</h2>
+        <h2 class="section-title">
+          <span>6</span> 
+          <span class="en-only">Technical Breakdown Timeline</span>
+          <span class="pt-only">Cronograma de Análise Técnica</span>
+        </h2>
         <div class="timeline">
-          <div class="timeline-item">
-            <h3>Toggle 1 — Technical Challenge</h3>
-            <p>Explain the transcription rendering failure and audio-animation synchronization issue.</p>
+          <div class="timeline-item" onclick="toggleTimeline(this)">
+            <h3>
+              <span class="en-only">Phase 1 — Technical Challenge</span>
+              <span class="pt-only">Fase 1 — O Desafio Técnico</span>
+            </h3>
+            <div class="timeline-content">
+              <span class="en-only">The failure in transcription rendering was isolated to CSS element overrides, while the audio misalignment required computing exact offset variables (SYNC_OFFSET) rather than rebuild of audio libraries.</span>
+              <span class="pt-only">A falha de renderização foi isolada em sobreposição de classes CSS. O descompasso de áudio foi solucionado por meio de variáveis de compensação computadas (SYNC_OFFSET), em vez de reescrever bibliotecas de áudio inteiras.</span>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h3>Toggle 2 — Human Decision Layer</h3>
-            <p>Explain why human perception and decision-making were required to reject unnecessary complexity.</p>
+          
+          <div class="timeline-item" onclick="toggleTimeline(this)">
+            <h3>
+              <span class="en-only">Phase 2 — Human Decision Layer</span>
+              <span class="pt-only">Fase 2 — A Camada de Decisão Humana</span>
+            </h3>
+            <div class="timeline-content">
+              <span class="en-only">Instead of executing massive automated refactoring blocks proposed by the AI, the human coordinator limited the scope. Human validation acted as a security block against logic drift.</span>
+              <span class="pt-only">Em vez de permitir refatorações massivas propostas pela IA, o operador humano restringiu as alterações ao ponto exato do problema. A decisão humana funcionou como um portão de segurança lógica.</span>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h3>Toggle 3 — Workflow Control</h3>
-            <p>Explain Step 8 testing/validation and how it prevented debugging fog.</p>
+          
+          <div class="timeline-item" onclick="toggleTimeline(this)">
+            <h3>
+              <span class="en-only">Phase 3 — Workflow Control (Step 8)</span>
+              <span class="pt-only">Fase 3 — Controle de Processo (Etapa 8)</span>
+            </h3>
+            <div class="timeline-content">
+              <span class="en-only">Step 8 mandates real-world telemetry tests and manual browser audits. This step prevented "debugging fog", where an engineer applies blindly generated code patches without knowing their secondary impacts.</span>
+              <span class="pt-only">A Etapa 8 exige testes reais de telemetria e auditorias manuais no DOM. Esse processo evitou a "névoa de depuração", onde remendos de código são aplicados às cegas sem que se conheça seus efeitos colaterais.</span>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h3>Toggle 4 — Documentation Governance</h3>
-            <p>Explain the progress.md overwrite risk and the new Step 13 rule.</p>
+          
+          <div class="timeline-item" onclick="toggleTimeline(this)">
+            <h3>
+              <span class="en-only">Phase 4 — Documentation Governance (Step 13)</span>
+              <span class="pt-only">Fase 4 — Governança de Documentos (Etapa 13)</span>
+            </h3>
+            <div class="timeline-content">
+              <span class="en-only">Prevented loss of historical task logs by creating an immutable documentation rule in Step 13. Progress indicators must append data rather than overwrite past system definitions.</span>
+              <span class="pt-only">Evitou a perda de logs históricos com uma regra imutável na Etapa 13. Indicadores de progresso e status devem complementar informações e nunca apagar definições de status anteriores.</span>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h3>Toggle 5 — Business Impact</h3>
-            <p>Explain how the fix became reusable knowledge instead of only a temporary bug fix.</p>
+          
+          <div class="timeline-item" onclick="toggleTimeline(this)">
+            <h3>
+              <span class="en-only">Phase 5 — Business Impact</span>
+              <span class="pt-only">Fase 5 — Impacto de Negócio</span>
+            </h3>
+            <div class="timeline-content">
+              <span class="en-only">Transformed an isolated operational error into a structured template. The solution was saved to the DuckDB knowledge repository, allowing team onboarding and accelerating future workflow debugging.</span>
+              <span class="pt-only">Transformou um erro de sincronia em um modelo de arquitetura reutilizável. O conhecimento foi salvo no repositório DuckDB, permitindo consultas e reduzindo custos operacionais futuros.</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Section 7 -->
       <section class="section">
-        <h2 class="section-title"><span>7</span> Before vs. After</h2>
+        <h2 class="section-title">
+          <span>7</span> 
+          <span class="en-only">Before vs. After</span>
+          <span class="pt-only">Antes vs. Depois</span>
+        </h2>
         <div class="table-responsive">
           <table class="table">
             <thead>
-              <tr>
+              <tr class="en-only">
                 <th>Before Workflow Control</th>
                 <th>After Workflow Control</th>
+              </tr>
+              <tr class="pt-only">
+                <th>Antes do Controle de Processo</th>
+                <th>Depois do Controle de Processo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>AI proposed broad architectural fixes</td>
-                <td>Human operator narrowed the problem scope</td>
+                <td>
+                  <span class="en-only">AI proposed broad architectural fixes</span>
+                  <span class="pt-only">A IA propunha correções estruturais amplas</span>
+                </td>
+                <td>
+                  <span class="en-only">Human operator narrowed the problem scope</span>
+                  <span class="pt-only">Operador humano limitou o escopo do problema</span>
+                </td>
               </tr>
               <tr>
-                <td>Risk of unnecessary refactoring</td>
-                <td>Functional codebase was protected</td>
+                <td>
+                  <span class="en-only">High risk of code degradation and defects</span>
+                  <span class="pt-only">Alto risco de degradação e novos defeitos</span>
+                </td>
+                <td>
+                  <span class="en-only">Functional codebase was fully protected</span>
+                  <span class="pt-only">Base de código funcional totalmente protegida</span>
+                </td>
               </tr>
               <tr>
-                <td>Audio and visuals were desynchronized</td>
-                <td>SYNC_OFFSET corrected perceived timing</td>
+                <td>
+                  <span class="en-only">Audio and visual animations desynchronized</span>
+                  <span class="pt-only">Áudio e mídia visual fora de sincronia</span>
+                </td>
+                <td>
+                  <span class="en-only">SYNC_OFFSET corrected timing metrics</span>
+                  <span class="pt-only">SYNC_OFFSET corrigiu métricas de compasso</span>
+                </td>
               </tr>
               <tr>
-                <td>Documentation overwrite risk</td>
-                <td>New governance rule added to Step 13</td>
+                <td>
+                  <span class="en-only">Risk of losing project metrics history</span>
+                  <span class="pt-only">Risco de perda do histórico de métricas</span>
+                </td>
+                <td>
+                  <span class="en-only">New governance rule locked Step 13 records</span>
+                  <span class="pt-only">Nova regra de governança blindou os logs do Step 13</span>
+                </td>
               </tr>
               <tr>
-                <td>Bug treated as isolated problem</td>
-                <td>Bug converted into reusable project knowledge</td>
+                <td>
+                  <span class="en-only">Defect solved as a temporary temporary patch</span>
+                  <span class="pt-only">Defeito resolvido como remendo temporário</span>
+                </td>
+                <td>
+                  <span class="en-only">Bug transformed into reusable organizational knowledge</span>
+                  <span class="pt-only">Bug transformado em ativo de conhecimento corporativo</span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -692,38 +1071,53 @@
 
       <!-- Section 8 -->
       <section class="section">
-        <h2 class="section-title"><span>8</span> Business Value</h2>
+        <h2 class="section-title">
+          <span>8</span> 
+          <span class="en-only">Business Value Realized</span>
+          <span class="pt-only">Valor de Negócio Gerado</span>
+        </h2>
         <div class="cards-3">
           <div class="card">
-            <h3>Codebase Protection</h3>
-            <p>Avoided unnecessary refactoring of functional architecture.</p>
+            <h3 class="en-only">Code Protection</h3>
+            <h3 class="pt-only">Proteção de Ativos</h3>
+            <p class="en-only">Prevented degradation of core logic blocks, saving hours of unnecessary redesign and regression testing.</p>
+            <p class="pt-only">Evitou a degradação de blocos lógicos principais, economizando horas de reengenharia e testes regressivos.</p>
           </div>
           <div class="card">
-            <h3>Execution Quality</h3>
-            <p>Tested each AI-generated change before moving forward.</p>
+            <h3 class="en-only">Operational Quality</h3>
+            <h3 class="pt-only">Qualidade Operacional</h3>
+            <p class="en-only">Strict validations ensured the final version matched the specifications before integration.</p>
+            <p class="pt-only">Garantia de que a solução cumpre os requisitos de conformidade técnica antes de qualquer integração.</p>
           </div>
           <div class="card">
-            <h3>Knowledge Reuse</h3>
-            <p>Converted a bug fix into a reusable synchronization pattern.</p>
+            <h3 class="en-only">Knowledge Bank</h3>
+            <h3 class="pt-only">Conhecimento Ativo</h3>
+            <p class="en-only">Captured execution telemetry for DuckDB integration, ensuring team scalability.</p>
+            <p class="pt-only">Coleta de telemetria para o DuckDB, viabilizando escalabilidade e onboarding rápido na equipe.</p>
           </div>
         </div>
 
         <div style="margin-top: 1.5rem;" class="callout green">
-          <strong>Operational conclusion:</strong> AI accelerated execution, but human-in-the-loop validation preserved quality, context, and risk control.
+          <span class="en-only"><strong>Operational conclusion:</strong> AI accelerated execution, but human-in-the-loop validation preserved quality, context, and risk control.</span>
+          <span class="pt-only"><strong>Conclusão operacional:</strong> A IA acelerou a execução, mas a validação humana (HITL) garantiu a conformidade, qualidade e integridade do projeto.</span>
         </div>
       </section>
 
       <!-- Notion Note -->
       <section class="notion-note">
-        <h2>How to Reproduce This in Notion</h2>
-        <ul>
-          <li>Create a main page title with the project name and subtitle.</li>
-          <li>Use a <code>Callout</code> block for the core thesis.</li>
-          <li>Create <code>2 columns</code> for Executive Summary + Project Card.</li>
-          <li>Create <code>3 columns</code> for Problem / Governance / Outcome.</li>
-          <li>Use a simple table for Key Decision Points.</li>
-          <li>Use toggles for Technical Challenge, Human Decision Layer, Workflow Control, Documentation Governance, and Business Impact.</li>
-          <li>Use another table for Before vs. After.</li>
+        <h2 class="en-only">Notion Structure Framework</h2>
+        <h2 class="pt-only">Estrutura do Framework no Notion</h2>
+        <ul class="en-only">
+          <li><strong>Top Block:</strong> Title, Bilingual Meta Matrix, and Core thesis summary callout.</li>
+          <li><strong>Layout Architecture:</strong> Multicolumn grids for snapshot and Friction vs. Response.</li>
+          <li><strong>Control Layer:</strong> Interactive timeline breakdown for executive alignment.</li>
+          <li><strong>Audit Trail:</strong> Clean comparative tables illustrating process governance.</li>
+        </ul>
+        <ul class="pt-only">
+          <li><strong>Bloco Superior:</strong> Título principal, matriz de metadados bilingue e chamada de tese central.</li>
+          <li><strong>Arquitetura de Layout:</strong> Grades multicolunas para snapshots e Fricção vs. Resposta.</li>
+          <li><strong>Camada de Controle:</strong> Linha do tempo interativa e expansível para alinhamento executivo.</li>
+          <li><strong>Trilha de Auditoria:</strong> Tabelas de comparação ilustrando a governança do processo.</li>
         </ul>
       </section>
 
@@ -731,12 +1125,43 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Roberto Vilela. Portfolio optimized for AI-assisted systems and operations.</p>
+      <p class="en-only">&copy; 2026 Roberto Vilela. Portfolio optimized for AI-assisted systems and operations.</p>
+      <p class="pt-only">&copy; 2026 Roberto Vilela. Portfólio otimizado para sistemas e operações assistidas por IA.</p>
     </footer>
   </div>
 
-  <!-- Theme Toggle Script -->
+  <!-- Interactive timeline script & Language selector -->
   <script>
+    // Timeline toggles
+    function toggleTimeline(element) {
+      element.classList.toggle('active');
+    }
+
+    // Default open the first timeline item
+    document.querySelector('.timeline-item').classList.add('active');
+
+    // Language setting logic
+    function setLang(lang) {
+      document.body.setAttribute('lang', lang);
+      
+      // Update active state of language buttons
+      const buttons = document.querySelectorAll('.lang-btn');
+      buttons.forEach(btn => {
+        if (btn.textContent.toLowerCase() === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      
+      localStorage.setItem('lang', lang);
+    }
+
+    // Load initial language
+    const savedLang = localStorage.getItem('lang') || 'en';
+    setLang(savedLang);
+
+    // Theme Toggle Script
     const themeToggleBtn = document.getElementById('theme-toggle');
     const getSavedTheme = () => {
       const savedTheme = localStorage.getItem('theme');
