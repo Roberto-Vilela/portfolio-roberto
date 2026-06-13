@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Voice-RMV Case Study - Human-in-the-Loop Governance & Audio Synchronization Workflow">
+  <title>Voice-RMV Case Study | Roberto Vilela</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #161f30;
+      --bg-card: rgba(22, 31, 48, 0.7);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(0, 242, 254, 0.3);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --accent-1: #00f2fe;
+      --accent-2: #4facfe;
+      --accent-purple: #a78bfa;
+      --accent-green: #34d399;
+      --gradient-text: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --gradient-hero: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.8);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(79, 172, 254, 0.5);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header & Back Button */
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-back:hover {
+      color: var(--accent-1);
+      border-color: var(--border-hover);
+      transform: translateX(-4px);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      color: var(--text-primary);
+      background-color: var(--border-color);
+    }
+
+    /* Hero Section */
+    .hero-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-hero);
+    }
+
+    .eyebrow {
+      color: var(--accent-1);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .callout {
+      background: rgba(0, 242, 254, 0.05);
+      border: 1px solid rgba(0, 242, 254, 0.1);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 1.05rem;
+    }
+
+    .callout strong {
+      color: var(--accent-1);
+    }
+
+    /* Meta Details Card */
+    .meta-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: bold;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Section styling */
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--gradient-hero);
+      color: #0b0f19;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 50%;
+    }
+
+    /* Grid Layouts */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cards-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .cards-3, .cards-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      margin-top: 1rem;
+      padding-left: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      color: var(--accent-1);
+    }
+
+    /* Process Flow */
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .flow-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .flow-item:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    /* Tables */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+      text-align: left;
+    }
+
+    .table th, .table td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .table th {
+      background-color: var(--bg-secondary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .table tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.01);
+    }
+
+    /* Toggles / Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-hover);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-1);
+    }
+
+    .timeline-item p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Callout types */
+    .callout.green {
+      background: rgba(52, 211, 153, 0.05);
+      border-color: rgba(52, 211, 153, 0.1);
+    }
+    .callout.green strong { color: var(--accent-green); }
+
+    .callout.orange {
+      background: rgba(245, 158, 11, 0.05);
+      border-color: rgba(245, 158, 11, 0.1);
+    }
+    .callout.orange strong { color: #f59e0b; }
+
+    .callout.red {
+      background: rgba(239, 68, 68, 0.05);
+      border-color: rgba(239, 68, 68, 0.1);
+    }
+    .callout.red strong { color: #ef4444; }
+
+    /* Notion note */
+    .notion-note {
+      background: var(--bg-secondary);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .notion-note h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .notion-note ul {
+      padding-left: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .notion-note li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 6rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Nav -->
+    <header class="header-nav">
+      <a href="index.html" class="btn-back">&larr; Back to Portfolio</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
+        ☀️
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      
+      <!-- Hero Card -->
+      <div class="hero-card">
+        <div class="eyebrow">Portfolio Case Study</div>
+        <h1>Voice-RMV Execution Workflow &amp; Audio Synchronization</h1>
+        <p class="subtitle">
+          How a 13-step execution workflow prevented structural rework through human-in-the-loop governance during the development of Voice-RMV.
+        </p>
+        <div class="callout">
+          <strong>Core thesis:</strong> AI does not become reliable only because it can generate solutions. It becomes reliable when execution is governed by structured workflows, validation checkpoints, and human decision-making.
+        </div>
+
+        <aside class="meta-card">
+          <div class="meta-row">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">Voice-RMV</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Category</span>
+            <span class="meta-value">AI-Assisted Workflow Systems</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Workflow Designer &amp; HITL Operator</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Method</span>
+            <span class="meta-value">13-Step Execution Workflow</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Outcome</span>
+            <span class="meta-value">SYNC_OFFSET &amp; Memory Bank Asset</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Section 1 -->
+      <section class="section">
+        <h2 class="section-title"><span>1</span> Executive Snapshot</h2>
+        <div class="cards-3">
+          <div class="card">
+            <h3>Problem</h3>
+            <p>Transcription stopped rendering and generated audio lost synchronization with the visual animation.</p>
+          </div>
+          <div class="card">
+            <h3>Risk</h3>
+            <p>The AI agent could have over-refactored functional code through trial and error.</p>
+          </div>
+          <div class="card">
+            <h3>Result</h3>
+            <p>A simple SYNC_OFFSET logic fixed synchronization and became reusable project knowledge.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="section">
+        <h2 class="section-title"><span>2</span> The Case in One Flow</h2>
+        <div class="flow">
+          <div class="flow-item">Problem detected</div>
+          <div class="flow-item">AI proposed complex fixes</div>
+          <div class="flow-item">Human operator paused execution</div>
+          <div class="flow-item">Workflow forced validation</div>
+          <div class="flow-item">Root cause isolated</div>
+          <div class="flow-item">SYNC_OFFSET applied</div>
+          <div class="flow-item">Memory Bank updated</div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="section">
+        <h2 class="section-title"><span>3</span> Two-Column Section</h2>
+        <div class="cards-2">
+          <div class="card">
+            <h3>Operational Friction</h3>
+            <ul>
+              <li>Transcription text was not visible in the interface.</li>
+              <li>Audio and animation were out of sync.</li>
+              <li>AI proposed broad architectural fixes.</li>
+              <li>Uncontrolled execution could create new defects.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Human-in-the-Loop Response</h3>
+            <ul>
+              <li>Introduced MCP browser inspection for DOM visibility.</li>
+              <li>Reframed sync issue as timing perception problem.</li>
+              <li>Forced step-by-step validation before new changes.</li>
+              <li>Protected functional code from unnecessary refactoring.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="section">
+        <h2 class="section-title"><span>4</span> Three-Column Section</h2>
+        <div class="cards-3">
+          <div class="card">
+            <h3>Problem</h3>
+            <p>The system had two execution failures at once: frontend rendering and audio synchronization.</p>
+            <div class="tag">Rendering</div>
+            <div class="tag">Audio Sync</div>
+          </div>
+          <div class="card">
+            <h3>Governance</h3>
+            <p>The 13-step workflow controlled the AI agent through human validation and incremental testing.</p>
+            <div class="tag">Step 8</div>
+            <div class="tag">Step 13</div>
+          </div>
+          <div class="card">
+            <h3>Outcome</h3>
+            <p>The fix avoided structural rework and became reusable logic documented in the Memory Bank.</p>
+            <div class="tag">SYNC_OFFSET</div>
+            <div class="tag">Memory Bank</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="section">
+        <h2 class="section-title"><span>5</span> Key Decision Points</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Decision Point</th>
+                <th>Human Action</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transcription not rendering</td>
+                <td>Added MCP browser inspection</td>
+                <td>CSS issue identified without unnecessary frontend rewrite</td>
+              </tr>
+              <tr>
+                <td>Audio out of sync</td>
+                <td>Reframed issue as a timing perception problem</td>
+                <td>Reduced risk of architectural over-refactoring</td>
+              </tr>
+              <tr>
+                <td>AI proposed multiple fixes</td>
+                <td>Forced immediate validation after each attempt</td>
+                <td>Prevented debugging fog and defect propagation</td>
+              </tr>
+              <tr>
+                <td><code>progress.md</code> overwrite risk</td>
+                <td>Challenged the AI’s justification</td>
+                <td>New documentation governance rule added</td>
+              </tr>
+              <tr>
+                <td>Final sync solution</td>
+                <td>Validated across multiple audio outputs</td>
+                <td>SYNC_OFFSET became reusable project logic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="section">
+        <h2 class="section-title"><span>6</span> Timeline / Toggle-Friendly Structure</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Toggle 1 — Technical Challenge</h3>
+            <p>Explain the transcription rendering failure and audio-animation synchronization issue.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Toggle 2 — Human Decision Layer</h3>
+            <p>Explain why human perception and decision-making were required to reject unnecessary complexity.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Toggle 3 — Workflow Control</h3>
+            <p>Explain Step 8 testing/validation and how it prevented debugging fog.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Toggle 4 — Documentation Governance</h3>
+            <p>Explain the progress.md overwrite risk and the new Step 13 rule.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Toggle 5 — Business Impact</h3>
+            <p>Explain how the fix became reusable knowledge instead of only a temporary bug fix.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="section">
+        <h2 class="section-title"><span>7</span> Before vs. After</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Before Workflow Control</th>
+                <th>After Workflow Control</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI proposed broad architectural fixes</td>
+                <td>Human operator narrowed the problem scope</td>
+              </tr>
+              <tr>
+                <td>Risk of unnecessary refactoring</td>
+                <td>Functional codebase was protected</td>
+              </tr>
+              <tr>
+                <td>Audio and visuals were desynchronized</td>
+                <td>SYNC_OFFSET corrected perceived timing</td>
+              </tr>
+              <tr>
+                <td>Documentation overwrite risk</td>
+                <td>New governance rule added to Step 13</td>
+              </tr>
+              <tr>
+                <td>Bug treated as isolated problem</td>
+                <td>Bug converted into reusable project knowledge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="section">
+        <h2 class="section-title"><span>8</span> Business Value</h2>
+        <div class="cards-3">
+          <div class="card">
+            <h3>Codebase Protection</h3>
+            <p>Avoided unnecessary refactoring of functional architecture.</p>
+          </div>
+          <div class="card">
+            <h3>Execution Quality</h3>
+            <p>Tested each AI-generated change before moving forward.</p>
+          </div>
+          <div class="card">
+            <h3>Knowledge Reuse</h3>
+            <p>Converted a bug fix into a reusable synchronization pattern.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;" class="callout green">
+          <strong>Operational conclusion:</strong> AI accelerated execution, but human-in-the-loop validation preserved quality, context, and risk control.
+        </div>
+      </section>
+
+      <!-- Notion Note -->
+      <section class="notion-note">
+        <h2>How to Reproduce This in Notion</h2>
+        <ul>
+          <li>Create a main page title with the project name and subtitle.</li>
+          <li>Use a <code>Callout</code> block for the core thesis.</li>
+          <li>Create <code>2 columns</code> for Executive Summary + Project Card.</li>
+          <li>Create <code>3 columns</code> for Problem / Governance / Outcome.</li>
+          <li>Use a simple table for Key Decision Points.</li>
+          <li>Use toggles for Technical Challenge, Human Decision Layer, Workflow Control, Documentation Governance, and Business Impact.</li>
+          <li>Use another table for Before vs. After.</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Roberto Vilela. Portfolio optimized for AI-assisted systems and operations.</p>
+    </footer>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const getSavedTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    };
+
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+    };
+
+    let currentTheme = getSavedTheme();
+    applyTheme(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
