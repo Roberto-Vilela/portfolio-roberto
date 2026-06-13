@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roberto Vilela - AI-Assisted Systems and Workflow Builder Portfolio. Over 10 years of experience in client operations, process optimization, and AI governance.">
+  <title>Roberto Vilela | AI-Assisted Operations & Workflow Builder</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #161f30;
+      --bg-card: rgba(22, 31, 48, 0.7);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(0, 242, 254, 0.3);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --accent-1: #00f2fe; /* Neon Cyan */
+      --accent-2: #4facfe; /* Vibrant Blue */
+      --accent-purple: #a78bfa;
+      --accent-green: #34d399;
+      --gradient-hero: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --gradient-card-hover: linear-gradient(135deg, rgba(0, 242, 254, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
+      --gradient-text: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #a78bfa 100%);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    /* Light Theme variables fallback */
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.8);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(79, 172, 254, 0.5);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --bg-card-hover: rgba(241, 245, 249, 0.5);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --shadow-glow: 0 0 20px rgba(79, 172, 254, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-secondary);
+      border: 2px solid var(--bg-primary);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-2);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation Bar */
+    header.nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(11, 15, 25, 0.7);
+      transition: var(--transition);
+    }
+    [data-theme="light"] header.nav-header {
+      background-color: rgba(248, 250, 252, 0.8);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-hero);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-contact-nav {
+      background: var(--gradient-hero);
+      color: #0b0f19;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-contact-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      color: var(--text-primary);
+      background-color: var(--border-color);
+    }
+
+    /* Cover Image Hero Section */
+    .hero-banner {
+      width: 100%;
+      height: 300px;
+      background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), var(--bg-primary)), url('Roberto\ Vilela/ChatGPT_Image_Jun_2_2026_01_29_19_PM.png');
+      background-size: cover;
+      background-position: center;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    /* Hero Section Content */
+    .hero-section {
+      padding: 4rem 0 6rem 0;
+      position: relative;
+      margin-top: -120px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-avatar-wrapper {
+        margin: 0 auto;
+      }
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 3px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      background-color: var(--bg-secondary);
+    }
+
+    .hero-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.2);
+      color: var(--accent-1);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-quote-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-1);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      font-style: italic;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Stats Grid */
+    .stats-section {
+      padding: 3rem 0;
+      background-color: rgba(22, 31, 48, 0.3);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* Sections General */
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-hero);
+      border-radius: 2px;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      padding: 6rem 0;
+    }
+
+    @media (max-width: 992px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Executive Summary & Core Strengths */
+    .summary-text {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      text-wrap: pretty;
+    }
+
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 576px) {
+      .strengths-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strength-tag {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .strength-tag:hover {
+      border-color: var(--border-hover);
+      background: var(--gradient-card-hover);
+      transform: translateX(5px);
+    }
+
+    .strength-icon {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--accent-1);
+      border-radius: 50%;
+    }
+
+    /* Sidebar / Highlights */
+    .sidebar-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      height: fit-content;
+      box-shadow: var(--shadow-md);
+    }
+
+    .sidebar-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .cert-item:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .cert-icon {
+      font-size: 1.8rem;
+    }
+
+    .cert-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Featured Case Studies / Projects */
+    .projects-section {
+      padding: 6rem 0;
+      background-color: rgba(22, 31, 48, 0.1);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow), var(--shadow-md);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    @media (max-width: 992px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-image-wrapper {
+      position: relative;
+      height: 100%;
+      min-height: 320px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.03);
+    }
+
+    .project-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (max-width: 576px) {
+      .project-content {
+        padding: 1.5rem;
+      }
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-1);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-name {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-bullets {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .project-bullets li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .project-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-1);
+      font-weight: bold;
+    }
+
+    .btn-project {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-project:hover {
+      background: var(--gradient-hero);
+      color: #0b0f19;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 6rem 0;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-desc {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .contact-value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer.page-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="nav-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Roberto Vilela</a>
+      <ul class="nav-menu">
+        <li><a href="#summary" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
+            ☀️
+          </button>
+        </li>
+        <li><a href="#contact" class="btn-contact-nav">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Cover Banner Image -->
+  <div class="hero-banner" role="img" aria-label="Notion banner header cover image representing modern technology systems"></div>
+
+  <!-- Hero Details -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-avatar-wrapper">
+          <img src="Roberto Vilela/e714277a-39c2-4e00-be8b-764545506eda.png" alt="Roberto Vilela" class="hero-avatar">
+        </div>
+        <div>
+          <span class="hero-badge">⚡ Operations & Workflow Architect</span>
+          <h1 class="hero-title">Roberto Vilela</h1>
+          <p class="hero-subtitle">AI-Assisted Systems &amp; Workflow Builder</p>
+          <div class="hero-meta">
+            <span>📍 Peabody, MA</span>
+            <span>🌐 Bilingual (PT / EN)</span>
+          </div>
+          <div class="hero-quote-card">
+            "I don't just use AI — I build the operational structure around it. My work sits at the intersection of process design, human validation, and practical automation."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Dashboard -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Cases Managed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">80%</div>
+        <div class="stat-label">Processing Time Reduction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Internal Quality Target</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">86K+</div>
+        <div class="stat-label">Content Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Info Section -->
+  <section class="container main-grid" id="summary">
+    <div>
+      <h2 class="section-title">Executive Summary</h2>
+      <p class="summary-text">
+        Operations and workflow professional with 10+ years of experience turning fragmented, manual processes into structured, trackable, and scalable systems. Background spans client operations, digital marketing, bilingual service delivery, and AI-assisted workflow design.
+      </p>
+      <p class="summary-text">
+        Most recently built and operationalized <strong>All For Visa Flow</strong>, a full-stack case management platform for U.S. immigration workflows reducing client processing time from 15 days to 3–4 days, maintaining a 98% internal quality target across 200+ cases, and onboarding 20 active clients within 90 days of launch.
+      </p>
+
+      <h3 style="font-size: 1.5rem; margin: 3rem 0 1.5rem 0;">Core Strengths</h3>
+      <div class="strengths-grid">
+        <div class="strength-tag">
+          <div class="strength-icon">🤖</div>
+          <span>AI-Assisted Workflow Design</span>
+        </div>
+        <div class="strength-tag">
+          <div class="strength-icon">📈</div>
+          <span>Business Process Optimization</span>
+        </div>
+        <div class="strength-tag">
+          <div class="strength-icon">⚖️</div>
+          <span>Human-in-the-Loop Governance</span>
+        </div>
+        <div class="strength-tag">
+          <div class="strength-icon">👥</div>
+          <span>Client Operations &amp; Support</span>
+        </div>
+        <div class="strength-tag">
+          <div class="strength-icon">📄</div>
+          <span>Process Documentation</span>
+        </div>
+        <div class="strength-tag">
+          <div class="strength-icon">🧩</div>
+          <span>Systems Thinking</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Highlights -->
+    <div class="sidebar-section" id="certifications">
+      <h3 class="sidebar-title">Certifications</h3>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-name">Google AI Essentials</div>
+            <div class="cert-issuer">Google</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-name">HubSpot Marketing Hub</div>
+            <div class="cert-issuer">HubSpot</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-name">Claude 101</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-name">Use AI Responsibly</div>
+            <div class="cert-issuer">Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Case Studies & Projects -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <!-- Project 1: Featured Case Study -->
+      <div class="project-card">
+        <div class="project-grid">
+          <div class="project-image-wrapper">
+            <img src="Roberto Vilela/ChatGPT_Image_Jun_9_2026_01_55_50_AM.png" alt="Voice-RMV Execution Flow Chart" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Case Study · AI Workflow Governance</span>
+            <h3 class="project-name">Voice-RMV Execution Workflow</h3>
+            <p class="project-desc">
+              Human-in-the-Loop Governance for AI-Assisted Execution. A case study showing how a 14-step execution workflow prevented uncontrolled AI refactoring, protected project memory, and converted an audio synchronization bug into reusable operational knowledge.
+            </p>
+            <ul class="project-bullets">
+              <li>Strict human-in-the-loop validation checkpoints</li>
+              <li>Controlled AI-assisted debugging &amp; memory protection</li>
+              <li>Turned audio bugs into repeatable operational assets</li>
+            </ul>
+            <a href="https://app.notion.com/p/Voice-RMV-Execution-Workflow-37aa7ede1184809c9896fe1606483533?pvs=21" class="btn-project" target="_blank">View Full Case Study &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-grid">
+          <div class="project-image-wrapper">
+            <img src="Roberto Vilela/ChatGPT_Image_Jun_9_2026_02_40_05_AM.png" alt="Voice-RMV Project Preview" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">AI Platform · Audio &amp; Media</span>
+            <h3 class="project-name">Voice-RMV</h3>
+            <p class="project-desc">
+              AI Audio Workflow Platform supporting transcription, voice generation, and synchronized audio editing. Demonstrates practical workflow building, task tracking, and human-reviewed execution over media assets.
+            </p>
+            <ul class="project-bullets">
+              <li>Structured, repeatable audio rendering pipelines</li>
+              <li>Integrated AI transcription + multi-speaker voice generation</li>
+              <li>Custom sync editing logic and error boundaries</li>
+            </ul>
+            <a href="https://app.notion.com/p/Voice-RMV-Execution-Workflow-37aa7ede1184809c9896fe1606483533?pvs=21" class="btn-project" target="_blank">View Full Project &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-grid">
+          <div class="project-image-wrapper">
+            <img src="Roberto Vilela/ChatGPT_Image_Jun_2_2026_08_26_06_PM.png" alt="Playbook-RMV Dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Operations Portfolio · AI Systems</span>
+            <h3 class="project-name">Playbook-RMV</h3>
+            <p class="project-desc">
+              AI Operations Portfolio designed to run, structure, document, and review AI workflow experiments in a controlled local environment. Includes local LLM execution via llama.cpp, structured persistence in DuckDB, and telemetry logging.
+            </p>
+            <ul class="project-bullets">
+              <li>Hardware telemetry &amp; structured knowledge logging</li>
+              <li>Local execution layers with strict human validation</li>
+              <li>Converts isolated AI experiments into reusable templates</li>
+            </ul>
+            <a href="Roberto Vilela/🌐 Playbook-RMV — AI-Assisted Operations &amp; Workflow 372a7ede1184805bad19ed15796afb73.html" class="btn-project">View Portfolio Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <div class="project-grid">
+          <div class="project-image-wrapper">
+            <img src="Roberto Vilela/ChatGPT_Image_Jun_2_2026_01_29_19_PM.png" alt="DexaFit Wellness Hub Layout" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Wellness Operations · Process Automation</span>
+            <h3 class="project-name">DexaFit Wellness Hub: 90-Day Action Loop</h3>
+            <p class="project-desc">
+              A comprehensive operational playbook structuring fitness tracking, telemetry metrics, and business process automation routines inside a continuous 90-day action loop.
+            </p>
+            <ul class="project-bullets">
+              <li>Business automation strategies for wellness hubs</li>
+              <li>Process mapping for multi-channel client communications</li>
+              <li>Continuous performance analytics cycles</li>
+            </ul>
+            <a href="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop 37ca7ede118480179bc4ff2253610e04.html" class="btn-project">View Action Loop &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-desc">
+        I am currently open to opportunities in Client Operations, AI Operations, Workflow Automation, Implementation Support, and Process Documentation. Let's build something organized together.
+      </p>
+      
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/roberto-vilela-ma/" class="contact-card" target="_blank">
+          <div class="contact-icon">💼</div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">roberto-vilela-ma</div>
+        </a>
+        <a href="mailto:roberto.vilela.ma@gmail.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">roberto.vilela.ma</div>
+        </a>
+        <a href="tel:+16179037224" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">(617) 903-7224</div>
+        </a>
+        <a href="https://github.com/Roberto-Vilela" class="contact-card" target="_blank">
+          <div class="contact-icon">💻</div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">Roberto-Vilela</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2026 Roberto Vilela. Portfolio optimized for AI-assisted systems and operations.</p>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    
+    // Set theme based on local storage or system preferences
+    const getSavedTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    };
+
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+      
+      // Update navigation header translucent bg color
+      const navHeader = document.querySelector('header.nav-header');
+      if (theme === 'light') {
+        navHeader.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+      } else {
+        navHeader.style.backgroundColor = 'rgba(11, 15, 25, 0.7)';
+      }
+    };
+
+    let currentTheme = getSavedTheme();
+    applyTheme(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
