@@ -44,3 +44,50 @@
         .icon-filled {
             font-variation-settings: 'FILL' 1;
         }
+
+        @keyframes ag1 {
+            0%, 100% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            8.33%, 91.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag2 {
+            8.33%, 91.66% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            0%, 16.66%, 83.33%, 100% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag3 {
+            16.66%, 83.33% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            8.33%, 25%, 75%, 91.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag4 {
+            25%, 75% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            16.66%, 33.33%, 66.66%, 83.33% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag5 {
+            33.33%, 66.66% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            25%, 41.66%, 58.33%, 75% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag6 {
+            41.66%, 58.33% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            33.33%, 50%, 66.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+        @keyframes ag7 {
+            50% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
+            41.66%, 58.33% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+        }
+
+        .auto-glow-1 { animation: ag1 8s infinite ease-in-out; }
+        .auto-glow-2 { animation: ag2 8s infinite ease-in-out; }
+        .auto-glow-3 { animation: ag3 8s infinite ease-in-out; }
+        .auto-glow-4 { animation: ag4 8s infinite ease-in-out; }
+        .auto-glow-5 { animation: ag5 8s infinite ease-in-out; }
+        .auto-glow-6 { animation: ag6 8s infinite ease-in-out; }
+        .auto-glow-7 { animation: ag7 8s infinite ease-in-out; }
+
+        @keyframes ray-move {
+            0%, 100% { background-position: 0% 50%; opacity: 0.3; }
+            50% { background-position: 100% 50%; opacity: 1; }
+        }
+        .animated-ray {
+            background-size: 200% 100%;
+            animation: ray-move 8s infinite ease-in-out;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.8) 50%, transparent 100%);
+        }
