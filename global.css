@@ -91,3 +91,47 @@
             animation: ray-move 8s infinite ease-in-out;
             background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.8) 50%, transparent 100%);
         }
+
+        /* Builder Map ping-pong: cyan for all steps, GOLD for step 5 */
+        @keyframes bm1 {
+            0%, 100% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            8.33%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+        @keyframes bm2 {
+            8.33%, 91.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            0%, 16.66%, 83.33%, 100% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+        @keyframes bm3 {
+            16.66%, 83.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            8.33%, 25%, 75%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+        @keyframes bm4 {
+            25%, 75% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            16.66%, 33.33%, 66.66%, 83.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+        @keyframes bm5 {
+            33.33%, 66.66% { background-color: #eab308; color: #0b1326; box-shadow: 0 0 24px rgba(234, 179, 8, 0.7); border-color: #eab308; }
+            25%, 41.66%, 58.33%, 75% { background-color: rgba(234, 179, 8, 0.08); color: #fde047; box-shadow: 0 0 12px rgba(234, 179, 8, 0.3); border-color: rgba(234, 179, 8, 0.5); }
+        }
+        @keyframes bm6 {
+            41.66%, 58.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            33.33%, 50%, 66.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+        @keyframes bm7 {
+            50% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            41.66%, 58.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        }
+
+        .bm-glow-1 { animation: bm1 8s infinite ease-in-out; }
+        .bm-glow-2 { animation: bm2 8s infinite ease-in-out; }
+        .bm-glow-3 { animation: bm3 8s infinite ease-in-out; }
+        .bm-glow-4 { animation: bm4 8s infinite ease-in-out; }
+        .bm-glow-5 { animation: bm5 8s infinite ease-in-out; }
+        .bm-glow-6 { animation: bm6 8s infinite ease-in-out; }
+        .bm-glow-7 { animation: bm7 8s infinite ease-in-out; }
+
+        .animated-ray-bm {
+            background-size: 200% 100%;
+            animation: ray-move 8s infinite ease-in-out;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.6) 40%, rgba(234, 179, 8, 0.6) 50%, rgba(79, 172, 254, 0.6) 60%, transparent 100%);
+        }
