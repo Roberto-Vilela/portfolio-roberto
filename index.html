@@ -1,1046 +1,364 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roberto Vilela - AI-Assisted Systems and Workflow Builder Portfolio. Over 10 years of experience in client operations, process optimization, and AI governance.">
-  <title>Roberto Vilela | AI-Assisted Operations & Workflow Builder</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <style>
-    :root {
-      --bg-primary: #0b0f19;
-      --bg-secondary: #161f30;
-      --bg-card: rgba(22, 31, 48, 0.7);
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(0, 242, 254, 0.3);
-      --text-primary: #f3f4f6;
-      --text-secondary: #9ca3af;
-      --text-muted: #6b7280;
-      --accent-1: #00f2fe; /* Neon Cyan */
-      --accent-2: #4facfe; /* Vibrant Blue */
-      --accent-purple: #a78bfa;
-      --accent-green: #34d399;
-      --gradient-hero: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-      --gradient-card-hover: linear-gradient(135deg, rgba(0, 242, 254, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
-      --gradient-text: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #a78bfa 100%);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-      --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.15);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-    }
-
-    /* Light Theme variables fallback */
-    [data-theme="light"] {
-      --bg-primary: #f8fafc;
-      --bg-secondary: #ffffff;
-      --bg-card: rgba(255, 255, 255, 0.8);
-      --border-color: rgba(0, 0, 0, 0.08);
-      --border-hover: rgba(79, 172, 254, 0.5);
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
-      --bg-card-hover: rgba(241, 245, 249, 0.5);
-      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
-      --shadow-glow: 0 0 20px rgba(79, 172, 254, 0.1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-primary);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--bg-secondary);
-      border: 2px solid var(--bg-primary);
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent-2);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Navigation Bar */
-    header.nav-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      background-color: rgba(11, 15, 25, 0.7);
-      transition: var(--transition);
-    }
-    [data-theme="light"] header.nav-header {
-      background-color: rgba(248, 250, 252, 0.8);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-hero);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover {
-      color: var(--text-primary);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .btn-contact-nav {
-      background: var(--gradient-hero);
-      color: #0b0f19;
-      padding: 0.6rem 1.2rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .btn-contact-nav:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      cursor: pointer;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    .theme-toggle:hover {
-      color: var(--text-primary);
-      background-color: var(--border-color);
-    }
-
-    /* Cover Image Hero Section */
-    .hero-banner {
-      width: 100%;
-      height: 300px;
-      background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), var(--bg-primary)), url('Roberto\ Vilela/ChatGPT_Image_Jun_2_2026_01_29_19_PM.png');
-      background-size: cover;
-      background-position: center;
-      margin-top: 80px;
-      position: relative;
-    }
-
-    /* Hero Section Content */
-    .hero-section {
-      padding: 4rem 0 6rem 0;
-      position: relative;
-      margin-top: -120px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-avatar-wrapper {
-        margin: 0 auto;
-      }
-    }
-
-    .hero-avatar-wrapper {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 3px solid var(--border-color);
-      box-shadow: var(--shadow-md);
-      background-color: var(--bg-secondary);
-    }
-
-    .hero-avatar {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.2);
-      color: var(--accent-1);
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-title {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hero-quote-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-color);
-      border-left: 4px solid var(--accent-1);
-      padding: 1.5rem;
-      border-radius: var(--radius-md);
-      font-style: italic;
-      color: var(--text-primary);
-      font-size: 1.1rem;
-      box-shadow: var(--shadow-md);
-    }
-
-    /* Stats Grid */
-    .stats-section {
-      padding: 3rem 0;
-      background-color: rgba(22, 31, 48, 0.3);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-
-    @media (max-width: 992px) {
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 576px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    /* Sections General */
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--gradient-hero);
-      border-radius: 2px;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 4rem;
-      padding: 6rem 0;
-    }
-
-    @media (max-width: 992px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Executive Summary & Core Strengths */
-    .summary-text {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      text-wrap: pretty;
-    }
-
-    .strengths-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 576px) {
-      .strengths-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .strength-tag {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-
-    .strength-tag:hover {
-      border-color: var(--border-hover);
-      background: var(--gradient-card-hover);
-      transform: translateX(5px);
-    }
-
-    .strength-icon {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(0, 242, 254, 0.1);
-      color: var(--accent-1);
-      border-radius: 50%;
-    }
-
-    /* Sidebar / Highlights */
-    .sidebar-section {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      height: fit-content;
-      box-shadow: var(--shadow-md);
-    }
-
-    .sidebar-title {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.75rem;
-    }
-
-    .cert-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .cert-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-color);
-      padding: 1rem;
-      border-radius: var(--radius-md);
-      transition: var(--transition);
-    }
-
-    .cert-item:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-    }
-
-    .cert-icon {
-      font-size: 1.8rem;
-    }
-
-    .cert-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .cert-issuer {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* Featured Case Studies / Projects */
-    .projects-section {
-      padding: 6rem 0;
-      background-color: rgba(22, 31, 48, 0.1);
-      border-top: 1px solid var(--border-color);
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-bottom: 4rem;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
-    }
-
-    .project-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-glow), var(--shadow-md);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-    }
-
-    @media (max-width: 992px) {
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project-image-wrapper {
-      position: relative;
-      height: 100%;
-      min-height: 320px;
-      overflow: hidden;
-      background: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .project-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .project-card:hover .project-image {
-      transform: scale(1.03);
-    }
-
-    .project-content {
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    @media (max-width: 576px) {
-      .project-content {
-        padding: 1.5rem;
-      }
-    }
-
-    .project-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent-1);
-      margin-bottom: 0.75rem;
-    }
-
-    .project-name {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-desc {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-bullets {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .project-bullets li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .project-bullets li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent-1);
-      font-weight: bold;
-    }
-
-    .btn-project {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      align-self: flex-start;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .btn-project:hover {
-      background: var(--gradient-hero);
-      color: #0b0f19;
-      border-color: transparent;
-      transform: translateY(-2px);
-    }
-
-    /* Contact Section */
-    .contact-section {
-      padding: 6rem 0;
-      text-align: center;
-      background: radial-gradient(circle at center, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
-    }
-
-    .contact-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .contact-desc {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
-    }
-
-    .contact-links {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .contact-links {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 480px) {
-      .contact-links {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      text-decoration: none;
-      color: var(--text-primary);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .contact-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-glow);
-      transform: translateY(-5px);
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    .contact-value {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    /* Footer */
-    footer.page-footer {
-      border-top: 1px solid var(--border-color);
-      padding: 2rem 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-  </style>
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roberto Vilela | AI Workflow Systems &amp; Operations Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<script src="tailwind.config.js"></script>
 </head>
-<body>
-
-  <!-- Navigation Bar -->
-  <header class="nav-header">
-    <div class="container nav-container">
-      <a href="#" class="logo">Roberto Vilela</a>
-      <ul class="nav-menu">
-        <li><a href="#summary" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#certifications" class="nav-link">Certifications</a></li>
-        <li>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
-            ☀️
-          </button>
-        </li>
-        <li><a href="#contact" class="btn-contact-nav">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- Cover Banner Image -->
-  <div class="hero-banner" role="img" aria-label="Notion banner header cover image representing modern technology systems"></div>
-
-  <!-- Hero Details -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-avatar-wrapper">
-          <img src="Roberto Vilela/e714277a-39c2-4e00-be8b-764545506eda.png" alt="Roberto Vilela" class="hero-avatar">
-        </div>
-        <div>
-          <span class="hero-badge">⚡ Operations & Workflow Architect</span>
-          <h1 class="hero-title">Roberto Vilela</h1>
-          <p class="hero-subtitle">AI-Assisted Systems &amp; Workflow Builder</p>
-          <div class="hero-meta">
-            <span>📍 Peabody, MA</span>
-            <span>🌐 Bilingual (PT / EN)</span>
-          </div>
-          <div class="hero-quote-card">
-            "I don't just use AI — I build the operational structure around it. My work sits at the intersection of process design, human validation, and practical automation."
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Metrics Dashboard -->
-  <section class="stats-section">
-    <div class="container stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">200+</div>
-        <div class="stat-label">Cases Managed</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">80%</div>
-        <div class="stat-label">Processing Time Reduction</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">98%</div>
-        <div class="stat-label">Internal Quality Target</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">86K+</div>
-        <div class="stat-label">Content Community</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Info Section -->
-  <section class="container main-grid" id="summary">
-    <div>
-      <h2 class="section-title">Executive Summary</h2>
-      <p class="summary-text">
-        Operations and workflow professional with 10+ years of experience turning fragmented, manual processes into structured, trackable, and scalable systems. Background spans client operations, digital marketing, bilingual service delivery, and AI-assisted workflow design.
-      </p>
-      <p class="summary-text">
-        Most recently built and operationalized <strong>All For Visa Flow</strong>, a full-stack case management platform for U.S. immigration workflows reducing client processing time from 15 days to 3–4 days, maintaining a 98% internal quality target across 200+ cases, and onboarding 20 active clients within 90 days of launch.
-      </p>
-
-      <h3 style="font-size: 1.5rem; margin: 3rem 0 1.5rem 0;">Core Strengths</h3>
-      <div class="strengths-grid">
-        <div class="strength-tag">
-          <div class="strength-icon">🤖</div>
-          <span>AI-Assisted Workflow Design</span>
-        </div>
-        <div class="strength-tag">
-          <div class="strength-icon">📈</div>
-          <span>Business Process Optimization</span>
-        </div>
-        <div class="strength-tag">
-          <div class="strength-icon">⚖️</div>
-          <span>Human-in-the-Loop Governance</span>
-        </div>
-        <div class="strength-tag">
-          <div class="strength-icon">👥</div>
-          <span>Client Operations &amp; Support</span>
-        </div>
-        <div class="strength-tag">
-          <div class="strength-icon">📄</div>
-          <span>Process Documentation</span>
-        </div>
-        <div class="strength-tag">
-          <div class="strength-icon">🧩</div>
-          <span>Systems Thinking</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sidebar Highlights -->
-    <div class="sidebar-section" id="certifications">
-      <h3 class="sidebar-title">Certifications</h3>
-      <div class="cert-list">
-        <div class="cert-item">
-          <div class="cert-icon">🎓</div>
-          <div>
-            <div class="cert-name">Google AI Essentials</div>
-            <div class="cert-issuer">Google</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon">🎓</div>
-          <div>
-            <div class="cert-name">HubSpot Marketing Hub</div>
-            <div class="cert-issuer">HubSpot</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon">🎓</div>
-          <div>
-            <div class="cert-name">Claude 101</div>
-            <div class="cert-issuer">Anthropic</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon">🎓</div>
-          <div>
-            <div class="cert-name">Use AI Responsibly</div>
-            <div class="cert-issuer">Google</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Case Studies & Projects -->
-  <section class="projects-section" id="projects">
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-
-      <!-- Project 1: Featured Case Study -->
-      <div class="project-card">
-        <div class="project-grid">
-          <div class="project-image-wrapper">
-            <img src="Roberto Vilela/ChatGPT_Image_Jun_9_2026_01_55_50_AM.png" alt="Voice-RMV Execution Flow Chart" class="project-image">
-          </div>
-          <div class="project-content">
-            <span class="project-tag">Case Study · AI Workflow Governance</span>
-            <h3 class="project-name">Voice-RMV Execution Workflow</h3>
-            <p class="project-desc">
-              Human-in-the-Loop Governance for AI-Assisted Execution. A case study showing how a 14-step execution workflow prevented uncontrolled AI refactoring, protected project memory, and converted an audio synchronization bug into reusable operational knowledge.
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida/AP1WRLsTZhYpIxt8ZAlvjA4o8GdovlYJ80Yq7qfekphzNYZybHSbvX2hLPWc3IkRgnRlCtBQyfs45JWJ_Vg6TPLNf2Zrf965zNXgjyKosavL2sjZwR8aomV4VS1mrudowOR-TfEGf3Uk-X-wbUWf9tBYlpfMGI1vxiaAhoY-T_sWpl-Ugeo_VduwIG4fHACcHq-2AJIzDs9JZNyZ4LpylWcoz-3ToK3JkHc3PsL3OIZWGttD60kVOjUNoKXrBEKC">
+<span class="font-display-lg text-headline-md font-bold tracking-tight text-primary">Roberto Vilela</span>
+</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a class="text-body-md text-primary font-semibold" href="#what-i-do">What I Do</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#featured-work">Work</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#how-i-work">Process</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95">
+            Let's Talk
+        </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- 1. Hero Section -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-margin-mobile md:px-0">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="absolute inset-0 hero-gradient"></div>
+<!-- Tech Visual Pattern Placeholder -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-max-width mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-white/5">
+<span class="w-2 h-2 rounded-full bg-ai-flow-end animate-pulse"></span>
+<span class="text-code-sm font-label-md text-secondary-container tracking-widest uppercase">Workflow Optimization Active</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg mb-6 max-w-5xl mx-auto leading-tight">
+                I build AI-assisted workflows that turn <span class="text-transparent bg-clip-text bg-gradient-to-r from-ai-flow-start to-ai-flow-end">complex operations into simple, repeatable systems.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-10">
+                I help service-based businesses, immigration operations, and health/wellness teams organize processes, automate content, improve client experience, and create scalable execution systems.
             </p>
-            <ul class="project-bullets">
-              <li>Strict human-in-the-loop validation checkpoints</li>
-              <li>Controlled AI-assisted debugging &amp; memory protection</li>
-              <li>Turned audio bugs into repeatable operational assets</li>
-            </ul>
-            <a href="voice-rmv-case-study.html" class="btn-project">View Full Case Study &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="project-grid">
-          <div class="project-image-wrapper">
-            <img src="Roberto Vilela/ChatGPT_Image_Jun_9_2026_02_40_05_AM.png" alt="Voice-RMV Project Preview" class="project-image">
-          </div>
-          <div class="project-content">
-            <span class="project-tag">AI Platform · Audio &amp; Media</span>
-            <h3 class="project-name">Voice-RMV</h3>
-            <p class="project-desc">
-              AI Audio Workflow Platform supporting transcription, voice generation, and synchronized audio editing. Demonstrates practical workflow building, task tracking, and human-reviewed execution over media assets.
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="w-full sm:w-auto px-10 py-4 bg-primary text-on-primary font-bold rounded-lg hover:shadow-[0_0_20px_rgba(79,172,254,0.4)] transition-all">
+                    Let's Talk
+                </button>
+<button class="w-full sm:w-auto px-10 py-4 border border-outline/30 bg-white/5 backdrop-blur-md text-on-surface font-bold rounded-lg hover:bg-white/10 transition-all">
+                    View My Work
+                </button>
+</div>
+<div class="mt-16 relative mx-auto max-w-4xl glass-card rounded-xl border border-white/10 p-2 overflow-hidden shadow-2xl">
+<img alt="Workflow Dashboard Visual" class="rounded-lg w-full opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-XEFt23h6fhzhspp4srVlOicxjohyU8d3aWxnbn8udDbeHhCuuuN7gGgJA7gyvC2FgCBdSvu1mbyou6k_TLRvj5KwvkEtDnJW6fcL7AXgPTqpp1BKBvy8OMRoeN6fNul0aqyPZ071Fn9ovYg45XRgc2fJ1qFoleE9S35SV8Q_TJK472w5Fdo8xfggab97KY_QW1JRPgp6iCkIYlb2hqxWnFawBbHpydbjhZ5UAdnAzMsMyRitiD67dQ">
+</div>
+</div>
+</section>
+<!-- 2. What I Do -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop" id="what-i-do">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Core Pillars</h2>
+<p class="text-on-surface-variant font-body-md">Engineered systems for modern business growth.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-10 rounded-xl">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<h3 class="font-headline-md text-headline-md mb-4">AI-Assisted Operations</h3>
+<p class="text-on-surface-variant text-body-md">Integrating custom AI agents into your daily stack to handle data entry, initial analysis, and repetitive administrative tasks.</p>
+</div>
+<div class="glass-card p-10 rounded-xl">
+<span class="material-symbols-outlined text-4xl text-secondary-container mb-6" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<h3 class="font-headline-md text-headline-md mb-4">Workflow &amp; Process Design</h3>
+<p class="text-on-surface-variant text-body-md">Mapping your current chaos into streamlined, step-by-step Standard Operating Procedures (SOPs) that anyone can follow.</p>
+</div>
+<div class="glass-card p-10 rounded-xl">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-headline-md text-headline-md mb-4">Content &amp; Client Experience</h3>
+<p class="text-on-surface-variant text-body-md">Systems that automate client onboarding and content distribution while maintaining a high-touch, personalized feel.</p>
+</div>
+</div>
+</section>
+<!-- 3. Who I Help -->
+<section class="py-24 bg-surface-container-low/50">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-center">Tailored Solutions For</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-8 rounded-xl border border-white/5 bg-surface-container flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">business_center</span>
+<h4 class="font-bold mb-2">Service Businesses</h4>
+<p class="text-sm text-on-surface-variant">Consultants and agencies looking to scale operations.</p>
+</div>
+<div class="p-8 rounded-xl border border-white/5 bg-surface-container flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">description</span>
+<h4 class="font-bold mb-2">Immigration Teams</h4>
+<p class="text-sm text-on-surface-variant">Managing complex document flows and case tracking.</p>
+</div>
+<div class="p-8 rounded-xl border border-white/5 bg-surface-container flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">monitor_heart</span>
+<h4 class="font-bold mb-2">Health &amp; Wellness</h4>
+<p class="text-sm text-on-surface-variant">Patient management and personalized health tracking hubs.</p>
+</div>
+<div class="p-8 rounded-xl border border-white/5 bg-surface-container flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">bolt</span>
+<h4 class="font-bold mb-2">Small AI-Teams</h4>
+<p class="text-sm text-on-surface-variant">Rapidly deploying local AI solutions for niche markets.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Transformation -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">The System Transformation</h2>
+<p class="text-on-surface-variant text-body-lg mb-8">From reactive fire-fighting to proactive strategic execution. I don't just add tools; I build the backbone of your business.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 rounded-lg bg-error-container/10 border border-error/20">
+<h5 class="text-error font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">block</span> Before
+                    </h5>
+<ul class="text-sm space-y-2 text-on-surface-variant">
+<li>• Scattered manual tasks</li>
+<li>• Inconsistent client experience</li>
+<li>• Team burnout &amp; bottlenecks</li>
+<li>• No clear operational data</li>
+</ul>
+</div>
+<div class="p-6 rounded-lg bg-primary-container/10 border border-primary/20">
+<h5 class="text-primary font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">check_circle</span> After
+                    </h5>
+<ul class="text-sm space-y-2 text-on-surface-variant">
+<li>• Organized automated systems</li>
+<li>• Predictable client onboarding</li>
+<li>• Scalable execution model</li>
+<li>• Real-time performance metrics</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Featured Work -->
+<section class="py-24 bg-surface-container-low/30" id="featured-work">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12">Featured Systems</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="aspect-video bg-surface-bright overflow-hidden">
+<img alt="DexaFit Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxuI4lhGJyvZ1biG98twGtYLfUO3UAa7obeXbIobEttyiqQ23y8u-1VsKTofRYtyKt02mo85nYFqCSSxKdTcgtCaQ8sQUtCJAqVsQNuMI8GdShvusJlYNO2-0ctJ9l4SWEro6gLm1DcDbK6gO-3bDH6TWgoZu-5LwLWUErAU9IaOd7yrrZMDu_1fGvriIr5nFuUwMge-pyFqjcqovDgcjaiSYFT2OGBIyw_PoMY42mfrw5mVlaXrmqVQ">
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md mb-2">DexaFit Wellness Hub</h3>
+<p class="text-on-surface-variant mb-6">Centralized client data ecosystem automating health report generation and follow-up sequences.</p>
+<a class="text-primary font-label-md flex items-center gap-2 hover:underline" href="#">View Case Study <span class="material-symbols-outlined text-sm">north_east</span></a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="aspect-video bg-surface-bright overflow-hidden">
+<img alt="Voice RMV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKhLKnanXdBoEnjx_P8pgOlrVaa6VcN_u_MXgNsgoFxkHmP78KysG2v_VUXEQt5LbPJki8uRZkpQvgmv0zdOpJe4KOWBp1Vgj91BFA8pk3ExpvAKLZ1pb4sh9HftS9k8ofJg5C5m_B7-aVzeoH0pEHNAm0xO9RL-2PVCfLuZakRitOI9LlzXQAqt6QvPS5CNHHmnv9QKfoHJrY5gdvCRMVvX57ZN3idvtjfSQJnDgPQDAizbG1oN0Fyw">
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md mb-2">Voice RMV</h3>
+<p class="text-on-surface-variant mb-6">AI-driven voice assistant for service inquiry handling and automated scheduling.</p>
+<a class="text-primary font-label-md flex items-center gap-2 hover:underline" href="#">View Case Study <span class="material-symbols-outlined text-sm">north_east</span></a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="aspect-video bg-surface-bright overflow-hidden">
+<img alt="Playbook RMV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT53G-yJXjFxkheNOOlSl9a3XPkn8LzW5W7fGYAz4yQkNujbFU-yRSWT-9El9g6hmX7YlTmSlcw78fMHY4LirE_D9oGAyeMP2yCKML9gSYWOXqIf24Yi0K4FEyZHw04k0eMIrbghGYxjqWyJEqRkvE9F_T_JMbUoNuvefp-jRHln-mdgWIfoQAveemwAsd1UFMVV0MjPNip_5tEknZVpoeDa71oZ_vSIWfgdk39T28XyZFxQc7vfJotg">
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md mb-2">Playbook RMV</h3>
+<p class="text-on-surface-variant mb-6">Interactive operational manual with embedded AI search for team onboarding.</p>
+<a class="text-primary font-label-md flex items-center gap-2 hover:underline" href="#">View Case Study <span class="material-symbols-outlined text-sm">north_east</span></a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="aspect-video bg-surface-bright overflow-hidden">
+<img alt="All For Visa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEaJymCg5BtXc9e8s_egrTzEqXZEX6HLD9wtoASpeoxn2zfYi-joFKO8G6HC2im3PcIb-wpKl9A-QvvqlgOOVvcmzrmaLMvvo5UJbCVNQsdBFRTQnvyWt1VRzawXHgW2I6Wcxtifl8r8qo4OdHbsjfTx5cr2Y_Cxtic0MiCtRFFWlAYSmmKd2ODc0vngNL0Ku9MCpRuOAOAHpUAWq6XQyM71BYivlsOGraUlF70BjpGABPo8XPsghm3A">
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md mb-2">All For Visa Flow</h3>
+<p class="text-on-surface-variant mb-6">Complex document automation system reducing case processing time by 60%.</p>
+<a class="text-primary font-label-md flex items-center gap-2 hover:underline" href="#">View Case Study <span class="material-symbols-outlined text-sm">north_east</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. How I Work -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop overflow-hidden" id="how-i-work">
+<h2 class="font-headline-lg text-headline-lg mb-16 text-center">My Execution Process</h2>
+<div class="relative">
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 relative z-10">
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">1</div>
+<h5 class="font-bold text-sm">Understand</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">2</div>
+<h5 class="font-bold text-sm">Map</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">3</div>
+<h5 class="font-bold text-sm">Design</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">4</div>
+<h5 class="font-bold text-sm">AI Assistant</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">5</div>
+<h5 class="font-bold text-sm">Human Review</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">6</div>
+<h5 class="font-bold text-sm">Test/Improve</h5>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">7</div>
+<h5 class="font-bold text-sm">Deliver</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Proof/Metrics -->
+<section class="py-20 border-y border-white/5 bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-4xl font-bold text-primary mb-2">200+</div>
+<div class="text-label-md text-on-surface-variant uppercase">Cases Managed</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">1,400+</div>
+<div class="text-label-md text-on-surface-variant uppercase">YouTube Subs</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">86k+</div>
+<div class="text-label-md text-on-surface-variant uppercase">Views</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">Local</div>
+<div class="text-label-md text-on-surface-variant uppercase">AI Systems</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. About Roberto -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-bright rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+<img alt="Roberto Vilela Profile" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuTe02LU0Po1Uuk_vgdvepNHUQ1s8JnETImxeJIGGfJ8VQtjWH8Z6fVfP4kLO3PGSgSf_UeAKuZigEodycHQ016jMh0d4_FtJzP3OkntoIX41oafMxrlnIg78YMcps5XjtUdiVocpmAwKL7RN3zCxEI2VZdaz4k14HaYHHzsnPyTPUGvaenRm_HQsqqqdI25df1Mdmv1u2oXZbkY4rkqXxCDv2cEZq1SpYkLc9lYuwXcL9bVOeWCCeA">
+</div>
+<div class="absolute -bottom-6 -right-6 p-6 glass-card rounded-xl border border-primary/30">
+<p class="font-bold text-primary">Roberto Vilela</p>
+<p class="text-sm opacity-70">Operations Architect</p>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Behind the Systems</h2>
+<p class="text-body-lg text-on-surface-variant mb-6">
+                    I am a professional dedicated to the intersection of operational efficiency and artificial intelligence. My background spans from high-stakes immigration case management to building personalized wellness ecosystems.
+                </p>
+<p class="text-body-lg text-on-surface-variant mb-8">
+                    My mission is to help growing teams reclaim their time by building systems that think, so they can focus on work that matters.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-label-md">Certified AI Solutions Architect</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Opportunities -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-center">Ways to Work Together</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-xl bg-surface border border-white/5">
+<h4 class="text-xl font-bold mb-4">Job Opportunities</h4>
+<p class="text-on-surface-variant text-sm mb-6">I am open to full-time roles in operational design and AI integration for forward-thinking companies.</p>
+<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Inquire</a>
+</div>
+<div class="p-8 rounded-xl bg-surface border border-white/5">
+<h4 class="text-xl font-bold mb-4">Freelance / Consulting</h4>
+<p class="text-on-surface-variant text-sm mb-6">Specific system builds, audit reports, or workflow automation sprints for your business.</p>
+<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Book a Sprint</a>
+</div>
+<div class="p-8 rounded-xl bg-surface border border-white/5">
+<h4 class="text-xl font-bold mb-4">Collaboration</h4>
+<p class="text-on-surface-variant text-sm mb-6">Partnering with SaaS platforms, creators, or agencies to develop custom AI-driven content.</p>
+<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Let's Connect</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Final CTA -->
+<section class="py-32 relative">
+<div class="absolute inset-0 glow-accent opacity-30"></div>
+<div class="max-w-4xl mx-auto px-margin-mobile text-center relative z-10">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg mb-8">Ready to Scale Your <br><span class="text-primary">Operations?</span></h2>
+<p class="text-on-surface-variant font-body-lg mb-12 max-w-2xl mx-auto">
+                Stop managing chaos and start managing growth. Let's discuss how a custom workflow system can transform your business.
             </p>
-            <ul class="project-bullets">
-              <li>Structured, repeatable audio rendering pipelines</li>
-              <li>Integrated AI transcription + multi-speaker voice generation</li>
-              <li>Custom sync editing logic and error boundaries</li>
-            </ul>
-            <a href="voice-rmv-case-study.html" class="btn-project">View Full Project &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <div class="project-grid">
-          <div class="project-image-wrapper">
-            <img src="Roberto Vilela/ChatGPT_Image_Jun_2_2026_08_26_06_PM.png" alt="Playbook-RMV Dashboard" class="project-image">
-          </div>
-          <div class="project-content">
-            <span class="project-tag">Operations Portfolio · AI Systems</span>
-            <h3 class="project-name">Playbook-RMV</h3>
-            <p class="project-desc">
-              AI Operations Portfolio designed to run, structure, document, and review AI workflow experiments in a controlled local environment. Includes local LLM execution via llama.cpp, structured persistence in DuckDB, and telemetry logging.
-            </p>
-            <ul class="project-bullets">
-              <li>Hardware telemetry &amp; structured knowledge logging</li>
-              <li>Local execution layers with strict human validation</li>
-              <li>Converts isolated AI experiments into reusable templates</li>
-            </ul>
-            <a href="Roberto Vilela/🌐 Playbook-RMV — AI-Assisted Operations &amp; Workflow 372a7ede1184805bad19ed15796afb73.html" class="btn-project">View Portfolio Book &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <div class="project-grid">
-          <div class="project-image-wrapper">
-            <img src="Roberto Vilela/ChatGPT_Image_Jun_2_2026_01_29_19_PM.png" alt="DexaFit Wellness Hub Layout" class="project-image">
-          </div>
-          <div class="project-content">
-            <span class="project-tag">Wellness Operations · Process Automation</span>
-            <h3 class="project-name">DexaFit Wellness Hub: 90-Day Action Loop</h3>
-            <p class="project-desc">
-              A comprehensive operational playbook structuring fitness tracking, telemetry metrics, and business process automation routines inside a continuous 90-day action loop.
-            </p>
-            <ul class="project-bullets">
-              <li>Business automation strategies for wellness hubs</li>
-              <li>Process mapping for multi-channel client communications</li>
-              <li>Continuous performance analytics cycles</li>
-            </ul>
-            <a href="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop 37ca7ede118480179bc4ff2253610e04.html" class="btn-project">View Action Loop &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="container contact-container">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="contact-desc">
-        I am currently open to opportunities in Client Operations, AI Operations, Workflow Automation, Implementation Support, and Process Documentation. Let's build something organized together.
-      </p>
-      
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/roberto-vilela-ma/" class="contact-card" target="_blank">
-          <div class="contact-icon">💼</div>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">roberto-vilela-ma</div>
-        </a>
-        <a href="mailto:roberto.vilela.ma@gmail.com" class="contact-card">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">roberto.vilela.ma</div>
-        </a>
-        <a href="tel:+16179037224" class="contact-card">
-          <div class="contact-icon">📞</div>
-          <div class="contact-label">Phone</div>
-          <div class="contact-value">(617) 903-7224</div>
-        </a>
-        <a href="https://github.com/Roberto-Vilela" class="contact-card" target="_blank">
-          <div class="contact-icon">💻</div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">Roberto-Vilela</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="page-footer">
-    <div class="container">
-      <p>&copy; 2026 Roberto Vilela. Portfolio optimized for AI-assisted systems and operations.</p>
-    </div>
-  </footer>
-
-  <!-- Theme Toggle Script -->
-  <script>
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    
-    // Set theme based on local storage or system preferences
-    const getSavedTheme = () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) return savedTheme;
-      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    };
-
-    const applyTheme = (theme) => {
-      document.documentElement.setAttribute('data-theme', theme);
-      themeToggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
-      
-      // Update navigation header translucent bg color
-      const navHeader = document.querySelector('header.nav-header');
-      if (theme === 'light') {
-        navHeader.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-      } else {
-        navHeader.style.backgroundColor = 'rgba(11, 15, 25, 0.7)';
-      }
-    };
-
-    let currentTheme = getSavedTheme();
-    applyTheme(currentTheme);
-
-    themeToggleBtn.addEventListener('click', () => {
-      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-      localStorage.setItem('theme', currentTheme);
-      applyTheme(currentTheme);
+<div class="flex flex-wrap justify-center gap-6">
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">mail</span> Email Me
+                </button>
+<button class="px-8 py-4 bg-surface-bright text-on-surface border border-white/10 font-bold rounded-lg hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">link</span> LinkedIn
+                </button>
+<button class="px-8 py-4 bg-surface-bright text-on-surface border border-white/10 font-bold rounded-lg hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">description</span> Download Resume
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-16 border-t border-white/5">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<img alt="Logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida/AP1WRLsTZhYpIxt8ZAlvjA4o8GdovlYJ80Yq7qfekphzNYZybHSbvX2hLPWc3IkRgnRlCtBQyfs45JWJ_Vg6TPLNf2Zrf965zNXgjyKosavL2sjZwR8aomV4VS1mrudowOR-TfEGf3Uk-X-wbUWf9tBYlpfMGI1vxiaAhoY-T_sWpl-Ugeo_VduwIG4fHACcHq-2AJIzDs9JZNyZ4LpylWcoz-3ToK3JkHc3PsL3OIZWGttD60kVOjUNoKXrBEKC">
+<span class="font-display-lg text-headline-md font-bold text-primary">Roberto Vilela</span>
+</div>
+<p class="text-on-surface-variant text-sm">
+                    © 2024 Operations Architect. <br> Built for efficiency, designed for impact.
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">YouTube</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Reveal animations or interaction logic
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.borderColor = 'rgba(74, 172, 254, 0.4)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+        });
     });
-  </script>
-</body>
-</html>
+</script>
+</body></html>
