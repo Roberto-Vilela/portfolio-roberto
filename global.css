@@ -46,32 +46,32 @@
         }
 
         @keyframes ag1 {
-            0%, 100% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            8.33%, 91.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            0%, 100% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            8.33%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag2 {
-            8.33%, 91.66% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            0%, 16.66%, 83.33%, 100% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            8.33%, 91.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            0%, 16.66%, 83.33%, 100% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag3 {
-            16.66%, 83.33% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            8.33%, 25%, 75%, 91.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            16.66%, 83.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            8.33%, 25%, 75%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag4 {
-            25%, 75% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            16.66%, 33.33%, 66.66%, 83.33% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            25%, 75% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            16.66%, 33.33%, 66.66%, 83.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag5 {
-            33.33%, 66.66% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            25%, 41.66%, 58.33%, 75% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            33.33%, 66.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            25%, 41.66%, 58.33%, 75% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag6 {
-            41.66%, 58.33% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            33.33%, 50%, 66.66% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            41.66%, 58.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            33.33%, 50%, 66.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
         @keyframes ag7 {
-            50% { background: #4facfe; color: #003256; box-shadow: 0 0 20px #4facfe; border-color: #4facfe; }
-            41.66%, 58.33% { background: #171f33; color: #dae2fd; box-shadow: none; border-color: #4facfe; }
+            50% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
+            41.66%, 58.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
         }
 
         .auto-glow-1 { animation: ag1 8s infinite ease-in-out; }
