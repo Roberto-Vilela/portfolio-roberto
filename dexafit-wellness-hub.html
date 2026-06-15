@@ -99,31 +99,6 @@
             </div>
         </section>
 
-        <!-- 1.5 Layout Preview -->
-        <section class="py-16 px-margin-mobile md:px-margin-desktop">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-6 items-stretch">
-                    <div class="glass-card rounded-2xl border border-white/10 p-8 flex flex-col justify-between">
-                        <div>
-                            <span class="block text-[10px] uppercase tracking-[0.3em] text-primary font-bold mb-3">DexaFit Layout</span>
-                            <h2 class="font-headline-lg text-2xl md:text-3xl text-white font-bold mb-4">Full-page concept layout</h2>
-                            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
-                                This is the complete interface layout used to present the DexaFit case study concept. It belongs here, inside the case page, not on the home page.
-                            </p>
-                        </div>
-                        <div class="mt-8 flex flex-wrap gap-3">
-                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Dashboard</span>
-                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Retention Flow</span>
-                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">90-Day Loop</span>
-                        </div>
-                    </div>
-                    <div class="glass-card rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
-                        <img alt="DexaFit full layout preview" class="w-full h-full object-cover" src="assets/profile/dexafit-layout-full.png">
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 2. Case Snapshot -->
         <section id="snapshot" class="py-16 bg-surface-container-low/30">
             <div class="max-w-4xl mx-auto px-margin-mobile md:px-0">
@@ -487,7 +462,7 @@
 
         <!-- 7. Solution Overview -->
         <section class="py-24 bg-surface-container-low/50 border-y border-white/5">
-            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
                 
                 <!-- Solution Header -->
                 <div class="mb-16 text-center max-w-3xl mx-auto">
@@ -525,37 +500,42 @@
                 </div>
 
                 <!-- Dashboard Mockup -->
-                <div class="dashboard-mosaic bg-surface-container-high rounded-2xl border border-white/10 overflow-hidden relative shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-surface-container-lowest/75 pointer-events-none"></div>
-                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 p-4 md:p-6">
-                        <figure class="dashboard-mosaic-card dashboard-mosaic-card-lg md:col-span-7 md:row-span-2">
-                            <img src="assets/cases/dexafit/dexafit-dashboard-main.png" alt="Dashboard principal do DexaFit Wellness Hub" class="dashboard-mosaic-image">
-                            <figcaption class="dashboard-mosaic-caption">
-                                <span class="dashboard-mosaic-kicker">Main view</span>
-                                <span class="dashboard-mosaic-title">Baseline Snapshot</span>
-                            </figcaption>
-                        </figure>
-                        <figure class="dashboard-mosaic-card md:col-span-5">
-                            <img src="assets/cases/dexafit/dexafit-dashboard-action.png" alt="Visão de ação do dashboard DexaFit" class="dashboard-mosaic-image">
-                            <figcaption class="dashboard-mosaic-caption">
-                                <span class="dashboard-mosaic-kicker">Action layer</span>
-                                <span class="dashboard-mosaic-title">Recommended Next Actions</span>
-                            </figcaption>
-                        </figure>
-                        <figure class="dashboard-mosaic-card md:col-span-5">
-                            <img src="assets/cases/dexafit/dexafit-dashboard-retest.png" alt="Visão de reteste do dashboard DexaFit" class="dashboard-mosaic-image">
-                            <figcaption class="dashboard-mosaic-caption">
-                                <span class="dashboard-mosaic-kicker">Retention layer</span>
-                                <span class="dashboard-mosaic-title">Retest Readiness</span>
-                            </figcaption>
-                        </figure>
-                        <figure class="dashboard-mosaic-card dashboard-mosaic-card-wide md:col-span-7">
-                            <img src="assets/cases/dexafit/dexafit-dashboard-secondary.png" alt="Visão complementar do dashboard DexaFit Wellness Hub" class="dashboard-mosaic-image">
-                            <figcaption class="dashboard-mosaic-caption">
-                                <span class="dashboard-mosaic-kicker">Secondary view</span>
-                                <span class="dashboard-mosaic-title">Engagement and Progress</span>
-                            </figcaption>
-                        </figure>
+                <div class="grid grid-cols-1 lg:grid-cols-[minmax(17rem,0.7fr)_minmax(0,1.5fr)] gap-6 items-start">
+                    <figure class="rounded-2xl border border-white/10 overflow-hidden bg-white shadow-2xl">
+                        <img alt="Layout completo do DexaFit Wellness Hub" class="block w-full h-auto" src="assets/profile/dexafit-layout-full.png">
+                    </figure>
+                    <div class="dashboard-mosaic bg-surface-container-high rounded-2xl border border-white/10 overflow-hidden relative shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-surface-container-lowest/75 pointer-events-none"></div>
+                        <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 p-4 md:p-6">
+                            <figure class="dashboard-mosaic-card dashboard-mosaic-card-lg md:col-span-7 md:row-span-2">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-main.png" alt="Dashboard principal do DexaFit Wellness Hub" class="dashboard-mosaic-image">
+                                <figcaption class="dashboard-mosaic-caption">
+                                    <span class="dashboard-mosaic-kicker">Main view</span>
+                                    <span class="dashboard-mosaic-title">Baseline Snapshot</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="dashboard-mosaic-card md:col-span-5">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-action.png" alt="Visão de ação do dashboard DexaFit" class="dashboard-mosaic-image">
+                                <figcaption class="dashboard-mosaic-caption">
+                                    <span class="dashboard-mosaic-kicker">Action layer</span>
+                                    <span class="dashboard-mosaic-title">Recommended Next Actions</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="dashboard-mosaic-card md:col-span-5">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-retest.png" alt="Visão de reteste do dashboard DexaFit" class="dashboard-mosaic-image">
+                                <figcaption class="dashboard-mosaic-caption">
+                                    <span class="dashboard-mosaic-kicker">Retention layer</span>
+                                    <span class="dashboard-mosaic-title">Retest Readiness</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="dashboard-mosaic-card dashboard-mosaic-card-wide md:col-span-7">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-secondary.png" alt="Visão complementar do dashboard DexaFit Wellness Hub" class="dashboard-mosaic-image">
+                                <figcaption class="dashboard-mosaic-caption">
+                                    <span class="dashboard-mosaic-kicker">Secondary view</span>
+                                    <span class="dashboard-mosaic-title">Engagement and Progress</span>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
                 
