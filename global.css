@@ -43,7 +43,7 @@
         }
 
         .dashboard-mosaic {
-            min-height: 44rem;
+            min-height: 0;
         }
 
         .dashboard-mosaic-card {
@@ -58,10 +58,6 @@
 
         .dashboard-mosaic-card-lg {
             min-height: 24rem;
-        }
-
-        .dashboard-mosaic-card-wide {
-            min-height: 16rem;
         }
 
         .dashboard-mosaic-image {
