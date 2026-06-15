@@ -35,7 +35,16 @@
 
         <!-- 1. Project Hero -->
         <section class="relative pt-32 pb-24 overflow-hidden px-margin-mobile md:px-margin-desktop border-b border-white/5">
-            <div class="absolute inset-0 z-0 opacity-20 hero-gradient"></div>
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <img
+                    src="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop/screen.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="hero-dashboard-image"
+                >
+                <div class="absolute inset-0 hero-dashboard-overlay"></div>
+                <div class="absolute inset-0 z-10 opacity-20 hero-gradient"></div>
+            </div>
             <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
                 
                 <!-- Badge -->
@@ -491,11 +500,38 @@
                 </div>
 
                 <!-- Dashboard Mockup -->
-                <div class="aspect-video bg-surface-container-high rounded-2xl border border-white/10 flex flex-col items-center justify-center p-8 overflow-hidden relative shadow-2xl group">
-                    <span class="material-symbols-outlined text-6xl text-on-surface-variant/30 mb-4 relative z-10 transition-transform group-hover:scale-110 duration-500">dashboard</span>
-                    <span class="text-on-surface-variant text-lg font-bold relative z-10 mb-2">Dashboard Concept View</span>
-                    <span class="text-sm text-outline relative z-10 text-center max-w-sm">Mockup goes here. Interface hides complexity and surfaces the next best action.</span>
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent pointer-events-none"></div>
+                <div class="dashboard-mosaic bg-surface-container-high rounded-2xl border border-white/10 overflow-hidden relative shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-surface-container-lowest/75 pointer-events-none"></div>
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 p-4 md:p-6">
+                        <figure class="dashboard-mosaic-card dashboard-mosaic-card-lg md:col-span-7 md:row-span-2">
+                            <img src="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop/screen.png" alt="Dashboard principal do DexaFit Wellness Hub" class="dashboard-mosaic-image">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">Main view</span>
+                                <span class="dashboard-mosaic-title">Baseline Snapshot</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card md:col-span-5">
+                            <img src="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop/a_premium_high_fidelity_3d_product_showcase_of_the_dexafit_wellness_hub_action.png" alt="Visão de ação do dashboard DexaFit" class="dashboard-mosaic-image">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">Action layer</span>
+                                <span class="dashboard-mosaic-title">Recommended Next Actions</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card md:col-span-5">
+                            <img src="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop/a_premium_high_fidelity_3d_product_showcase_of_the_dexafit_wellness_hub_retest.png" alt="Visão de reteste do dashboard DexaFit" class="dashboard-mosaic-image">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">Retention layer</span>
+                                <span class="dashboard-mosaic-title">Retest Readiness</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card dashboard-mosaic-card-wide md:col-span-7">
+                            <img src="Roberto Vilela/DexaFit Wellness Hub 90-Day Action Loop/screen 1.png" alt="Visão complementar do dashboard DexaFit Wellness Hub" class="dashboard-mosaic-image">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">Secondary view</span>
+                                <span class="dashboard-mosaic-title">Engagement and Progress</span>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
                 
             </div>
@@ -576,145 +612,181 @@
             </div>
         </section>
 
-        <!-- 13. Product Experience / Rationale -->
-        <section class="py-16 bg-surface-container-low/30 border-y border-white/5">
-            <div class="max-w-4xl mx-auto px-margin-mobile md:px-0">
-                <!-- Empty placeholder for any additional text before rationale if needed. The dashboard mockup was moved to Section 07. -->
-
-                <h3 class="font-headline-md text-2xl mb-6">14. Design Rationale</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="glass-card p-4 rounded-lg">
-                        <h4 class="font-bold text-white text-sm mb-2">Light clinical surfaces</h4>
-                        <p class="text-xs text-on-surface-variant">Reduce friction and improve readability.</p>
-                    </div>
-                    <div class="glass-card p-4 rounded-lg border-b-2 border-primary">
-                        <h4 class="font-bold text-white text-sm mb-2">Technical Blue</h4>
-                        <p class="text-xs text-on-surface-variant">Signal action, status, and dashboard feedback.</p>
-                    </div>
-                    <div class="glass-card p-4 rounded-lg border-b-2 border-purple-400">
-                        <h4 class="font-bold text-white text-sm mb-2">Lavender/Purple</h4>
-                        <p class="text-xs text-on-surface-variant">Signal AI-assisted interpretation and goals.</p>
-                    </div>
-                    <div class="glass-card p-4 rounded-lg border-b-2 border-green-400">
-                        <h4 class="font-bold text-white text-sm mb-2">Soft Green</h4>
-                        <p class="text-xs text-on-surface-variant">Signal progress, validation, and completion.</p>
-                    </div>
+        <!-- 09. Business Value -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">09 / Business Value</span>
+                <h3 class="font-headline-lg text-3xl md:text-4xl text-white font-bold mb-4">Translating Product Experience into Business Value</h3>
+                <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">How the Wellness Hub supports retention, repeat scans, and long-term value.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4 block">trending_up</span>
+                    <h4 class="font-bold text-white text-lg mb-3">Higher Client Retention</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Clients stay engaged after the scan through clarity, action, and progress visibility.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl mb-4 block">event_repeat</span>
+                    <h4 class="font-bold text-white text-lg mb-3">Increased Repeat Scan Bookings</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Retest readiness makes the next scan feel like a natural continuation, not a separate sales push.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+                    <span class="material-symbols-outlined text-green-400 text-3xl mb-4 block">loyalty</span>
+                    <h4 class="font-bold text-white text-lg mb-3">Stronger LTV &amp; Referrals</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Ongoing engagement increases long-term customer value. Visible progress creates shareable, referral-ready outcomes.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+                    <span class="material-symbols-outlined text-amber-500 text-3xl mb-4 block">model_training</span>
+                    <h4 class="font-bold text-white text-lg mb-3">Operational Consistency</h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Staff follows a structured follow-up framework instead of disconnected, ad-hoc manual communication.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 15. Business Value -->
-        <section class="py-16 max-w-4xl mx-auto px-margin-mobile md:px-0">
-            <div class="text-center mb-12">
-                <h3 class="font-headline-lg text-3xl mb-4">15. Business Value</h3>
-                <p class="text-on-surface-variant text-body-md">Turning the dashboard into a retention system.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="flex gap-4 items-start">
-                    <span class="material-symbols-outlined text-primary mt-1">trending_up</span>
-                    <div>
-                        <h4 class="font-bold text-white mb-1">Higher Client Retention</h4>
-                        <p class="text-sm text-on-surface-variant">Clients stay engaged after the scan through clarity, action, and progress visibility.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="material-symbols-outlined text-primary mt-1">event_repeat</span>
-                    <div>
-                        <h4 class="font-bold text-white mb-1">Increased Repeat Scan Bookings</h4>
-                        <p class="text-sm text-on-surface-variant">Retest readiness makes the next scan feel like a natural continuation.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="material-symbols-outlined text-primary mt-1">loyalty</span>
-                    <div>
-                        <h4 class="font-bold text-white mb-1">Stronger LTV & Referrals</h4>
-                        <p class="text-sm text-on-surface-variant">Ongoing engagement increases long-term customer value. Visible progress creates shareable outcomes.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="material-symbols-outlined text-primary mt-1">model_training</span>
-                    <div>
-                        <h4 class="font-bold text-white mb-1">Operational Consistency</h4>
-                        <p class="text-sm text-on-surface-variant">Staff uses a structured follow-up framework instead of disconnected manual communication.</p>
-                    </div>
+        <!-- Final CTA -->
+        <section class="py-32 text-center border-t border-white/5 bg-surface-container-lowest relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="max-w-2xl mx-auto px-margin-mobile relative z-10">
+                <h2 class="font-headline-lg text-3xl md:text-4xl text-white font-bold mb-6">Interested in how I turn strategy, AI, and workflow design into practical business systems?</h2>
+                <p class="text-lg text-on-surface-variant mb-12">Open to roles, projects, and conversations.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://linkedin.com/in/roberto-vilela" target="_blank" class="px-8 py-4 bg-[#0a66c2] text-white font-bold rounded-xl hover:bg-[#004182] hover:scale-105 transition-all inline-block shadow-lg shadow-[#0a66c2]/30">Connect on LinkedIn</a>
+                    <a href="mailto:roberto.vilela.ma@gmail.com" class="px-8 py-4 bg-primary/20 border border-primary/50 text-white font-bold rounded-xl hover:bg-primary/30 transition-all inline-block">Email Me</a>
+                    <a href="https://drive.google.com/file/d/1MoPYpnW5fU7_3KxEusfQhFY9J5FwfHV1/view?usp=sharing" target="_blank" class="px-8 py-4 border border-outline/30 bg-white/5 text-on-surface font-bold rounded-xl hover:bg-white/10 transition-all inline-block">View Resume</a>
+                    <a href="index.html" class="px-8 py-4 border border-transparent hover:border-white/10 text-on-surface-variant hover:text-white rounded-xl transition-all inline-block">Back to Portfolio</a>
                 </div>
             </div>
         </section>
 
         <!-- 16. Execution Workflow & 17. What This Demonstrates -->
         <section class="py-16 bg-surface-container-low/50 border-y border-white/5">
-            <div class="max-w-5xl mx-auto px-margin-mobile lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="font-headline-md text-2xl mb-6">16. Execution Process / How I Built It</h3>
-                    <ul class="space-y-4 text-sm text-on-surface-variant">
-                        <li><strong class="text-white">1. Framework:</strong> Defined 90-day engagement concept.</li>
-                        <li><strong class="text-white">2. Research:</strong> Organized context and market references.</li>
-                        <li><strong class="text-white">3. Strategic Interview:</strong> AI-assisted questioning on UX & ops.</li>
-                        <li><strong class="text-white">4. Product Logic:</strong> Converted discovery into retention workflow & business value model.</li>
-                        <li><strong class="text-white">5. AI Production:</strong> Used AI tools for writing, visual dev, and structure.</li>
-                        <li><strong class="text-white">6. Assembly:</strong> Built case study and embedded media.</li>
-                        <li><strong class="text-white">7. Human Review:</strong> Reviewed, edited, corrected, and approved.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-headline-md text-2xl mb-6">17. What This Demonstrates</h3>
-                    <div class="glass-card rounded-xl overflow-hidden text-sm">
-                        <div class="grid grid-cols-2 p-3 border-b border-white/10 bg-surface-container-high font-bold text-xs uppercase tracking-wider text-outline">
-                            <div>Demonstrated Action</div>
-                            <div>Professional Skill</div>
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="toolproof-panel rounded-3xl border border-white/10 overflow-hidden">
+                    <div class="toolproof-panel-top">
+                        <div>
+                            <span class="block text-[10px] font-bold uppercase tracking-[0.28em] text-primary mb-3">16 / 17</span>
+                            <h3 class="font-headline-md text-2xl md:text-3xl text-white font-bold">Execution Workflow and What This Demonstrates</h3>
                         </div>
-                        <div class="grid grid-cols-2 p-3 border-b border-white/5 items-center gap-4">
-                            <div class="text-on-surface-variant">Turning a vague challenge into a structured system</div>
-                            <div class="text-white font-medium">Process Design</div>
+                        <p class="text-sm md:text-base text-on-surface-variant max-w-2xl leading-relaxed">
+                            This section proves the work was executed with a documented workflow, not just presented as an idea. It shows how the case study was researched, built, assembled, and reviewed.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 md:p-8">
+                        <div class="toolproof-card">
+                            <span class="toolproof-label">16. Execution Process / How I Built It</span>
+                            <div class="toolproof-steps">
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">1</span>
+                                    <div>
+                                        <strong>Framework</strong>
+                                        <p>Defined the strategic direction and the 90-day engagement concept.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">2</span>
+                                    <div>
+                                        <strong>Research</strong>
+                                        <p>NotebookLM organized company context, public information, and market references.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">3</span>
+                                    <div>
+                                        <strong>Strategic Interview</strong>
+                                        <p>ChatGPT guided the discovery process across marketing, product strategy, UX, and planning.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">4</span>
+                                    <div>
+                                        <strong>Product Logic</strong>
+                                        <p>Discovery became the retention bottleneck, 90-day loop, intelligence layer, dashboard concept, and business value model.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">5</span>
+                                    <div>
+                                        <strong>AI Production</strong>
+                                        <p>ChatGPT, Gemini, Google Stitch, Voice RMV, Gamma, and Google Vids supported writing, design, audio, presentation, and video production.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">6</span>
+                                    <div>
+                                        <strong>Assembly</strong>
+                                        <p>The video was uploaded to YouTube and the final case study was assembled in Notion.</p>
+                                    </div>
+                                </div>
+                                <div class="toolproof-step">
+                                    <span class="toolproof-step-number">7</span>
+                                    <div>
+                                        <strong>Human Review</strong>
+                                        <p>Roberto reviewed, edited, corrected, selected, and approved the final output manually.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="grid grid-cols-2 p-3 border-b border-white/5 items-center gap-4">
-                            <div class="text-on-surface-variant">Connecting customer behavior to business retention</div>
-                            <div class="text-white font-medium">Product Strategy</div>
-                        </div>
-                        <div class="grid grid-cols-2 p-3 border-b border-white/5 items-center gap-4">
-                            <div class="text-on-surface-variant">Keeping human review in sensitive guidance</div>
-                            <div class="text-white font-medium">Governance / HITL</div>
-                        </div>
-                        <div class="grid grid-cols-2 p-3 border-b border-white/5 items-center gap-4">
-                            <div class="text-on-surface-variant">Building a complete artifact from idea to presentation</div>
-                            <div class="text-white font-medium">Execution Capability</div>
+
+                        <div class="toolproof-card toolproof-card-accent">
+                            <span class="toolproof-label">17. What This Demonstrates</span>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-5">
+                                This portfolio proves that I can use AI tools as part of a real execution pipeline. It demonstrates research discipline, product thinking, visual assembly, multimodal production, and human quality control.
+                            </p>
+                            <div class="toolproof-tags">
+                                <span>Research</span>
+                                <span>Prompting</span>
+                                <span>Visual Design</span>
+                                <span>Audio / Video</span>
+                                <span>Assembly</span>
+                                <span>Human Review</span>
+                            </div>
+                            <div class="mt-6 grid grid-cols-1 gap-3">
+                                <div class="glass-card p-4 rounded-xl border border-white/10">
+                                    <h4 class="font-bold text-white text-sm mb-1">Tool stack coverage</h4>
+                                    <p class="text-xs text-on-surface-variant leading-relaxed">NotebookLM, ChatGPT, Gemini, Google Stitch, Voice RMV, Gamma, Google Vids, Notion, and YouTube.</p>
+                                </div>
+                                <div class="glass-card p-4 rounded-xl border border-white/10">
+                                    <h4 class="font-bold text-white text-sm mb-1">Why it matters</h4>
+                                    <p class="text-xs text-on-surface-variant leading-relaxed">It shows the work moved from strategy to execution and stayed structured, documented, and reviewable.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 18. Disclaimer & 19. Next Steps -->
-        <section class="py-16 max-w-4xl mx-auto px-margin-mobile md:px-0">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="font-headline-md text-2xl mb-6 text-tertiary">18. Limitations / Disclaimer</h3>
+        <!-- 12. Disclaimer & Next Steps -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl border border-white/5 border-l-4 border-l-outline/20">
+                    <span class="material-symbols-outlined text-outline mb-4 block">info</span>
+                    <h3 class="font-headline-md text-xl font-bold text-white mb-4">Limitations &amp; Disclaimer</h3>
                     <p class="text-sm text-on-surface-variant leading-relaxed">This project was created independently for portfolio and educational purposes. It does not represent an official DexaFit product, internal roadmap, clinical protocol, partnership, or business decision.</p>
                 </div>
-                <div>
-                    <h3 class="font-headline-md text-2xl mb-6">19. Next Steps</h3>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box_outline_blank</span> <div><strong class="text-white block">Validate with staff:</strong> <span class="text-on-surface-variant">Confirm real post-scan pain points.</span></div></li>
-                        <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box_outline_blank</span> <div><strong class="text-white block">Build prototype:</strong> <span class="text-on-surface-variant">Test dashboard comprehension.</span></div></li>
-                        <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box_outline_blank</span> <div><strong class="text-white block">Define metrics:</strong> <span class="text-on-surface-variant">Measure retest conversion and referral lift.</span></div></li>
-                        <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box_outline_blank</span> <div><strong class="text-white block">Integrate CRM:</strong> <span class="text-on-surface-variant">Connect retest readiness to actual conversion.</span></div></li>
+                <div class="glass-card p-8 rounded-2xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary mb-4 block">rocket_launch</span>
+                    <h3 class="font-headline-md text-xl font-bold text-white mb-6">If Taken Forward</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-primary text-base mt-0.5 flex-shrink-0">adjust</span>
+                            <div><strong class="text-white block">Validate with staff</strong><span class="text-on-surface-variant">Confirm real post-scan pain points and operational gaps.</span></div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-primary text-base mt-0.5 flex-shrink-0">adjust</span>
+                            <div><strong class="text-white block">Build interactive prototype</strong><span class="text-on-surface-variant">Test dashboard comprehension and usability with real users.</span></div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-primary text-base mt-0.5 flex-shrink-0">adjust</span>
+                            <div><strong class="text-white block">Define success metrics</strong><span class="text-on-surface-variant">Measure retest conversion, repeat engagement, and referral lift.</span></div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-primary text-base mt-0.5 flex-shrink-0">adjust</span>
+                            <div><strong class="text-white block">Integrate CRM</strong><span class="text-on-surface-variant">Connect retest readiness to real follow-up and conversion flows.</span></div>
+                        </li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 20. Final CTA -->
-        <section class="py-24 text-center border-t border-white/5 bg-surface-container-lowest">
-            <div class="max-w-2xl mx-auto px-margin-mobile">
-                <h2 class="font-headline-lg text-3xl mb-6">20. Interested in how I approach AI-assisted workflows, customer experience, and retention?</h2>
-                <p class="text-on-surface-variant mb-10">Let's connect.</p>
-                
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://drive.google.com/file/d/1MoPYpnW5fU7_3KxEusfQhFY9J5FwfHV1/view?usp=sharing" target="_blank" class="px-6 py-3 border border-outline/30 bg-white/5 text-on-surface font-bold rounded-lg hover:bg-white/10 transition-all inline-block">View Resume</a>
-                    <a href="https://linkedin.com/in/roberto-vilela" target="_blank" class="px-6 py-3 bg-[#0a66c2] text-white font-bold rounded-lg hover:bg-[#004182] transition-all inline-block">Connect on LinkedIn</a>
-                    <a href="mailto:roberto.vilela.ma@gmail.com" class="px-6 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block">Email Me</a>
-                    <a href="index.html" class="px-6 py-3 border border-transparent hover:border-white/10 text-on-surface-variant hover:text-white rounded-lg transition-all inline-block">Back to Portfolio</a>
                 </div>
             </div>
         </section>
@@ -724,7 +796,7 @@
     <footer class="bg-surface-container-lowest py-8 border-t border-white/5 text-center text-sm text-on-surface-variant">
         <div class="flex items-center justify-center gap-2 opacity-60">
             <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
-            <span>© 2026 Roberto Vilela | Operations Architect</span>
+            <span>© 2026 Roberto Vilela | AI Workflow Designer</span>
         </div>
     </footer>
 
