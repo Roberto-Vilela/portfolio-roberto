@@ -69,7 +69,7 @@
                     <a href="#snapshot" class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block shadow-lg shadow-primary/20">
                         View Case Study
                     </a>
-                    <a href="#" class="px-8 py-3 border border-outline/30 bg-white/5 text-on-surface font-bold rounded-lg hover:bg-white/10 transition-all inline-flex items-center gap-2">
+                    <a href="#video-walkthrough" class="px-8 py-3 border border-outline/30 bg-white/5 text-on-surface font-bold rounded-lg hover:bg-white/10 transition-all inline-flex items-center gap-2">
                         <span class="material-symbols-outlined text-sm">play_circle</span> Watch Walkthrough
                     </a>
                 </div>
@@ -377,6 +377,22 @@
             </div>
         </section>
 
+        <section class="pb-24 px-margin-mobile md:px-margin-desktop scroll-mt-24" id="video-walkthrough">
+            <div class="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-white/10 bg-surface-container shadow-2xl">
+                <div class="aspect-video">
+                    <iframe
+                        class="h-full w-full"
+                        src="https://www.youtube-nocookie.com/embed/E8QAIRZkcoU"
+                        title="DexaFit Wellness Hub video walkthrough"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
         <!-- 6. Strategy: 90-Day Loop -->
         <section class="py-24 max-w-5xl mx-auto px-margin-mobile lg:px-margin-desktop">
             <div class="text-center mb-16">
@@ -502,27 +518,27 @@
                 <!-- Dashboard Mockup -->
                 <div class="grid grid-cols-1 lg:grid-cols-[minmax(17rem,0.7fr)_minmax(0,1.5fr)] gap-6 items-stretch">
                     <figure class="rounded-2xl border border-white/10 overflow-hidden bg-white shadow-2xl">
-                        <img alt="Layout completo do DexaFit Wellness Hub" class="block w-full h-auto" src="assets/profile/dexafit-layout-full.png">
+                        <img alt="Layout completo do DexaFit Wellness Hub" class="lightbox-trigger block w-full h-auto" data-lightbox src="assets/profile/dexafit-layout-full.png">
                     </figure>
                     <div class="dashboard-mosaic h-full bg-surface-container-high rounded-2xl border border-white/10 overflow-hidden relative shadow-2xl">
                         <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-surface-container-lowest/75 pointer-events-none"></div>
                         <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 p-4 md:p-6">
                             <figure class="dashboard-mosaic-card dashboard-mosaic-card-lg md:col-span-7 md:row-span-2">
-                                <img src="assets/cases/dexafit/dexafit-dashboard-main.png" alt="Dashboard principal do DexaFit Wellness Hub" class="dashboard-mosaic-image">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-main.png" alt="Dashboard principal do DexaFit Wellness Hub" class="dashboard-mosaic-image lightbox-trigger" data-lightbox>
                                 <figcaption class="dashboard-mosaic-caption">
                                     <span class="dashboard-mosaic-kicker">Main view</span>
                                     <span class="dashboard-mosaic-title">Baseline Snapshot</span>
                                 </figcaption>
                             </figure>
                             <figure class="dashboard-mosaic-card md:col-span-5">
-                                <img src="assets/cases/dexafit/dexafit-dashboard-action.png" alt="Visão de ação do dashboard DexaFit" class="dashboard-mosaic-image">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-action.png" alt="Visão de ação do dashboard DexaFit" class="dashboard-mosaic-image lightbox-trigger" data-lightbox>
                                 <figcaption class="dashboard-mosaic-caption">
                                     <span class="dashboard-mosaic-kicker">Action layer</span>
                                     <span class="dashboard-mosaic-title">Recommended Next Actions</span>
                                 </figcaption>
                             </figure>
                             <figure class="dashboard-mosaic-card md:col-span-5">
-                                <img src="assets/cases/dexafit/dexafit-dashboard-retest.png" alt="Visão de reteste do dashboard DexaFit" class="dashboard-mosaic-image">
+                                <img src="assets/cases/dexafit/dexafit-dashboard-retest.png" alt="Visão de reteste do dashboard DexaFit" class="dashboard-mosaic-image lightbox-trigger" data-lightbox>
                                 <figcaption class="dashboard-mosaic-caption">
                                     <span class="dashboard-mosaic-kicker">Retention layer</span>
                                     <span class="dashboard-mosaic-title">Retest Readiness</span>
@@ -797,6 +813,51 @@
             <span>© 2026 Roberto Vilela | AI Workflow Designer</span>
         </div>
     </footer>
+
+    <dialog class="image-lightbox" id="image-lightbox" aria-label="Visualização ampliada da imagem">
+        <button class="image-lightbox-close" type="button" aria-label="Fechar imagem ampliada">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+        <div class="image-lightbox-content">
+            <img id="image-lightbox-preview" alt="">
+            <p id="image-lightbox-caption"></p>
+        </div>
+    </dialog>
+
+    <script>
+        const lightbox = document.querySelector("#image-lightbox");
+        const lightboxPreview = document.querySelector("#image-lightbox-preview");
+        const lightboxCaption = document.querySelector("#image-lightbox-caption");
+        const lightboxClose = document.querySelector(".image-lightbox-close");
+
+        document.querySelectorAll("[data-lightbox]").forEach((image) => {
+            image.tabIndex = 0;
+            image.setAttribute("role", "button");
+            image.setAttribute("aria-label", `Ampliar: ${image.alt}`);
+
+            const openLightbox = () => {
+                lightboxPreview.src = image.currentSrc || image.src;
+                lightboxPreview.alt = image.alt;
+                lightboxCaption.textContent = image.alt;
+                lightbox.showModal();
+            };
+
+            image.addEventListener("click", openLightbox);
+            image.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox();
+                }
+            });
+        });
+
+        lightboxClose.addEventListener("click", () => lightbox.close());
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                lightbox.close();
+            }
+        });
+    </script>
 
 </body>
 </html>
