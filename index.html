@@ -42,15 +42,15 @@
   <!-- Badges / Tags - Capsula Destacada -->
   <div class="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 px-5 py-2.5 bg-surface-container rounded-full border border-primary/20 mb-8 shadow-[0_0_12px_rgba(79,172,254,0.1)]">
     <span class="w-2 h-2 rounded-full bg-ai-flow-end animate-pulse flex-shrink-0"></span>
-    <span class="text-xs font-label-md text-secondary-container tracking-wide">Client Operations</span>
+    <span class="tag-cycle text-xs font-label-md text-secondary-container tracking-wide">Client Operations</span>
     <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
-    <span class="text-xs font-label-md text-on-surface-variant tracking-wide">Workflow Design</span>
+    <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Workflow Design</span>
     <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
-    <span class="text-xs font-label-md text-on-surface-variant tracking-wide">Process Documentation</span>
+    <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Process Documentation</span>
     <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
-    <span class="text-xs font-label-md text-on-surface-variant tracking-wide">Human-in-the-Loop AI</span>
+    <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Human-in-the-Loop AI</span>
     <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
-    <span class="text-xs font-label-md text-on-surface-variant tracking-wide">Implementation Support</span>
+    <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Implementation Support</span>
   </div>
 
   <!-- H1 -->
@@ -758,5 +758,25 @@ Over the last four years, I have operated a real client-facing immigration docum
             card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
         });
     });
+
+    // Tag cycling - highlights one tag at a time for ~60s each
+    (function() {
+        var tags = document.querySelectorAll('.tag-cycle');
+        var current = 0;
+        function cycleTag() {
+            tags.forEach(function(el, i) {
+                if (i === current) {
+                    el.classList.add('text-secondary-container');
+                    el.classList.remove('text-on-surface-variant');
+                } else {
+                    el.classList.remove('text-secondary-container');
+                    el.classList.add('text-on-surface-variant');
+                }
+            });
+            current = (current + 1) % tags.length;
+        }
+        if (tags.length) cycleTag();
+        setInterval(cycleTag, 60000);
+    })();
 </script>
 </body></html>
