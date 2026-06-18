@@ -104,31 +104,125 @@
             </div>
         </section>
 
-        <!-- 2. System Snapshot -->
-        <section id="snapshot" class="py-16 bg-surface-container-low/30">
-            <div class="max-w-4xl mx-auto px-margin-mobile md:px-0">
-                <div class="glass-card rounded-xl overflow-hidden border border-white/5">
-                    <div class="bg-surface-container-high p-4 border-b border-white/5">
-                        <h2 class="font-headline-md text-lg font-bold flex items-center gap-2 text-primary">
-                            <span class="material-symbols-outlined">bolt</span> System Snapshot
-                        </h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
-                        <div class="p-6">
-                            <h4 class="font-bold text-primary mb-2 uppercase text-xs tracking-wider">What It Does</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">Automates content creation by generating scripts, audio, and visual materials from prompts with human approval.</p>
+        <!-- 2. How it started -->
+        <section id="snapshot" class="py-16 md:py-24 bg-surface-container-low/30">
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
 
-                            <h4 class="font-bold text-secondary-container mb-2 uppercase text-xs tracking-wider">Why It Exists</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">To scale content production while maintaining quality control and brand consistency across all outputs.</p>
-                        </div>
-                        <div class="p-6 bg-surface-container/50">
-                            <h4 class="font-bold text-tertiary mb-2 uppercase text-xs tracking-wider">Architecture Pattern</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">AI handles generation → Human reviews critical content → Approved content is published and tracked.</p>
+                <div class="mb-12">
+                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">01 / The Origin</span>
+                    <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white">How it started</h2>
+                </div>
 
-                            <h4 class="font-bold text-primary mb-2 uppercase text-xs tracking-wider">My Contribution</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">Designed the workflow, defined the AI governance layer, and documented the operational process.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+                    <!-- Left: Narrative -->
+                    <div class="glass-card rounded-xl p-6 md:p-8 border border-white/5 space-y-4">
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            Toda solução começa quando uma necessidade operacional deixa de ser apenas uma ideia e começa a mostrar onde o processo está quebrando.
+                        </p>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            Foi assim que surgiu o Voice-RMV.
+                        </p>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            Em um dos projetos, eu percebi que o problema não estava apenas em criar conteúdo. O problema estava em transformar esse conteúdo em entrega. Existiam vídeos, textos e mensagens com potencial, mas o processo para adaptar, traduzir, narrar e reutilizar esse material era lento, manual e fragmentado.
+                        </p>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            A comunicação existia, mas nem sempre chegava com força ao receptor certo. A produção existia, mas parte dela se perdia no caminho. A oportunidade de vender, ensinar ou expandir para outros idiomas estava ali, mas dependia de tirar o processo do papel e transformar a ideia em uma operação real.
+                        </p>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            O Voice-RMV nasceu dessa necessidade: aumentar a velocidade de produção e entrega de conteúdos em diferentes idiomas, criando um fluxo onde texto, vídeo e áudio pudessem ser transformados em narrações revisáveis, reutilizáveis e prontas para gerar valor.
+                        </p>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                            Para estruturar essa solução, usei IA generativa como parceira de planejamento, organização e validação de ideias. A partir disso, desenhei o workflow que você vai ver nas próximas seções: um processo pensado para reduzir gargalos, melhorar a entrega e mostrar como a IA pode ser aplicada dentro de uma operação real — não apenas como uma ferramenta isolada, mas como parte de um fluxo controlado, revisável e com total domínio sobre os dados gerenciados.
+                        </p>
+                    </div>
+
+                    <!-- Right: Flow diagram -->
+                    <div class="glass-card rounded-xl p-6 md:p-8 border border-white/5">
+                        <h4 class="font-bold text-primary mb-6 uppercase text-xs tracking-wider">Journey</h4>
+                        <div class="space-y-0">
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Operational need</p>
+                                    <p class="text-xs text-on-surface-variant">Identified bottleneck in content delivery</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Broken process</p>
+                                    <p class="text-xs text-on-surface-variant">Fragmented tools and manual steps</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Slow multilingual delivery</p>
+                                    <p class="text-xs text-on-surface-variant">Velocity gap across languages</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Expansion opportunity</p>
+                                    <p class="text-xs text-on-surface-variant">Untapped reach in new markets</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">AI-assisted planning</p>
+                                    <p class="text-xs text-on-surface-variant">Generative AI as planning partner</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Workflow design</p>
+                                    <p class="text-xs text-on-surface-variant">Structured production pipeline</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                    <div class="w-0.5 h-9 bg-white/10"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-sm font-semibold text-white">Human review + control</p>
+                                    <p class="text-xs text-on-surface-variant">Quality layer at every stage</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80 flex-shrink-0 mt-1.5"></div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Reusable multilingual content</p>
+                                    <p class="text-xs text-on-surface-variant">Scalable asset ready for distribution</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
