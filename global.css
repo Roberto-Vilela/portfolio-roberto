@@ -393,7 +393,7 @@
             background-color: var(--flow-idle-bg);
             border-color: var(--flow-idle-border);
             color: var(--flow-color);
-            will-change: transform, background-color, box-shadow, color, border-color;
+            will-change: background-color, box-shadow, color, border-color;
         }
 
         .flow-icon-ping .material-symbols-outlined {
@@ -436,53 +436,53 @@
         }
 
         @keyframes flow-ping-1 {
-            0%, 100% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            7.14%, 92.86% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 100% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+            6%, 94% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
         }
 
         @keyframes flow-ping-2 {
-            7.14%, 92.86% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            0%, 14.28%, 85.72%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 2%, 13%, 87%, 98%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            7.14%, 92.86% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-3 {
-            14.28%, 85.72% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            7.14%, 21.42%, 78.58%, 92.86% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 9%, 20%, 80%, 91%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            14.28%, 85.72% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-4 {
-            21.42%, 78.58% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            14.28%, 28.56%, 71.44%, 85.72% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 16%, 27%, 73%, 84%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            21.42%, 78.58% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-5 {
-            28.56%, 71.44% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            21.42%, 35.7%, 64.3%, 78.58% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 23%, 34%, 66%, 77%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            28.56%, 71.44% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-6 {
-            35.7%, 64.3% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            28.56%, 42.84%, 57.16%, 71.44% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 30%, 41%, 59%, 70%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            35.7%, 64.3% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-7 {
-            42.84%, 57.16% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            35.7%, 50%, 64.3% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 37%, 48%, 52%, 63%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            42.84%, 57.16% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
         @keyframes flow-ping-8 {
-            50% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 20px var(--flow-shadow); border-color: var(--flow-color); transform: translateY(-3px) scale(1.05); }
-            42.84%, 57.16% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); transform: translateY(0) scale(1); }
+            0%, 44%, 56%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+            50% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
         }
 
-        .flow-ping-1 { animation: flow-ping-1 9s infinite ease-in-out; }
-        .flow-ping-2 { animation: flow-ping-2 9s infinite ease-in-out; }
-        .flow-ping-3 { animation: flow-ping-3 9s infinite ease-in-out; }
-        .flow-ping-4 { animation: flow-ping-4 9s infinite ease-in-out; }
-        .flow-ping-5 { animation: flow-ping-5 9s infinite ease-in-out; }
-        .flow-ping-6 { animation: flow-ping-6 9s infinite ease-in-out; }
-        .flow-ping-7 { animation: flow-ping-7 9s infinite ease-in-out; }
-        .flow-ping-8 { animation: flow-ping-8 9s infinite ease-in-out; }
+        .flow-ping-1 { animation: flow-ping-1 36s infinite ease-in-out; }
+        .flow-ping-2 { animation: flow-ping-2 36s infinite ease-in-out; }
+        .flow-ping-3 { animation: flow-ping-3 36s infinite ease-in-out; }
+        .flow-ping-4 { animation: flow-ping-4 36s infinite ease-in-out; }
+        .flow-ping-5 { animation: flow-ping-5 36s infinite ease-in-out; }
+        .flow-ping-6 { animation: flow-ping-6 36s infinite ease-in-out; }
+        .flow-ping-7 { animation: flow-ping-7 36s infinite ease-in-out; }
+        .flow-ping-8 { animation: flow-ping-8 36s infinite ease-in-out; }
 
 @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(20px); }
