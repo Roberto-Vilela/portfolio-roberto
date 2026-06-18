@@ -13,6 +13,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="global.css?v=5">
     <script src="tailwind.config.js?v=5"></script>
+    <style>
+        .marquee-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 100%;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: scroll-text 12s linear infinite;
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 
 <body class="font-body-md text-on-surface">
@@ -42,8 +57,10 @@
 
                 <!-- Badge -->
                 <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-primary/20 shadow-[0_0_12px_rgba(79,172,254,0.1)]">
-                    <span class="material-symbols-outlined text-primary text-sm">settings_applications</span>
-                    <span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Personal Project · AI Audio Workflow · In Active Use</span>
+                    <span class="material-symbols-outlined text-primary text-sm flex-shrink-0">settings_applications</span>
+                    <span class="marquee-wrap max-w-[200px] md:max-w-[300px]">
+                        <span class="marquee-text text-xs text-on-surface-variant font-bold uppercase tracking-wider">Personal Project · AI Audio Workflow · In Active Use</span>
+                    </span>
                 </div>
 
                 <!-- Title -->
