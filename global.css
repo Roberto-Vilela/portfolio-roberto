@@ -75,6 +75,48 @@
             filter: saturate(1) contrast(1) brightness(1);
         }
 
+        .editorial-screen-figure {
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+        .editorial-screen-image {
+            transform: translateZ(0) scale(1);
+            transform-origin: center center;
+            transition:
+                transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+                filter 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .editorial-screen-figure:hover .editorial-screen-image {
+                transform: translateZ(70px) scale(1.045) rotateX(1.4deg) rotateY(-1.8deg);
+                border-color: rgba(147, 197, 253, 0.42);
+                box-shadow:
+                    0 36px 90px rgba(0, 0, 0, 0.58),
+                    0 0 48px rgba(79, 172, 254, 0.18);
+                filter: saturate(1.06) contrast(1.02) brightness(1.04);
+            }
+
+            .editorial-screen-figure:nth-child(even):hover .editorial-screen-image,
+            .editorial-screen-figure.is-reverse:hover .editorial-screen-image {
+                transform: translateZ(70px) scale(1.045) rotateX(1.4deg) rotateY(1.8deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .editorial-screen-image {
+                transition: none;
+            }
+
+            .editorial-screen-figure:hover .editorial-screen-image {
+                transform: none;
+            }
+        }
+
         .dashboard-mosaic-caption {
             position: absolute;
             inset: auto 0 0 0;

@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="global.css?v=9">
+    <link rel="stylesheet" href="global.css?v=10">
     <script src="tailwind.config.js?v=9"></script>
     <style>
         .marquee-wrap {
@@ -361,8 +361,8 @@
 
                 <!-- Editorial Screens -->
                 <div class="mt-12 space-y-10 md:space-y-16">
-                    <figure>
-                        <img src="./assets/voice/voice-selection.png" class="w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="Voice selection screen">
+                    <figure class="editorial-screen-figure">
+                        <img src="./assets/voice/voice-selection.png" class="editorial-screen-image w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="Voice selection screen">
                         <figcaption class="mt-4 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-outline">
                             <span class="h-px w-10 bg-primary/70"></span>
                             01 / Voice selection in Portuguese and English
@@ -370,16 +370,16 @@
                     </figure>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                        <figure class="lg:col-span-7 lg:mt-12">
-                            <img src="./assets/voice/voice-upload-generation.png" class="w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="File upload and generation">
+                        <figure class="editorial-screen-figure lg:col-span-7 lg:mt-12">
+                            <img src="./assets/voice/voice-upload-generation.png" class="editorial-screen-image w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="File upload and generation">
                             <figcaption class="mt-4 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-outline">
                                 <span class="h-px w-10 bg-yellow-400/70"></span>
                                 02 / Content upload and generation trigger
                             </figcaption>
                         </figure>
 
-                        <figure class="lg:col-span-5">
-                            <img src="./assets/voice/voice-audio-player.png" class="w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="Audio player with generated voice">
+                        <figure class="editorial-screen-figure is-reverse lg:col-span-5">
+                            <img src="./assets/voice/voice-audio-player.png" class="editorial-screen-image w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/40" alt="Audio player with generated voice">
                             <figcaption class="mt-4 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-outline">
                                 <span class="h-px w-10 bg-primary/70"></span>
                                 03 / Generated audio ready for review
