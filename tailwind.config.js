@@ -1,3 +1,7 @@
+// Cache buster for tailwind.config.js
+const CACHE_VERSION = "v3";
+const CACHE_BUSTER = `?v=${CACHE_VERSION}`;
+
 tailwind.config = {
     darkMode: "class",
     theme: {
