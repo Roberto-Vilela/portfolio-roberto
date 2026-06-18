@@ -550,40 +550,40 @@
                         </div>
 
                         <div class="divide-y divide-white/5">
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Input layer</span>
-                                <span class="text-sm text-on-surface-variant">Receives text, video URLs, audio and video files.</span>
-                                <span class="text-xs font-semibold text-primary">Frontend forms + API endpoints</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Input layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Receives text, video URLs, audio and video files.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">Frontend forms + API endpoints</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Processing layer</span>
-                                <span class="text-sm text-on-surface-variant">Runs heavy media tasks without blocking the user.</span>
-                                <span class="text-xs font-semibold text-primary">FastAPI, Celery, Redis</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Processing layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Runs heavy media tasks without blocking the user.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">FastAPI, Celery, Redis</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Media layer</span>
-                                <span class="text-sm text-on-surface-variant">Downloads video and extracts audio.</span>
-                                <span class="text-xs font-semibold text-primary">yt-dlp, ffmpeg</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Media layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Downloads video and extracts audio.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">yt-dlp, ffmpeg</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Transcription layer</span>
-                                <span class="text-sm text-on-surface-variant">Turns audio and video into editable text.</span>
-                                <span class="text-xs font-semibold text-primary">faster-whisper</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Transcription layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Turns audio and video into editable text.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">faster-whisper</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Review layer</span>
-                                <span class="text-sm text-on-surface-variant">Keeps human validation before final delivery.</span>
-                                <span class="text-xs font-semibold text-primary">Editor, transcript segments</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Review layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Keeps human validation before final delivery.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">Editor, transcript segments</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Voice layer</span>
-                                <span class="text-sm text-on-surface-variant">Generates narrated audio from reviewed content.</span>
-                                <span class="text-xs font-semibold text-primary">edge-tts</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Voice layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Generates narrated audio from reviewed content.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">edge-tts</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6">
-                                <span class="text-sm font-bold text-white">Tracking layer</span>
-                                <span class="text-sm text-on-surface-variant">Stores status, history and reusable outputs.</span>
-                                <span class="text-xs font-semibold text-primary">Database, task records</span>
+                            <div class="group grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr_0.9fr] gap-3 p-5 md:p-6 transition-colors hover:bg-yellow-400/5">
+                                <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400">Tracking layer</span>
+                                <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Stores status, history and reusable outputs.</span>
+                                <span class="text-xs font-semibold text-primary transition-colors group-hover:text-yellow-400">Database, task records</span>
                             </div>
                         </div>
                     </div>
@@ -601,265 +601,184 @@
             </div>
         </section>
 
-        <!-- 4. Problem Context -->
-        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- 05. Skills learned and applied -->
+        <section class="py-24 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="mb-12">
-                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">03 / The Problem</span>
-                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-4">Content at Scale Without Losing Quality</h2>
-                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">
-                    Creating consistent, high-quality content at scale is challenging. Without systems, every piece of content becomes a manual task, creating bottlenecks and inconsistent quality.
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / Skills learned and applied</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Skills learned and applied</h2>
+                <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                    The capabilities developed while turning an operational problem into a real AI workflow.
                 </p>
             </div>
 
-            <!-- Challenge Cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Challenge 1 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-error bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-error mb-2">Challenge</span>
-                    <h4 class="font-bold text-white mb-2">Manual Bottleneck</h4>
-                    <p class="text-sm text-on-surface-variant">Every script, caption, and audio clip requires manual creation, creating a bottleneck that limits output velocity.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">account_tree</span>
+                    <h3 class="font-bold text-white mb-3">Workflow Design</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Mapping steps, bottlenecks and decision points inside a real operational process.</p>
                 </div>
-
-                <!-- Challenge 2 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-error bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-error mb-2">Challenge</span>
-                    <h4 class="font-bold text-white mb-2">Quality Variance</h4>
-                    <p class="text-sm text-on-surface-variant">Without standardization, content quality varies across creators and time periods, damaging brand consistency.</p>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-yellow-400 text-2xl mb-5 block">psychology</span>
+                    <h3 class="font-bold text-white mb-3">AI Operations</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Using generative AI as a copilot for planning, validation and solution design.</p>
                 </div>
-
-                <!-- Challenge 3 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-error bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-error mb-2">Challenge</span>
-                    <h4 class="font-bold text-white mb-2">Knowledge Silo</h4>
-                    <p class="text-sm text-on-surface-variant">Critical content decisions and guidelines exist only in individual minds, not documented in a repeatable system.</p>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">verified_user</span>
+                    <h3 class="font-bold text-white mb-3">Human-in-the-loop</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Designing review points before treating AI-generated outputs as final delivery.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- 4. Solution Architecture -->
-        <section id="architecture" class="py-24 bg-surface-container-low/50 border-y border-white/5">
-            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">04 / The Solution</span>
-                <h3 class="font-headline-lg text-3xl md:text-4xl mb-6 text-white font-bold">AI-Assisted Content Pipeline</h3>
-                <p class="text-xl text-on-surface-variant max-w-3xl mx-auto mb-12">
-                    A 5-stage workflow that leverages AI for generation while ensuring human oversight for critical decisions.
-                </p>
-
-                <!-- Architecture Flow -->
-                <div class="glass-card p-8 rounded-2xl border border-white/5 text-left mb-8">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-6">Workflow Stages</span>
-
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
-                        <div class="flex flex-col items-center p-4 rounded-xl bg-surface-container border border-white/5">
-                            <span class="material-symbols-outlined text-primary text-2xl mb-2">input</span>
-                            <span class="text-sm font-bold text-white mb-1">1. Prompt</span>
-                            <span class="text-xs text-on-surface-variant leading-tight">Define content requirements</span>
-                        </div>
-                        <span class="material-symbols-outlined text-outline hidden md:block text-sm">arrow_forward</span>
-                        <div class="flex flex-col items-center p-4 rounded-xl bg-surface-container border border-white/5">
-                            <span class="material-symbols-outlined text-primary text-2xl mb-2">smart_toy</span>
-                            <span class="text-sm font-bold text-white mb-1">2. Generate</span>
-                            <span class="text-xs text-on-surface-variant leading-tight">AI creates draft content</span>
-                        </div>
-                        <span class="material-symbols-outlined text-outline hidden md:block text-sm">arrow_forward</span>
-                        <div class="flex flex-col items-center p-4 rounded-xl bg-surface-container border border-white/5">
-                            <span class="material-symbols-outlined text-primary text-2xl mb-2">check_circle</span>
-                            <span class="text-sm font-bold text-white mb-1">3. Review</span>
-                            <span class="text-xs text-on-surface-variant leading-tight">Human approves critical content</span>
-                        </div>
-                        <span class="material-symbols-outlined text-outline hidden md:block text-sm">arrow_forward</span>
-                        <div class="flex flex-col items-center p-4 rounded-xl bg-surface-container border border-white/5">
-                            <span class="material-symbols-outlined text-primary text-2xl mb-2">publish</span>
-                            <span class="text-sm font-bold text-white mb-1">4. Publish</span>
-                            <span class="text-xs text-on-surface-variant leading-tight">Content goes live</span>
-                        </div>
-                        <span class="material-symbols-outlined text-outline hidden md:block text-sm">arrow_forward</span>
-                        <div class="flex flex-col items-center p-4 rounded-xl bg-surface-container border border-white/5">
-                            <span class="material-symbols-outlined text-primary text-2xl mb-2">analytics</span>
-                            <span class="text-sm font-bold text-white mb-1">5. Measure</span>
-                            <span class="text-xs text-on-surface-variant leading-tight">Track performance and iterate</span>
-                        </div>
-                    </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-yellow-400 text-2xl mb-5 block">automation</span>
+                    <h3 class="font-bold text-white mb-3">Process Automation</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Turning repetitive tasks into a controlled and reusable workflow.</p>
                 </div>
-
-                <p class="text-on-surface-variant font-medium text-sm">The AI generates the draft. Humans make the final decisions. The system repeats and improves.</p>
-            </div>
-        </section>
-
-        <!-- 5. Governance Layer -->
-        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="mb-12 text-center">
-                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">05 / Governance</span>
-                <h3 class="font-headline-lg text-3xl md:text-4xl text-white font-bold">Human-in-the-Loop AI</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Stage 1 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-primary bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Low-Risk Automation</span>
-                    <h4 class="font-bold text-lg text-white mb-4">Automated Generation</h4>
-                    <p class="text-sm text-on-surface-variant mb-4">AI-generated content for metadata, captions, and low-stakes materials.</p>
-                    <div class="pt-4 border-t border-white/5">
-                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">AI Role</span>
-                        <p class="text-xs text-white">Full automation with no human intervention needed.</p>
-                    </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">dynamic_feed</span>
+                    <h3 class="font-bold text-white mb-3">Content Operations</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Connecting creation, translation, narration, review and reuse inside one production flow.</p>
                 </div>
-
-                <!-- Stage 2 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-yellow-400 bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-yellow-400 mb-2">Medium-Risk Review</span>
-                    <h4 class="font-bold text-lg text-white mb-4">Human Approval</h4>
-                    <p class="text-sm text-on-surface-variant mb-4">Critical content requires human review before publishing.</p>
-                    <div class="pt-4 border-t border-white/5">
-                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">AI Role</span>
-                        <p class="text-xs text-white">AI draft → Human final approval → Publish.</p>
-                    </div>
-                </div>
-
-                <!-- Stage 3 -->
-                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-primary bg-surface-container-low/50">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Continuous Learning</span>
-                    <h4 class="font-bold text-lg text-white mb-4">Data-Driven Iteration</h4>
-                    <p class="text-sm text-on-surface-variant mb-4">Performance metrics inform prompt engineering and model selection.</p>
-                    <div class="pt-4 border-t border-white/5">
-                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">AI Role</span>
-                        <p class="text-xs text-white">AI learns from performance to optimize future outputs.</p>
-                    </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-yellow-400 text-2xl mb-5 block">translate</span>
+                    <h3 class="font-bold text-white mb-3">Technical Translation</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Connecting business needs with the technical layers required to make the solution work.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 6. My Role -->
-        <section class="py-24 bg-surface-container-low/30 border-y border-white/5">
-            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- My Role -->
-                <div>
-                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">06 / Execution</span>
-                    <h3 class="font-headline-md text-3xl font-bold text-white mb-8">My Contribution: Design & Documentation</h3>
-
-                    <div class="glass-card rounded-xl border border-white/5 overflow-hidden">
-                        <div class="p-5 border-b border-white/5 hover:bg-surface-container-high transition-colors">
-                            <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Workflow Design</span>
-                            <p class="text-sm text-white leading-relaxed">Mapped the 5-stage content production pipeline with clear handoffs between AI and human stages.</p>
-                        </div>
-                        <div class="p-5 border-b border-white/5 hover:bg-surface-container-high transition-colors">
-                            <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-1">AI Governance</span>
-                            <p class="text-sm text-white leading-relaxed">Defined the risk-based approval framework that determines when human review is required.</p>
-                        </div>
-                        <div class="p-5 border-b border-white/5 hover:bg-surface-container-high transition-colors">
-                            <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-1">System Documentation</span>
-                            <p class="text-sm text-white leading-relaxed">Created operational documentation for the workflow, ensuring knowledge is preserved and repeatable.</p>
-                        </div>
-                        <div class="p-5 hover:bg-surface-container-high transition-colors bg-surface-container/50">
-                            <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Final Review</span>
-                            <p class="text-sm text-on-surface-variant leading-relaxed">Reviewed and approved the workflow design and documentation for operational readiness.</p>
-                        </div>
-                    </div>
+        <!-- 06. Tools and models behind the workflow -->
+        <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="mb-12">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / Tools and models behind the workflow</span>
+                    <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Tools and models behind the workflow</h2>
+                    <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed">
+                        The stack used to support the operation, from planning to transcription, voice generation and delivery.
+                    </p>
                 </div>
 
-                <!-- Research & Discovery -->
-                <div>
-                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">07 / Discovery</span>
-                    <h3 class="font-headline-md text-3xl font-bold text-white mb-8">Research & Discovery</h3>
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="hidden md:grid grid-cols-[0.7fr_0.9fr_1.4fr] gap-4 px-6 py-4 border-b border-white/5 text-xs font-bold uppercase tracking-widest text-outline">
+                        <span>Category</span>
+                        <span>Tools / models</span>
+                        <span>Role in the project</span>
+                    </div>
 
-                    <div class="glass-card p-6 rounded-xl border border-white/5 space-y-6">
-                        <div class="flex gap-4">
-                            <span class="material-symbols-outlined text-secondary-container bg-secondary-container/10 p-2 rounded-lg h-fit">search</span>
-                            <div>
-                                <strong class="text-white block text-sm mb-1">Content Production Analysis</strong>
-                                <span class="text-xs text-on-surface-variant">Analyzed existing content workflows and identified bottlenecks in the manual process.</span>
-                            </div>
+                    <div class="divide-y divide-white/5">
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">AI Planning</span>
+                            <span class="text-sm font-semibold text-primary">ChatGPT / generative AI models</span>
+                            <span class="text-sm text-on-surface-variant">Planning, decomposition, validation and decision support.</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span class="material-symbols-outlined text-secondary-container bg-secondary-container/10 p-2 rounded-lg h-fit">tune</span>
-                            <div>
-                                <strong class="text-white block text-sm mb-1">AI Tool Evaluation</strong>
-                                <span class="text-xs text-on-surface-variant">Researched available AI tools for content generation and selected appropriate solutions.</span>
-                            </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Transcription</span>
+                            <span class="text-sm font-semibold text-primary">faster-whisper</span>
+                            <span class="text-sm text-on-surface-variant">Turning audio and video into editable text.</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span class="material-symbols-outlined text-secondary-container bg-secondary-container/10 p-2 rounded-lg h-fit">security</span>
-                            <div>
-                                <strong class="text-white block text-sm mb-1">Governance Framework</strong>
-                                <span class="text-xs text-on-surface-variant">Designed the human-in-the-loop approval model to ensure quality and compliance.</span>
-                            </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Voice Generation</span>
+                            <span class="text-sm font-semibold text-primary">edge-tts</span>
+                            <span class="text-sm text-on-surface-variant">Generating narrated audio in neural voices.</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span class="material-symbols-outlined text-secondary-container bg-secondary-container/10 p-2 rounded-lg h-fit">edit</span>
-                            <div>
-                                <strong class="text-white block text-sm mb-1">Process Documentation</strong>
-                                <span class="text-xs text-on-surface-variant">Translated the workflow into operational documentation that any team member can follow.</span>
-                            </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Media Processing</span>
+                            <span class="text-sm font-semibold text-primary">ffmpeg / yt-dlp</span>
+                            <span class="text-sm text-on-surface-variant">Extracting audio and handling video sources.</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Backend Workflow</span>
+                            <span class="text-sm font-semibold text-primary">FastAPI / Celery / Redis</span>
+                            <span class="text-sm text-on-surface-variant">Receiving requests and processing long-running tasks.</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Data & Tracking</span>
+                            <span class="text-sm font-semibold text-primary">PostgreSQL / SQLAlchemy</span>
+                            <span class="text-sm text-on-surface-variant">Storing tasks, status, metadata and history.</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5">
+                            <span class="text-sm font-bold text-white">Interface</span>
+                            <span class="text-sm font-semibold text-primary">React / TypeScript / Tailwind</span>
+                            <span class="text-sm text-on-surface-variant">Creating the visual operation layer for review and playback.</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Value Proposition -->
-        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="mb-12 text-center">
-                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">08 / Value</span>
-                <h3 class="font-headline-lg text-3xl md:text-4xl text-white font-bold">Scalable Content at Human Quality</h3>
-            </div>
-
-            <div class="glass-card p-8 rounded-2xl border border-white/5 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-bold text-white mb-4">Before (Manual)</h4>
-                        <ul class="space-y-3 text-on-surface-variant">
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-error text-lg flex-shrink-0 mt-0.5">close</span>
-                                <span>Every piece of content requires manual creation</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-error text-lg flex-shrink-0 mt-0.5">close</span>
-                                <span>Content quality varies between creators</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-error text-lg flex-shrink-0 mt-0.5">close</span>
-                                <span>Knowledge is siloed in individual minds</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-error text-lg flex-shrink-0 mt-0.5">close</span>
-                                <span>Slow output velocity limits reach</span>
-                            </li>
-                        </ul>
+        <!-- 07. What I learned -->
+        <section class="py-24 max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-start">
+                <div class="lg:sticky lg:top-28">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / What I learned</span>
+                    <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">What I learned</h2>
+                    <div class="rounded-2xl border border-yellow-400/30 bg-yellow-400/5 p-6 mt-8">
+                        <span class="material-symbols-outlined text-yellow-400 text-3xl mb-4 block">tips_and_updates</span>
+                        <p class="text-xl md:text-2xl font-bold text-white leading-snug">
+                            AI can accelerate execution, but governance is what makes the execution reliable.
+                        </p>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-white mb-4">After (Voice RMV)</h4>
-                        <ul class="space-y-3 text-on-surface-variant">
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">check_circle</span>
-                                <span>AI generates drafts in minutes</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">check_circle</span>
-                                <span>Human approval ensures consistent quality</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">check_circle</span>
-                                <span>Documented system preserves institutional knowledge</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">check_circle</span>
-                                <span>High velocity without sacrificing quality</span>
-                            </li>
-                        </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl border border-white/5 p-6 md:p-8 space-y-5 text-sm md:text-base text-on-surface-variant leading-relaxed">
+                    <p class="text-white font-semibold">The biggest learning from Voice-RMV was not only how to build an AI-assisted product. It was understanding that AI projects need governance.</p>
+                    <p>During the development, I implemented a Memory Bank to keep the project organized, traceable and consistent. This became one of the most important parts of the entire experience.</p>
+                    <p>The Memory Bank worked as the operational memory of the project: decisions, bugs, validations, architecture choices, workflow rules, known issues and lessons learned were documented instead of being lost between conversations, tests or implementation attempts.</p>
+                    <p>This changed the way I worked with AI.</p>
+                    <p>Instead of treating each AI interaction as an isolated conversation, I started using a controlled process: understand the problem, check the project memory, define a plan, validate with a human, implement, test, document the result and only then move forward.</p>
+                    <p>That was the strongest governance experience in the project.</p>
+                    <p>It showed me that building with AI is not just about generating faster. It is about keeping control over context, decisions, data, quality and delivery.</p>
+                    <p>The Memory Bank helped prevent repeated mistakes, made bugs easier to understand and created a clear source of truth for the project. When a problem appeared again, the answer was not hidden in memory or scattered across chats. It was documented, reviewed and connected to the workflow.</p>
+                    <p>I learned that AI can accelerate execution, but governance is what makes the execution reliable.</p>
+                    <p>For me, this became one of the most important lessons of the project: a strong AI operation needs more than prompts and tools. It needs process, documentation, validation, ownership and memory.</p>
+                    <p class="text-white font-semibold">That is why the next case study is dedicated to the Memory Bank itself: how it was designed, how it worked in practice, and how it became the governance layer that kept the Voice-RMV project moving with control, continuity and human validation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08. Next case study -->
+        <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 p-6 md:p-10">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Next case study</span>
+                    <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Next case study: Memory Bank in Practice</h2>
+                    <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-8">
+                        How governance, documentation and project memory kept an AI-assisted workflow under control.
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 items-start">
+                        <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                            <p class="text-white font-semibold">Voice-RMV showed the visible product.</p>
+                            <p>The Memory Bank shows the governance system behind the construction.</p>
+                            <p>In the next case study, I break down how project memory, workflow rules, validation gates, progress tracking and documented lessons helped keep the development process consistent, traceable and controlled while working with AI.</p>
+                        </div>
+
+                        <div class="rounded-xl border border-primary/25 bg-primary/5 p-6">
+                            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">library_books</span>
+                            <h3 class="font-bold text-white mb-3">Governance as a case study</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">The next page focuses on the system that preserved decisions, validations, bugs, lessons and workflow continuity.</p>
+                            <a href="playbook-rmv.html" class="inline-flex items-center gap-2 px-5 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                                Read the Memory Bank case study
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. Footer -->
-        <section class="py-16 bg-surface-container-low/30 border-t border-white/5">
-            <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                <h2 class="font-headline-md text-xl font-bold text-white mb-4">Ready to Scale Your Content?</h2>
-                <p class="text-on-surface-variant mb-8 max-w-2xl mx-auto">
-                    Transform your content production with AI-assisted workflows that maintain human quality at scale.
-                </p>
-                <a href="mailto:roberto.vilela.ma@gmail.com" class="inline-block px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block shadow-lg shadow-primary/20">
-                    Let's Talk
+        <!-- 09. Final invitation -->
+        <section class="py-24">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">09 / Final invitation</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Let's turn your operational bottleneck into an AI workflow</h2>
+                <div class="max-w-3xl mx-auto space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+                    <p class="text-white font-semibold">Voice-RMV is one example of how I think, plan and build.</p>
+                    <p>The product itself may not be the exact solution every business needs, but the method behind it can be applied to many operations: content, sales, education, support, marketing, internal processes and multilingual delivery.</p>
+                    <p>If you have a process that depends on manual steps, disconnected tools, repeated decisions or content that does not become delivery fast enough, this is where I can help.</p>
+                    <p>Let's map the workflow, identify the bottlenecks and design an AI-assisted solution with human control, automation and business value.</p>
+                </div>
+                <a href="mailto:roberto.vilela.ma@gmail.com" class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                    Let's build an AI workflow
+                    <span class="material-symbols-outlined text-base">arrow_forward</span>
                 </a>
             </div>
         </section>
