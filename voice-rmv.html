@@ -798,8 +798,19 @@
             const audio = new Audio(src);
             audio.play();
         }
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-   <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="roberto-vilela-ma" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/roberto-vilela-ma?trk=profile-badge">Roberto Vilela</a></div>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" defer type="text/javascript"></script>
+    <script>
+        LinkedIn=LinkedIn||function(){LinkedIn.q=LinkedIn.q||[];LinkedIn.apply(LinkedIn.q,arguments)};
+        LinkedIn('set', 'profileUrl', 'https://www.linkedin.com/in/roberto-vilela-ma');
+        LinkedIn('renderProfileBadge', 'LI-profile-badge', {
+            'locale': 'en_US',
+            'size': 'medium',
+            'theme': 'dark',
+            'type': 'VERTICAL',
+            'vanity': 'roberto-vilela-ma',
+            'version': 'v1'
+        });
+    </script>
 
 </body>
 </html>
