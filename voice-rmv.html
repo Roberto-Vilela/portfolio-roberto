@@ -401,6 +401,162 @@
             </div>
         </section>
 
+        <!-- 5. How it was Built -->
+        <section class="py-24">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="border-b border-white/5 px-6 py-5 md:px-8">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">03 / How the workflow became a real system</span>
+                        <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-4">How the workflow became a real system</h2>
+                        <p class="text-on-surface-variant text-lg">Built with AI-assisted planning, human validation, controlled testing and a real full-stack workflow behind the interface.</p>
+                    </div>
+
+                    <div class="p-6 md:p-8 lg:p-10 space-y-10">
+                        <!-- Opening text -->
+                        <div class="max-w-4xl space-y-4 text-base text-on-surface-variant leading-relaxed">
+                            <p>
+                                Voice-RMV was not built from a single prompt or a single technical decision.
+                            </p>
+                            <p>
+                                The system was developed with an AI copilot approach: generative AI helped with planning, options, explanations and structure, but no decision was considered valid without human testing and validation.
+                            </p>
+                            <p>
+                                The goal was not only to make an application work once. The goal was to build a reliable workflow where each step could be tested, corrected and validated before moving forward.
+                            </p>
+                        </div>
+
+                        <!-- Block 1: AI as Copilot -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="rounded-xl border border-primary/30 p-6 bg-primary/5">
+                                <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-3">01 / AI as Copilot</span>
+                                <h3 class="font-bold text-white mb-3">Generative AI as Copilot</h3>
+                                <p class="text-sm text-on-surface-variant mb-4">
+                                    Generative AI was used to support planning, break down problems, suggest implementation paths and explain technical decisions.
+                                </p>
+                                <p class="text-sm text-on-surface-variant mb-4">
+                                    But the workflow followed one rule: every decision needed to be tested by a human before being treated as valid.
+                                </p>
+
+                                <!-- AI suggests flow diagram -->
+                                <div class="flex flex-col items-center space-y-2 mt-4">
+                                    <span class="text-xs font-bold text-white block">AI suggests</span>
+                                    <span class="material-symbols-outlined text-outline text-2xl">arrow_drop_down</span>
+                                    <span class="text-xs font-bold text-white block">Human understands</span>
+                                    <span class="material-symbols-outlined text-outline text-2xl">arrow_drop_down</span>
+                                    <span class="text-xs font-bold text-white block">One test at a time</span>
+                                    <span class="material-symbols-outlined text-outline text-2xl">arrow_drop_down</span>
+                                    <span class="text-xs font-bold text-white block">Evidence is checked</span>
+                                    <span class="material-symbols-outlined text-outline text-2xl">arrow_drop_down</span>
+                                    <span class="text-xs font-bold text-white block">Next step is approved</span>
+                                </div>
+                            </div>
+
+                            <!-- Block 2: Controlled validation -->
+                            <div class="rounded-xl border border-primary/30 p-6 bg-primary/5">
+                                <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-3">02 / Controlled validation</span>
+                                <h3 class="font-bold text-white mb-3">Controlled validation flow</h3>
+                                <p class="text-sm text-on-surface-variant mb-4">
+                                    The system was validated step by step, starting from the safest backend checks before moving into the full interface.
+                                </p>
+                                <p class="text-sm text-on-surface-variant mb-4">
+                                    First, I validated that the API was alive. Then I checked the available voices, generated a simple narration, confirmed task history, and only after that moved into the frontend integration.
+                                </p>
+                                <p class="text-sm text-on-surface-variant font-medium mt-4">
+                                    This process reduced guesswork. Instead of assuming the system worked, each layer had to prove it was connected before the next one was tested.
+                                </p>
+
+                                <!-- Validation flow -->
+                                <div class="flex flex-col items-center space-y-1 mt-4">
+                                    <span class="text-xs font-bold text-white block">/api/health</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">/api/voices</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">/api/narrate/text</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">generated audio</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">/api/tasks</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">frontend dashboard</span>
+                                    <span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                    <span class="text-xs font-bold text-white block">real upload flow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Block 3: Technical layers -->
+                        <div class="rounded-xl border border-white/5 p-6">
+                            <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">03 / Technical layers</span>
+                            <h3 class="font-bold text-white mb-4">Technical layers behind the operation</h3>
+                            <p class="text-sm text-on-surface-variant mb-6">
+                                Behind the interface, Voice-RMV was organized as a pipeline. Each layer has a clear role in the operation: receive content, process media, generate transcription, support human review, create voice output and keep the result reusable.
+                            </p>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="border-b border-white/5">
+                                            <th class="text-left py-3 px-4 text-white font-bold">Operational layer</th>
+                                            <th class="text-left py-3 px-4 text-white font-bold">What it does</th>
+                                            <th class="text-left py-3 px-4 text-white font-bold">Technical support</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-on-surface-variant">
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Input layer</td>
+                                            <td class="py-3 px-4">Receives text, video URLs, audio and video files</td>
+                                            <td class="py-3 px-4">Frontend forms + API endpoints</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Processing layer</td>
+                                            <td class="py-3 px-4">Handles heavy media tasks without blocking the user</td>
+                                            <td class="py-3 px-4">FastAPI, Celery, Redis</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Media layer</td>
+                                            <td class="py-3 px-4">Downloads video and extracts audio</td>
+                                            <td class="py-3 px-4">yt-dlp, ffmpeg</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Transcription layer</td>
+                                            <td class="py-3 px-4">Turns audio/video into editable text</td>
+                                            <td class="py-3 px-4">faster-whisper</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Review layer</td>
+                                            <td class="py-3 px-4">Keeps human validation before final delivery</td>
+                                            <td class="py-3 px-4">Editor, transcript segments</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Voice layer</td>
+                                            <td class="py-3 px-4">Generates narrated audio from reviewed content</td>
+                                            <td class="py-3 px-4">edge-tts</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="py-3 px-4 text-white font-medium">Tracking layer</td>
+                                            <td class="py-3 px-4">Stores status, history and reusable outputs</td>
+                                            <td class="py-3 px-4">Database, task records</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Closing text -->
+                        <div class="rounded-xl border border-white/5 p-6 space-y-4">
+                            <h3 class="font-bold text-white">In practice, building Voice-RMV was also an AI Operations exercise.</h3>
+                            <p class="text-sm text-on-surface-variant">
+                                The application proves that AI can accelerate planning and execution, but the real value comes from structuring the process: defining the workflow, validating each step, keeping human control, managing the data and turning the output into something useful for the business.
+                            </p>
+                            <p class="text-sm text-white font-medium italic">
+                                The technology is not the center of the story. It is the infrastructure that made the workflow real.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 4. Problem Context -->
         <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="mb-12">
