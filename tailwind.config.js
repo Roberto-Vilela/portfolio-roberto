@@ -1,5 +1,5 @@
 // Cache buster for tailwind.config.js
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v11";
 const CACHE_BUSTER = `?v=${CACHE_VERSION}`;
 
 tailwind.config = {
@@ -85,13 +85,13 @@ tailwind.config = {
             },
             "fontSize": {
                 "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "body-md": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
                 "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-md": ["15px", {"lineHeight": "22px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
                 "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
                 "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+                "code-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
             }
         }
     }

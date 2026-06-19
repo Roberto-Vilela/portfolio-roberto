@@ -2,6 +2,64 @@
             background-color: #0b1326;
             color: #dae2fd;
             overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.75;
+        }
+
+        .material-symbols-outlined {
+            line-height: 1;
+        }
+
+        body :is(.text-\[10px\]):not(.material-symbols-outlined) {
+            font-size: 0.75rem !important;
+            line-height: 1.1rem !important;
+        }
+
+        body :is(.text-xs):not(.material-symbols-outlined) {
+            font-size: 0.85rem !important;
+            line-height: 1.3rem !important;
+        }
+
+        body :is(.text-sm):not(.material-symbols-outlined) {
+            font-size: 1rem !important;
+            line-height: 1.55rem !important;
+        }
+
+        body :is(.text-base):not(.material-symbols-outlined),
+        body :is(.text-body-md):not(.material-symbols-outlined) {
+            font-size: 1.08rem !important;
+            line-height: 1.75rem !important;
+        }
+
+        body :is(.text-body-lg):not(.material-symbols-outlined) {
+            font-size: 1.2rem !important;
+            line-height: 2rem !important;
+        }
+
+        body :is(.text-label-md):not(.material-symbols-outlined) {
+            font-size: 1rem !important;
+            line-height: 1.5rem !important;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 17px;
+            }
+
+            body :is(.text-sm):not(.material-symbols-outlined) {
+                font-size: 0.95rem !important;
+                line-height: 1.45rem !important;
+            }
+
+            body :is(.text-base):not(.material-symbols-outlined),
+            body :is(.text-body-md):not(.material-symbols-outlined) {
+                font-size: 1rem !important;
+                line-height: 1.65rem !important;
+            }
+        }
+
+        main p + p {
+            margin-top: 1.25rem;
         }
         
         .glass-card {

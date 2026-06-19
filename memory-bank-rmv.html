@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Memory Bank RMV | AI Governance Case Study</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css?v=11">
+    <script src="tailwind.config.js?v=11"></script>
+    <style>
+        .marquee-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 100%;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: scroll-text 25s linear infinite;
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface">
+
+    <!-- NavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-white/5">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary">arrow_back</span>
+                <span class="font-label-md text-primary font-semibold tracking-wider uppercase">Back to Portfolio</span>
+            </a>
+            <button onclick="document.getElementById('contact-modal').showModal()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer">
+                Contact Me
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <!-- 1. Hero -->
+        <section class="relative pt-[10px] pb-24 overflow-hidden px-margin-mobile md:px-margin-desktop border-b border-white/5">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="absolute inset-0 hero-gradient"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+            </div>
+            <div class="relative z-10 max-w-full mx-auto text-center flex flex-col items-center">
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-primary/20 shadow-[0_0_12px_rgba(79,172,254,0.1)]">
+                    <span class="material-symbols-outlined text-primary text-sm flex-shrink-0">account_tree</span>
+                    <span class="marquee-wrap max-w-[200px] md:max-w-[300px]">
+                        <span class="marquee-text text-xs text-on-surface-variant font-bold uppercase tracking-wider">SYSTEM DESIGN · AI GOVERNANCE · COGNITIVE ARCHITECTURE · HUMAN-IN-THE-LOOP · PROJECT MEMORY · OPERATIONAL CONSISTENCY</span>
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-display-lg font-extrabold mb-8 leading-snug text-white">
+                    Memory Bank RMV: Architecture Thinking<br>
+                    Beyond the Context Window
+                </h1>
+
+                <!-- Description -->
+                <p class="text-base md:text-lg text-on-surface-variant/80 max-w-4xl leading-relaxed mb-6">
+                    Every complex project driven by AI eventually hits a wall: code fragmentation and long-context amnesia. The Memory Bank is not an execution tool; it is a structural governance framework designed to act as the permanent cognitive core of an operation, keeping AI agents aligned with architectural boundaries, workflow rules and past decisions across months of execution.
+                </p>
+
+                <!-- CTA -->
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <a href="#ai-interview" class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block shadow-lg shadow-primary/20">
+                        Read AI Agent Interview ↓
+                    </a>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-nowrap justify-center gap-2 overflow-x-auto pb-2">
+                    <span class="text-xs bg-primary/10 text-primary px-2.5 py-1.5 rounded-full font-semibold whitespace-nowrap">Architectural Governance</span>
+                    <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2.5 py-1.5 rounded-full font-semibold whitespace-nowrap">Cognitive State Persistence</span>
+                    <span class="text-xs bg-primary/10 text-primary px-2.5 py-1.5 rounded-full font-semibold whitespace-nowrap">Operational Cost Mitigation</span>
+                    <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2.5 py-1.5 rounded-full font-semibold whitespace-nowrap">Human-in-the-Loop Guardrails</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. The Origin & Core Problem -->
+        <section class="py-16 md:py-24 bg-surface-container-low/30">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="border-b border-white/5 px-6 py-5 md:px-8">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">01 / THE ORIGIN & CORE PROBLEM</span>
+                        <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white">The Cost of LLM Amnesia in Real Operations</h2>
+                    </div>
+
+                    <div class="p-6 md:p-8 lg:p-10">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14">
+                            <!-- Left: Narrative -->
+                            <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                                <p>
+                                    In 2025, I started building a platform to improve the visa documentation process. The first idea was simple: create a member area, automate part of the workflow and use AI to help generate the code.
+                                </p>
+                                <p>
+                                    At first, I tried to move fast using tools like WordPress, plugins and AI-assisted coding. But as the project grew, the same problem kept happening: the AI could help with isolated parts, but it would lose track of the full plan, the previous decisions, the business logic and the structure of the system.
+                                </p>
+                                <p class="text-white font-semibold">
+                                    But the momentum did not last.
+                                </p>
+                                <p>
+                                    A form, a checklist or a small implementation could take hours to fix because the AI did not remember why the system had been built a certain way. Sometimes the fastest path became starting over — again.
+                                </p>
+                                <p>
+                                    Later, I moved to a more robust stack with Python and React. The structure improved, the application became more stable, and the project finally reached production in January 2026. But the cost of getting there was high.
+                                </p>
+                                <p>
+                                    Because I was operating alone, every technical delay became a business delay. Time spent recovering lost context was time taken away from selling, serving clients and growing the operation. I lost speed, money, client momentum and business focus because the workflow depended too much on AI-assisted execution without persistent project memory.
+                                </p>
+                            </div>
+
+                            <!-- Right: LLM Amnesia Loop diagram -->
+                            <div class="rounded-2xl border border-white/10 bg-surface/40 p-6 md:p-8">
+                                <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-primary mb-4">The LLM Amnesia Loop</span>
+                                <div class="relative pl-8">
+                                    <div class="absolute left-[1.7rem] top-4 bottom-4 w-px bg-gradient-to-b from-error via-yellow-400 to-error"></div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-error/40 bg-error/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-error text-lg">psychology</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-error uppercase tracking-wider">Step 1</span>
+                                            <p class="text-sm font-semibold text-white">Business need</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">A feature or fix is required.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-lg">smart_toy</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-primary uppercase tracking-wider">Step 2</span>
+                                            <p class="text-sm font-semibold text-white">AI-assisted execution</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">Model generates code and solutions.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-yellow-400/40 bg-yellow-400/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-yellow-400 text-lg">sync_problem</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Step 3</span>
+                                            <p class="text-sm font-semibold text-white">Model loses context</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">Session resets or focus shifts.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-error/40 bg-error/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-error text-lg">architecture</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-error uppercase tracking-wider">Step 4</span>
+                                            <p class="text-sm font-semibold text-white">Architecture decisions forgotten</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">Prior constraints are ignored.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-error/40 bg-error/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-error text-lg">build</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-error uppercase tracking-wider">Step 5</span>
+                                            <p class="text-sm font-semibold text-white">Hours of rework</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">Same bugs, same fixes, same cost.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4 pb-6">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-error/40 bg-error/10 flex items-center justify-center flex-shrink-0">
+                                            <span class="material-symbols-outlined text-error text-lg">trending_down</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-error uppercase tracking-wider">Step 6</span>
+                                            <p class="text-sm font-semibold text-white">Business focus lost</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">Delivery slips, confidence drops.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-center gap-4">
+                                        <div class="relative z-10 w-10 h-10 rounded-full border-2 border-error/60 bg-error/20 flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(255,180,171,0.25)]">
+                                            <span class="material-symbols-outlined text-error text-lg">replay</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs font-bold text-error uppercase tracking-wider">Loop</span>
+                                            <p class="text-sm font-semibold text-white">Start over again</p>
+                                            <p class="text-xs text-on-surface-variant mt-0.5">No memory, no progress.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-10"></div>
+
+                        <!-- Governance Insight -->
+                        <div class="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-8">
+                            <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-4">The Governance Insight</span>
+                            <p class="text-base md:text-lg text-white font-semibold leading-relaxed mb-2">
+                                AI was not the bottleneck because it could not generate.
+                            </p>
+                            <p class="text-base md:text-lg text-white font-semibold leading-relaxed mb-4">
+                                AI became the bottleneck because it could not remember the operation.
+                            </p>
+                            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-2">
+                                Without a persistent project memory, AI acceleration turns into operational rework.
+                            </p>
+                            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed font-semibold text-white">
+                                That is the problem the Memory Bank was created to solve.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Turning Point -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">02 / THE TURNING POINT</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">From Scattered Prompts to a Shared Reference Point</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 mb-12">
+                    <div class="space-y-4 text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        <p>
+                            After losing time, budget, and client momentum to repeated rework, I stepped back from active building to understand why.
+                        </p>
+                        <p>
+                            At first, I thought the problem could be solved with a better model, a better tool, or a better prompt. But the pattern kept repeating: every new session created a risk of losing decisions, context, and execution logic.
+                        </p>
+                        <p>
+                            So I started studying how AI models, coding assistants, and agent-based tools tried to preserve behavior across sessions. I reviewed documentation, rules files, agent configuration files, project-level instructions, and early skill patterns.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-6 border-l-2 border-primary/50 self-center">
+                        <p class="text-base md:text-lg text-primary font-semibold leading-relaxed">
+                            That is when the pattern became clear: the strongest systems were not depending only on the chat. They were using persistent reference files to guide the agent before execution.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3-column grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="rounded-xl border border-white/10 bg-surface-container/40 p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-primary text-2xl">description</span>
+                            <h3 class="text-lg font-bold text-white">Model Instruction Files</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Reviewed how different models and platforms use structured instruction files — such as agent configuration files and project-level rule files (e.g., Qwen.md) — to guide behavior before a task begins.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-white/10 bg-surface-container/40 p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-yellow-400 text-2xl">rule</span>
+                            <h3 class="text-lg font-bold text-white">Tool-Level Rule Patterns</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Studied how coding assistant extensions like Cline use their own rule files to keep an AI agent consistent within a project's context and boundaries.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-white/10 bg-surface-container/40 p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-secondary-container text-2xl">category</span>
+                            <h3 class="text-lg font-bold text-white">Skill File Patterns</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Looked at how some agent setups let an AI pull in specific skills or instructions through separate files when needed. This pointed to the same idea: a project could have its own persistent reference material, not just a one-time conversation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Full-width highlight: One File, Any Agent -->
+                <div class="rounded-2xl border border-primary/25 bg-primary/5 p-8 md:p-10 mb-12">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-3">One File, Any Agent</span>
+                    <p class="text-base md:text-lg text-white font-semibold leading-relaxed mb-4">
+                        I built a simple structure: instead of explaining the project from scratch in every new chat or tool, each agent — whether Claude, Gemini, Codex, or another assistant — gets pointed to the same starting file.
+                    </p>
+                    <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-4">
+                        That starting file leads to <strong class="text-white">workflow.md</strong>.
+                    </p>
+                    <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                        <strong class="text-white">workflow.md</strong> became the project's operational entry point. It holds the rules to follow, the current execution logic, the required validation steps, and the boundaries every agent must respect before moving forward. Every agent reads it first, so the project's logic does not depend on memory that resets between sessions.
+                    </p>
+                </div>
+
+                <!-- Closing quote -->
+                <div class="relative pl-8 border-l-2 border-primary/50 py-2">
+                    <p class="text-lg md:text-xl text-primary font-semibold leading-relaxed mb-1">
+                        The chat was temporary.
+                    </p>
+                    <p class="text-lg md:text-xl text-white font-semibold leading-relaxed">
+                        The workflow had to be permanent.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Solution -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">03 / THE SOLUTION</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">A Shared Reference Structure for AI-Assisted Work</h2>
+                <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed mb-12">
+                    Instead of relying on each chat to remember the project, I created a simple structure that gave every agent the same starting point, the same workflow logic and the same project memory before continuing the work.
+                </p>
+
+                <!-- Two columns -->
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 mb-12">
+                    <div class="space-y-4 text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        <p>
+                            Once I understood the pattern, the solution became clearer: I did not need to make every new chat remember everything by itself. I needed a shared reference structure that any agent could read before continuing the project.
+                        </p>
+                        <p>
+                            As an AI Builder, I had to think beyond code generation. I needed to think about the development flow, the handoff between sessions, the way decisions were recorded, how risks could be reduced and how different agents could follow the same logic even when the model changed.
+                        </p>
+                    </div>
+                    <div class="space-y-4 text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        <p>
+                            That is where <strong class="text-white">workflow.md</strong> became important. It was not created to be just a documentation file. It became the starting reference for how the project should move: what the agent should understand first, what rules it should follow, when it should ask for approval, how changes should be validated and how progress should be registered.
+                        </p>
+                        <p>
+                            But <strong class="text-white">workflow.md</strong> alone was not enough. The project also needed supporting files: rules, active context, progress records and a simple way to keep decisions, bugs, validations and lessons learned available across sessions.
+                        </p>
+                        <p>
+                            That is how Memory Bank RMV started to take shape.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Impact phrase -->
+                <div class="group rounded-2xl border border-yellow-400/30 bg-yellow-400/5 p-8 md:p-10 mb-12 transition-colors duration-300 hover:bg-primary/10 hover:border-primary/30">
+                    <p class="text-lg md:text-xl text-yellow-400 font-semibold leading-relaxed text-center transition-colors duration-300 group-hover:text-white">
+                        A file became the difference between starting over and starting from where things were left.
+                    </p>
+                </div>
+
+                <!-- Final paragraph -->
+                <div class="space-y-4 text-base md:text-lg text-on-surface-variant leading-relaxed mb-12">
+                    <p>
+                        The idea was practical: if I moved from Codex to Claude, Gemini or another assistant, the project should not lose its logic just because the chat changed. Each agent kept its own rule file, but the first instruction inside that file was always the same: check <strong class="text-white">workflow.md</strong> before producing any output.
+                    </p>
+                    <p>
+                        At that point, I asked Codex to help design the files with me. The surprising part was that once the files existed, Codex started following the structure we had defined. That was the proof of concept.
+                    </p>
+                    <p class="text-white font-semibold">
+                        The Memory Bank did not make AI perfect. It made the work less dependent on temporary chat memory. The project now had a place to point the agent before the agent started acting.
+                    </p>
+                </div>
+
+                <!-- 4 cards grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+                    <div class="rounded-xl border border-primary/25 bg-primary/5 p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-primary text-2xl">flag</span>
+                            <h3 class="text-base font-bold text-white">Shared Starting Point</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Every agent reads the same entry file before acting, regardless of the model or platform.</p>
+                    </div>
+                    <div class="rounded-xl border border-yellow-400/30 bg-yellow-400/5 p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-yellow-400 text-2xl">account_tree</span>
+                            <h3 class="text-base font-bold text-white">Workflow Logic</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The execution flow, validation steps, and approval rules are documented and followed by every agent.</p>
+                    </div>
+                    <div class="rounded-xl border border-secondary-container/30 bg-secondary-container/10 p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-secondary-container text-2xl">database</span>
+                            <h3 class="text-base font-bold text-white">Project Memory</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Decisions, bugs, validations, and lessons are stored in persistent files, not in chat history.</p>
+                    </div>
+                    <div class="rounded-xl border border-primary/25 bg-primary/5 p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-primary text-2xl">sync</span>
+                            <h3 class="text-base font-bold text-white">Cross-Agent Consistency</h3>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Switching between Codex, Claude, or Gemini does not reset the project's operational logic.</p>
+                    </div>
+                </div>
+
+                <!-- Closing quote -->
+                <div class="relative pl-8 border-l-2 border-primary/50 py-2">
+                    <p class="text-lg md:text-xl text-primary font-semibold leading-relaxed mb-1">
+                        The transformation was not that the AI became smarter.
+                    </p>
+                    <p class="text-lg md:text-xl text-white font-semibold leading-relaxed">
+                        The transformation was that the project became easier for any agent to understand before continuing the work.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Structure -->
+        <section class="py-24 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">04 / THE STRUCTURE</span>
+            <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">How the Memory Bank Was Organized</h2>
+            <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed mb-12">
+                The Memory Bank RMV was designed as a shared reference structure. Different agents could enter the project, but they should not start from zero.
+            </p>
+
+            <!-- Block 1: Shared Entry Point -->
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center mb-20">
+                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                    <img src="./assets/voice/MEMORY2.png" class="w-full h-auto" alt="Entry files tree structure">
+                    <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                        <span class="font-bold text-primary">Entry files</span> — Each agent with its own entry point, all pointing to the same workflow.
+                    </figcaption>
+                </figure>
+                <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                    <h3 class="text-xl font-bold text-white">1. Shared Entry Point</h3>
+                    <p>
+                        Different AI agents could have different entry files, but they were all directed to the same workflow logic.
+                    </p>
+                    <p>
+                        This reduced repeated explanations and gave each new session a consistent place to start.
+                    </p>
+                    <div class="rounded-xl bg-surface-container/40 border border-white/5 p-4 font-mono text-xs text-on-surface-variant leading-relaxed">
+                        voice-rmv/<br>
+                        ├── AGENTS.md<br>
+                        ├── CLAUDE.md<br>
+                        ├── CODEX.md<br>
+                        ├── GEMINI.md<br>
+                        ├── QWEN.md<br>
+                        └── workflow.md
+                    </div>
+                    <p class="text-white font-semibold">
+                        workflow.md became the shared entry reference — the file every agent was directed to read before continuing the work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Block 2: Core Memory Structure -->
+            <div class="mb-20">
+                <h3 class="text-xl font-bold text-white mb-8 text-center">2. The Core Memory Structure</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr_1fr] gap-8 items-center">
+                    <!-- Left labels -->
+                    <div class="space-y-4">
+                        <div class="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                            <span class="text-sm font-bold text-white">workflow_rules.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Keeps the working rules visible for the agents.</p>
+                        </div>
+                        <div class="rounded-xl border border-yellow-400/20 bg-yellow-400/5 p-4">
+                            <span class="text-sm font-bold text-white">activeContext.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Shows what is active now and what needs attention.</p>
+                        </div>
+                        <div class="rounded-xl border border-secondary-container/20 bg-secondary-container/10 p-4">
+                            <span class="text-sm font-bold text-white">progress.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Preserves validated progress and completed work.</p>
+                        </div>
+                    </div>
+
+                    <!-- Centered image -->
+                    <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                        <img src="./assets/voice/MOMORY1.png" class="w-full h-auto" alt="Memory bank core structure">
+                        <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5 text-center">
+                            <span class="font-bold text-primary">memory-bank/</span> — The persistent project memory directory
+                        </figcaption>
+                    </figure>
+
+                    <!-- Right labels -->
+                    <div class="space-y-4">
+                        <div class="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                            <span class="text-sm font-bold text-white">analysis_summary.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Gives a fast consultation point for the project.</p>
+                        </div>
+                        <div class="rounded-xl border border-yellow-400/20 bg-yellow-400/5 p-4">
+                            <span class="text-sm font-bold text-white">designer_rules.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Keeps visual and interface consistency.</p>
+                        </div>
+                        <div class="rounded-xl border border-secondary-container/20 bg-secondary-container/10 p-4">
+                            <span class="text-sm font-bold text-white">erro_implementacao.md</span>
+                            <p class="text-xs text-on-surface-variant mt-1">Records failed attempts and debugging history.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tree at bottom -->
+                <div class="mt-8 rounded-xl bg-surface-container/40 border border-white/5 p-4 font-mono text-xs text-on-surface-variant leading-relaxed max-w-md mx-auto text-center">
+                    memory-bank/<br>
+                    ├── workflow_rules.md<br>
+                    ├── activeContext.md<br>
+                    ├── progress.md<br>
+                    ├── analysis_summary.md<br>
+                    ├── designer_rules.md<br>
+                    └── erro_implementacao.md
+                </div>
+            </div>
+
+            <!-- Block 3: Dedicated Reference Documents -->
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center">
+                <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                    <h3 class="text-xl font-bold text-white">3. Dedicated Reference Documents</h3>
+                    <p>
+                        When a bug or implementation became complex, it received its own document.
+                    </p>
+                    <p>
+                        This allowed the next agent to understand the issue, previous attempts, and reasoning before proposing a new change.
+                    </p>
+                    <div class="rounded-xl bg-surface-container/40 border border-white/5 p-4 font-mono text-xs text-on-surface-variant leading-relaxed">
+                        docs/<br>
+                        ├── botao_clear.md<br>
+                        ├── library_analise.md<br>
+                        ├── backend_analise.md<br>
+                        └── frontend_analise.md
+                    </div>
+                    <p class="text-white font-semibold">
+                        The project started preserving reasoning, not just results.
+                    </p>
+                </div>
+                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                    <img src="./assets/voice/MEMORY03.png" class="w-full h-auto" alt="Dedicated reference documents structure">
+                    <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                        <span class="font-bold text-primary">docs/</span> — Complex problems preserved as standalone references.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Closing Insight -->
+            <div class="mt-16 rounded-2xl border border-primary/25 bg-primary/5 p-8 md:p-10 text-center">
+                <p class="text-lg md:text-xl text-white font-semibold leading-relaxed">
+                    The structure was simple: give every new agent a place to start, a shared workflow to follow, and a memory of what the project had already learned.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Skills learned and applied -->
+        <section class="py-24 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="mb-12">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / Skills learned and applied</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Skills learned and applied</h2>
+                <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                    The capabilities developed while designing and operating a project memory governance system.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">account_tree</span>
+                    <h3 class="font-bold text-white mb-3">System Architecture</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Designing scalable documentation systems that persist across sessions without external dependencies.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-yellow-400 text-2xl mb-5 block">gavel</span>
+                    <h3 class="font-bold text-white mb-3">AI Governance</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Creating guardrails that keep AI agents aligned with project constraints and prior decisions.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">psychology</span>
+                    <h3 class="font-bold text-white mb-3">Cognitive Architecture</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Structuring information so both humans and AI agents can retrieve and act on it efficiently.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">verified_user</span>
+                    <h3 class="font-bold text-white mb-3">Human-in-the-loop</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Designing review checkpoints before any change is committed to project memory.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-yellow-400 text-2xl mb-5 block">description</span>
+                    <h3 class="font-bold text-white mb-3">Technical Documentation</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Writing clear, structured documentation that serves as the single source of truth for the project.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <span class="material-symbols-outlined text-primary text-2xl mb-5 block">settings</span>
+                    <h3 class="font-bold text-white mb-3">Process Automation</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Building routines that automatically sync project memory across sessions and agents.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Interview Section -->
+        <section id="ai-interview" class="py-24 bg-surface-container-low/25 border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="border-b border-white/5 px-6 py-5 md:px-8">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">06 / AI Agent Interview</span>
+                        <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white">Read AI Agent Interview</h2>
+                    </div>
+                    <div class="p-6 md:p-8 lg:p-10 space-y-6">
+                        <div class="max-w-4xl space-y-4 text-base text-on-surface-variant leading-relaxed">
+                            <p class="text-white font-semibold">
+                                The Memory Bank was built alongside the Voice-RMV project. Below is an interview with the AI agent that was guided by it.
+                            </p>
+                            <div class="rounded-xl border border-primary/20 bg-primary/5 p-6 mt-6">
+                                <span class="material-symbols-outlined text-primary text-2xl mb-4 block">smart_toy</span>
+                                <p class="text-sm text-on-surface-variant italic leading-relaxed mb-4">
+                                    "Before the Memory Bank, every session felt like starting over. I would lose track of decisions made three conversations ago. The Memory Bank changed that — it gave me a persistent identity within the project. I could reference past decisions, avoid previously fixed bugs, and understand the architectural boundaries without being told again."
+                                </p>
+                                <p class="text-sm text-white font-semibold">— AI Agent, Voice-RMV Project</p>
+                            </div>
+                            <p>
+                                The interview covers how the Memory Bank affected the agent's ability to maintain context, avoid regressions, and produce consistent code across months of development. It is a first-person account from the AI perspective, documenting the before-and-after of introducing structured project memory.
+                            </p>
+                            <p>
+                                Full interview available in the project documentation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Next case study -->
+        <section class="py-24">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 p-6 md:p-10">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / Next case study</span>
+                    <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Continue exploring</h2>
+                    <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-8">
+                        See how the Memory Bank was applied in a real content production workflow.
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 items-start">
+                        <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                            <p class="text-white font-semibold">The Memory Bank was built to support the Voice-RMV project.</p>
+                            <p>In that case study, you can see the visible product — the interface, the workflow, and the automation. The Memory Bank was the governance system behind it.</p>
+                        </div>
+
+                        <div class="rounded-xl border border-primary/25 bg-primary/5 p-6">
+                            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">record_voice_over</span>
+                            <h3 class="font-bold text-white mb-3">Voice-RMV case study</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">The content and voice workflow that the Memory Bank governed during development.</p>
+                            <a href="voice-rmv.html" class="inline-flex items-center gap-2 px-5 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                                Read the Voice-RMV case study
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Final invitation -->
+        <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Final invitation</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Does your AI project need a Memory Bank?</h2>
+                <div class="max-w-3xl mx-auto space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+                    <p class="text-white font-semibold">If you are building with AI and finding that context is lost between sessions, the Memory Bank is a pattern you can adopt.</p>
+                    <p>It does not require a new tool, a new platform, or a new workflow. It requires discipline, structure, and the willingness to treat project memory as a first-class artifact.</p>
+                    <p>I can help you design a Memory Bank for your project — tailored to your stack, your team, and your operational needs.</p>
+                </div>
+                <button onclick="document.getElementById('contact-modal').showModal()" class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20 cursor-pointer">
+                    Let's build your Memory Bank
+                    <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact Modal -->
+    <dialog id="contact-modal" class="w-full max-w-lg rounded-2xl bg-surface border border-white/10 p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm" style="max-width: 32rem;">
+        <div class="relative p-8">
+            <button onclick="document.getElementById('contact-modal').close()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-surface-container border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+            <h2 class="font-headline-lg text-headline-lg mb-2 text-on-surface">Get in Touch</h2>
+            <p class="text-on-surface-variant text-sm mb-8">Fill out the form below and I'll get back to you within 24 hours.</p>
+
+            <form id="contact-form">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="name">Name</label>
+                        <input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="email">Email</label>
+                        <input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="type">Type</label>
+                        <select id="type" name="type" data-fs-field class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm focus:outline-none focus:border-primary/50 transition-colors">
+                            <option value="">Select an option</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="freelance">Freelance / Consulting</option>
+                            <option value="collaboration">Collaboration</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="message">Message</label>
+                        <textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" data-fs-submit-btn class="w-full py-3.5 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(79,172,254,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">send</span> Send Message
+                    </button>
+                </div>
+            </form>
+
+            <div data-fs-success class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-green-400 mb-4 block">check_circle</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Message Sent!</h3>
+                <p class="text-on-surface-variant text-sm">Thanks for reaching out. I'll respond within 24 hours.</p>
+            </div>
+
+            <div data-fs-error class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-error mb-4 block">error</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Something went wrong</h3>
+                <p class="text-on-surface-variant text-sm">Please try again or email me directly.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-white/5 py-8">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center text-sm text-on-surface-variant">
+            <p>&copy; 2025 Roberto Vilela. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openAudioModal(lang) {
+            const src = lang === 'en' ? 'assets/voice-demo-en.mp3' : 'assets/voice-demo-ptbr.mp3';
+            const audio = new Audio(src);
+            audio.play();
+        }
+    </script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" defer type="text/javascript"></script>
+    <script>
+        window.addEventListener('load', function () {
+            if (!window.LinkedIn) return;
+
+            window.LinkedIn('set', 'profileUrl', 'https://www.linkedin.com/in/roberto-vilela-ma');
+            window.LinkedIn('renderProfileBadge', 'LI-profile-badge', {
+                'locale': 'en_US',
+                'size': 'medium',
+                'theme': 'dark',
+                'type': 'VERTICAL',
+                'vanity': 'roberto-vilela-ma',
+                'version': 'v1'
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'meewwpvg' });
+    </script>
+
+</body>
+</html>
