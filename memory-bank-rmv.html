@@ -549,10 +549,139 @@
             </div>
         </section>
 
-        <!-- 5. Skills learned and applied -->
+        <!-- 5. How It Worked in Practice -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / HOW IT WORKED IN PRACTICE</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">From Project Memory to Execution Discipline</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-8">
+                    The Memory Bank was not valuable only because the files existed.
+                </p>
+                <p class="text-base text-on-surface-variant max-w-4xl leading-relaxed mb-4">
+                    It became valuable because those files changed how each AI-assisted task started, moved and ended.
+                </p>
+                <p class="text-base text-on-surface-variant max-w-4xl leading-relaxed mb-12">
+                    Instead of asking an agent to generate a solution immediately, the workflow created a repeatable path: understand the request, check the project memory, analyze viability, prepare a plan, wait for approval, execute inside the agreed scope, validate with the human and document the result.
+                </p>
+                <p class="text-lg text-white font-semibold max-w-4xl leading-relaxed mb-12">
+                    This turned the Memory Bank from a folder structure into a working method.
+                </p>
+
+                <!-- Block 1: The agent started by reading the project -->
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center mb-20">
+                    <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                        <img src="./assets/voice/workflow-step-4-consultar-memory.png" class="w-full h-auto" alt="Agent consulting project memory before planning">
+                        <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                            <span class="font-bold text-primary">Memory check</span> — The agent checks the project memory before moving into planning.
+                        </figcaption>
+                    </figure>
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                        <h3 class="text-xl font-bold text-white">1. The agent started by reading the project</h3>
+                        <p>
+                            Before planning the implementation, the agent had to consult the project memory.
+                        </p>
+                        <p>
+                            In this example, the workflow led the agent to read the project memory, the execution workflow, the current dashboard files and the API client before proposing the next step.
+                        </p>
+                        <p class="text-white font-semibold">
+                            The important point is simple: the agent did not start from a blank chat. It started from the project's existing context.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Block 2: The plan came before execution -->
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center mb-20">
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed order-last lg:order-first">
+                        <h3 class="text-xl font-bold text-white">2. The plan came before execution</h3>
+                        <p>
+                            After reading the memory and analyzing the project, the agent did not jump directly into implementation.
+                        </p>
+                        <p>
+                            It prepared a plan first.
+                        </p>
+                        <p>
+                            The plan explained the objective, the current situation, the files that could be modified, the implementation path, the risks, the tests and the approval point before execution.
+                        </p>
+                        <p class="text-white font-semibold">
+                            This mattered because the workflow created a pause between idea and action. The agent had to show what it intended to do before touching the project.
+                        </p>
+                    </div>
+                    <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                        <img src="./assets/voice/workflow-step-5-plan-approval-sequence1.png" class="w-full h-auto" alt="Plan approval sequence before implementation">
+                        <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                            <span class="font-bold text-primary">Plan before action</span> — A real planning sequence before implementation: scope, files, risks, tests and approval.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Block 3: Human validation closed the loop -->
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center mb-20">
+                    <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                        <img src="./assets/voice/workflow-human-validation-and-test-results.png" class="w-full h-auto" alt="Human validation and test results">
+                        <figcaption class="px-5 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                            <span class="font-bold text-primary">Evidence after execution</span> — The task was validated through observable checks before being treated as complete.
+                        </figcaption>
+                    </figure>
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                        <h3 class="text-xl font-bold text-white">3. Human validation closed the loop</h3>
+                        <p>
+                            The workflow also kept the human inside the loop.
+                        </p>
+                        <p>
+                            After the implementation, the result was not treated as complete just because the agent said it worked. The task still needed observable validation: API checks, task history, generated output, local file access and playback.
+                        </p>
+                        <p class="text-white font-semibold">
+                            That made the process more reliable. The work did not end with code generation. It ended with evidence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4 cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+                    <div class="rounded-xl border border-primary/25 bg-primary/5 p-5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-3 block">memory</span>
+                        <h3 class="text-sm font-bold text-white mb-2">Memory Check</h3>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The agent had to read the project context before proposing changes.</p>
+                    </div>
+                    <div class="rounded-xl border border-yellow-400/30 bg-yellow-400/5 p-5">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-3 block">rule</span>
+                        <h3 class="text-sm font-bold text-white mb-2">Plan Before Action</h3>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The agent had to explain objective, scope, files, risks and validation before execution.</p>
+                    </div>
+                    <div class="rounded-xl border border-secondary-container/30 bg-secondary-container/10 p-5">
+                        <span class="material-symbols-outlined text-secondary-container text-2xl mb-3 block">verified_user</span>
+                        <h3 class="text-sm font-bold text-white mb-2">Human Approval</h3>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The implementation only moved forward after the plan was reviewed.</p>
+                    </div>
+                    <div class="rounded-xl border border-primary/25 bg-primary/5 p-5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-3 block">fact_check</span>
+                        <h3 class="text-sm font-bold text-white mb-2">Evidence After Execution</h3>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The task was validated through real outputs, not only by the agent's claim.</p>
+                    </div>
+                </div>
+
+                <!-- Closing -->
+                <div class="rounded-2xl border border-primary/25 bg-primary/5 p-8 md:p-10">
+                    <p class="text-base md:text-lg text-white font-semibold leading-relaxed mb-2">
+                        The value was not only in having memory files.
+                    </p>
+                    <p class="text-base md:text-lg text-white font-semibold leading-relaxed mb-4">
+                        The value was in making the agent use them before acting.
+                    </p>
+                    <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                        The Memory Bank gave the project a place to remember.
+                    </p>
+                    <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                        The workflow made that memory part of the work.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Skills learned and applied -->
         <section class="py-24 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="mb-12">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / Skills learned and applied</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / Skills learned and applied</span>
                 <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Skills learned and applied</h2>
                 <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">
                     The capabilities developed while designing and operating a project memory governance system.
@@ -598,7 +727,7 @@
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
                     <div class="border-b border-white/5 px-6 py-5 md:px-8">
-                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">06 / AI Agent Interview</span>
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">07 / AI Agent Interview</span>
                         <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white">Read AI Agent Interview</h2>
                     </div>
                     <div class="p-6 md:p-8 lg:p-10 space-y-6">
@@ -629,7 +758,7 @@
         <section class="py-24">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="glass-card rounded-2xl border border-white/5 p-6 md:p-10">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / Next case study</span>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Next case study</span>
                     <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Continue exploring</h2>
                     <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-8">
                         See how the Memory Bank was applied in a real content production workflow.
@@ -658,7 +787,7 @@
         <!-- 8. Final invitation -->
         <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Final invitation</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">09 / Final invitation</span>
                 <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Does your AI project need a Memory Bank?</h2>
                 <div class="max-w-3xl mx-auto space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
                     <p class="text-white font-semibold">If you are building with AI and finding that context is lost between sessions, the Memory Bank is a pattern you can adopt.</p>
