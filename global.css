@@ -90,13 +90,13 @@
             object-fit: cover;
             object-position: center center;
             transform: scale(1.03);
-            opacity: 0.35;
-            filter: saturate(0.75) contrast(0.92) brightness(0.58) blur(0.4px);
+            opacity: 0.55;
+            filter: saturate(0.85) contrast(0.95) brightness(0.75) blur(0.4px);
         }
 
         .hero-dashboard-overlay {
             background:
-                linear-gradient(180deg, rgba(11, 19, 38, 0.34) 0%, rgba(11, 19, 38, 0.52) 46%, rgba(11, 19, 38, 0.88) 100%),
+                linear-gradient(180deg, rgba(11, 19, 38, 0.15) 0%, rgba(11, 19, 38, 0.30) 46%, rgba(11, 19, 38, 0.7) 100%),
                 radial-gradient(circle at top, rgba(79, 172, 254, 0.08) 0%, transparent 58%);
         }
 

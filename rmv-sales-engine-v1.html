@@ -692,24 +692,123 @@
             </div>
         </section>
 
-        <!-- 14. Screenshots -->
-        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="text-center mb-16">
-                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">11 / Screenshots</span>
-                <h3 class="font-headline-lg text-3xl md:text-4xl text-white font-bold mb-4">Pipeline in Practice</h3>
-                <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">Key interface views from the RMV Sales Engine V1 workflow.</p>
+        <!-- 14. Pipeline Proof -->
+        <section class="py-24 max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">11 / Pipeline Proof</span>
+                <h3 class="font-headline-lg text-3xl md:text-4xl text-white font-bold mb-6">Pipeline Proof</h3>
+                <p class="text-lg text-on-surface-variant leading-relaxed">Each screen captures a real moment in the RMV Sales Engine V1 workflow — from raw prospect data to validated output.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-white shadow-2xl">
-                    <img alt="Voice selection interface for prospect audio" class="lightbox-trigger block w-full h-auto" data-lightbox src="assets/voice/voice-selection.png">
+
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(17rem,0.7fr)_minmax(0,1.5fr)] gap-6 items-stretch">
+                <figure class="dashboard-mosaic-card dashboard-mosaic-card-lg min-h-[28rem]">
+                    <img src="assets/voice/workflowrmv1/Input and Status Layer.png" class="dashboard-mosaic-image" alt="Raw Prospect Data / Sales Input" style="object-position: 50% 30%;">
+                    <figcaption class="dashboard-mosaic-caption">
+                        <span class="dashboard-mosaic-kicker">01 / Sales Input</span>
+                        <span class="dashboard-mosaic-title">Raw Prospect Data</span>
+                    </figcaption>
                 </figure>
-                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-white shadow-2xl">
-                    <img alt="Upload and generation workflow for voice assets" class="lightbox-trigger block w-full h-auto" data-lightbox src="assets/voice/voice-upload-generation.png">
-                </figure>
-                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-white shadow-2xl">
-                    <img alt="Voice audio player interface" class="lightbox-trigger block w-full h-auto" data-lightbox src="assets/voice/voice-audio-player.png">
-                </figure>
+                <div class="dashboard-mosaic bg-surface-container-high rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-surface-container-lowest/75 pointer-events-none"></div>
+                    <div class="relative z-10 grid grid-cols-2 gap-4 p-4 md:p-6">
+                        <figure class="dashboard-mosaic-card min-h-[14rem]">
+                            <img src="assets/voice/workflowrmv1/Voice RMV Integration Logic.png" class="dashboard-mosaic-image" alt="Workflow Architecture">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">02 / Orchestration</span>
+                                <span class="dashboard-mosaic-title">Workflow Architecture</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card min-h-[14rem]">
+                            <img src="assets/voice/workflowrmv1/Spreadsheet Status Update.png" class="dashboard-mosaic-image" alt="Technical Validation">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">03 / Configuration</span>
+                                <span class="dashboard-mosaic-title">Technical Validation</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card min-h-[14rem]">
+                            <img src="assets/voice/workflowrmv1/Generated Asset Storage.png" class="dashboard-mosaic-image" alt="Generated Asset Storage">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">04 / Storage</span>
+                                <span class="dashboard-mosaic-title">Generated Asset Storage</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="dashboard-mosaic-card min-h-[14rem]">
+                            <img src="assets/voice/workflowrmv1/outputreview.png" class="dashboard-mosaic-image" alt="Final Output Validation">
+                            <figcaption class="dashboard-mosaic-caption">
+                                <span class="dashboard-mosaic-kicker">05 / Output</span>
+                                <span class="dashboard-mosaic-title">Final Output Validation</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 / 13. AI Collaboration & Human Review -->
+        <section class="py-16 bg-surface-container-low/50 border-y border-white/5">
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="toolproof-panel rounded-3xl border border-white/10 overflow-hidden">
+                    <div class="toolproof-panel-top">
+                        <div>
+                            <span class="block text-[10px] font-bold uppercase tracking-[0.28em] text-yellow-400 mb-3">12 / 13</span>
+                            <h3 class="font-headline-md text-2xl md:text-3xl text-white font-bold">AI Collaboration &amp; Human Review</h3>
+                        </div>
+                        <p class="text-sm md:text-base text-on-surface-variant max-w-2xl leading-relaxed">
+                            AI tools supported the execution process, but human review remained the control layer.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-8">
+                        <div class="toolproof-card">
+                            <span class="material-symbols-outlined text-primary mb-4 block text-3xl">psychology</span>
+                            <h4 class="text-white font-bold text-base mb-3">ChatGPT 5.5</h4>
+                            <ul class="space-y-2 text-sm text-on-surface-variant">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-0.5 text-xs">&#9679;</span>Strategy &amp; positioning</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-0.5 text-xs">&#9679;</span>Case structure &amp; writing refinement</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-0.5 text-xs">&#9679;</span>Business narrative &amp; positioning</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-400/10 border border-blue-400/20 text-blue-200">Strategy</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-400/10 border border-blue-400/20 text-blue-200">Writing</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-400/10 border border-blue-400/20 text-blue-200">Narrative</span>
+                            </div>
+                        </div>
+                        <div class="toolproof-card">
+                            <span class="material-symbols-outlined text-purple-400 mb-4 block text-3xl">terminal</span>
+                            <h4 class="text-white font-bold text-base mb-3">Claude Desktop</h4>
+                            <ul class="space-y-2 text-sm text-on-surface-variant">
+                                <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5 text-xs">&#9679;</span>Technical reasoning &amp; review</li>
+                                <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5 text-xs">&#9679;</span>Documentation support</li>
+                                <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5 text-xs">&#9679;</span>Workflow organization &amp; project structure</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-400/10 border border-purple-400/20 text-purple-200">Reasoning</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-400/10 border border-purple-400/20 text-purple-200">Docs</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-400/10 border border-purple-400/20 text-purple-200">Structure</span>
+                            </div>
+                        </div>
+                        <div class="toolproof-card toolproof-card-accent">
+                            <span class="material-symbols-outlined text-yellow-400 mb-4 block text-3xl">verified</span>
+                            <h4 class="text-white font-bold text-base mb-3">Human Review</h4>
+                            <ul class="space-y-2 text-sm text-on-surface-variant">
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5 text-xs">&#9679;</span>Workflow architecture &amp; design</li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5 text-xs">&#9679;</span>Testing, corrections &amp; output review</li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5 text-xs">&#9679;</span>Final decision &amp; approval</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-yellow-400/10 border border-yellow-400/20 text-yellow-200">Control</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-yellow-400/10 border border-yellow-400/20 text-yellow-200">Validation</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-yellow-400/10 border border-yellow-400/20 text-yellow-200">Approval</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8">
+                        <div class="bg-white/5 rounded-xl px-5 py-4 text-center border border-white/5">
+                            <p class="text-sm font-bold text-white tracking-wide">
+                                AI prepares. <span class="text-yellow-400">Human approves.</span> Automation executes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -820,7 +919,7 @@
         });
 
         function playAudioDemo() {
-            var audio = new Audio('assets/voice/' + encodeURIComponent('Voice-RMV is a practical proof of how AI-assisted workflows turn operational bot.mp3'));
+            var audio = new Audio('assets/voice/workflowrmv1/' + encodeURIComponent('audio_cliente_001_2026-06-24.mp3'));
             audio.play().catch(function(e) {
                 console.log('Audio playback failed:', e);
             });
