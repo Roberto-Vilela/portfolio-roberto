@@ -25,9 +25,14 @@
 <a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#how-i-work">Process</a>
 <a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
 </div>
-<a href="https://calendar.app.google/ACrQGU7KmJjYf2BEA" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block">
-            Let's Talk
-        </a>
+<div class="flex items-center gap-3">
+    <a href="https://drive.google.com/file/d/1MoPYpnW5fU7_3KxEusfQhFY9J5FwfHV1/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors font-label-md text-sm">
+        <span class="material-symbols-outlined text-base">description</span> Resume
+    </a>
+    <a href="https://calendar.app.google/ACrQGU7KmJjYf2BEA" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block">
+        Let's Talk
+    </a>
+</div>
 </div>
 </nav>
 <main class="pt-20">
@@ -774,9 +779,19 @@ Four years managing 200+ immigration cases end-to-end — intake, documents, sta
 <p class="text-body-lg text-on-surface-variant mb-8">
                     Now I help growing teams do the same — turn scattered, manual work into documented, repeatable systems with AI as the execution assistant and humans keeping final control.
                 </p>
-<div class="flex gap-4">
+<div class="flex gap-4 mb-4">
 <span class="material-symbols-outlined text-primary">verified</span>
 <span class="font-label-md">Certified AI Solutions Architect</span>
+</div>
+<div class="flex flex-wrap gap-4 text-sm text-on-surface-variant">
+    <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-base text-primary">location_on</span>
+        Peabody, MA — Available Remote
+    </span>
+    <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-base text-primary">language</span>
+        English · Portuguese
+    </span>
 </div>
 </div>
 </div>
@@ -879,7 +894,54 @@ Four years managing 200+ immigration cases end-to-end — intake, documents, sta
 </div>
 </section>
 
-<!-- 10. Opportunities -->
+<!-- 10. Tools & Stack -->
+<section class="py-16 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-10">
+    <h2 class="font-headline-lg text-headline-lg mb-3">Tools & Stack</h2>
+    <p class="text-on-surface-variant text-sm">Technologies used across active systems and case studies.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="glass-card p-6 rounded-xl border border-white/10">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Workflow & Automation</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">n8n</span>
+            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">FastAPI</span>
+            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">Celery</span>
+            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">Redis</span>
+            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">Docker</span>
+        </div>
+    </div>
+    <div class="glass-card p-6 rounded-xl border border-white/10">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-4">AI & Models</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">Claude / Anthropic</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">faster-whisper</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">edge-tts</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">Local LLMs</span>
+        </div>
+    </div>
+    <div class="glass-card p-6 rounded-xl border border-white/10">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-tertiary mb-4">Data & Backend</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">PostgreSQL</span>
+            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">DuckDB</span>
+            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">Streamlit</span>
+            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">Python</span>
+        </div>
+    </div>
+    <div class="glass-card p-6 rounded-xl border border-white/10">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-green-400 mb-4">CRM & Infra</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">HubSpot</span>
+            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">Digital Ocean</span>
+            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">Formspree</span>
+            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">GitHub</span>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 12. Opportunities -->
 <section class="py-24 bg-surface-container">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
 <h2 class="font-headline-lg text-headline-lg mb-12 text-center">Ways to Work Together</h2>
@@ -887,17 +949,17 @@ Four years managing 200+ immigration cases end-to-end — intake, documents, sta
 <div class="p-8 rounded-xl bg-surface border border-white/5">
 <h4 class="text-xl font-bold mb-4">Job Opportunities</h4>
 <p class="text-on-surface-variant text-sm mb-6">I am open to full-time roles in operational design and AI integration for forward-thinking companies.</p>
-<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Inquire</a>
+<button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Inquire</button>
 </div>
 <div class="p-8 rounded-xl bg-surface border border-white/5">
 <h4 class="text-xl font-bold mb-4">Freelance / Consulting</h4>
 <p class="text-on-surface-variant text-sm mb-6">Specific system builds, audit reports, or workflow automation sprints for your business.</p>
-<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Book a Sprint</a>
+<button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Book a Sprint</button>
 </div>
 <div class="p-8 rounded-xl bg-surface border border-white/5">
 <h4 class="text-xl font-bold mb-4">Collaboration</h4>
 <p class="text-on-surface-variant text-sm mb-6">Partnering with SaaS platforms, creators, or agencies to develop custom AI-driven content.</p>
-<a class="text-primary font-bold text-sm uppercase tracking-wider" href="#">Let's Connect</a>
+<button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Let's Connect</button>
 </div>
 </div>
 </div>
@@ -991,9 +1053,8 @@ Four years managing 200+ immigration cases end-to-end — intake, documents, sta
 </div>
 <div class="flex gap-8">
 <a class="text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/in/roberto-vilela-ma/" target="_blank">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">YouTube</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="https://www.youtube.com/@RobertoVilela-y4p" target="_blank">YouTube</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Roberto-Vilela" target="_blank">GitHub</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
 </div>
 </div>
 </div>
