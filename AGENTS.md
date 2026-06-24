@@ -15,7 +15,7 @@ For local preview: `busybox httpd -f -p 9090 &`
 - **Custom CSS** in `global.css` — referenced as `global.css?v=2` on index.html but **without** the cache buster on `dexafit-wellness-hub.html`
 - **Color system**: custom dark-theme tokens in `tailwind.config.js` (`surface`, `primary`, `on-surface-variant`, etc.) — do NOT use standard Tailwind color names
 - **Animations**: CSS keyframe "ping-pong" glow effects (classes `auto-glow-1` through `-7`, `bm-glow-1` through `-7`)
-- **Lightbox**: vanilla `<dialog>` element + JS, only on `dexafit-wellness-hub.html`
+- **Lightbox**: vanilla `<dialog>` element + JS, on `dexafit-wellness-hub.html` and `rmv-sales-engine-v1.html`
 - **Portfolio categories (4)**: Active Systems & Client Work (green), Case Studies & Technical Validations (yellow), Research & Frameworks (purple), Internal Systems (cyan)
 - **Card convention**: Cards without a dedicated page show "Case study coming soon" as an outline button in the section color. Linked cards show a filled action button in the section color (e.g., purple button in Research, cyan button in Internal Systems). Skill/stack tags inside cards use matching section badge colors.
 - **Audio demo**: inline JS `new Audio(src).play()` — no external player
@@ -28,10 +28,12 @@ For local preview: `busybox httpd -f -p 9090 &`
 | `voice-rmv.html` | Voice-RMV case study (945 lines) — sections 01-10, dictation feature v0.1.3 |
 | `memory-bank-rmv.html` | Memory Bank case study (947 lines) — governance, project memory |
 | `dexafit-wellness-hub.html` | DexaFit case study (866 lines) |
+| `rmv-sales-engine-v1.html` | RMV Sales Engine V1 case study (831 lines) — n8n pipeline, sales workflow
 | `global.css` | Custom styles, animations, glassmorphism (600 lines) |
 | `tailwind.config.js` | Tailwind design tokens (98 lines) |
 | `assets/profile/` | Profile photo + mockups |
 | `assets/cases/dexafit/` | DexaFit case study screenshots |
+| `assets/cases/rmv-sales-engine/` | RMV Sales Engine V1 workflow screens |
 | `assets/voice/` | Voice-RMV screenshots + demo MP3s (EN, PT-BR) |
 | `assets/voice/workflow/` | Workflow diagram assets |
 
