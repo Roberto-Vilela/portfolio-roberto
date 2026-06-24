@@ -76,6 +76,9 @@
                 <p class="text-base md:text-lg text-on-surface-variant/80 max-w-3xl leading-relaxed mb-10">
                     Voice-RMV is a practical proof of how I map operational bottlenecks, organize production stages, and apply automation to transform manual content processes into reviewable workflows that generate business value.
                 </p>
+                <p class="text-base md:text-lg text-on-surface-variant/80 max-w-3xl leading-relaxed mb-10">
+                    Version 0.1.3 introduced speech-to-text dictation by category — a structured capture layer that lets users dictate content against thematic vocabularies, improving transcription accuracy across specialized domains.
+                </p>
 
                 <!-- Demo Buttons -->
                 <div class="flex flex-wrap justify-center gap-4 mb-6">
@@ -399,12 +402,71 @@
             </div>
         </section>
 
+        <!-- 04. Dictation by Category -->
+        <section class="py-24 bg-surface-container-low/30">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="border-b border-white/5 px-6 py-5 md:px-8">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">04 / Dictation by Category</span>
+                        <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-4">Speech-to-Text with Contextual Vocabulary</h2>
+                    </div>
+
+                    <div class="p-6 md:p-8 lg:p-10 space-y-8">
+                        <div class="max-w-4xl space-y-4 text-base text-on-surface-variant leading-relaxed">
+                            <p>
+                                The workflow originally handled transcription as a downstream step — extract audio, transcribe, review. But as the operation matured, a different pattern emerged: users needed to <span class="text-white font-semibold">capture ideas directly into the system</span> by speaking, not only by uploading existing media.
+                            </p>
+                            <p class="text-white font-semibold">
+                                That gap led to the dictation layer in v0.1.3 — a structured speech-to-capture system with thematic awareness.
+                            </p>
+                            <p>
+                                Instead of treating transcription as a generic audio-to-text problem, the system now organizes capture by domain. The user selects a category — financial, marketing, policy, relationships, or health — and the transcription engine loads a specialized vocabulary with weighted keywords that improve accuracy for that context.
+                            </p>
+                            <p>
+                                A dedicated <span class="text-primary font-semibold">DictationModal</span> component handles the recording flow directly in the browser, while the <span class="text-primary font-semibold">useSpeechToText</span> hook manages recording state, audio submission, and transcription result reactively. The backend exposes a <span class="text-primary font-semibold">POST /api/transcribe</span> endpoint that routes audio through the vocabulary-aware transcriber before returning the result.
+                            </p>
+                        </div>
+
+                        <!-- Architecture Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="rounded-xl border border-primary/25 bg-primary/5 p-5">
+                                <span class="material-symbols-outlined text-primary text-2xl mb-3 block">mic</span>
+                                <h3 class="text-sm font-bold text-white mb-2">DictationModal</h3>
+                                <p class="text-xs text-on-surface-variant leading-relaxed">Browser-based audio capture with category selection and one-click submission.</p>
+                            </div>
+                            <div class="rounded-xl border border-yellow-400/30 bg-yellow-400/5 p-5">
+                                <span class="material-symbols-outlined text-yellow-400 text-2xl mb-3 block">menu_book</span>
+                                <h3 class="text-sm font-bold text-white mb-2">Thematic Vocabulary</h3>
+                                <p class="text-xs text-on-surface-variant leading-relaxed">Per-domain keyword files with weighted terms that steer the transcriber toward domain-relevant interpretations.</p>
+                            </div>
+                            <div class="rounded-xl border border-secondary-container/30 bg-secondary-container/10 p-5">
+                                <span class="material-symbols-outlined text-secondary-container text-2xl mb-3 block">route</span>
+                                <h3 class="text-sm font-bold text-white mb-2">useSpeechToText Hook</h3>
+                                <p class="text-xs text-on-surface-variant leading-relaxed">Reactive state management for the full dictation lifecycle — idle, recording, sending, transcribed, or error.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="rounded-xl border border-primary/30 p-4 bg-primary/5">
+                                <span class="text-xs font-bold text-primary mb-2 block">Operational impact</span>
+                                <p class="text-sm text-on-surface-variant">Reduced the friction between having an idea and having it documented. Users can dictate thoughts in real time and receive structured text ready for review, editing, or routing into the production pipeline.</p>
+                            </div>
+                            <div class="rounded-xl border border-yellow-400/30 p-4 bg-yellow-400/5">
+                                <span class="text-xs font-bold text-yellow-400 mb-2 block">Architecture pattern</span>
+                                <p class="text-sm text-on-surface-variant">Category selection at capture time means the system knows the domain before transcription begins — enabling context-aware processing instead of post-hoc classification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 5. How it was Built -->
         <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
             <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start mb-12">
                     <div class="lg:sticky lg:top-28">
-                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">03 / How the workflow became a real system</span>
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / How the workflow became a real system</span>
                         <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">How the workflow became a real system</h2>
                         <p class="text-lg text-on-surface-variant leading-relaxed">
                             Built with AI-assisted planning, human validation, controlled testing and a real full-stack workflow behind the interface.
@@ -602,7 +664,7 @@
         <!-- 05. Skills learned and applied -->
         <section class="py-24 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="mb-12">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / Skills learned and applied</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / Skills learned and applied</span>
                 <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Skills learned and applied</h2>
                 <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">
                     The capabilities developed while turning an operational problem into a real AI workflow.
@@ -647,7 +709,7 @@
         <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
             <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="mb-12">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / Tools and models behind the workflow</span>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / Tools and models behind the workflow</span>
                     <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Tools and models behind the workflow</h2>
                     <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed">
                         The stack used to support the operation, from planning to transcription, voice generation and delivery.
@@ -678,6 +740,11 @@
                             <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Generating narrated audio in neural voices.</span>
                         </div>
                         <div class="group grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5 transition-colors hover:bg-yellow-400/5">
+                            <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400"><span class="material-symbols-outlined text-primary text-base mr-2 align-middle">mic</span> Dictation / STT</span>
+                            <span class="text-sm font-semibold text-primary transition-colors group-hover:text-yellow-400">faster-whisper + vocabulary</span>
+                            <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Category-aware speech-to-text with domain-specific keyword weighting.</span>
+                        </div>
+                        <div class="group grid grid-cols-1 md:grid-cols-[0.7fr_0.9fr_1.4fr] gap-3 px-6 py-5 transition-colors hover:bg-yellow-400/5">
                             <span class="text-sm font-bold text-white transition-colors group-hover:text-yellow-400"><span class="material-symbols-outlined text-primary text-base mr-2 align-middle">movie</span> Media Processing</span>
                             <span class="text-sm font-semibold text-primary transition-colors group-hover:text-yellow-400">ffmpeg / yt-dlp</span>
                             <span class="text-sm text-on-surface-variant transition-colors group-hover:text-yellow-400">Extracting audio and handling video sources.</span>
@@ -706,7 +773,7 @@
         <section class="py-24 max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-start">
                 <div class="lg:sticky lg:top-28">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / What I learned</span>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / What I learned</span>
                     <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">What I learned</h2>
                     <div class="rounded-2xl border border-yellow-400/30 bg-yellow-400/5 p-6 mt-8">
                         <span class="material-symbols-outlined text-yellow-400 text-3xl mb-4 block">tips_and_updates</span>
@@ -736,7 +803,7 @@
         <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="glass-card rounded-2xl border border-white/5 p-6 md:p-10">
-                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Next case study</span>
+                    <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">09 / Next case study</span>
                     <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-4">Next case study: Memory Bank in Practice</h2>
                     <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-8">
                         How governance, documentation and project memory kept an AI-assisted workflow under control.
@@ -766,7 +833,7 @@
         <!-- 09. Final invitation -->
         <section class="py-24">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">09 / Final invitation</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">10 / Final invitation</span>
                 <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Let's turn your operational bottleneck into an AI workflow</h2>
                 <div class="max-w-3xl mx-auto space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
                     <p class="text-white font-semibold">Voice-RMV is one example of how I think, plan and build.</p>
@@ -844,8 +911,11 @@
 
     <script>
         function openAudioModal(lang) {
-            const src = lang === 'en' ? 'assets/voice-demo-en.mp3' : 'assets/voice-demo-ptbr.mp3';
-            const audio = new Audio(src);
+            const base = 'assets/voice/';
+            const file = lang === 'en'
+                ? "Voice-RMV is a practical proof of how AI-assisted workflows turn operational bot.mp3"
+                : "Voice-RMV é a prova prática de como workflows assistidos por IA transformam garg.mp3";
+            const audio = new Audio(base + encodeURIComponent(file));
             audio.play();
         }
     </script>
