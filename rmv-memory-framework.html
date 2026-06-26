@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>RMV Memory Framework | AI Workflow Automation Specialist</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css?v=11">
+    <script src="tailwind.config.js?v=11"></script>
+    <style>
+        .marquee-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 100%;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: scroll-text 25s linear infinite;
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        #magnifier-modal {
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(4px);
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            width: 100vw;
+            height: 100vh;
+        }
+        #magnifier-modal[open] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #magnifier-modal::backdrop {
+            background: rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface">
+
+    <!-- NavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-white/5">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <a href="memory-bank-rmv.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary">arrow_back</span>
+                <span class="font-label-md text-primary font-semibold tracking-wider uppercase">Back to V1: Memory Bank RMV</span>
+            </a>
+            <button onclick="document.getElementById('contact-modal').showModal()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer">
+                Contact Me
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <!-- Hero -->
+        <section class="relative pt-[10px] pb-24 overflow-hidden px-margin-mobile md:px-margin-desktop border-b border-white/5">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="absolute inset-0 hero-gradient"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+            </div>
+            <div class="relative z-10 max-w-full mx-auto text-center flex flex-col items-center">
+
+                <!-- Eyebrow -->
+                <span class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Memory Bank RMV → RMV Memory Framework (V2)</span>
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-primary/20 shadow-[0_0_12px_rgba(79,172,254,0.1)]">
+                    <span class="material-symbols-outlined text-primary text-sm flex-shrink-0">terminal</span>
+                    <span class="marquee-wrap max-w-[200px] md:max-w-[300px]">
+                        <span class="marquee-text text-xs text-on-surface-variant font-bold uppercase tracking-wider">REUSABLE CLI · PROJECT MEMORY · AI GOVERNANCE · HUMAN-IN-THE-LOOP · WORKFLOW AUTOMATION · OPERATIONAL CONSISTENCY</span>
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-display-lg font-extrabold mb-6 leading-snug text-white">
+                    RMV Memory Framework
+                </h1>
+
+                <!-- Tagline -->
+                <p class="text-lg md:text-xl text-primary font-semibold mb-6 max-w-3xl leading-relaxed">
+                    A reusable CLI that turns project memory into something you can generate, not rebuild.
+                </p>
+
+                <!-- Description -->
+                <p class="text-base md:text-lg text-on-surface-variant/80 max-w-4xl leading-relaxed mb-6">
+                    The RMV Memory Framework takes the manual memory pattern from V1 and makes it repeatable. A terminal CLI scaffolds the memory structure for a new project, and configurable variables adapt that structure to each project — while keeping the same human-in-the-loop execution discipline.
+                </p>
+
+                <p class="text-base md:text-lg text-on-surface-variant/80 max-w-4xl leading-relaxed mb-10">
+                    It turns AI-assisted work from temporary chat context into persistent, auditable project memory — now generated in one command instead of assembled by hand.
+                </p>
+
+                <!-- CTA -->
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <a href="#workflow" class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block shadow-lg shadow-primary/20">
+                        See How It Works ↓
+                    </a>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap justify-center gap-2 max-w-3xl">
+                    <span class="text-xs bg-primary/10 text-primary px-2.5 py-1.5 rounded-full font-semibold">Reusable CLI</span>
+                    <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2.5 py-1.5 rounded-full font-semibold">Project Memory</span>
+                    <span class="text-xs bg-primary/10 text-primary px-2.5 py-1.5 rounded-full font-semibold">AI Governance</span>
+                    <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2.5 py-1.5 rounded-full font-semibold">Human-in-the-loop</span>
+                    <span class="text-xs bg-primary/10 text-primary px-2.5 py-1.5 rounded-full font-semibold">Workflow Automation</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 1. FROM V1 -->
+        <section class="py-10 md:py-16 bg-surface-container-low/30">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                    <div class="border-b border-white/5 px-6 py-5 md:px-8">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">01 / FROM V1</span>
+                        <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white">Where V1 Left Off</h2>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="p-6 md:p-8 lg:p-10 space-y-4 text-base text-on-surface-variant leading-relaxed border-b lg:border-b-0 lg:border-r border-white/5">
+                            <p>
+                                V1 proved that persistent project memory keeps AI agents aligned across sessions — but every project had to be assembled by hand. The governance discipline was sound, but the setup cost was too high to scale.
+                            </p>
+                            <p class="text-white font-semibold">
+                                V2 keeps the same governance philosophy and removes the manual setup. The pattern is no longer something you build — it is something the framework gives you.
+                            </p>
+                        </div>
+                        <div class="p-6 md:p-8 lg:p-10 flex items-center">
+                            <div class="rounded-xl border border-primary/20 bg-primary/5 p-5 w-full text-center">
+                                <span class="material-symbols-outlined text-primary text-3xl mb-3 block">account_tree</span>
+                                <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                                    See how the pattern was first proven — built by hand, tested on real projects, and validated across months of AI-assisted development.
+                                </p>
+                                <a href="memory-bank-rmv.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary text-sm font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                                    Explore V1 →
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. WHAT CHANGED -->
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">02 / WHAT CHANGED</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">What's New in V2</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-10">
+                    Three things turn the V1 pattern into a framework:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-4 block">terminal</span>
+                        <h3 class="font-bold text-white mb-2">A CLI that scaffolds memory</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Instead of creating memory files by hand, one command generates the <span class="text-white font-semibold">.rmvsystem-memory</span> bundle already structured: workflow, rules, context, plan, progress, architecture, and agent entry files.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-4 block">tune</span>
+                        <h3 class="font-bold text-white mb-2">Variables that adapt per project</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            The framework is project-agnostic. Configurable variables shape the bundle to fit the project it manages, so the same structure works across different kinds of work without being rewritten each time.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-4 block">dashboard</span>
+                        <h3 class="font-bold text-white mb-2">A visual CLI for the console</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            A terminal interface makes the framework operable and demonstrable: framework scope, the managed project, available commands, and workflow order are all visible at a glance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Key line -->
+                <div class="relative pl-8 border-l-2 border-primary/50 py-2 mb-12">
+                    <p class="text-lg md:text-xl text-primary font-semibold leading-relaxed">
+                        The structure is no longer something you remember to build. It's something the framework gives you.
+                    </p>
+                </div>
+
+                <!-- Folder tree -->
+                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40">
+                    <div class="px-6 py-4 border-b border-white/5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Generated bundle structure</span>
+                    </div>
+                    <img src="./assets/voice/file.png" class="w-full h-auto" alt="Generated .rmvsystem-memory bundle structure">
+                    <figcaption class="px-6 py-3 text-xs text-on-surface-variant border-t border-white/5">
+                        <span class="font-bold text-primary">.rmvsystem-memory/</span> — The generated bundle structure with workflow, rules, context, plan, and agent entry files.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 3. THE INTERFACE -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">03 / THE INTERFACE</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">The Visual CLI</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-12">
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                        <p>
+                            To make the framework easy to operate and demonstrate, I built a terminal-based visual CLI inspired by agentic coding tools. It separates the framework from the project it manages: the framework is project-agnostic, and the managed project shown is only the current one.
+                        </p>
+                        <p>
+                            The CLI is structured to support different project types — web apps, backend APIs, automation/CLI tools, and model-ops projects — with the per-project variables doing the adapting.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-primary/25 bg-primary/5 p-6">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Project Types</span>
+                        <div class="space-y-3 mt-4">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">web</span>
+                                <span class="text-sm text-white">Web Apps</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">api</span>
+                                <span class="text-sm text-white">Backend APIs</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-yellow-400 text-lg">terminal</span>
+                                <span class="text-sm text-white">Automation / CLI Tools</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">neurology</span>
+                                <span class="text-sm text-white">Model-Ops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLI Screenshot area -->
+                <figure class="rounded-2xl border border-white/10 overflow-hidden bg-surface-container/40 cursor-pointer group relative" onclick="openMagnifier('./assets/profile/cli_1.png')">
+                    <img src="./assets/profile/cli_1.png" class="w-full h-auto" alt="RMV Memory Framework CLI terminal interface">
+                    <div class="absolute top-3 right-3 bg-primary text-on-primary text-[11px] font-bold px-3 py-1 rounded-full shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity">View full screen ↗</div>
+                    <figcaption class="px-6 py-4 text-xs text-on-surface-variant border-t border-white/5">
+                        <span class="font-bold text-primary">RMV Memory Framework CLI</span> — A reusable operational memory framework managing one real project at a time.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 4. THE WORKFLOW -->
+        <section id="workflow" class="py-24">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">04 / THE WORKFLOW</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">How the Framework Works</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-12">
+                    The CLI scaffolds the memory. The workflow governs the execution. The framework does not try to make AI fully autonomous — it makes AI-assisted execution structured, traceable, and human-reviewed.
+                </p>
+
+                <!-- Workflow Flow + Gates Story -->
+                <div class="glass-card rounded-2xl border border-white/5 mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Left: Workflow Timeline -->
+                        <div class="p-6 md:p-10 rounded-t-2xl lg:rounded-tr-none lg:rounded-bl-2xl border-b lg:border-b-0 lg:border-r border-white/5">
+                            <div class="relative pl-8">
+                                <div class="absolute left-[1.7rem] top-4 bottom-4 w-px bg-gradient-to-b from-primary via-yellow-400 to-tertiary"></div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-primary text-lg">person</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Step 1</span>
+                                        <p class="text-sm font-semibold text-white">User request arrives</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">A task, fix, or feature is submitted to the system.</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-primary text-lg">description</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Step 2</span>
+                                        <p class="text-sm font-semibold text-white">Agent reads workflow</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">The agent consults the workflow file before taking any action.</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-primary text-lg">memory</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Step 3</span>
+                                        <p class="text-sm font-semibold text-white">Agent reviews project memory</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">Past decisions, constraints, and active context are loaded.</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-primary text-lg">my_location</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Step 4</span>
+                                        <p class="text-sm font-semibold text-white">Agent identifies current state</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">The agent maps where the project stands relative to the request.</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-yellow-400/40 bg-yellow-400/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-yellow-400 text-lg">edit_note</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Step 5</span>
+                                        <p class="text-sm font-semibold text-white">Agent prepares an implementation plan</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">Scope, files, risks, and validation criteria are documented.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Gate 1 -->
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-red-400/40 bg-red-400/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(255,180,171,0.25)]">
+                                        <span class="material-symbols-outlined text-error text-lg">gavel</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-error uppercase tracking-wider">Gate 1</span>
+                                        <p class="text-sm font-semibold text-white">Human reviews and approves</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">← Execution only proceeds after human sign-off</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-tertiary/40 bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-tertiary text-lg">build</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-tertiary uppercase tracking-wider">Step 6</span>
+                                        <p class="text-sm font-semibold text-white">Agent executes within approved scope</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">Implementation is limited to what was reviewed and authorized.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Gate 2 -->
+                                <div class="relative flex items-center gap-4 pb-6">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-red-400/40 bg-red-400/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(255,180,171,0.25)]">
+                                        <span class="material-symbols-outlined text-error text-lg">fact_check</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-error uppercase tracking-wider">Gate 2</span>
+                                        <p class="text-sm font-semibold text-white">Result is validated</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">← Task is only complete with observable evidence</p>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center gap-4">
+                                    <div class="relative z-10 w-10 h-10 rounded-full border-2 border-tertiary/40 bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                        <span class="material-symbols-outlined text-tertiary text-lg">update</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-tertiary uppercase tracking-wider">Step 7</span>
+                                        <p class="text-sm font-semibold text-white">Memory is updated</p>
+                                        <p class="text-xs text-on-surface-variant mt-0.5">Progress, decisions, and new context are written to persistent files.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Sticky panel — Why the gates exist -->
+                        <div class="lg:sticky lg:top-28 self-start p-6 md:p-10 rounded-b-2xl lg:rounded-bl-none lg:rounded-br-2xl">
+                            <div class="rounded-2xl border border-red-400/20 overflow-hidden bg-red-400/[0.03]">
+                                <div class="px-5 py-4 border-b border-white/5 bg-red-400/5">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-error flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm">gavel</span>
+                                        Why the Gates Exist
+                                    </span>
+                                </div>
+                                <div class="p-5 space-y-4">
+                                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                                        Each gate in this workflow came from a real failure — not from theory.
+                                    </p>
+
+                                    <div class="rounded-xl border border-white/5 bg-surface-container p-4">
+                                        <span class="text-xs font-bold uppercase tracking-widest text-error mb-2 block">Gate 1 — The File Truncation Incident</span>
+                                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                                            During Voice-RMV development, the agent was asked to update <span class="text-white font-semibold">progress.md</span>. Without a plan-first rule, it overwrote the entire file with a partial summary — erasing weeks of validated progress entries in one write operation.
+                                        </p>
+                                        <div class="mt-3 pt-3 border-t border-white/5">
+                                            <span class="text-xs font-bold text-white">Rule created:</span>
+                                            <p class="text-sm text-on-surface-variant leading-relaxed mt-1">
+                                                <span class="text-yellow-400 font-semibold">File Truncation Prevention</span> — read the complete file before updating. Never rewrite blindly.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-on-surface-variant leading-relaxed italic border-t border-white/5 pt-3">
+                                        The gates are not bureaucratic overhead. They are scars from real mistakes — encoded as rules so the same failure does not happen twice.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WHERE IT RUNS -->
+        <section class="py-24 bg-surface-container-low/30 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">05 / WHERE IT RUNS</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">Proven on Real Projects</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-10">
+                    This is not a theoretical framework. It has been applied to real work, at two stages of its own evolution:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-primary">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-2 block">record_voice_over</span>
+                        <h3 class="font-bold text-white mb-2">V1 — Voice-RMV</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                            The manual memory pattern was proven on the Voice-RMV project, where it kept multiple AI agents aligned across months of development.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="voice-rmv.html" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-lg hover:bg-primary/20 transition-all">
+                                View Voice-RMV
+                                <span class="material-symbols-outlined text-xs">open_in_new</span>
+                            </a>
+                            <a href="memory-bank-rmv.html" class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-lg hover:bg-primary/20 transition-all">
+                                V1 Origin Story
+                                <span class="material-symbols-outlined text-xs">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-yellow-400">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-2 block">neurology</span>
+                        <h3 class="font-bold text-white mb-2">V2 — Neural Lab AI</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                            The CLI framework is currently managing Neural Lab AI: a web application for monitoring, managing, and running inference on local models with llama.cpp, planned to integrate into Playbook-RMV as its model dashboard and inference control layer.
+                        </p>
+                        <span class="inline-flex items-center gap-1 px-3 py-1.5 border border-yellow-400/30 text-yellow-400 text-xs font-semibold rounded-lg cursor-default">
+                            Case study coming soon
+                            <span class="material-symbols-outlined text-xs">pending</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-primary/50 py-2">
+                    <p class="text-lg md:text-xl text-primary font-semibold leading-relaxed">
+                        V1 was proven by hand. V2 is being proven by command.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. OPERATIONAL TRUTH -->
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / OPERATIONAL TRUTH</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">Framework Ready vs. Project In Progress</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_0.6fr] gap-10 lg:gap-14 items-center mb-10">
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+                        <p>
+                            In the project it currently manages, the framework documents the real state of the repository: backend partially implemented, frontend still in progress, specific technical constraints still open.
+                        </p>
+                        <p>
+                            That is not a framework failure. It is the framework doing its job — documenting the real state instead of pretending the system is complete.
+                        </p>
+                    </div>
+
+                    <!-- Status card -->
+                    <div class="rounded-2xl border border-white/10 bg-surface-container/40 p-6">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-4">Status Card</span>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-on-surface-variant">Framework status</span>
+                                <span class="text-xs font-bold text-green-400">ready</span>
+                            </div>
+                            <div class="w-full h-px bg-white/5"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-on-surface-variant">Managed project</span>
+                                <span class="text-xs font-bold text-yellow-400">Neural Lab AI — in progress (by design)</span>
+                            </div>
+                            <div class="w-full h-px bg-white/5"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-on-surface-variant">Memory status</span>
+                                <span class="text-xs font-bold text-green-400">consistent</span>
+                            </div>
+                            <div class="w-full h-px bg-white/5"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-on-surface-variant">Execution gate</span>
+                                <span class="text-xs font-bold text-primary">human approval required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-8">
+                    <p class="text-lg md:text-xl text-white font-semibold leading-relaxed mb-2">
+                        An incomplete managed project is not a framework failure. Inconsistent memory is.
+                    </p>
+                    <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                        The framework is production-ready. The managed project shown, Neural Lab AI, is intentionally mid-build — that's exactly why its memory has to be accurate.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ROBERTO'S ROLE -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / ROBERTO'S ROLE</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">My Role</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-10">
+                    <div class="space-y-4 text-base text-on-surface-variant leading-relaxed self-center">
+                        <p>
+                            This framework came from a real operational problem, not a technical experiment. Working with AI-assisted projects, I kept hitting the same bottleneck: agents could generate output, but they lost context, forgot decisions, and operated without a reliable picture of the project's real state. I identified that the deeper issue wasn't generation — it was operational memory.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl border border-white/5 p-6">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-primary mb-4">My Direct Contribution</span>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">psychology</span>
+                                <p class="text-sm text-on-surface-variant">Framed the recurring problem of context loss as a memory problem, not a generation problem</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-yellow-400 text-lg flex-shrink-0">gavel</span>
+                                <p class="text-sm text-on-surface-variant">Defined the workflow-before-execution rule and human approval as a required gate</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">account_tree</span>
+                                <p class="text-sm text-on-surface-variant">Designed the memory bundle structure around real project needs</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-yellow-400 text-lg flex-shrink-0">science</span>
+                                <p class="text-sm text-on-surface-variant">Tested it inside real projects (Voice-RMV, then Neural Lab AI) instead of treating it as theory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation Flow Diagram -->
+                <style>
+                    .transform-section {
+                        position: relative;
+                        padding: 80px 32px;
+                        overflow: hidden;
+                        background:
+                            radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.06), transparent 34%),
+                            linear-gradient(180deg, #0b1220 0%, #08111f 100%);
+                        border-radius: 1.5rem;
+                        border: 1px solid rgba(125, 180, 255, 0.12);
+                    }
+                    .transform-section::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+                        opacity: 0.35;
+                        pointer-events: none;
+                    }
+                    .transform-header {
+                        position: relative;
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 14px;
+                        margin-bottom: 48px;
+                        text-align: center;
+                    }
+                    .transform-header h2 {
+                        margin: 0;
+                        font-size: 14px;
+                        letter-spacing: 0.42em;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        color: #f5f7fb;
+                    }
+                    .transform-header h2 span {
+                        color: #00e5ff;
+                        text-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+                    }
+                    .transform-line {
+                        width: 96px;
+                        height: 1px;
+                        background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+                        opacity: 0.7;
+                    }
+                    .transform-dot {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 999px;
+                        background: #00e5ff;
+                        box-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+                    }
+                    .transform-flow {
+                        position: relative;
+                        z-index: 1;
+                        max-width: 1380px;
+                        margin: 0 auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 28px;
+                    }
+                    .t-card {
+                        width: 280px;
+                        min-height: 360px;
+                        padding: 36px 28px;
+                        border-radius: 22px;
+                        border: 1px solid rgba(125, 180, 255, 0.28);
+                        background: rgba(15, 24, 40, 0.58);
+                        backdrop-filter: blur(16px);
+                        -webkit-backdrop-filter: blur(16px);
+                        text-align: center;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow:
+                            0 0 0 1px rgba(0, 229, 255, 0.06) inset,
+                            0 20px 50px rgba(0, 0, 0, 0.42),
+                            0 0 34px rgba(0, 229, 255, 0.05);
+                        animation: fadeInUp 0.7s ease both;
+                        transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+                    }
+                    .t-card::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background:
+                            radial-gradient(circle at 50% -10%, rgba(0, 229, 255, 0.18), transparent 45%),
+                            linear-gradient(180deg, rgba(255,255,255,0.035), transparent 40%);
+                        opacity: 0.8;
+                        pointer-events: none;
+                    }
+                    .t-card:hover {
+                        transform: translateY(-8px);
+                        border-color: rgba(0, 229, 255, 0.52);
+                        box-shadow:
+                            0 0 0 1px rgba(0, 229, 255, 0.12) inset,
+                            0 28px 70px rgba(0, 0, 0, 0.55),
+                            0 0 42px rgba(0, 229, 255, 0.16);
+                    }
+                    .t-icon {
+                        position: relative;
+                        z-index: 1;
+                        width: 76px;
+                        height: 76px;
+                        margin: 0 auto 26px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid rgba(0, 229, 255, 0.55);
+                        color: #00e5ff;
+                        font-size: 32px;
+                        box-shadow:
+                            0 0 0 10px rgba(0, 229, 255, 0.04),
+                            0 0 28px rgba(0, 229, 255, 0.26),
+                            inset 0 0 18px rgba(0, 229, 255, 0.12);
+                        animation: pulseGlow 2.6s ease-in-out infinite;
+                    }
+                    .t-icon .material-symbols-outlined {
+                        font-size: 32px;
+                        color: #00e5ff;
+                    }
+                    .t-number {
+                        position: relative;
+                        z-index: 1;
+                        display: block;
+                        margin-bottom: 12px;
+                        color: #00e5ff;
+                        font-size: 28px;
+                        font-weight: 800;
+                        letter-spacing: 0.04em;
+                        text-shadow: 0 0 16px rgba(0, 229, 255, 0.35);
+                    }
+                    .t-card h3 {
+                        position: relative;
+                        z-index: 1;
+                        margin: 0;
+                        font-size: 23px;
+                        line-height: 1.18;
+                        font-weight: 800;
+                        color: #f5f7fb;
+                    }
+                    .t-mini-line {
+                        position: relative;
+                        z-index: 1;
+                        width: 48px;
+                        height: 2px;
+                        margin: 20px auto 22px;
+                        background: #00e5ff;
+                        box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+                    }
+                    .t-card p {
+                        position: relative;
+                        z-index: 1;
+                        margin: 0;
+                        font-size: 16px;
+                        line-height: 1.55;
+                        color: #9fb3c8;
+                    }
+                    .t-arrow {
+                        color: #00e5ff;
+                        font-size: 44px;
+                        line-height: 1;
+                        font-weight: 300;
+                        text-shadow: 0 0 10px rgba(0, 229, 255, 0.35), 0 0 24px rgba(0, 229, 255, 0.3);
+                        animation: arrowPulse 2s ease-in-out infinite;
+                    }
+                    .delay-1 { animation-delay: 0.05s; }
+                    .delay-2 { animation-delay: 0.15s; }
+                    .delay-3 { animation-delay: 0.25s; }
+                    .delay-4 { animation-delay: 0.35s; }
+
+                    @keyframes fadeInUp {
+                        from { opacity: 0; transform: translateY(28px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    @keyframes pulseGlow {
+                        0%, 100% {
+                            box-shadow: 0 0 0 10px rgba(0, 229, 255, 0.04), 0 0 24px rgba(0, 229, 255, 0.22), inset 0 0 18px rgba(0, 229, 255, 0.10);
+                        }
+                        50% {
+                            box-shadow: 0 0 0 12px rgba(0, 229, 255, 0.06), 0 0 38px rgba(0, 229, 255, 0.44), inset 0 0 26px rgba(0, 229, 255, 0.18);
+                        }
+                    }
+                    @keyframes arrowPulse {
+                        0%, 100% { opacity: 0.72; transform: translateX(0); }
+                        50% { opacity: 1; transform: translateX(5px); }
+                    }
+                    @media (max-width: 1100px) {
+                        .transform-flow { flex-wrap: wrap; }
+                        .t-card { width: min(100%, 320px); }
+                    }
+                    @media (max-width: 760px) {
+                        .transform-section { padding: 56px 18px; }
+                        .transform-header { gap: 10px; margin-bottom: 36px; }
+                        .transform-header h2 { font-size: 12px; letter-spacing: 0.22em; }
+                        .transform-line { width: 44px; }
+                        .transform-flow { flex-direction: column; gap: 20px; }
+                        .t-arrow { transform: rotate(90deg); font-size: 34px; animation: none; }
+                        .t-card { width: 100%; max-width: 360px; min-height: auto; padding: 30px 24px; }
+                    }
+                </style>
+
+                <div class="transform-section">
+                    <div class="transform-header">
+                        <span class="transform-line"></span>
+                        <span class="transform-dot"></span>
+                        <h2>Transformation <span>Flow</span></h2>
+                        <span class="transform-dot"></span>
+                        <span class="transform-line"></span>
+                    </div>
+
+                    <div class="transform-flow">
+                        <article class="t-card delay-1">
+                            <div class="t-icon">
+                                <span class="material-symbols-outlined">warning</span>
+                            </div>
+                            <span class="t-number">01</span>
+                            <h3>Operational Pain</h3>
+                            <div class="t-mini-line"></div>
+                            <p>Fragmented processes, context switching, and manual work slow everything down.</p>
+                        </article>
+
+                        <div class="t-arrow">→</div>
+
+                        <article class="t-card delay-2">
+                            <div class="t-icon">
+                                <span class="material-symbols-outlined">account_tree</span>
+                            </div>
+                            <span class="t-number">02</span>
+                            <h3>Systems Thinking</h3>
+                            <div class="t-mini-line"></div>
+                            <p>Map the system, define principles, and design scalable workflows.</p>
+                        </article>
+
+                        <div class="t-arrow">→</div>
+
+                        <article class="t-card delay-3">
+                            <div class="t-icon">
+                                <span class="material-symbols-outlined">database</span>
+                            </div>
+                            <span class="t-number">03</span>
+                            <h3>Memory Framework</h3>
+                            <div class="t-mini-line"></div>
+                            <p>Capture, organize, and connect project memory for clarity and reuse.</p>
+                        </article>
+
+                        <div class="t-arrow">→</div>
+
+                        <article class="t-card delay-4">
+                            <div class="t-icon">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <span class="t-number">04</span>
+                            <h3>AI-Assisted Execution<br>with Human Review</h3>
+                            <div class="t-mini-line"></div>
+                            <p>AI supports the work. Humans approve, validate, and protect final accountability.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. WHY IT MATTERS -->
+        <section class="py-24 bg-surface-container-low/10">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / WHY IT MATTERS</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Business Value</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-14">
+                    The value is not the folder structure. It's continuity, traceability, reduced rework, and safer AI-assisted execution — turning operational memory from a hidden cost into a measurable advantage.
+                </p>
+
+                <!-- Before/After table -->
+                <div class="glass-card rounded-2xl border border-white/5 overflow-hidden mb-14">
+                    <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
+                        <div class="p-6 md:p-8">
+                            <span class="block text-xs font-bold uppercase tracking-widest text-error mb-6">Without the Framework</span>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error text-lg flex-shrink-0">close</span>
+                                    <span class="text-sm text-on-surface-variant">Context loss between sessions</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error text-lg flex-shrink-0">close</span>
+                                    <span class="text-sm text-on-surface-variant">Repeated explanations for each model</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error text-lg flex-shrink-0">close</span>
+                                    <span class="text-sm text-on-surface-variant">Inconsistent execution across agents</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error text-lg flex-shrink-0">close</span>
+                                    <span class="text-sm text-on-surface-variant">Undocumented decisions and drift</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error text-lg flex-shrink-0">close</span>
+                                    <span class="text-sm text-on-surface-variant">Unplanned rework and regressions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 bg-primary/5">
+                            <span class="block text-xs font-bold uppercase tracking-widest text-primary mb-6">With the Framework</span>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check_circle</span>
+                                    <span class="text-sm text-on-surface-variant">Resume projects without replaying context</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check_circle</span>
+                                    <span class="text-sm text-on-surface-variant">Consistent alignment across tools and agents</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check_circle</span>
+                                    <span class="text-sm text-on-surface-variant">Plan-before-execution discipline</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check_circle</span>
+                                    <span class="text-sm text-on-surface-variant">Traceable, validated progress</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check_circle</span>
+                                    <span class="text-sm text-on-surface-variant">Audit-ready project memory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Value by audience -->
+                <div>
+                    <span class="block text-sm font-bold uppercase tracking-widest text-primary mb-6 text-center">Value, by Who It Serves</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                            <div class="px-6 py-4 border-b border-white/5 bg-primary/5 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">terminal</span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-primary">For the Developer</span>
+                            </div>
+                            <div class="p-5 space-y-3">
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Switch between Claude, Codex, or Gemini without re-briefing</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Scaffold the full memory bundle in one command</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Reuse the same pattern across every project you own</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                            <div class="px-6 py-4 border-b border-white/5 bg-green-400/5 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-green-400">business_center</span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-green-400">For the Business</span>
+                            </div>
+                            <div class="p-5 space-y-3">
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-green-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Fewer hours re-explaining context to models</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-green-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Less regression from forgotten decisions</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-green-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Faster recovery for paused or handed-off projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-2xl border border-white/5 overflow-hidden">
+                            <div class="px-6 py-4 border-b border-white/5 bg-yellow-400/5 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-yellow-400">verified_user</span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-yellow-400">For Trust &amp; Audit</span>
+                            </div>
+                            <div class="p-5 space-y-3">
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Traceable, human-validated progress at every cycle</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Decisions documented — not lost in chat history</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-yellow-400 text-base flex-shrink-0">check_circle</span>
+                                    <span class="text-xs text-on-surface-variant">Audit-ready memory for compliance or review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CAPABILITY -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">09 / CAPABILITY</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-8">What This Demonstrates</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-10">
+                    This project shows my ability to spot operational friction in AI-assisted work and turn it into a reusable system.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-3 block">account_tree</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-primary mb-1">Workflow Design</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">AI-assisted workflow design from operational friction to structured execution.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-3 block">gavel</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-yellow-400 mb-1">AI Governance</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Human-in-the-loop governance with non-negotiable approval gates.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-3 block">description</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-primary mb-1">Documentation</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Persistent project memory structure designed for consistency across sessions.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-3 block">terminal</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-yellow-400 mb-1">CLI Tooling</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Reusable terminal CLI that scaffolds memory in one command.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-primary text-2xl mb-3 block">verified_user</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-primary mb-1">Human Review</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Execution discipline with human validation before any change is committed.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border border-white/5">
+                        <span class="material-symbols-outlined text-yellow-400 text-2xl mb-3 block">memory</span>
+                        <span class="block text-xs font-bold uppercase tracking-wider text-yellow-400 mb-1">Project Memory</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Operational memory architecture that persists beyond any single chat session.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-8">
+                    <p class="text-base md:text-lg text-white font-semibold leading-relaxed">
+                        I don't just use AI tools — I design the operational structure around them so AI-assisted work becomes consistent, traceable, and human-reviewed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FINAL INVITATION -->
+        <section class="py-24 bg-surface-container-low/25 border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">10 / FINAL INVITATION</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Let's Build Your Operational Memory</h2>
+                <div class="max-w-3xl mx-auto space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed mb-8">
+                    <p>I design practical AI workflow systems for teams, builders, and operators who need more structure, continuity, and human-reviewed execution. If your AI-assisted projects keep losing context, repeating decisions, or drifting from the real project state, I can design a project memory and workflow governance system around your existing tools.</p>
+                </div>
+
+                <div class="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-8 mb-8 max-w-2xl mx-auto">
+                    <p class="text-lg md:text-xl text-primary font-semibold leading-relaxed">
+                        One framework. Multiple projects. Persistent operational memory.
+                    </p>
+                </div>
+
+                <div class="text-base text-on-surface-variant leading-relaxed mb-8 max-w-2xl mx-auto">
+                    <p class="text-white font-semibold">Roberto Vilela — AI Workflow Automation Specialist | Building Operations Systems for Service Businesses | Bilingual PT/EN | Available for Projects & Full-Time Roles</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <button onclick="document.getElementById('contact-modal').showModal()" class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20 cursor-pointer">
+                        Let's Talk
+                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                    </button>
+                </div>
+
+                <a href="memory-bank-rmv.html" class="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity text-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">arrow_back</span>
+                    Back to V1: Memory Bank RMV (the origin)
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact Modal -->
+    <dialog id="contact-modal" class="w-full max-w-lg rounded-2xl bg-surface border border-white/10 p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm" style="max-width: 32rem;">
+        <div class="relative p-8">
+            <button onclick="document.getElementById('contact-modal').close()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-surface-container border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+            <h2 class="font-headline-lg text-headline-lg mb-2 text-on-surface">Get in Touch</h2>
+            <p class="text-on-surface-variant text-sm mb-8">Fill out the form below and I'll get back to you within 24 hours.</p>
+
+            <form id="contact-form">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="name">Name</label>
+                        <input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="email">Email</label>
+                        <input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="type">Type</label>
+                        <select id="type" name="type" data-fs-field class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm focus:outline-none focus:border-primary/50 transition-colors">
+                            <option value="">Select an option</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="freelance">Freelance / Consulting</option>
+                            <option value="collaboration">Collaboration</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="message">Message</label>
+                        <textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" data-fs-submit-btn class="w-full py-3.5 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(79,172,254,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">send</span> Send Message
+                    </button>
+                </div>
+            </form>
+
+            <div data-fs-success class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-green-400 mb-4 block">check_circle</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Message Sent!</h3>
+                <p class="text-on-surface-variant text-sm">Thanks for reaching out. I'll respond within 24 hours.</p>
+            </div>
+
+            <div data-fs-error class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-error mb-4 block">error</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Something went wrong</h3>
+                <p class="text-on-surface-variant text-sm">Please try again or email me directly.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Magnifier dialog -->
+    <dialog id="magnifier-modal">
+        <button onclick="closeMagnifier()" class="fixed top-6 right-6 z-[10000] w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all cursor-pointer border border-white/20">
+            <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+        <div id="magnifier-content" class="flex items-center justify-center w-full h-full">
+            <img id="magnifier-img" src="" alt="" class="max-w-[95vw] max-h-[92vh] object-contain cursor-pointer" onclick="closeMagnifier()">
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-white/5 py-8">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center text-sm text-on-surface-variant">
+            <p>&copy; 2026 Roberto Vilela. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://platform.linkedin.com/badges/js/profile.js" defer type="text/javascript"></script>
+    <script>
+        window.addEventListener('load', function () {
+            if (!window.LinkedIn) return;
+
+            window.LinkedIn('set', 'profileUrl', 'https://www.linkedin.com/in/roberto-vilela-ma');
+            window.LinkedIn('renderProfileBadge', 'LI-profile-badge', {
+                'locale': 'en_US',
+                'size': 'medium',
+                'theme': 'dark',
+                'type': 'VERTICAL',
+                'vanity': 'roberto-vilela-ma',
+                'version': 'v1'
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'meewwpvg' });
+    </script>
+
+    <script>
+        const magnifierModal = document.getElementById('magnifier-modal');
+        const magnifierImg = document.getElementById('magnifier-img');
+
+        function openMagnifier(src) {
+            magnifierImg.src = src;
+            magnifierImg.alt = 'Image expanded view';
+            magnifierModal.showModal();
+        }
+
+        function closeMagnifier() {
+            magnifierModal.close();
+        }
+
+        magnifierModal.addEventListener('click', function(e) {
+            if (e.target === magnifierModal) {
+                magnifierModal.close();
+            }
+        });
+    </script>
+
+</body>
+</html>
