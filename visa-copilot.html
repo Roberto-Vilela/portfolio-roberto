@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Copilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c4b5fd",
+                        "tertiary-fixed": "#ede9fe",
+                        "secondary-fixed": "#d8dae6",
+                        "surface-container-low": "#e5e7ed",
+                        "secondary": "#6c6e7e",
+                        "on-primary-fixed": "#1e1b4b",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#7c3aed",
+                        "surface-tint": "#6366f1",
+                        "on-tertiary-container": "#3b1f63",
+                        "on-surface-variant": "#585a68",
+                        "surface-container": "#e2e4ea",
+                        "surface": "#e8eaf0",
+                        "on-secondary-fixed": "#1a1b26",
+                        "surface-container-lowest": "#f0f2f8",
+                        "on-tertiary-fixed-variant": "#5b21b6",
+                        "on-background": "#2e3040",
+                        "background": "#e8eaf0",
+                        "surface-dim": "#d4d6dc",
+                        "secondary-fixed-dim": "#b8baca",
+                        "primary-container": "#818cf8",
+                        "surface-container-highest": "#d6d8de",
+                        "on-secondary-fixed-variant": "#404252",
+                        "tertiary-container": "#a78bfa",
+                        "outline-variant": "#d0d2dc",
+                        "outline": "#8a8c9a",
+                        "surface-bright": "#edeef4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#a5b4fc",
+                        "surface-variant": "#dcdee4",
+                        "error": "#dc2626",
+                        "primary": "#6366f1",
+                        "surface-container-high": "#dcdee4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e0e2ff",
+                        "on-tertiary-fixed": "#2e1065",
+                        "on-surface": "#2e3040",
+                        "on-primary-fixed-variant": "#4338ca",
+                        "on-error-container": "#991b1b",
+                        "on-secondary-container": "#585a68",
+                        "inverse-on-surface": "#e8eaf0",
+                        "inverse-surface": "#2e3040",
+                        "secondary-container": "#d8dae6",
+                        "error-container": "#fee2e2",
+                        "on-primary-container": "#e0e2ff",
+                        "inverse-primary": "#a5b4fc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    "boxShadow": {
+                        "neo-raised": "6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6)",
+                        "neo-pressed": "inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5)",
+                        "neo-raised-hover": "4px 4px 8px rgba(0,0,0,0.1), -4px -4px 8px rgba(255,255,255,0.7)",
+                        "neo-pressed-hover": "inset 6px 6px 12px rgba(0,0,0,0.08), inset -6px -6px 12px rgba(255,255,255,0.6)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #e8eaf0; /* matching the surface variable */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .section-enter {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen font-body flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background shadow-[6px_6px_12px_rgba(0,0,0,0.08),-6px_-6px_12px_rgba(255,255,255,0.6)] flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 rounded-b-2xl mb-8">
+<div class="flex items-center gap-4">
+<span class="text-xl font-semibold tracking-tight text-on-surface dark:text-on-surface">Visa Copilot</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<!-- Navigation logically hidden for transactional landing page -->
+</div>
+<div>
+<a class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-background text-primary font-semibold shadow-neo-raised hover:shadow-neo-pressed transition-shadow duration-300 active:scale-95 text-sm" href="https://wa.me/13512294692?text=Oi%20Roberto%2C%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20Visa%20Copilot" rel="noopener noreferrer" target="_blank">
+                Quero uma demonstração
+            </a>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 gap-24">
+<!-- 1. Hero Section -->
+<section class="w-full flex flex-col lg:flex-row items-center gap-12 pt-12 lg:pt-24">
+<div class="w-full lg:w-1/2 flex flex-col gap-8 text-center lg:text-left">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-semibold text-on-surface leading-tight tracking-tight">
+                    Quantas horas por semana sua equipe gasta respondendo "o que falta no meu processo?" no WhatsApp?
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-medium max-w-2xl mx-auto lg:mx-0">
+                    Dê aos seus clientes visibilidade total do caso deles em tempo real, sem migrar um único dado do seu sistema atual.
+                </p>
+<div class="flex justify-center lg:justify-start pt-4">
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-background text-primary font-semibold shadow-neo-raised hover:shadow-neo-pressed transition-shadow duration-300 active:scale-95 text-lg gap-2" href="https://wa.me/13512294692?text=Oi%20Roberto%2C%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20Visa%20Copilot" rel="noopener noreferrer" target="_blank">
+<span>Quero uma demonstração</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex justify-center">
+<div class="relative w-full max-w-md aspect-square rounded-full bg-background shadow-neo-pressed flex items-center justify-center p-8">
+<!-- Conceptual Illustration Placeholder -->
+<div class="w-full h-full rounded-full bg-background shadow-neo-raised flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-cover rounded-full mix-blend-multiply opacity-90" data-alt="A clean, minimalist 3D rendering of a smartphone displaying a progress bar, floating smoothly above a soft light-gray surface. Soft, volumetric lighting emphasizes a futuristic yet accessible neomorphic aesthetic. A subtle indigo glow emanates from the screen, contrasting with the soft shadows on the gray background. High-key lighting, soft edges, modern UI visualization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJWBbMw9b3Y0tlY0OyLw-SqWPu23RsO-N6u-_MxAwcqQmI6UjCcuOhB6nIXXCDUHRoto9hQ5kJ8ubOGJfOJPsa2gRD9HNx9vzX_8XjF3yBCb4RtNk_VuB-YwR_9Ajin25-Qn1QWamw7jNPS3ie_ffPRX15LN8vc753FBjr6Q4qPoi8hfAdU1Pv0VM8H6vrVez1hlFDg0hBffhFeesuZeybq0Ob-_PsACwNdwFiv_5ka-6ckiRSbX7uctDgiiTub6ZV7x7nLNp0xDJb"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. O Problema -->
+<section class="w-full flex flex-col gap-12 pt-12">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface mb-4">A realidade dolorosa</h2>
+<p class="text-lg text-on-surface-variant font-medium">Você é especialista, mas trabalha como atendente de call center.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pain Point 1 -->
+<div class="bg-background rounded-2xl p-8 shadow-neo-pressed flex flex-col gap-4 items-center text-center">
+<div class="w-16 h-16 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-error mb-2">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</div>
+<h3 class="text-xl font-semibold text-on-surface">WhatsApp sobrecarregado</h3>
+<p class="text-on-surface-variant">Mensagens infinitas e perdidas no mar de conversas diárias. O foco some.</p>
+</div>
+<!-- Pain Point 2 -->
+<div class="bg-background rounded-2xl p-8 shadow-neo-pressed flex flex-col gap-4 items-center text-center">
+<div class="w-16 h-16 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-error mb-2">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="text-xl font-semibold text-on-surface">Documento errado</h3>
+<p class="text-on-surface-variant">Cliente envia foto tremida, incompleta ou o documento errado, gerando retrabalho constante.</p>
+</div>
+<!-- Pain Point 3 -->
+<div class="bg-background rounded-2xl p-8 shadow-neo-pressed flex flex-col gap-4 items-center text-center">
+<div class="w-16 h-16 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-error mb-2">
+<span class="material-symbols-outlined text-3xl">hourglass_empty</span>
+</div>
+<h3 class="text-xl font-semibold text-on-surface">Ponto cego da equipe</h3>
+<p class="text-on-surface-variant">Ninguém sabe quem está atrasado sem abrir cada arquivo no sistema antigo.</p>
+</div>
+</div>
+</section>
+<!-- 3. O que é o Visa Copilot -->
+<section class="w-full bg-background rounded-3xl shadow-neo-raised p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2">
+<div class="w-full aspect-[1.83/1] rounded-2xl bg-background shadow-neo-pressed overflow-hidden relative">
+<img src="assets/visa_copilot_overlay.png" alt="Visa Copilot roda como camada paralela sobre o seu sistema atual, sem migração de dados" class="w-full h-full object-contain"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background shadow-neo-pressed self-start text-tertiary font-semibold text-sm">
+<span class="material-symbols-outlined text-sm">layers</span>
+                    Overlay Paralelo
+                </div>
+<h2 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface leading-tight">
+                    O que é o Visa Copilot?
+                </h2>
+<p class="text-lg text-on-surface-variant font-medium">
+                    Ele atua como uma camada visual sobre o seu processo. O Visa Copilot roda em paralelo ao seu sistema atual.
+                </p>
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex items-center gap-3 text-on-surface font-medium">
+<div class="w-8 h-8 rounded-full bg-background shadow-neo-pressed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm icon-fill">check_circle</span>
+</div>
+                        Zero migração de dados
+                    </div>
+<div class="flex items-center gap-3 text-on-surface font-medium"><div class="w-8 h-8 rounded-full bg-background shadow-neo-pressed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm icon-fill">check_circle</span></div>Roda em paralelo, sem tocar no seu sistema atual</div>
+<div class="flex items-center gap-3 text-on-surface font-medium"><div class="w-8 h-8 rounded-full bg-background shadow-neo-pressed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm icon-fill">check_circle</span></div>Seus dados em instância própria do escritório</div>
+</div>
+</div>
+</section>
+<!-- 4. Como funciona -->
+<section class="w-full flex flex-col gap-12">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface mb-4">Como funciona na prática</h2>
+<p class="text-lg text-on-surface-variant font-medium">Três passos simples para liberar o seu tempo.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between relative gap-8 md:gap-4 mt-8">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-background shadow-neo-pressed -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center gap-4 w-full md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-primary text-2xl font-bold mb-4">
+                        1
+                    </div>
+<div class="bg-background rounded-2xl p-6 shadow-neo-raised w-full h-full flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4">fact_check</span>
+<h3 class="text-xl font-semibold text-on-surface mb-2">Cliente vê o checklist</h3>
+<p class="text-sm text-on-surface-variant">Visão clara do que falta, sem jargões. Transparência imediata.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center gap-4 w-full md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-primary text-2xl font-bold mb-4">
+                        2
+                    </div>
+<div class="bg-background rounded-2xl p-6 shadow-neo-raised w-full h-full flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4">cloud_upload</span>
+<h3 class="text-xl font-semibold text-on-surface mb-2">Upload pelo celular</h3>
+<p class="text-sm text-on-surface-variant">O cliente tira foto e envia pelo próprio smartphone com facilidade.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center gap-4 w-full md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-primary text-2xl font-bold mb-4">
+                        3
+                    </div>
+<div class="bg-background rounded-2xl p-6 shadow-neo-raised w-full h-full flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4">dashboard</span>
+<h3 class="text-xl font-semibold text-on-surface mb-2">Equipe vê o painel</h3>
+<p class="text-sm text-on-surface-variant">Pendências consolidadas em um só lugar. Atrasos identificados na hora.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Demo Video -->
+<section class="w-full max-w-4xl mx-auto flex flex-col items-center gap-8">
+<div class="text-center">
+<h2 class="text-3xl font-headline font-semibold text-on-surface mb-2">Veja o Copilot em ação</h2>
+</div>
+<div class="w-full aspect-video rounded-3xl bg-background shadow-neo-pressed p-4 relative group cursor-pointer">
+<div class="w-full h-full rounded-2xl bg-surface-dim overflow-hidden relative flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-60" data-alt="A blurred, soft-focus background showing a modern dashboard interface with subtle neo-morphic cards. Overlaid in the exact center is a distinct, raised neomorphic play button circular icon, softly glowing in primary indigo color. The aesthetic is clean, light-mode, soft grays, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfH0IG-3GKvHWbB-WkLOjaUTIYo1VZv0vmuCpKGeJV7tTlQYSmiDV0gGEry_IHuodT7jddJXW64nrXQYTIxka1uMJRZVp9xUxatexjXtS9XbqgZi_D0ji8sQVKtXU8kdK-MUUtQOFDCeiLuTny5YKJ2T6GOGtegnUqmPehKcJfxMR-RS0QOIdxZLMbR4mVEX0-myrNtyFZTmUq3E314Z2nX_7payh_i-fd823aRs4XsEJDElCInU8xuSvnYyxEGq_C9gRaAb_pnjwI"/>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center transition-colors group-hover:bg-black/10">
+<div class="w-24 h-24 rounded-full bg-background shadow-neo-raised flex items-center justify-center text-primary group-hover:shadow-neo-pressed transition-shadow duration-300">
+<span class="material-symbols-outlined text-5xl icon-fill ml-2">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Preços -->
+<section class="w-full flex flex-col items-center gap-12 pt-12">
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface mb-4">Investimento simples e transparente</h2>
+</div>
+<div class="w-full max-w-md bg-background rounded-3xl shadow-neo-raised p-8 flex flex-col items-center border border-white/40">
+<div class="w-full flex flex-col gap-6 text-center">
+<div class="pb-6 border-b border-surface-dim/30 w-full flex flex-col items-center gap-2"><span class="text-on-surface-variant font-medium">Setup total $650</span><div class="text-xl font-bold text-on-surface">($200 pré-build + $450 no fechamento)</div></div>
+<div class="pb-6 border-b border-surface-dim/30 w-full flex flex-col items-center gap-2"><span class="text-on-surface-variant font-medium">Pré-build $200</span><div class="text-xl font-bold text-on-surface">(abatido do setup)</div></div>
+<div class="pt-2 w-full flex flex-col items-center gap-2 relative"><div class="absolute -top-4 bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">50% OFF NO 1º MÊS</div><span class="text-primary font-semibold uppercase tracking-wider text-sm mt-4">Mensalidade</span><div class="flex flex-col items-center gap-1"><div class="flex items-baseline gap-1"><span class="text-xl text-on-surface font-semibold">a partir de</span><div class="text-5xl font-bold text-primary">$199</div><span class="text-on-surface-variant font-medium">/mês</span></div><span class="text-sm text-on-surface-variant font-medium">(1º mês $99,50)</span></div></div>
+</div>
+</div>
+</section>
+<!-- 7. Confiança / Bio -->
+<section class="w-full max-w-4xl mx-auto bg-background rounded-3xl shadow-neo-pressed p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 mt-12">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-background shadow-neo-raised shrink-0 p-2 overflow-hidden">
+<div class="w-full h-full rounded-full bg-surface-dim overflow-hidden relative">
+<img class="w-full h-full object-cover" alt="Roberto Vilela" src="assets/profile/roberto-vilela-profile.png"/>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-center md:text-left">
+<h3 class="text-2xl font-headline font-semibold text-on-surface">Desenvolvido por RMV Flow Systems</h3>
+<p class="text-on-surface-variant font-medium italic">"Meu foco é recuperar a sua capacidade faturável."</p>
+<p class="text-on-surface-variant leading-relaxed">
+                    Olá, sou Roberto. Vi inúmeros escritórios e consultorias perderem dezenas de horas valiosas tentando organizar documentos e responder atualizações de status. O Visa Copilot nasceu para estancar esse vazamento de tempo. Não é sobre trocar de sistema, é sobre dar visão clara a quem precisa, recuperando o seu tempo para faturar mais.
+                </p>
+</div>
+</section>
+<!-- 8. Final CTA -->
+<section class="w-full max-w-3xl mx-auto flex flex-col items-center text-center gap-8 pt-12" id="demo-cta">
+<h2 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface">Pronto para recuperar suas horas perdidas?</h2>
+<a class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-background text-primary font-bold shadow-neo-raised hover:shadow-neo-pressed transition-all duration-300 active:scale-95 text-xl gap-3" href="https://wa.me/13512294692?text=Oi%20Roberto%2C%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20Visa%20Copilot" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined icon-fill">rocket_launch</span>
+<span>Quero uma demonstração</span>
+</a>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4 text-sm font-medium text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">block</span>
+                    Sem migração
+                </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">cloud_off</span>
+                    Sem instalar nada no seu sistema
+                </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">event_busy</span>
+                    Cancela quando quiser
+                </div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background shadow-[inset_0px_2px_4px_rgba(0,0,0,0.02)] w-full py-12 px-6 flex flex-col items-center gap-6 mt-12 rounded-t-2xl">
+<div class="text-lg font-semibold text-on-surface">
+            Visa Copilot
+        </div>
+<div class="flex gap-6 font-label text-sm text-on-secondary-fixed-variant">
+<a class="hover:text-primary transition-colors" href="#">Termos de Uso</a>
+<a class="hover:text-primary transition-colors" href="#">Privacidade</a>
+<a class="hover:text-primary transition-colors" href="#">Suporte</a>
+</div>
+<div class="font-body font-medium text-on-surface-variant text-sm text-center">© 2026 Visa Copilot by RMV Flow Systems. Todos os direitos reservados.</div>
+</footer>
+<script>
+        const sections = document.querySelectorAll('main > section');
+
+        const entranceObserver = new IntersectionObserver(entries => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('section-visible'), i * 120);
+                    entranceObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        sections.forEach(s => {
+            s.classList.add('section-enter');
+            entranceObserver.observe(s);
+        });
+
+        sections.forEach(section => {
+            const items = section.querySelectorAll(':scope > div, :scope > .grid > div, :scope > .flex-wrap > div');
+            if (!items.length) return;
+
+            section.addEventListener('mousemove', e => {
+                const rect = section.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (e.clientX - cx) / rect.width;
+                const dy = (e.clientY - cy) / rect.height;
+
+                items.forEach((el, i) => {
+                    const speed = 6 + (i % 3) * 2;
+                    const x = dx * speed;
+                    const y = dy * speed;
+                    el.style.transform = `perspective(600px) translate(${x}px, ${y}px)`;
+                });
+            });
+
+            section.addEventListener('mouseleave', () => {
+                items.forEach(el => el.style.transform = 'perspective(600px) translate(0, 0)');
+            });
+        });
+    </script>
+</body></html>
