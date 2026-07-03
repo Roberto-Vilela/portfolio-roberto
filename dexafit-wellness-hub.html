@@ -27,10 +27,9 @@
                 <span class="material-symbols-outlined text-primary">arrow_back</span>
                 <span class="font-label-md text-primary font-semibold tracking-wider uppercase">Back to Portfolio</span>
             </a>
-            <a href="mailto:roberto.vilela.ma@gmail.com"
-                class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block">
+            <button onclick="document.getElementById('contact-modal').showModal()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer">
                 Contact Me
-            </a>
+            </button>
         </div>
     </nav>
 
@@ -669,7 +668,7 @@
                 <p class="text-lg text-on-surface-variant mb-12">Open to roles, projects, and conversations.</p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="https://linkedin.com/in/roberto-vilela" target="_blank" class="px-8 py-4 bg-[#0a66c2] text-white font-bold rounded-xl hover:bg-[#004182] hover:scale-105 transition-all inline-block shadow-lg shadow-[#0a66c2]/30">Connect on LinkedIn</a>
-                    <a href="mailto:roberto.vilela.ma@gmail.com" class="px-8 py-4 bg-primary/20 border border-primary/50 text-white font-bold rounded-xl hover:bg-primary/30 transition-all inline-block">Email Me</a>
+                    <button onclick="document.getElementById('contact-modal').showModal()" class="px-8 py-4 bg-primary/20 border border-primary/50 text-white font-bold rounded-xl hover:bg-primary/30 transition-all inline-block cursor-pointer">Email Me</button>
                     <a href="https://drive.google.com/file/d/1MoPYpnW5fU7_3KxEusfQhFY9J5FwfHV1/view?usp=sharing" target="_blank" class="px-8 py-4 border border-outline/30 bg-white/5 text-on-surface font-bold rounded-xl hover:bg-white/10 transition-all inline-block">View Resume</a>
                     <a href="index.html" class="px-8 py-4 border border-transparent hover:border-white/10 text-on-surface-variant hover:text-white rounded-xl transition-all inline-block">Back to Portfolio</a>
                 </div>
@@ -862,5 +861,58 @@
         });
     </script>
 
+    <dialog id="contact-modal" class="w-full max-w-lg rounded-2xl bg-surface border border-white/10 p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm" style="max-width: 32rem;">
+        <div class="relative p-8">
+            <button onclick="document.getElementById('contact-modal').close()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-surface-container border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+            <h2 class="font-headline-lg text-headline-lg mb-2 text-on-surface">Get in Touch</h2>
+            <p class="text-on-surface-variant text-sm mb-8">Fill out the form below and I'll get back to you within 24 hours.</p>
+            <form id="contact-form">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="name">Name</label>
+                        <input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="email">Email</label>
+                        <input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="type">Type</label>
+                        <select id="type" name="type" data-fs-field class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm focus:outline-none focus:border-primary/50 transition-colors">
+                            <option value="">Select an option</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="freelance">Freelance / Consulting</option>
+                            <option value="collaboration">Collaboration</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="message">Message</label>
+                        <textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" data-fs-submit-btn class="w-full py-3.5 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(79,172,254,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">send</span> Send Message
+                    </button>
+                </div>
+            </form>
+            <div data-fs-success class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-green-400 mb-4 block">check_circle</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Message Sent!</h3>
+                <p class="text-on-surface-variant text-sm">Thanks for reaching out. I'll respond within 24 hours.</p>
+            </div>
+            <div data-fs-error class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-error mb-4 block">error</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Something went wrong</h3>
+                <p class="text-on-surface-variant text-sm">Please try again or email me directly.</p>
+            </div>
+        </div>
+    </dialog>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'meewwpvg' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
