@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Visa Flow Copilot | AI Interface for Staff Support</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="global.css?v=11">
+    <script src="tailwind.config.js?v=11"></script>
+</head>
+
+<body class="font-body-md text-on-surface">
+
+    <!-- NavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary">arrow_back</span>
+                <span class="font-label-md text-primary font-semibold tracking-wider uppercase">Back to Portfolio</span>
+            </a>
+            <button onclick="document.getElementById('contact-modal').showModal()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer">
+                Contact Me
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <!-- 1. Project Hero -->
+        <section class="relative pt-32 pb-24 overflow-hidden px-margin-mobile md:px-margin-desktop border-b border-white/5">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="absolute inset-0 hero-gradient"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/10 rounded-full blur-[120px]"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-white/10 shadow-sm">
+                    <span class="material-symbols-outlined text-green-400 text-sm">forum</span>
+                    <span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">AI Interface · Staff Support · Case Operations</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display-lg font-extrabold mb-6 leading-tight text-white max-w-4xl">
+                    Visa Flow Copilot<br>
+                    <span class="text-green-400">AI Interface for Staff Support</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="font-body-lg text-lg md:text-xl text-on-surface-variant mb-10 max-w-3xl leading-relaxed">
+                    An AI-assisted chat interface that connects staff to case context, document status, workflow guidance, and structured operational support — built as the user-facing layer of the RMV Flow Ecosystem.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-16">
+                    <a href="#snapshot" class="px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:scale-105 transition-all inline-block shadow-lg shadow-primary/20">
+                        View Copilot Overview
+                    </a>
+                    <a href="rmv-flow-ecosystem.html" class="px-8 py-3 border border-green-400/40 text-green-400 font-bold rounded-lg hover:bg-green-400/10 transition-all inline-block">
+                        View Full Ecosystem
+                    </a>
+                </div>
+
+                <!-- Metadata Grid -->
+                <div class="w-full max-w-3xl mx-auto glass-card p-2 md:p-4 rounded-2xl border border-white/10 shadow-xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-left">
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+                            <span class="block text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Layer</span>
+                            <span class="text-sm font-semibold text-white">Copilot / Chat</span>
+                        </div>
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+                            <span class="block text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Role</span>
+                            <span class="text-sm font-semibold text-white">AI Systems Architect</span>
+                        </div>
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+                            <span class="block text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Focus</span>
+                            <span class="text-sm font-semibold text-white">Staff Productivity & Case Context</span>
+                        </div>
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+                            <span class="block text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Output</span>
+                            <span class="text-sm font-semibold text-white">Chat Interface · 21+ Agents · Electron</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. Product Snapshot -->
+        <section id="snapshot" class="py-16 bg-surface-container-low/30">
+            <div class="max-w-4xl mx-auto px-margin-mobile md:px-0">
+                <div class="glass-card rounded-xl overflow-hidden border border-white/5">
+                    <div class="bg-surface-container-high p-4 border-b border-white/5">
+                        <h2 class="font-headline-md text-lg font-bold flex items-center gap-2 text-green-400">
+                            <span class="material-symbols-outlined">bolt</span> 02 / Product Snapshot
+                        </h2>
+                    </div>
+                    <div class="p-6 border-b border-white/5">
+                        <p class="text-sm text-on-surface-variant">A quick overview of the Copilot, its operational purpose, core capabilities, and role within the ecosystem.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
+                        <div class="p-6">
+                            <h4 class="font-bold text-error mb-2 uppercase text-xs tracking-wider">Operational Problem</h4>
+                            <p class="text-sm text-on-surface-variant">Staff spend significant time searching for case information across scattered records, reconstructing context from messages and folders, and manually checking document status — all before they can help a client or move a case forward.</p>
+                        </div>
+                        <div class="p-6 bg-surface-container/50">
+                            <h4 class="font-bold text-green-400 mb-2 uppercase text-xs tracking-wider">Product Approach</h4>
+                            <p class="text-sm text-on-surface-variant">The Copilot connects staff to case context through a chat interface with controlled access to the management system. Instead of being a general AI writing tool, it is a workflow assistant that can answer questions, retrieve documents, summarize status, and organize next steps.</p>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold text-primary mb-2 uppercase text-xs tracking-wider">Core Capability</h4>
+                            <p class="text-sm text-on-surface-variant">Multi-agent chat system with 21+ specialized agents for case status review, document checking, follow-up preparation, case summarization, checklist guidance, and human review preparation.</p>
+                        </div>
+                        <div class="p-6 bg-surface-container/50">
+                            <h4 class="font-bold text-secondary-container mb-2 uppercase text-xs tracking-wider">My Role</h4>
+                            <p class="text-sm text-on-surface-variant">I designed the Copilot experience, agent structure, workflow integration, controlled data access patterns, and the separation between AI assistance and human decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. What the Copilot Solves -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="mb-12">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">03 / What the Copilot Solves</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-4">Staff need context, not just AI generated text.</h2>
+                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">In immigration case operations, every question a staff member answers requires context: case history, document status, previous follow-ups, pending actions. The Copilot reduces time spent searching and reconstructing by connecting AI assistance directly to structured operational data.</p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-headline-md text-xl font-bold text-white flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-400 text-xl">grid_view</span>
+                    Operational Friction Points
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-outline">search</span> Context Recovery</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Staff spend time searching across messages, emails, and folders to understand where a case stands before taking action.</p>
+                </div>
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-outline">description</span> Document Tracking</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Manually checking which documents were submitted, rejected, or still missing adds friction to every follow-up interaction.</p>
+                </div>
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-outline">forward_to_inbox</span> Follow-up Burden</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Crafting clear follow-up messages requires gathering scattered information and re-explaining what is missing or pending.</p>
+                </div>
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-outline">summarize</span> Case Summarization</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Reconstructing a complete case summary for internal review or handoff takes time and risks missing important context.</p>
+                </div>
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-outline">checklist</span> Workflow Guidance</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Without structured guidance, staff may follow inconsistent sequences or miss important steps in case processing.</p>
+                </div>
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-amber-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-amber-400">verified_user</span> Human Validation</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Sensitive communication and case decisions still need human review, but preparing the information for that review can be inefficient without structured support.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Banner Insight -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="group rounded-2xl border border-green-400/30 bg-green-400/5 p-8 md:p-10 mb-12 transition-colors duration-300 hover:bg-primary/10 hover:border-primary/30">
+                    <p class="text-lg md:text-xl text-green-400 font-semibold leading-relaxed text-center transition-colors duration-300 group-hover:text-white">
+                        The Copilot does not replace staff knowledge. It reduces the operational overhead of finding, organizing, and preparing case context — so staff can focus on the work that requires human judgment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Why a Dedicated AI Layer -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="mb-16">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">04 / Why a Dedicated AI Layer</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">The AI layer is separated from the management system by design.</h2>
+                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">The Copilot is not embedded inside the management system. It is a separate layer connected through a controlled MCP bridge. This separation means the AI interface can evolve independently, the management system stays focused on operational structure, and staff always have a clear boundary between AI-assisted work and direct system actions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-green-400">
+                    <h4 class="font-bold text-lg text-white mb-4">Independent Evolution</h4>
+                    <div class="mb-4">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Design Choice</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The Copilot can be updated, improved, and expanded without changing the management system. New agents, tools, and capabilities are added to the AI layer independently.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Result</span>
+                        <p class="text-xs text-green-400 font-medium">Faster iteration without operational disruption</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-green-400">
+                    <h4 class="font-bold text-lg text-white mb-4">Controlled Access</h4>
+                    <div class="mb-4">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Design Choice</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The Copilot does not connect directly to the database. All data access goes through the MCP bridge, which exposes specific tools and approved actions instead of open-ended queries.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Result</span>
+                        <p class="text-xs text-green-400 font-medium">AI works with data without unrestricted system access</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 border-t-2 border-t-amber-500">
+                    <h4 class="font-bold text-lg text-white mb-4">Human Boundaries</h4>
+                    <div class="mb-4">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Design Choice</span>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">The Copilot prepares, organizes, and retrieves information — but sensitive actions, communication, and case decisions remain under human control and review.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Result</span>
+                        <p class="text-xs text-amber-500 font-medium">AI assists without replacing human judgment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture connection diagram -->
+            <div class="max-w-md mx-auto">
+                <div class="glass-card p-6 rounded-xl border border-green-400/20 bg-green-400/5 text-center mb-3">
+                    <span class="material-symbols-outlined text-green-400 text-2xl mb-2 block">forum</span>
+                    <h4 class="font-bold text-white">Visa Flow Copilot / Chat</h4>
+                    <p class="text-xs text-on-surface-variant mt-1">AI questions · Context retrieval · Workflow support</p>
+                </div>
+                <div class="flex justify-center mb-3">
+                    <span class="material-symbols-outlined text-white/20">arrow_downward</span>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-green-400/30 bg-green-400/10 text-center mb-3">
+                    <span class="material-symbols-outlined text-green-400 text-2xl mb-2 block">alt_route</span>
+                    <h4 class="font-bold text-white">Visa Flow MCP</h4>
+                    <p class="text-xs text-green-400/80 mt-1 font-semibold">Controlled tools · Approved actions</p>
+                </div>
+                <div class="flex justify-center mb-3">
+                    <span class="material-symbols-outlined text-white/20">arrow_downward</span>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-white/5 text-center">
+                    <span class="material-symbols-outlined text-white text-2xl mb-2 block">account_tree</span>
+                    <h4 class="font-bold text-white">Visa Flow Management</h4>
+                    <p class="text-xs text-on-surface-variant mt-1">Clients · Cases · Documents · Forms · Tasks · Status</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 5. Interface Overview -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <div class="mb-16">
+                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">05 / Interface Overview</span>
+                    <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">A chat interface built for case operations.</h2>
+                    <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">The Copilot interface is designed around operational conversations. Staff can ask questions, request summaries, check document status, and prepare follow-up communications — all through a chat interface that is connected to real case data through controlled tools.</p>
+                </div>
+
+                <!-- Screenshot 1 -->
+                <div class="mb-12">
+                    <div onclick="document.getElementById('lightbox-1').showModal()" class="group relative overflow-hidden rounded-xl border border-white/5 bg-surface-container-low cursor-pointer mb-6">
+                        <img src="assets/COPILOT/Screenshot_2026-07-06_04-22-36.png"
+                             alt="Copilot interface — case context view"
+                             class="w-full object-contain transition-all duration-500 group-hover:scale-[1.02]"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm font-bold">
+                                <span class="material-symbols-outlined text-base">open_in_full</span>
+                                Click to expand
+                            </span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <h4 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-400 text-lg">search</span>
+                            Case Context View
+                        </h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Staff can select a case and immediately see its current status, key information, pending items, and available actions. The interface presents case context in a structured conversation layout.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="mb-12">
+                    <div onclick="document.getElementById('lightbox-2').showModal()" class="group relative overflow-hidden rounded-xl border border-white/5 bg-surface-container-low cursor-pointer mb-6">
+                        <img src="assets/COPILOT/Screenshot_2026-07-06_04-30-08.png"
+                             alt="Copilot interface — document and checklist view"
+                             class="w-full object-contain transition-all duration-500 group-hover:scale-[1.02]"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm font-bold">
+                                <span class="material-symbols-outlined text-base">open_in_full</span>
+                                Click to expand
+                            </span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <h4 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-400 text-lg">description</span>
+                            Document & Checklist View
+                        </h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The interface shows document status, required items, and checklist progress within the conversation flow. Staff can see what is missing, what was submitted, and what needs review without leaving the chat.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div>
+                    <div onclick="document.getElementById('lightbox-3').showModal()" class="group relative overflow-hidden rounded-xl border border-white/5 bg-surface-container-low cursor-pointer mb-6">
+                        <img src="assets/COPILOT/Screenshot_2026-07-06_04-37-02.png"
+                             alt="Copilot interface — human review preparation"
+                             class="w-full object-contain transition-all duration-500 group-hover:scale-[1.02]"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm font-bold">
+                                <span class="material-symbols-outlined text-base">open_in_full</span>
+                                Click to expand
+                            </span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <h4 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-400 text-lg">verified</span>
+                            Human Review Preparation
+                        </h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The Copilot organizes information that needs human validation before a case can move forward. Staff can review AI-prepared summaries and checklists, then apply their judgment before taking action.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Use Cases -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="mb-16">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">06 / Use Cases</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">Practical ways the Copilot supports daily operations.</h2>
+                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">Each use case is designed around a real operational need — reducing manual searching, improving follow-up consistency, and keeping human review at the center of the workflow.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">search</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Case Status Review</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"What is the current status of this case and what still needs attention?"</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Helps staff understand the case position without manually searching across different records.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">forward_to_inbox</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Follow-up Preparation</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"Prepare a clear follow-up message explaining what the client still needs to send."</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Supports consistent communication while keeping human review before anything is sent.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">description</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Missing Document Check</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"Which documents are still missing, rejected, or waiting for review?"</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Makes document follow-up more structured and reduces repeated manual checking.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">summarize</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Case Summary</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"Summarize this case for internal review."</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Reduces time spent reconstructing case history from scattered information.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">checklist</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Checklist Guidance</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"What should be checked next based on this case type and current status?"</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Helps staff follow a more consistent operational sequence.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">verified</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Human Review Preparation</h4>
+                    </div>
+                    <div class="mb-4 p-3 rounded-lg bg-surface-container/50 border border-white/5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1 block">Example prompt</span>
+                        <p class="text-sm text-on-surface-variant italic leading-relaxed">"Organize the key items that need human validation before the next action."</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-green-400/70 mb-1 block">Operational value</span>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Keeps sensitive steps connected to human judgment instead of treating AI output as final.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 7. Architecture & Integration -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <div class="mb-16">
+                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">07 / Architecture & Integration</span>
+                    <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">How the Copilot connects to the ecosystem.</h2>
+                    <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">The Copilot operates as an Electron-based desktop client with a multi-agent chat system. It connects to the Visa Flow MCP bridge to access case data, and through the MCP layer, it reaches the management system with controlled, approved actions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">dns</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Desktop Client</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Electron-based application that provides a dedicated chat interface for staff. It runs as a standalone desktop client connected to the ecosystem through the MCP layer.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">psychology</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Multi-Agent System</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">21+ specialized agents handle different operational tasks — case queries, document checks, follow-up preparation, summarization, and workflow guidance.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">alt_route</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">MCP Bridge</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">All data requests from the Copilot go through the Visa Flow MCP layer, which exposes controlled tools and approved actions instead of giving the AI direct system access.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. Copilot Features -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="mb-16">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">08 / Copilot Features</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">Designed for operational conversations.</h2>
+                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">Every feature in the Copilot is designed to reduce friction between the staff member and the case information they need to work effectively.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-400">forum</span> Case-Aware Chat</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Every conversation is connected to a specific case context. The Copilot knows which case the staff member is working on and retrieves relevant information automatically.</p>
+                </div>
+
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-400">handyman</span> Tool-Integrated Responses</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Instead of generating text alone, the Copilot can surface structured data, document status tables, checklists, and actionable items through tool calls to the MCP bridge.</p>
+                </div>
+
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-green-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-400">visibility</span> Status Visibility</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Case status, document progress, task assignments, and review requirements are accessible through natural language queries, reducing the need to navigate system screens.</p>
+                </div>
+
+                <div class="bg-surface-container p-5 rounded-xl border border-white/5 border-l-2 border-l-amber-500">
+                    <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm text-amber-400">verified_user</span> Human Review Gateway</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">The Copilot prepares information for human review but does not execute sensitive actions autonomously. All communication, case decisions, and client-facing outputs go through staff validation.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 9. What This Demonstrates -->
+        <section class="py-24 bg-surface-container-low/20 border-y border-white/5">
+            <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <div class="mb-16">
+                    <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">09 / What This Demonstrates</span>
+                    <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">What the Copilot demonstrates about my approach to AI product design.</h2>
+                    <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">The Visa Flow Copilot is not a generic chatbot. It is an AI interface designed around a specific operational context, with controlled access to structured data, clear human boundaries, and a focus on reducing staff friction rather than replacing staff judgment.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">account_tree</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">AI Product Design</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The Copilot is designed around staff workflow, not around AI capabilities. Each agent serves a specific operational need rather than offering generic chat functionality.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">lock</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Controlled AI Access</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The separation between the AI interface, the MCP bridge, and the management system creates clear boundaries for how AI can access and interact with operational data.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">verified_user</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Human-in-the-Loop</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The Copilot is designed to assist, not replace. Sensitive actions remain under human review, and the AI output is treated as preparation, not as a final decision.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">hub</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Systems Integration</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">The Copilot does not exist in isolation. It is one layer of a three-layer ecosystem, connected through a controlled bridge to a structured operational system.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">bolt</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Operational Focus</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Every feature in the Copilot is built to solve a real operational pain: scattered context, unclear status, repeated follow-ups, and inefficient preparation for human review.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">trending_up</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base">Incremental Improvement</h4>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">As a separate layer, the Copilot can be improved, expanded, and refined without disruptive changes to the management system or the MCP bridge.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 10. Current Status & Next Iterations -->
+        <section class="py-24 max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
+
+            <div class="mb-16">
+                <span class="block text-sm font-bold uppercase tracking-widest text-outline mb-3">10 / Current Status & Next Iterations</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-6">What the Copilot delivers today and where it is headed.</h2>
+                <p class="text-on-surface-variant text-lg max-w-3xl leading-relaxed">The Visa Flow Copilot is an active product layer with a growing set of capabilities. This section shows the current status and the planned improvements that would make the assistant even more useful in daily operations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Current Capabilities</h4>
+                    </div>
+                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-green-500/20 text-green-400 mb-3">Active · 21+ agents</span>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Electron-based desktop client with multi-agent chat, case context retrieval, document status checking, follow-up preparation, case summarization, and human review preparation.</p>
+                    <div class="pt-3 border-t border-white/5">
+                        <span class="text-xs font-bold text-white/50 uppercase tracking-widest">Key agents</span>
+                        <p class="text-xs text-on-surface-variant mt-1">Case Status · Document Check · Follow-up · Summary · Checklist · Human Review</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">construction</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">In Progress</h4>
+                    </div>
+                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400 mb-3">In development</span>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Agent memory persistence to retain conversation context across sessions, multi-language support for diverse client communication, and enhanced summarization tools for complex case reviews.</p>
+                    <div class="pt-3 border-t border-white/5">
+                        <span class="text-xs font-bold text-white/50 uppercase tracking-widest">Next</span>
+                        <p class="text-xs text-on-surface-variant mt-1">Memory persistence · Multi-language · Enhanced summarization</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-green-400/20 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-400/10 border border-green-400/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-lg">rocket_launch</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Future Roadmap</h4>
+                    </div>
+                    <span class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 mb-3">Planned</span>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Proactive case alerts, automated status change notifications, deeper document analysis capabilities, expanded agent library, and enhanced integration with external communication channels.</p>
+                    <div class="pt-3 border-t border-white/5">
+                        <span class="text-xs font-bold text-white/50 uppercase tracking-widest">Vision</span>
+                        <p class="text-xs text-on-surface-variant mt-1">Proactive alerts · Document analysis · Expanded agents · External integration</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Closing note -->
+            <div class="glass-card p-8 rounded-2xl border border-green-400/30 bg-green-400/5 text-center">
+                <span class="material-symbols-outlined text-green-400 text-3xl mb-3 block">forum</span>
+                <p class="text-base text-white font-semibold max-w-2xl mx-auto leading-relaxed">The Copilot is designed as an evolving layer. New agents, tools, and capabilities can be added as operational needs grow — making the AI interface more useful over time without requiring changes to the underlying management system.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Contact Modal -->
+    <dialog id="contact-modal" class="w-full max-w-lg rounded-2xl bg-surface border border-white/10 p-0 backdrop:bg-black/70 backdrop:backdrop-blur-sm" style="max-width: 32rem;">
+        <div class="relative p-8">
+            <button onclick="document.getElementById('contact-modal').close()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-surface-container border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+            <h2 class="font-headline-lg text-headline-lg mb-2 text-on-surface">Get in Touch</h2>
+            <p class="text-on-surface-variant text-sm mb-8">Fill out the form below and I'll get back to you within 24 hours.</p>
+            <form id="contact-form">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="name">Name</label>
+                        <input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="email">Email</label>
+                        <input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="type">Type</label>
+                        <select id="type" name="type" data-fs-field class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm focus:outline-none focus:border-primary/50 transition-colors">
+                            <option value="">Select an option</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="freelance">Freelance / Consulting</option>
+                            <option value="collaboration">Collaboration</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="message">Message</label>
+                        <textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" data-fs-submit-btn class="w-full py-3.5 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(79,172,254,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">send</span> Send Message
+                    </button>
+                </div>
+            </form>
+            <div data-fs-success class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-green-400 mb-4 block">check_circle</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Message Sent!</h3>
+                <p class="text-on-surface-variant text-sm">Thanks for reaching out. I'll respond within 24 hours.</p>
+            </div>
+            <div data-fs-error class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-5xl text-error mb-4 block">error</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Something went wrong</h3>
+                <p class="text-on-surface-variant text-sm">Please try again or email me directly.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest py-8 border-t border-white/5 text-center text-sm text-on-surface-variant">
+        <div class="flex items-center justify-center gap-2 opacity-60">
+            <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+            <span>© 2026 Roberto Vilela | AI Workflow Automation Specialist</span>
+        </div>
+    </footer>
+
+    <!-- Lightbox 1 -->
+    <dialog id="lightbox-1" class="w-screen h-screen max-w-none max-h-none m-0 bg-black/95 backdrop:bg-black/95 p-4" onclick="this.close()">
+        <div class="relative w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
+            <button onclick="document.getElementById('lightbox-1').close()" class="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+            <img src="assets/COPILOT/Screenshot_2026-07-06_04-22-36.png" alt="Copilot interface — case context view" class="max-w-full max-h-full object-contain cursor-default">
+        </div>
+    </dialog>
+
+    <!-- Lightbox 2 -->
+    <dialog id="lightbox-2" class="w-screen h-screen max-w-none max-h-none m-0 bg-black/95 backdrop:bg-black/95 p-4" onclick="this.close()">
+        <div class="relative w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
+            <button onclick="document.getElementById('lightbox-2').close()" class="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+            <img src="assets/COPILOT/Screenshot_2026-07-06_04-30-08.png" alt="Copilot interface — document and checklist view" class="max-w-full max-h-full object-contain cursor-default">
+        </div>
+    </dialog>
+
+    <!-- Lightbox 3 -->
+    <dialog id="lightbox-3" class="w-screen h-screen max-w-none max-h-none m-0 bg-black/95 backdrop:bg-black/95 p-4" onclick="this.close()">
+        <div class="relative w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
+            <button onclick="document.getElementById('lightbox-3').close()" class="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+            <img src="assets/COPILOT/Screenshot_2026-07-06_04-37-02.png" alt="Copilot interface — human review preparation" class="max-w-full max-h-full object-contain cursor-default">
+        </div>
+    </dialog>
+
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'meewwpvg' });
+    </script>
+
+</body>
+</html>
