@@ -14,22 +14,34 @@
     <link rel="stylesheet" href="global.css?v=12">
     <script src="tailwind.config.js?v=12"></script>
     <style>
-        :root { --lab-accent: #00f0ff; --lab-panel: #0d0e13; }
+        :root { --lab-accent: #a855f7; --lab-panel: #0d0e13; }
         .lab-mono { font-family: "JetBrains Mono", monospace; }
         .lab-grid {
             background-image:
-                linear-gradient(rgba(0,240,255,.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,240,255,.035) 1px, transparent 1px);
+                linear-gradient(rgba(168,85,247,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(168,85,247,.035) 1px, transparent 1px);
             background-size: 28px 28px;
         }
-        .lab-glow { box-shadow: 0 0 34px rgba(0,240,255,.08), inset 0 0 0 1px rgba(0,240,255,.08); }
+        .lab-glow { box-shadow: 0 0 34px rgba(168,85,247,.08), inset 0 0 0 1px rgba(168,85,247,.08); }
         .lab-window { background: linear-gradient(145deg, rgba(13,14,19,.98), rgba(18,19,24,.95)); }
         .signal-dot { box-shadow: 0 0 10px currentColor; }
         .flow-line {
-            background: linear-gradient(90deg, transparent, rgba(0,240,255,.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(168,85,247,.7), transparent);
             background-size: 200% 100%;
             animation: flow 3s linear infinite;
         }
+        .evidence-shot { cursor: zoom-in; }
+        #evidence-modal {
+            background: rgba(0,0,0,.96);
+            border: 0;
+            padding: 0;
+            max-width: 100vw;
+            max-height: 100vh;
+            width: 100vw;
+            height: 100vh;
+        }
+        #evidence-modal[open] { display: flex; align-items: center; justify-content: center; }
+        #evidence-modal::backdrop { background: rgba(0,0,0,.95); }
         @keyframes flow { to { background-position: -200% 0; } }
         @media (prefers-reduced-motion: reduce) { .flow-line { animation: none; } }
     </style>
@@ -52,47 +64,47 @@
     <main class="pt-20">
         <section class="relative min-h-[820px] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop border-b border-white/5 lab-grid">
             <div class="absolute inset-0 hero-gradient opacity-80"></div>
-            <div class="absolute -top-32 right-[-10%] w-[620px] h-[620px] bg-cyan-400/10 rounded-full blur-[130px]"></div>
+            <div class="absolute -top-32 right-[-10%] w-[620px] h-[620px] bg-purple-400/10 rounded-full blur-[130px]"></div>
             <div class="relative z-10 max-w-7xl mx-auto w-full py-16 md:py-24">
                 <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-cyan-400/20 shadow-[0_0_16px_rgba(0,240,255,.08)]">
-                            <span class="w-2 h-2 rounded-full bg-cyan-400 signal-dot text-cyan-400"></span>
-                            <span class="text-xs text-cyan-300 font-bold uppercase tracking-[.16em]">Local AI · Runtime Operations · Open Source</span>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full mb-8 border border-purple-400/20 shadow-[0_0_16px_rgba(168,85,247,.08)]">
+                            <span class="w-2 h-2 rounded-full bg-purple-400 signal-dot text-purple-400"></span>
+                            <span class="text-xs text-purple-300 font-bold uppercase tracking-[.16em]">Professional Case Study · AI-Assisted Operations · Product Execution</span>
                         </div>
                         <h1 class="text-4xl md:text-6xl lg:text-7xl font-display-lg font-extrabold mb-7 leading-[1.02] text-white">
-                            RMV Neural Lab <span class="text-cyan-300">AI</span>
+                            RMV Neural Lab <span class="text-purple-300">AI</span>
                         </h1>
                         <p class="text-xl md:text-2xl text-white font-semibold leading-snug mb-5">
-                            A visual control plane for local LLM inference.
+                            Turning a complex technical process into a structured, usable operating system.
                         </p>
                         <p class="text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed mb-9">
-                            Neural Lab turns the complexity of operating <strong class="text-white">llama.cpp</strong> servers into one observable workflow — discover GGUF models, estimate hardware fit, build safe launch commands, manage processes, and diagnose failures without stitching together multiple terminal tools.
+                            I created this project to demonstrate how I approach operational problems: understand a fragmented process, translate technical requirements into a clear workflow, direct AI-assisted implementation, validate the product in a real environment, and document the result for continued use.
                         </p>
                         <div class="flex flex-wrap gap-3 mb-10">
-                            <span class="text-xs bg-cyan-400/10 text-cyan-300 px-3 py-1.5 rounded-full font-semibold border border-cyan-400/20">FastAPI</span>
-                            <span class="text-xs bg-cyan-400/10 text-cyan-300 px-3 py-1.5 rounded-full font-semibold border border-cyan-400/20">React + TypeScript</span>
-                            <span class="text-xs bg-cyan-400/10 text-cyan-300 px-3 py-1.5 rounded-full font-semibold border border-cyan-400/20">llama.cpp</span>
+                            <span class="text-xs bg-purple-400/10 text-purple-300 px-3 py-1.5 rounded-full font-semibold border border-purple-400/20">Workflow Design</span>
+                            <span class="text-xs bg-purple-400/10 text-purple-300 px-3 py-1.5 rounded-full font-semibold border border-purple-400/20">Requirements Translation</span>
+                            <span class="text-xs bg-purple-400/10 text-purple-300 px-3 py-1.5 rounded-full font-semibold border border-purple-400/20">Testing & Documentation</span>
                             <span class="text-xs bg-yellow-500/15 text-yellow-300 px-3 py-1.5 rounded-full font-semibold border border-yellow-500/20">Human-in-the-Loop</span>
                         </div>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            <div><p class="text-3xl font-bold text-cyan-300">6</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Product screens</p></div>
-                            <div><p class="text-3xl font-bold text-cyan-300">19</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">REST endpoints</p></div>
-                            <div><p class="text-3xl font-bold text-cyan-300">111</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Automated tests</p></div>
-                            <div><p class="text-3xl font-bold text-cyan-300">100%</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Local-first</p></div>
+                            <div><p class="text-3xl font-bold text-purple-300">6</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Working screens</p></div>
+                            <div><p class="text-3xl font-bold text-purple-300">19</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">REST endpoints</p></div>
+                            <div><p class="text-3xl font-bold text-purple-300">111</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Automated tests</p></div>
+                            <div><p class="text-3xl font-bold text-purple-300">12+</p><p class="text-xs text-on-surface-variant uppercase tracking-wider">Validated phases</p></div>
                         </div>
                     </div>
 
-                    <div class="lab-window lab-glow rounded-2xl border border-cyan-400/15 overflow-hidden shadow-2xl">
+                    <div class="lab-window lab-glow rounded-2xl border border-purple-400/15 overflow-hidden shadow-2xl">
                         <div class="h-11 px-4 flex items-center justify-between border-b border-white/5 bg-black/20">
                             <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-400/70"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/70"></span></div>
                             <span class="lab-mono text-[10px] text-gray-500">127.0.0.1 · RMV NEURAL LAB</span>
                         </div>
                         <div class="grid grid-cols-[108px_1fr] min-h-[500px]">
-                            <aside class="border-r border-cyan-400/10 p-3 bg-black/10">
-                                <p class="text-cyan-300 text-[10px] font-bold tracking-wider mb-6">RMV LAB</p>
+                            <aside class="border-r border-purple-400/10 p-3 bg-black/10">
+                                <p class="text-purple-300 text-[10px] font-bold tracking-wider mb-6">RMV LAB</p>
                                 <div class="space-y-2 text-[9px] text-gray-500 lab-mono">
-                                    <div class="rounded bg-cyan-400/10 text-cyan-300 px-2 py-2">▦ Dashboard</div>
+                                    <div class="rounded bg-purple-400/10 text-purple-300 px-2 py-2">▦ Dashboard</div>
                                     <div class="px-2 py-2">◇ Models</div>
                                     <div class="px-2 py-2">⚙ Builder</div>
                                     <div class="px-2 py-2">&gt;_ Terminal</div>
@@ -103,8 +115,8 @@
                             </aside>
                             <div class="p-4 md:p-5">
                                 <div class="flex justify-between items-center mb-4">
-                                    <div><p class="text-sm font-semibold text-white">Dashboard</p><p class="lab-mono text-[8px] text-cyan-300">CUDA · LIVE</p></div>
-                                    <button class="text-[8px] px-3 py-1.5 rounded bg-cyan-300 text-black font-bold">NEW SERVER</button>
+                                    <div><p class="text-sm font-semibold text-white">Dashboard</p><p class="lab-mono text-[8px] text-purple-300">CUDA · LIVE</p></div>
+                                    <button class="text-[8px] px-3 py-1.5 rounded bg-purple-300 text-black font-bold">NEW SERVER</button>
                                 </div>
                                 <div class="border border-green-400/15 bg-green-400/[.03] rounded-lg p-3 mb-3">
                                     <div class="flex items-center gap-2 mb-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 signal-dot text-green-400"></span><span class="text-[10px] text-white lab-mono">Qwen3.5-9B-Q4_K_M.gguf</span></div>
@@ -116,30 +128,66 @@
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-3 mb-3">
-                                    <div class="border border-cyan-400/10 rounded-lg p-3 bg-white/[.015]">
+                                    <div class="border border-purple-400/10 rounded-lg p-3 bg-white/[.015]">
                                         <p class="text-[7px] text-gray-500 tracking-wider mb-1">GPU</p><p class="text-xs text-white">RTX 4060 Ti</p>
-                                        <div class="h-1 bg-white/5 rounded mt-3 overflow-hidden"><div class="h-full w-[64%] bg-cyan-300"></div></div>
+                                        <div class="h-1 bg-white/5 rounded mt-3 overflow-hidden"><div class="h-full w-[64%] bg-purple-300"></div></div>
                                         <p class="text-[8px] text-gray-500 mt-1 lab-mono">5.2 / 8.0 GB VRAM</p>
                                     </div>
-                                    <div class="border border-cyan-400/10 rounded-lg p-3 bg-white/[.015]">
+                                    <div class="border border-purple-400/10 rounded-lg p-3 bg-white/[.015]">
                                         <p class="text-[7px] text-gray-500 tracking-wider mb-1">SYSTEM RAM</p><p class="text-xs text-white">12.8 / 32 GB</p>
-                                        <div class="h-1 bg-white/5 rounded mt-3 overflow-hidden"><div class="h-full w-[40%] bg-cyan-300"></div></div>
+                                        <div class="h-1 bg-white/5 rounded mt-3 overflow-hidden"><div class="h-full w-[40%] bg-purple-300"></div></div>
                                         <p class="text-[8px] text-gray-500 mt-1 lab-mono">19.2 GB available</p>
                                     </div>
-                                    <div class="border border-cyan-400/10 rounded-lg p-3 bg-white/[.015]">
+                                    <div class="border border-purple-400/10 rounded-lg p-3 bg-white/[.015]">
                                         <p class="text-[7px] text-gray-500 tracking-wider mb-1">MODEL FIT</p><p class="text-xs text-green-300">✓ Fits on GPU</p><p class="text-[8px] text-gray-500 mt-2">Estimated before launch</p>
                                     </div>
-                                    <div class="border border-cyan-400/10 rounded-lg p-3 bg-white/[.015]">
+                                    <div class="border border-purple-400/10 rounded-lg p-3 bg-white/[.015]">
                                         <p class="text-[7px] text-gray-500 tracking-wider mb-1">ENDPOINT</p><p class="text-xs text-green-300">✓ 42 ms</p><p class="text-[8px] text-gray-500 mt-2 lab-mono">/v1/chat/completions</p>
                                     </div>
                                 </div>
                                 <div class="border border-white/5 bg-black/20 rounded-lg p-3 lab-mono">
                                     <p class="text-[7px] text-gray-600 mb-2">LATEST SERVER EVENTS</p>
-                                    <p class="text-[8px] text-cyan-300">&gt; loading model metadata...</p>
+                                    <p class="text-[8px] text-purple-300">&gt; loading model metadata...</p>
                                     <p class="text-[8px] text-green-300">&gt; CUDA0 model buffer loaded</p>
                                     <p class="text-[8px] text-gray-400">&gt; HTTP server listening on :41733</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-surface-container-low/30 border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16">
+                    <div>
+                        <span class="block text-xs font-bold uppercase tracking-widest text-purple-300 mb-3">What this demonstrates to an employer</span>
+                        <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">More than a software interface — evidence of how I work</h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed">
+                            This applied research project shows my ability to bring structure to a complex operation, work across business and technical requirements, coordinate AI-assisted execution, and keep human judgment responsible for quality.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="glass-card p-6 rounded-xl border border-purple-400/15">
+                            <span class="material-symbols-outlined text-purple-300 mb-3">account_tree</span>
+                            <h3 class="text-white font-bold mb-2">Process & Workflow Design</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Mapped a fragmented terminal-based operation into a six-stage workflow with clear inputs, decisions, controls, and outputs.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl border border-purple-400/15">
+                            <span class="material-symbols-outlined text-purple-300 mb-3">translate</span>
+                            <h3 class="text-white font-bold mb-2">Requirements Translation</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Converted technical parameters and infrastructure needs into guided screens, presets, status indicators, and understandable actions.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl border border-purple-400/15">
+                            <span class="material-symbols-outlined text-purple-300 mb-3">fact_check</span>
+                            <h3 class="text-white font-bold mb-2">Testing & Quality Control</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Defined validation checkpoints, ran the system in its real environment, and identified three critical issues that automated output alone did not catch.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl border border-purple-400/15">
+                            <span class="material-symbols-outlined text-purple-300 mb-3">description</span>
+                            <h3 class="text-white font-bold mb-2">Documentation & Traceability</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Maintained architecture, product decisions, troubleshooting knowledge, test evidence, and progress through the RMV Memory Framework.</p>
                         </div>
                     </div>
                 </div>
@@ -167,11 +215,11 @@
                     <p class="text-on-surface-variant max-w-3xl mx-auto">Neural Lab connects the entire local inference lifecycle instead of treating launch, monitoring, and debugging as separate tasks.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                    <div class="relative p-5 rounded-xl bg-surface-container border border-cyan-400/15 text-center"><span class="material-symbols-outlined text-cyan-300 mb-3">folder_open</span><p class="text-xs font-bold text-white">1. Scan</p><p class="text-[11px] text-on-surface-variant mt-1">Find GGUF files</p></div>
-                    <div class="relative p-5 rounded-xl bg-surface-container border border-cyan-400/15 text-center"><span class="material-symbols-outlined text-cyan-300 mb-3">memory</span><p class="text-xs font-bold text-white">2. Inspect</p><p class="text-[11px] text-on-surface-variant mt-1">Read metadata</p></div>
-                    <div class="relative p-5 rounded-xl bg-surface-container border border-cyan-400/15 text-center"><span class="material-symbols-outlined text-cyan-300 mb-3">tune</span><p class="text-xs font-bold text-white">3. Configure</p><p class="text-[11px] text-on-surface-variant mt-1">Apply parameters</p></div>
-                    <div class="relative p-5 rounded-xl bg-surface-container border border-cyan-400/15 text-center"><span class="material-symbols-outlined text-cyan-300 mb-3">rocket_launch</span><p class="text-xs font-bold text-white">4. Launch</p><p class="text-[11px] text-on-surface-variant mt-1">Start server</p></div>
-                    <div class="relative p-5 rounded-xl bg-surface-container border border-cyan-400/15 text-center"><span class="material-symbols-outlined text-cyan-300 mb-3">monitoring</span><p class="text-xs font-bold text-white">5. Monitor</p><p class="text-[11px] text-on-surface-variant mt-1">Observe runtime</p></div>
+                    <div class="relative p-5 rounded-xl bg-surface-container border border-purple-400/15 text-center"><span class="material-symbols-outlined text-purple-300 mb-3">folder_open</span><p class="text-xs font-bold text-white">1. Scan</p><p class="text-[11px] text-on-surface-variant mt-1">Find GGUF files</p></div>
+                    <div class="relative p-5 rounded-xl bg-surface-container border border-purple-400/15 text-center"><span class="material-symbols-outlined text-purple-300 mb-3">memory</span><p class="text-xs font-bold text-white">2. Inspect</p><p class="text-[11px] text-on-surface-variant mt-1">Read metadata</p></div>
+                    <div class="relative p-5 rounded-xl bg-surface-container border border-purple-400/15 text-center"><span class="material-symbols-outlined text-purple-300 mb-3">tune</span><p class="text-xs font-bold text-white">3. Configure</p><p class="text-[11px] text-on-surface-variant mt-1">Apply parameters</p></div>
+                    <div class="relative p-5 rounded-xl bg-surface-container border border-purple-400/15 text-center"><span class="material-symbols-outlined text-purple-300 mb-3">rocket_launch</span><p class="text-xs font-bold text-white">4. Launch</p><p class="text-[11px] text-on-surface-variant mt-1">Start server</p></div>
+                    <div class="relative p-5 rounded-xl bg-surface-container border border-purple-400/15 text-center"><span class="material-symbols-outlined text-purple-300 mb-3">monitoring</span><p class="text-xs font-bold text-white">5. Monitor</p><p class="text-[11px] text-on-surface-variant mt-1">Observe runtime</p></div>
                     <div class="relative p-5 rounded-xl bg-surface-container border border-yellow-400/20 text-center"><span class="material-symbols-outlined text-yellow-300 mb-3">troubleshoot</span><p class="text-xs font-bold text-white">6. Diagnose</p><p class="text-[11px] text-on-surface-variant mt-1">Resolve errors</p></div>
                 </div>
                 <div class="flow-line h-px w-5/6 mx-auto mt-5"></div>
@@ -183,12 +231,90 @@
                 <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">03 / Product capabilities</span>
                 <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-12">Six focused workspaces, one operating system</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">dashboard</span><h3 class="font-bold text-white text-lg mb-2">Dashboard</h3><p class="text-sm text-on-surface-variant leading-relaxed">Live view of the loaded model, endpoint status, CUDA version, GPU and VRAM, RAM, disks, processes, open ports, and server uptime.</p></div>
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">deployed_code</span><h3 class="font-bold text-white text-lg mb-2">Models</h3><p class="text-sm text-on-surface-variant leading-relaxed">Scans model directories, reads GGUF metadata, detects quantization and model type, and adds contextual education for local-model formats.</p></div>
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">tune</span><h3 class="font-bold text-white text-lg mb-2">Builder</h3><p class="text-sm text-on-surface-variant leading-relaxed">Turns llama-server flags into a guided form with five presets, VRAM-fit estimation, contextual help, and a visible command before execution.</p></div>
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">terminal</span><h3 class="font-bold text-white text-lg mb-2">Restricted Terminal</h3><p class="text-sm text-on-surface-variant leading-relaxed">Provides auxiliary system diagnostics through an explicit allowlist of 34 commands while blocking high-risk shell operations.</p></div>
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">article</span><h3 class="font-bold text-white text-lg mb-2">Logs</h3><p class="text-sm text-on-surface-variant leading-relaxed">Colorizes runtime events, filters by severity, identifies likely CUDA or port causes, copies errors, and exports a debug report.</p></div>
-                    <div class="glass-card p-7 rounded-xl border border-cyan-400/15"><span class="material-symbols-outlined text-cyan-300 text-3xl mb-4">settings</span><h3 class="font-bold text-white text-lg mb-2">Settings</h3><p class="text-sm text-on-surface-variant leading-relaxed">Validates paths, discovers binaries, tests port availability, reloads environment configuration, and exposes readiness as visible status.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">dashboard</span><h3 class="font-bold text-white text-lg mb-2">Dashboard</h3><p class="text-sm text-on-surface-variant leading-relaxed">Live view of the loaded model, endpoint status, CUDA version, GPU and VRAM, RAM, disks, processes, open ports, and server uptime.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">deployed_code</span><h3 class="font-bold text-white text-lg mb-2">Models</h3><p class="text-sm text-on-surface-variant leading-relaxed">Scans model directories, reads GGUF metadata, detects quantization and model type, and adds contextual education for local-model formats.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">tune</span><h3 class="font-bold text-white text-lg mb-2">Builder</h3><p class="text-sm text-on-surface-variant leading-relaxed">Turns llama-server flags into a guided form with five presets, VRAM-fit estimation, contextual help, and a visible command before execution.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">terminal</span><h3 class="font-bold text-white text-lg mb-2">Restricted Terminal</h3><p class="text-sm text-on-surface-variant leading-relaxed">Provides auxiliary system diagnostics through an explicit allowlist of 34 commands while blocking high-risk shell operations.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">article</span><h3 class="font-bold text-white text-lg mb-2">Logs</h3><p class="text-sm text-on-surface-variant leading-relaxed">Colorizes runtime events, filters by severity, identifies likely CUDA or port causes, copies errors, and exports a debug report.</p></div>
+                    <div class="glass-card p-7 rounded-xl border border-purple-400/15"><span class="material-symbols-outlined text-purple-300 text-3xl mb-4">settings</span><h3 class="font-bold text-white text-lg mb-2">Settings</h3><p class="text-sm text-on-surface-variant leading-relaxed">Validates paths, discovers binaries, tests port availability, reloads environment configuration, and exposes readiness as visible status.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center mb-14">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-purple-300 mb-3">Real product evidence</span>
+                    <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">Six working screens — not a concept mockup</h2>
+                    <p class="text-on-surface-variant max-w-4xl mx-auto text-lg leading-relaxed">Each screen represents a different operational responsibility. Together, they show how research and requirements were transformed into a functional, testable workflow.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/dashboard.png','Dashboard — operational visibility')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/dashboard.png" alt="RMV Neural Lab dashboard showing model, endpoints, GPU, memory, storage and network status" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">01 · Operational Visibility</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Dashboard</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Consolidates the active model, endpoint, GPU, memory, storage, processes, and network status. It demonstrates how I organize scattered operational data into one decision surface.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/models.png','Models — structured inventory and decision support')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/models.png" alt="RMV Neural Lab model inventory with disks, model paths, categories and actions" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">02 · Structured Information</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Models</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Turns files distributed across disks into a searchable inventory with model type, size, context, VRAM fit, status, and next actions — evidence of structured data and user-centered organization.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/builder.png','Builder — requirements translated into a guided workflow')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/builder.png" alt="RMV Neural Lab builder with presets, configuration form and execution summary" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">03 · Requirements Translation</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Builder</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Converts command-line parameters into guided choices, safe presets, contextual explanations, and a reviewable execution summary. It shows how I translate technical requirements into a usable process.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/logs.png','Logs — traceability, diagnosis and continuous improvement')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/logs.png" alt="RMV Neural Lab logs screen showing server runs and detailed execution records" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">04 · Traceability & Diagnosis</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Logs</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Preserves execution history and detailed events so failures can be diagnosed instead of guessed. This reflects my focus on evidence, troubleshooting, and continuous process improvement.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/terminal.png','Terminal — controlled operational access')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/terminal.png" alt="RMV Neural Lab restricted terminal for approved operational commands" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">05 · Controlled Execution</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Restricted Terminal</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Provides necessary diagnostic access through an allowlist while blocking unsafe commands. It demonstrates operational control: enable the work that is needed while defining clear boundaries.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="glass-card rounded-2xl overflow-hidden border border-purple-400/15 group">
+                        <button type="button" onclick="openEvidence('assets/neural-lab/config.png','Configuration — readiness and environment validation')" class="block w-full text-left evidence-shot">
+                            <div class="aspect-video overflow-hidden bg-black/30"><img src="assets/neural-lab/config.png" alt="RMV Neural Lab configuration screen showing paths, server settings, runtime and binary validation" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"></div>
+                        </button>
+                        <figcaption class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">06 · Readiness Validation</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-2">Configuration</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Makes paths, ports, runtime, GPU, and required binaries visible and verifiable. It shows how I convert hidden dependencies into an operational readiness checklist.</p>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -203,11 +329,11 @@
                         <p class="text-white font-semibold">A local operating surface — not a cloud dependency.</p>
                     </div>
                     <div class="space-y-4 lab-mono text-sm">
-                        <div class="p-5 rounded-xl border border-cyan-400/20 bg-cyan-400/[.04]">
-                            <div class="flex items-center justify-between gap-3"><span class="text-cyan-300 font-semibold">FRONTEND · :5180</span><span class="text-[10px] text-gray-500">React + Vite + TypeScript</span></div>
+                        <div class="p-5 rounded-xl border border-purple-400/20 bg-purple-400/[.04]">
+                            <div class="flex items-center justify-between gap-3"><span class="text-purple-300 font-semibold">FRONTEND · :5180</span><span class="text-[10px] text-gray-500">React + Vite + TypeScript</span></div>
                             <p class="text-xs text-gray-400 mt-2">6 pages · 10 components · 3 TanStack Query hooks</p>
                         </div>
-                        <div class="flex justify-center"><span class="material-symbols-outlined text-cyan-300">south</span></div>
+                        <div class="flex justify-center"><span class="material-symbols-outlined text-purple-300">south</span></div>
                         <div class="p-5 rounded-xl border border-primary/20 bg-primary/[.04]">
                             <div class="flex items-center justify-between gap-3"><span class="text-primary font-semibold">REST API · :8091</span><span class="text-[10px] text-gray-500">FastAPI + Pydantic v2</span></div>
                             <p class="text-xs text-gray-400 mt-2">Models · Server · System · 19 endpoints · Swagger UI</p>
@@ -216,7 +342,7 @@
                             <div class="p-4 rounded-xl border border-white/10 bg-surface-container"><p class="text-xs text-white">Service layer</p><p class="text-[10px] text-gray-500 mt-2">scanner · builder<br>process manager · monitor</p></div>
                             <div class="p-4 rounded-xl border border-white/10 bg-surface-container"><p class="text-xs text-white">Persistence</p><p class="text-[10px] text-gray-500 mt-2">SQLAlchemy 2.0<br>SQLite · local data</p></div>
                         </div>
-                        <div class="flex justify-center"><span class="material-symbols-outlined text-cyan-300">south</span></div>
+                        <div class="flex justify-center"><span class="material-symbols-outlined text-purple-300">south</span></div>
                         <div class="p-5 rounded-xl border border-yellow-400/20 bg-yellow-400/[.04]">
                             <div class="flex items-center justify-between gap-3"><span class="text-yellow-300 font-semibold">INFERENCE · :41733</span><span class="text-[10px] text-gray-500">llama.cpp</span></div>
                             <p class="text-xs text-gray-400 mt-2">CUDA → Vulkan → CPU fallback · GGUF models · OpenAI-compatible endpoint</p>
@@ -241,9 +367,9 @@
                     <div>
                         <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">06 / Engineering evidence</span>
                         <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-white mb-7">Validated beyond the happy path</h2>
-                        <div class="glass-card rounded-xl overflow-hidden border border-cyan-400/15">
-                            <div class="grid grid-cols-[1fr_auto] gap-4 p-5 border-b border-white/5"><div><p class="text-white font-bold">Backend suite</p><p class="text-xs text-on-surface-variant mt-1">Services, schemas, security, monitor, scanner, and full flow</p></div><span class="text-cyan-300 text-2xl font-bold">76</span></div>
-                            <div class="grid grid-cols-[1fr_auto] gap-4 p-5 border-b border-white/5"><div><p class="text-white font-bold">Frontend suite</p><p class="text-xs text-on-surface-variant mt-1">API client, log parser, states, badges, outputs, and toasts</p></div><span class="text-cyan-300 text-2xl font-bold">35</span></div>
+                        <div class="glass-card rounded-xl overflow-hidden border border-purple-400/15">
+                            <div class="grid grid-cols-[1fr_auto] gap-4 p-5 border-b border-white/5"><div><p class="text-white font-bold">Backend suite</p><p class="text-xs text-on-surface-variant mt-1">Services, schemas, security, monitor, scanner, and full flow</p></div><span class="text-purple-300 text-2xl font-bold">76</span></div>
+                            <div class="grid grid-cols-[1fr_auto] gap-4 p-5 border-b border-white/5"><div><p class="text-white font-bold">Frontend suite</p><p class="text-xs text-on-surface-variant mt-1">API client, log parser, states, badges, outputs, and toasts</p></div><span class="text-purple-300 text-2xl font-bold">35</span></div>
                             <div class="grid grid-cols-[1fr_auto] gap-4 p-5 border-b border-white/5"><div><p class="text-white font-bold">TypeScript validation</p><p class="text-xs text-on-surface-variant mt-1">Static checking through tsc --noEmit</p></div><span class="material-symbols-outlined text-green-300 text-2xl">check_circle</span></div>
                             <div class="grid grid-cols-[1fr_auto] gap-4 p-5"><div><p class="text-white font-bold">Production build</p><p class="text-xs text-on-surface-variant mt-1">Vite build validated as a release gate</p></div><span class="material-symbols-outlined text-green-300 text-2xl">check_circle</span></div>
                         </div>
@@ -254,11 +380,11 @@
 
         <section class="py-20 md:py-24 border-y border-white/5">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">07 / Human + AI development model</span>
-                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">The code was AI-assisted. The product decisions were human-owned.</h2>
-                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-12">Neural Lab was built by Roberto Vilela with an AI coding agent under the RMV System Memory Bank. The agent generated most implementation code; Roberto defined the product, approved each plan, tested the real environment, rejected failures, and closed every phase through observable validation.</p>
+                <span class="block text-xs font-bold uppercase tracking-widest text-purple-300 mb-3">07 / My role and the AI's role</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">The code was AI-generated. The direction, requirements, and acceptance decisions were mine.</h2>
+                <p class="text-lg text-on-surface-variant max-w-4xl leading-relaxed mb-12">This distinction matters. I am not presenting the project as proof that I manually wrote every line of Python or React. It is proof that I can define an operational problem, translate needs into requirements, direct an AI-assisted build, evaluate the output, identify failures, and maintain human responsibility for the final result.</p>
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
-                    <div class="p-5 rounded-xl bg-cyan-400/[.05] border border-cyan-400/15"><p class="text-xs text-cyan-300 font-bold mb-2">01 · DEFINE</p><p class="text-sm text-white">Human identifies the operational problem and sets scope.</p></div>
+                    <div class="p-5 rounded-xl bg-purple-400/[.05] border border-purple-400/15"><p class="text-xs text-purple-300 font-bold mb-2">01 · DEFINE</p><p class="text-sm text-white">Human identifies the operational problem and sets scope.</p></div>
                     <div class="p-5 rounded-xl bg-surface-container border border-white/5"><p class="text-xs text-primary font-bold mb-2">02 · PLAN</p><p class="text-sm text-white">Agent analyzes architecture, risks, files, and validation.</p></div>
                     <div class="p-5 rounded-xl bg-yellow-400/[.05] border border-yellow-400/15"><p class="text-xs text-yellow-300 font-bold mb-2">03 · APPROVE</p><p class="text-sm text-white">Human approves, adjusts, or rejects the proposed plan.</p></div>
                     <div class="p-5 rounded-xl bg-surface-container border border-white/5"><p class="text-xs text-primary font-bold mb-2">04 · EXECUTE</p><p class="text-sm text-white">Agent implements only the approved scope.</p></div>
@@ -273,46 +399,78 @@
 
         <section class="py-20 md:py-24 bg-surface-container-low/25">
             <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop">
-                <span class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">08 / Skills demonstrated</span>
-                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-10">From infrastructure pain to an operable product</h2>
+                <span class="block text-xs font-bold uppercase tracking-widest text-purple-300 mb-3">08 / Professional capabilities demonstrated</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-5">The capabilities a hiring team can evaluate</h2>
+                <p class="text-on-surface-variant text-lg max-w-4xl leading-relaxed mb-10">The technical stack is context. The professional evidence is how I organized the work, connected requirements to execution, and validated the result.</p>
                 <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Product Discovery</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Systems Architecture</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">FastAPI & REST Design</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">React & TypeScript</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Local AI Infrastructure</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Process Management</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Hardware Observability</span>
-                    <span class="px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-200 text-sm">Security Guardrails</span>
-                    <span class="px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-200 text-sm">Human-in-the-Loop QA</span>
-                    <span class="px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-200 text-sm">AI-Assisted Delivery</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Process Mapping</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Requirements Documentation</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Workflow Design</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">AI-Assisted Implementation</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Testing & Troubleshooting</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Technical Documentation</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Operational Visibility</span>
+                    <span class="px-4 py-2 rounded-full bg-purple-400/10 border border-purple-400/20 text-purple-200 text-sm">Project Coordination</span>
+                    <span class="px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-200 text-sm">Human-in-the-Loop Quality Control</span>
                 </div>
             </div>
         </section>
 
         <section class="py-24 lab-grid border-y border-white/5">
             <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                <span class="material-symbols-outlined text-cyan-300 text-5xl mb-6">memory</span>
-                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">Local AI should feel operable, not improvised.</h2>
-                <p class="text-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-10">RMV Neural Lab AI is an open, auditable foundation for researchers, builders, and privacy-conscious teams that need visibility and control over local model inference.</p>
+                <span class="material-symbols-outlined text-purple-300 text-5xl mb-6">memory</span>
+                <span class="block text-xs font-bold uppercase tracking-widest text-purple-300 mb-3">For recruiters and hiring managers</span>
+                <h2 class="font-headline-lg text-3xl md:text-5xl font-bold text-white mb-6">I turn complex work into structured, trackable, human-reviewed workflows.</h2>
+                <p class="text-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-10">RMV Neural Lab is one example of the way I work across operations and technology: clarify the problem, organize requirements, use AI to accelerate execution, test the real result, and preserve human accountability.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://github.com/Roberto-Vilela/rmv-system-neural-lab-ai" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 px-8 py-3 bg-cyan-300 text-black font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-cyan-400/20">
-                        Explore the source
+                    <a href="https://calendar.app.google/ACrQGU7KmJjYf2BEA" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 px-8 py-3 bg-purple-500 text-white font-bold rounded-lg hover:scale-105 transition-all shadow-lg shadow-purple-500/20">
+                        Discuss an opportunity
                         <span class="material-symbols-outlined text-base">open_in_new</span>
                     </a>
-                    <a href="rmv-memory-framework.html" class="inline-flex justify-center items-center gap-2 px-8 py-3 border border-white/15 bg-white/5 text-white font-bold rounded-lg hover:bg-white/10 transition-all">
-                        See the governance framework
-                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                    <a href="https://github.com/Roberto-Vilela/rmv-system-neural-lab-ai" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 px-8 py-3 border border-purple-400/25 bg-purple-400/5 text-white font-bold rounded-lg hover:bg-purple-400/10 transition-all">
+                        Review the evidence
+                        <span class="material-symbols-outlined text-base">code</span>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
+    <dialog id="evidence-modal" onclick="if(event.target===this) closeEvidence()">
+        <button type="button" onclick="closeEvidence()" class="fixed top-5 right-5 z-10 w-11 h-11 rounded-full bg-white/10 border border-white/15 text-white hover:bg-white/20 flex items-center justify-center" aria-label="Close expanded screenshot">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="max-w-[96vw] max-h-[94vh] flex flex-col items-center gap-3">
+            <img id="evidence-image" src="" alt="" class="max-w-[96vw] max-h-[88vh] object-contain">
+            <p id="evidence-caption" class="text-sm text-white/80 text-center"></p>
+        </div>
+    </dialog>
+
     <footer class="bg-surface-container-low border-t border-white/5 py-8">
         <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center text-sm text-on-surface-variant">
             <p>&copy; 2026 Roberto Vilela. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        const evidenceModal = document.getElementById('evidence-modal');
+        const evidenceImage = document.getElementById('evidence-image');
+        const evidenceCaption = document.getElementById('evidence-caption');
+
+        function openEvidence(src, caption) {
+            evidenceImage.src = src;
+            evidenceImage.alt = caption;
+            evidenceCaption.textContent = caption;
+            evidenceModal.showModal();
+        }
+
+        function closeEvidence() {
+            evidenceModal.close();
+            evidenceImage.src = '';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && evidenceModal.open) closeEvidence();
+        });
+    </script>
 </body>
 </html>
