@@ -11,7 +11,7 @@ Hi there 👋
 My primary strength is bridging the gap between Business Needs → Process Design → Tech Implementation.
 
 
-Case Study Highlight: All For Visa Flow: I designed, operationalized, and scaled a full-cycle SaaS platform. This involved defining complex process logic, directing AI-assisted document validation, and structuring a robust Human-in-the-Loop (HITL) review system. Result: Reduced client case preparation time by up to 80%, down to as fast as 3-4 days at peak efficiency.
+Case Study Highlight: All For Visa Flow: I designed, operationalized, and scaled a full-cycle SaaS platform. This involved defining complex process logic, directing AI-assisted document validation, and structuring a robust Human-in-the-Loop (HITL) review system. Result: Reduced client case preparation time by up to 80%, from 15 days to 3–4 business days at peak efficiency.
 
 
 🌱 Expanding Capabilities (Continuous Learning):
