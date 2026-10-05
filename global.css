@@ -598,3 +598,49 @@
 .animate-fade-in {
     animation: fade-in 0.4s ease-out forwards;
 }
+
+/* ============================================================
+   2026-10-05 — Positioning & performance review fixes
+   1. Material Symbols FOUT guard: reserve a fixed icon box so the
+      ligature text (e.g. "check_circle") never shifts layout or
+      flashes as raw text before the webfont loads. Decorative icons
+      get aria-hidden="true" via JS (see index.html).
+   2. Keyboard navigation: visible focus ring (WCAG 2.4.7).
+   3. Reduced motion: disable glow/ping animations (WCAG 2.3.3).
+   ============================================================ */
+.material-symbols-outlined {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+    /* font-display: block equivalent — hide ligature text until usable */
+    font-display: block;
+}
+/* While the icon font is not yet loaded, keep the box but hide text */
+html:not(.msym-loaded) .material-symbols-outlined {
+    color: transparent !important;
+}
+html.msym-loaded .material-symbols-outlined {
+    overflow: visible;
+}
+
+:focus-visible {
+    outline: 2px solid #4facfe;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auto-glow-1, .auto-glow-2, .auto-glow-3, .auto-glow-4,
+    .auto-glow-5, .auto-glow-6, .auto-glow-7,
+    .bm-glow-1, .bm-glow-2, .bm-glow-3, .bm-glow-4,
+    .bm-glow-5, .bm-glow-6, .bm-glow-7,
+    .flow-ping-1, .flow-ping-2, .flow-ping-3, .flow-ping-4,
+    .flow-ping-5, .flow-ping-6, .flow-ping-7, .flow-ping-8,
+    .animate-fade-in-up, .animate-fade-in, .animated-ray, .animated-ray-bm {
+        animation: none !important;
+    }
+}
