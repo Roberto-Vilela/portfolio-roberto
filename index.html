@@ -1,9 +1,6 @@
 <!DOCTYPE html><html class="dark" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Roberto Vilela | Customer Success Operations Lead | Workflow Implementation Specialist | Reduced Intake &amp; Case Prep from 15 days to 3–4 business days | 200+ Cases | Bilingual PT/EN</title>
 <!-- SEO: single canonical description (Lighthouse SEO + WhatsApp/LinkedIn preview) -->
 <meta name="description" content="Customer Success Operations Lead and Workflow Implementation Specialist. I define requirements and rules, validate and operate AI-assisted workflows — from 15 days to 3–4 business days case prep, 98% internal quality target. Focused on document preparation and workflow support, not legal advice.">
@@ -22,14 +19,39 @@
 <meta name="theme-color" content="#0b1326">
 <!-- Favicon: inline SVG (avoids 404, improves Lighthouse) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1326'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%234facfe' font-family='sans-serif' font-weight='bold'%3ERV%3C/text%3E%3C/svg%3E">
-<!-- Performance: preconnect fonts (LCP) + async icon font (prevents icon-text FOUT) -->
+<!-- Performance: preconnect fonts (LCP) + non-blocking CSS/fonts.
+     Pattern: preload as style + stylesheet with media="print" swap via onload.
+     display=swap in the Google Fonts URLs enables font-display: swap. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<!-- LCP image preload (profile photo, fetchpriority=high below) -->
+<link rel="preload" as="image" href="assets/profile/roberto-vilela-profile.png" fetchpriority="high">
+<!-- Critical CSS above the fold (FCP < 1.8s on Slow 4G): layout, nav, hero,
+     font fallbacks (system UI until Outfit/Inter swap in), CLS reservations. -->
+<style>
+html{background:#0b1326}
+body{background-color:#0b1326;color:#dae2fd;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:18px;line-height:1.75;overflow-x:hidden}
+.font-display-lg,.font-headline-lg,.font-headline-md{font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif}
+nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,19,38,.95)}
+main{padding-top:5rem}
+.aspect-video{aspect-ratio:16/9}
+img{max-width:100%}
+.material-symbols-outlined{display:inline-block;width:1em;height:1em;line-height:1;overflow:hidden;white-space:nowrap;flex-shrink:0;font-display:block}
+html:not(.msym-loaded) .material-symbols-outlined{color:transparent!important}
+</style>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="global.css?v=12">
-<script src="tailwind.config.js?v=11"></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="global.css?v=14">
+<link rel="stylesheet" href="global.css?v=14" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="global.css?v=14"></noscript>
+<script src="tailwind.config.js?v=12"></script>
 </head>
 <body class="font-body-md text-on-surface">
 <!-- TopNavBar -->
@@ -68,15 +90,15 @@
   <div class="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 px-5 py-2.5 bg-surface-container rounded-full border border-primary/20 mb-8 shadow-[0_0_12px_rgba(79,172,254,0.1)]">
     <span class="w-2 h-2 rounded-full bg-ai-flow-end animate-pulse flex-shrink-0"></span>
     <span class="tag-cycle text-xs font-label-md text-secondary-container tracking-wide">Client Operations</span>
-    <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
+    <span class="text-on-surface-variant hidden sm:inline text-xs" aria-hidden="true">·</span>
     <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Workflow Design</span>
-    <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
+    <span class="text-on-surface-variant hidden sm:inline text-xs" aria-hidden="true">·</span>
     <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Process Documentation</span>
-    <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
+    <span class="text-on-surface-variant hidden sm:inline text-xs" aria-hidden="true">·</span>
     <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Human-in-the-Loop AI</span>
-    <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
+    <span class="text-on-surface-variant hidden sm:inline text-xs" aria-hidden="true">·</span>
     <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Implementation Support</span>
-    <span class="text-on-surface-variant/30 hidden sm:inline text-xs">·</span>
+    <span class="text-on-surface-variant hidden sm:inline text-xs" aria-hidden="true">·</span>
     <span class="tag-cycle text-xs font-label-md text-on-surface-variant tracking-wide">Bilingual PT/EN</span>
   </div>
 
@@ -97,10 +119,10 @@
 
   <!-- Metrics: official facts only — time metric + 98% internal target + organic reach -->
   <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-10">
-    <span class="text-sm text-on-surface-variant"><strong class="text-primary font-bold">200+</strong> Cases Managed</span>
-    <span class="text-sm text-on-surface-variant"><strong class="text-primary font-bold">80%</strong> Reduction in Processing Time (from 15 days to 3–4 business days)</span>
-    <span class="text-sm text-on-surface-variant"><strong class="text-primary font-bold">98%</strong> internal quality target across client case preparation workflows</span>
-    <span class="text-sm text-on-surface-variant"><strong class="text-primary font-bold">86K+</strong> YouTube views — organic reach &amp; client acquisition channel</span>
+    <span class="hero-metric text-sm text-on-surface-variant"><strong class="text-primary font-bold">200+</strong> Cases Managed</span>
+    <span class="hero-metric text-sm text-on-surface-variant"><strong class="text-primary font-bold">80%</strong> Reduction in Processing Time (from 15 days to 3–4 business days)</span>
+    <span class="hero-metric text-sm text-on-surface-variant"><strong class="text-primary font-bold">98%</strong> internal quality target across client case preparation workflows</span>
+    <span class="hero-metric text-sm text-on-surface-variant"><strong class="text-primary font-bold">86K+</strong> YouTube views — organic reach &amp; client acquisition channel</span>
   </div>
 
   <!-- CTAs: primary = Download Resume + Contact; 15-min call demoted to secondary -->
@@ -114,7 +136,7 @@
   </div>
   <p class="mt-4 text-sm text-on-surface-variant">
     <a href="https://calendar.app.google/ACrQGU7KmJjYf2BEA" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">Prefer a call? Book a free 15-min intro call</a>
-    <span class="text-on-surface-variant/60"> — secondary, no pressure.</span>
+    <span class="text-on-surface-variant"> — secondary, no pressure.</span>
   </p>
 
 <!-- AI Operations Builder Map -->
@@ -176,7 +198,7 @@
 <span class="font-bold text-yellow-300">Human Review</span>
 </div>
 </div>
-<p class="text-yellow-300/80 text-sm flex items-center px-4 md:px-0 italic">Human-in-the-loop governance ensures quality, compliance and ethical control.</p>
+<p class="text-yellow-300 text-sm flex items-center px-4 md:px-0 italic">Human-in-the-loop governance ensures quality, compliance and ethical control.</p>
 
 <!-- Stage 5 -->
 <div class="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/20">
@@ -426,22 +448,22 @@ A portfolio organized by maturity and purpose — active systems, case studies, 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="p-8 rounded-xl border border-primary/20 bg-surface-container flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-3xl text-primary mb-4">business_center</span>
-<h4 class="font-bold mb-2">Service Businesses</h4>
+<h3 class="font-bold mb-2 text-base">Service Businesses</h3>
 <p class="text-sm text-on-surface-variant">Consultants and service businesses drowning in manual client work.</p>
 </div>
 <div class="p-8 rounded-xl border border-green-500/20 bg-surface-container flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-3xl text-green-400 mb-4">description</span>
-<h4 class="font-bold mb-2">Immigration Teams</h4>
+<h3 class="font-bold mb-2 text-base">Immigration Teams</h3>
 <p class="text-sm text-on-surface-variant">Document-heavy teams managing cases, status updates, and client follow-up.</p>
 </div>
 <div class="p-8 rounded-xl border border-purple-500/20 bg-surface-container flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-3xl text-purple-400 mb-4">monitor_heart</span>
-<h4 class="font-bold mb-2">Health &amp; Wellness</h4>
+<h3 class="font-bold mb-2 text-base">Health &amp; Wellness</h3>
 <p class="text-sm text-on-surface-variant">Studios and clinics that need intake, retention, and follow-up on autopilot.</p>
 </div>
 <div class="p-8 rounded-xl border border-amber-500/20 bg-surface-container flex flex-col items-center text-center">
 <span class="material-symbols-outlined text-3xl text-amber-400 mb-4">bolt</span>
-<h4 class="font-bold mb-2">Small AI-Teams</h4>
+<h3 class="font-bold mb-2 text-base">Small AI-Teams</h3>
 <p class="text-sm text-on-surface-variant">Teams building with AI who need governance, documentation, and human review baked in.</p>
 </div>
 </div>
@@ -527,12 +549,12 @@ A portfolio organized by maturity and purpose — active systems, case studies, 
 <div class="p-8">
 <span class="inline-block text-[10px] uppercase tracking-wider font-bold bg-green-500/20 text-green-400 px-2 py-0.5 rounded mb-2">Active System · Operational Base Layer</span>
 <h3 class="font-headline-md text-headline-md mb-2">Visa Flow Management</h3>
-<p class="text-on-surface-variant mb-6">Web-based management system for immigration case operations — clients, cases, documents, forms, tasks, and status tracking. I defined the requirements and business rules, validated every release, and operate it day-to-day; implementation was AI-assisted. <span class="text-on-surface-variant/80">Focused on document preparation and workflow support, not legal advice.</span></p>
+<p class="text-on-surface-variant mb-6">Web-based management system for immigration case operations — clients, cases, documents, forms, tasks, and status tracking. I defined the requirements and business rules, validated every release, and operate it day-to-day; implementation was AI-assisted. <span class="text-on-surface-variant">Focused on document preparation and workflow support, not legal advice.</span></p>
 <div class="flex flex-wrap gap-2 mt-4">
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">FastAPI</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">PostgreSQL</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">React</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">REST API</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">FastAPI</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">PostgreSQL</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">React</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">REST API</span>
 </div>
 <div class="mt-5">
 <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-green-600/30 group-hover:scale-105 transition-all duration-200">
@@ -549,14 +571,14 @@ View Management
 <div class="p-8">
 <span class="inline-block text-[10px] uppercase tracking-wider font-bold bg-green-500/20 text-green-400 px-2 py-0.5 rounded mb-2">Active System · 3-Layer Architecture</span>
 <h3 class="font-headline-md text-headline-md mb-2">RMV Flow Ecosystem</h3>
-<p class="text-on-surface-variant mb-6">My operational backbone for immigration case work — I defined the requirements and review rules, validate every release, and operate it day-to-day across intake, documents, and delivery; implementation was AI-assisted. <span class="text-on-surface-variant/80">Focused on document preparation and workflow support, not legal advice.</span></p>
+<p class="text-on-surface-variant mb-6">My operational backbone for immigration case work — I defined the requirements and review rules, validate every release, and operate it day-to-day across intake, documents, and delivery; implementation was AI-assisted. <span class="text-on-surface-variant">Focused on document preparation and workflow support, not legal advice.</span></p>
 <div class="flex flex-wrap gap-2 mt-4">
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">FastAPI</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">PostgreSQL</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">React</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Electron</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">MCP</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Python</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">FastAPI</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">PostgreSQL</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">React</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Electron</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">MCP</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Python</span>
 </div>
 <div class="mt-5">
 <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-green-600/30 group-hover:scale-105 transition-all duration-200">
@@ -573,12 +595,12 @@ View Architecture
 <div class="p-8">
 <span class="inline-block text-[10px] uppercase tracking-wider font-bold bg-green-500/20 text-green-400 px-2 py-0.5 rounded mb-2">Active System · AI Interface Layer</span>
 <h3 class="font-headline-md text-headline-md mb-2">Visa Flow Copilot</h3>
-<p class="text-on-surface-variant mb-6">AI-assisted chat interface for immigration case operations. I defined the requirements, review rules, and agent behavior, validate outputs, and operate it with the team; implementation was AI-assisted. <span class="text-on-surface-variant/80">Focused on document preparation and workflow support, not legal advice.</span></p>
+<p class="text-on-surface-variant mb-6">AI-assisted chat interface for immigration case operations. I defined the requirements, review rules, and agent behavior, validate outputs, and operate it with the team; implementation was AI-assisted. <span class="text-on-surface-variant">Focused on document preparation and workflow support, not legal advice.</span></p>
 <div class="flex flex-wrap gap-2 mt-4">
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Electron</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Multi-Agent</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">MCP</span>
-<span class="text-[10px] bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Chat Interface</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Electron</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Multi-Agent</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">MCP</span>
+<span class="text-[10px] bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20 whitespace-nowrap">Chat Interface</span>
 </div>
 <div class="mt-5">
 <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-green-600/30 group-hover:scale-105 transition-all duration-200">
@@ -613,11 +635,11 @@ View Copilot
                 <h3 class="font-headline-md text-headline-md mb-2">DexaFit Wellness Hub</h3>
                 <p class="text-on-surface-variant mb-6">Health-tech retention workflow concept — 90-day action loop connecting scan data to guided engagement, AI-assisted interpretation, and retest readiness. Full operational case study.</p>
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">AI Workflow Design</span>
-                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Product Strategy</span>
-                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">HITL Governance</span>
-                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Retention Strategy</span>
-                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Behavioral Design</span>
+                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">AI Workflow Design</span>
+                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Product Strategy</span>
+                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">HITL Governance</span>
+                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Retention Strategy</span>
+                    <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Behavioral Design</span>
                 </div>
                 <div class="mt-5">
                     <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-black font-bold text-sm rounded-lg shadow-lg shadow-yellow-500/30 group-hover:scale-105 transition-all duration-200">
@@ -636,12 +658,12 @@ View Copilot
 <h3 class="font-headline-md text-headline-md mb-2">RMV Sales Engine V1</h3>
 <p class="text-on-surface-variant mb-6">Outreach and follow-up workflow I defined, validated, and operate — structured pipeline, review checkpoints, and AI-assisted voice/content generation for consistent multilingual delivery.</p>
 <div class="flex flex-wrap gap-2 mt-4">
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">n8n</span>
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Voice RMV</span>
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Google Sheets</span>
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Google Drive</span>
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Claude</span>
-<span class="text-[10px] bg-yellow-500/10 text-yellow-400/80 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">ChatGPT</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">n8n</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Voice RMV</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Google Sheets</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Google Drive</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">Claude</span>
+<span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/20 whitespace-nowrap">ChatGPT</span>
 </div>
 <div class="mt-5">
 <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-black font-bold text-sm rounded-lg shadow-lg shadow-yellow-500/30 group-hover:scale-105 transition-all duration-200">
@@ -698,10 +720,10 @@ View Full Study
 <h3 class="font-headline-md text-headline-md mb-2">RMV Neural Lab AI</h3>
 <p class="text-on-surface-variant mb-6">Applied research project that transforms the complexity of local AI model operations into a structured, observable, and human-validated workflow. Demonstrates requirements translation, process design, AI-assisted implementation, testing, troubleshooting, and technical documentation.</p>
 <div class="flex flex-wrap gap-2 mb-5">
-<span class="text-[10px] bg-purple-500/10 text-purple-400/80 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Applied Research</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400/80 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Workflow Design</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400/80 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Human-in-the-Loop</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400/80 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">111 Tests</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Applied Research</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Workflow Design</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Human-in-the-Loop</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">111 Tests</span>
 </div>
 <span class="inline-flex self-start items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-all duration-200">
 View Applied Research
@@ -771,31 +793,31 @@ Built on 5 years of real operations since August 2021, not theory. I start by un
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4 relative z-10">
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-1">1</div>
-<h5 class="font-bold text-sm">Understand</h5>
+<h3 class="font-bold text-sm">Understand</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-2">2</div>
-<h5 class="font-bold text-sm">Map</h5>
+<h3 class="font-bold text-sm">Map</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-3">3</div>
-<h5 class="font-bold text-sm">Design</h5>
+<h3 class="font-bold text-sm">Design</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-4">4</div>
-<h5 class="font-bold text-sm">AI Assistant</h5>
+<h3 class="font-bold text-sm">AI Assistant</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-5">5</div>
-<h5 class="font-bold text-sm">Human Review</h5>
+<h3 class="font-bold text-sm">Human Review</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-6">6</div>
-<h5 class="font-bold text-sm">Test/Improve</h5>
+<h3 class="font-bold text-sm">Test/Improve</h3>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-12 h-12 rounded-full bg-surface-container border border-primary flex items-center justify-center mb-4 transition-all auto-glow-7">7</div>
-<h5 class="font-bold text-sm">Deliver</h5>
+<h3 class="font-bold text-sm">Deliver</h3>
 </div>
 </div>
 </div>
@@ -807,19 +829,19 @@ Built on 5 years of real operations since August 2021, not theory. I start by un
 <p class="text-on-surface-variant font-body-md mb-16 max-w-2xl mx-auto">5 years running a real client-facing operation since August 2021. Converting that into structured AI-assisted systems.</p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
 <div>
-<div class="text-4xl font-bold text-primary mb-2">200+</div>
+<div class="stat-value text-4xl font-bold text-primary mb-2">200+</div>
 <div class="text-label-md text-on-surface-variant uppercase">Cases Managed</div>
 </div>
 <div>
-<div class="text-4xl font-bold text-primary mb-2">1,100+</div>
+<div class="stat-value text-4xl font-bold text-primary mb-2">1,100+</div>
 <div class="text-label-md text-on-surface-variant uppercase">Members</div>
 </div>
 <div>
-<div class="text-4xl font-bold text-primary mb-2">86K+</div>
+<div class="stat-value text-4xl font-bold text-primary mb-2">86K+</div>
 <div class="text-label-md text-on-surface-variant uppercase">Organic Views</div>
 </div>
 <div>
-<div class="text-4xl font-bold text-primary mb-2">1</div>
+<div class="stat-value text-4xl font-bold text-primary mb-2">1</div>
 <div class="text-label-md text-on-surface-variant uppercase">Live Deployment</div>
 </div>
 </div>
@@ -835,7 +857,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-12 items-center">
 <div class="order-1 lg:order-2 relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 lg:mb-0">
 <div class="w-full h-full bg-surface-bright rounded-full overflow-hidden border border-white/10 shadow-2xl ring-4 ring-primary/20">
-<img alt="Roberto Vilela — Customer Success Operations Lead, Workflow Implementation Specialist" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="assets/profile/roberto-vilela-profile.png" fetchpriority="high" decoding="async">
+<img alt="Roberto Vilela — Customer Success Operations Lead, Workflow Implementation Specialist" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="assets/profile/roberto-vilela-profile.png" fetchpriority="high" decoding="async" width="320" height="320">
 </div>
 <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-6 py-4 glass-card rounded-xl border border-primary/30 text-center whitespace-nowrap">
 <p class="font-bold text-primary">Roberto Vilela</p>
@@ -843,7 +865,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 </div>
 </div>
 <ul class="order-2 lg:order-1 text-body-lg text-on-surface-variant mb-8 lg:mb-0 list-none space-y-3">
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">check_circle</span><span>Defined, validated, and operate the RMV Flow Ecosystem — my case-management workflow for client intake, document tracking, and service delivery; implementation was AI-assisted. <span class="text-on-surface-variant/80">Focused on document preparation and workflow support, not legal advice.</span></span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">check_circle</span><span>Defined, validated, and operate the RMV Flow Ecosystem — my case-management workflow for client intake, document tracking, and service delivery; implementation was AI-assisted. <span class="text-on-surface-variant">Focused on document preparation and workflow support, not legal advice.</span></span></li>
 <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">check_circle</span><span>Scaled immigration and service operations by reducing case preparation time from 15 days to 3–4 business days, while enforcing a 98% internal quality target across client case preparation workflows.</span></li>
 <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">check_circle</span><span>Managed the end-to-end operational lifecycle for 200+ complex client cases, following internal documentation checklists and proactive follow-up communications.</span></li>
 </ul>
@@ -874,7 +896,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
         Contact via form — replies within 24h
     </button>
 </div>
-<p class="mt-4 text-xs text-on-surface-variant/80 max-w-xl mx-auto">Short version: 5 years running immigration case operations since August 2021; now I implement the same discipline as AI-assisted workflows for service teams. Focused on document preparation and workflow support, not legal advice.</p>
+<p class="mt-4 text-xs text-on-surface-variant max-w-xl mx-auto">Short version: 5 years running immigration case operations since August 2021; now I implement the same discipline as AI-assisted workflows for service teams. Focused on document preparation and workflow support, not legal advice.</p>
 </div>
 </div>
 </div>
@@ -903,7 +925,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
         <p class="text-on-surface-variant text-sm flex-grow mb-6 relative z-10">Inbound marketing automation, lead management, and platform optimization (Valid through Jun 2027).</p>
         <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-10">
             <span class="text-xs text-on-surface-variant uppercase tracking-wider">HubSpot Academy</span>
-            <a href="https://drive.google.com/drive/folders/1yhmfKZ3rVQVMx71Q1VHS1ZQXr58joY98?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-on-primary text-sm font-bold flex items-center gap-1 group-hover:underline">
+            <a href="https://drive.google.com/drive/folders/1yhmfKZ3rVQVMx71Q1VHS1ZQXr58joY98?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-white text-sm font-bold flex items-center gap-1 group-hover:underline">
                 View <span class="material-symbols-outlined text-xs">open_in_new</span>
             </a>
         </div>
@@ -930,7 +952,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
         </div>
         <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-10">
             <span class="text-xs text-on-surface-variant uppercase tracking-wider">Google</span>
-            <a href="https://drive.google.com/drive/folders/1DNn5Ivlny0eSkMtbYwnAX92PaR_ANB54?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-on-primary text-sm font-bold flex items-center gap-1 group-hover:underline">
+            <a href="https://drive.google.com/drive/folders/1DNn5Ivlny0eSkMtbYwnAX92PaR_ANB54?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-white text-sm font-bold flex items-center gap-1 group-hover:underline">
                 View <span class="material-symbols-outlined text-xs">open_in_new</span>
             </a>
         </div>
@@ -951,7 +973,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
         <p class="text-on-surface-variant text-sm flex-grow mb-6 relative z-10">Frameworks for LLM integration and operational fluency in AI-driven environments.</p>
         <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-10">
             <span class="text-xs text-on-surface-variant uppercase tracking-wider">Anthropic / Coursera</span>
-            <a href="https://drive.google.com/drive/folders/1Mv61fOS6_iim8wWxEuIxgLrGbHaFU2bu?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-on-primary text-sm font-bold flex items-center gap-1 group-hover:underline">
+            <a href="https://drive.google.com/drive/folders/1Mv61fOS6_iim8wWxEuIxgLrGbHaFU2bu?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-white text-sm font-bold flex items-center gap-1 group-hover:underline">
                 View <span class="material-symbols-outlined text-xs">open_in_new</span>
             </a>
         </div>
@@ -970,38 +992,38 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     <div class="glass-card p-6 rounded-xl border border-white/10">
-        <h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Workflow & Automation</h4>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Workflow & Automation</h3>
         <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">n8n</span>
-            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">HubSpot workflows</span>
-            <span class="text-xs bg-primary/10 text-primary/80 px-3 py-1 rounded-full border border-primary/20">Docker</span>
+            <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">n8n</span>
+            <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">HubSpot workflows</span>
+            <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">Docker</span>
             <!-- NOTE: Celery / Redis demoted — supporting queue infrastructure, not operator positioning. -->
         </div>
     </div>
     <div class="glass-card p-6 rounded-xl border border-white/10">
-        <h4 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-4">AI & Models</h4>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-4">AI & Models</h3>
         <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">Claude / Anthropic</span>
-            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">faster-whisper</span>
-            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">edge-tts</span>
-            <span class="text-xs bg-secondary-container/10 text-secondary-container/80 px-3 py-1 rounded-full border border-secondary-container/20">Local LLMs</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full border border-secondary-container/20">Claude / Anthropic</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full border border-secondary-container/20">faster-whisper</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full border border-secondary-container/20">edge-tts</span>
+            <span class="text-xs bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full border border-secondary-container/20">Local LLMs</span>
         </div>
     </div>
     <div class="glass-card p-6 rounded-xl border border-white/10">
-        <h4 class="text-xs font-bold uppercase tracking-widest text-tertiary mb-4">Data & Backend</h4>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-tertiary mb-4">Data & Backend</h3>
         <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">PostgreSQL</span>
-            <span class="text-xs bg-tertiary/10 text-tertiary/80 px-3 py-1 rounded-full border border-tertiary/20">Python</span>
+            <span class="text-xs bg-tertiary/10 text-tertiary px-3 py-1 rounded-full border border-tertiary/20">PostgreSQL</span>
+            <span class="text-xs bg-tertiary/10 text-tertiary px-3 py-1 rounded-full border border-tertiary/20">Python</span>
             <!-- NOTE: DuckDB / Streamlit demoted — internal experiment plumbing, not operator positioning. -->
         </div>
     </div>
     <div class="glass-card p-6 rounded-xl border border-white/10">
-        <h4 class="text-xs font-bold uppercase tracking-widest text-green-400 mb-4">CRM & Infra</h4>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-green-400 mb-4">CRM & Infra</h3>
         <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">HubSpot</span>
-            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">Digital Ocean</span>
-            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">Formspree</span>
-            <span class="text-xs bg-green-500/10 text-green-400/80 px-3 py-1 rounded-full border border-green-500/20">GitHub</span>
+            <span class="text-xs bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20">HubSpot</span>
+            <span class="text-xs bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20">Digital Ocean</span>
+            <span class="text-xs bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20">Formspree</span>
+            <span class="text-xs bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20">GitHub</span>
         </div>
     </div>
 </div>
@@ -1067,17 +1089,17 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 <h2 class="font-headline-lg text-headline-lg mb-12 text-center">Ways to Work Together</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="p-8 rounded-xl bg-surface border border-white/5">
-<h4 class="text-xl font-bold mb-4">Job Opportunities</h4>
+<h3 class="text-xl font-bold mb-4">Job Opportunities</h3>
 <p class="text-on-surface-variant text-sm mb-6">I am open to full-time roles in operational design and AI integration for forward-thinking companies.</p>
 <button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Inquire</button>
 </div>
 <div class="p-8 rounded-xl bg-surface border border-white/5">
-<h4 class="text-xl font-bold mb-4">Freelance / Consulting</h4>
+<h3 class="text-xl font-bold mb-4">Freelance / Consulting</h3>
 <p class="text-on-surface-variant text-sm mb-6">Specific system builds, audit reports, or workflow automation sprints for your business.</p>
 <button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Book a Sprint</button>
 </div>
 <div class="p-8 rounded-xl bg-surface border border-white/5">
-<h4 class="text-xl font-bold mb-4">Collaboration</h4>
+<h3 class="text-xl font-bold mb-4">Collaboration</h3>
 <p class="text-on-surface-variant text-sm mb-6">Partnering with SaaS platforms, creators, or agencies to develop custom AI-driven content.</p>
 <button onclick="document.getElementById('contact-modal').showModal()" class="text-primary font-bold text-sm uppercase tracking-wider cursor-pointer hover:underline bg-transparent border-none p-0">Let's Connect</button>
 </div>
@@ -1119,11 +1141,11 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 <div class="space-y-5">
 <div>
 <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="name">Name</label>
-<input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+<input type="text" id="name" name="name" data-fs-field placeholder="Your name" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant focus:outline-none focus:border-primary/50 transition-colors">
 </div>
 <div>
 <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="email">Email</label>
-<input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors">
+<input type="email" id="email" name="email" data-fs-field placeholder="you@example.com" required class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant focus:outline-none focus:border-primary/50 transition-colors">
 </div>
 <div>
 <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="type">Type</label>
@@ -1136,7 +1158,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
 </div>
 <div>
 <label class="block text-sm font-label-md text-on-surface-variant mb-1.5" for="message">Message</label>
-<textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+<textarea id="message" name="message" data-fs-field placeholder="Tell me about your project..." required rows="4" class="w-full px-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface text-sm placeholder:text-on-surface-variant focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
 </div>
 <button type="submit" data-fs-submit-btn class="w-full py-3.5 bg-primary text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(79,172,254,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-sm">send</span> Send Message
@@ -1171,7 +1193,7 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
                     © 2026 Roberto Vilela — Customer Success Operations Lead | Workflow Implementation Specialist. <br> Built for efficiency, designed for impact.
                 </p>
                 <!-- Legal safeguard (mandatory on footer + immigration case studies) -->
-                <p class="text-on-surface-variant/70 text-xs mt-3 max-w-md">
+                <p class="text-on-surface-variant text-xs mt-3 max-w-md">
                     Focused on document preparation and workflow support, not legal advice.
                 </p>
 </div>
@@ -1200,20 +1222,13 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
     })();
 </script>
 <script>
-    // Reveal animations or interaction logic
-    document.querySelectorAll('.glass-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.borderColor = 'rgba(74, 172, 254, 0.4)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-        });
-    });
-
-    // Tag cycling - highlights one tag at a time for ~60s each
+    // Tag cycling — runs only while the hero badge is visible and motion is allowed.
+    // Saves CPU/battery vs an unconditional setInterval on a background tab.
     (function() {
         var tags = document.querySelectorAll('.tag-cycle');
-        var current = 0;
+        if (!tags.length) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var current = 0, timer = null;
         function cycleTag() {
             tags.forEach(function(el, i) {
                 if (i === current) {
@@ -1226,8 +1241,26 @@ Five years managing 200+ immigration cases end-to-end since August 2021 — inta
             });
             current = (current + 1) % tags.length;
         }
-        if (tags.length) cycleTag();
-        setInterval(cycleTag, 3500);
+        function start() {
+            if (timer) return;
+            cycleTag();
+            timer = setInterval(cycleTag, 3500);
+        }
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+        if ('IntersectionObserver' in window) {
+            var badge = tags[0].closest('div');
+            new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) { e.isIntersecting ? start() : stop(); });
+            }).observe(badge);
+        } else {
+            start();
+        }
+        // Pause when the tab is hidden (PageSpeed: reduce unused JS execution).
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) stop();
+        });
     })();
 </script>
 <script>

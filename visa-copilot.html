@@ -2,10 +2,31 @@
 <html class="scroll-smooth" lang="pt-BR" data-lang="pt"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <title>Visa Copilot</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+(function () {
+document.querySelectorAll('.material-symbols-outlined').forEach(function (el) {
+if (!el.getAttribute('aria-label')) el.setAttribute('aria-hidden', 'true');
+});
+function markReady() { document.documentElement.classList.add('msym-loaded'); }
+if (document.fonts && document.fonts.load) {
+document.fonts.load('24px "Material Symbols Outlined"').then(markReady).catch(markReady);
+setTimeout(markReady, 2500);
+} else { markReady(); }
+})();
+</script>
+<link rel="canonical" href="https://portfolio-roberto-nine.vercel.app/visa-copilot.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Visa Copilot"/>
+<meta property="og:description" content="Visa Copilot: AI-assisted case preparation interface. Focused on document preparation and workflow support, not legal advice."/>
+<meta property="og:url" content="https://portfolio-roberto-nine.vercel.app/visa-copilot.html"/>
+<meta property="og:image" content="https://portfolio-roberto-nine.vercel.app/assets/profile/roberto-vilela-profile.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",

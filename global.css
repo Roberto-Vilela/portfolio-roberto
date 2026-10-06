@@ -67,13 +67,32 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Narrow transition (was `all`): transform is GPU-composited,
+               border/background animate without triggering layout. */
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
         }
 
         .glass-card:hover {
             border-color: rgba(79, 172, 254, 0.3);
             background: rgba(23, 31, 51, 0.8);
-            transform: translateY(-4px);
+            transform: translateY(-4px) translateZ(0);
+        }
+
+        /* Placeholder contrast (WCAG AA): solid secondary text, full opacity.
+           Browsers render placeholders at ~50% opacity by default. */
+        ::placeholder {
+            opacity: 1;
+            color: #bfc7d3;
+        }
+
+        /* Below-the-fold sections: skip offscreen rendering work (perf),
+           intrinsic size reserves layout so CLS stays 0. */
+        #what-i-do, #featured-work, #how-i-work {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 1200px;
         }
 
         .glow-accent {
@@ -376,8 +395,8 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -10px, 0); }
         }
 
         .animate-float {
@@ -394,95 +413,149 @@
             font-variation-settings: 'FILL' 1;
         }
 
-        @keyframes ag1 {
-            0%, 100% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            8.33%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        /* Builder glow dots (auto-glow) — composited sequential pulse.
+           Colors are static (painted once); only opacity + transform
+           (compositor props) animate, so the 8s ping-pong costs no
+           main-thread repaint per frame. Phase offsets preserve the
+           1→7 travel of the original glow sequence. */
+        .auto-glow-1, .auto-glow-2, .auto-glow-3, .auto-glow-4,
+        .auto-glow-5, .auto-glow-6, .auto-glow-7 {
+            background-color: rgba(23, 31, 51, 1);
+            border: 1px solid rgba(79, 172, 254, 0.5);
+            color: #dae2fd;
+            will-change: transform, opacity;
         }
-        @keyframes ag2 {
-            8.33%, 91.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            0%, 16.66%, 83.33%, 100% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp1 {
+            0%, 100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            8.33%, 91.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes ag3 {
-            16.66%, 83.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            8.33%, 25%, 75%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp2 {
+            8.33%, 91.66% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            0%, 16.66%, 83.33%, 100% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes ag4 {
-            25%, 75% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            16.66%, 33.33%, 66.66%, 83.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp3 {
+            16.66%, 83.33% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            8.33%, 25%, 75%, 91.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes ag5 {
-            33.33%, 66.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            25%, 41.66%, 58.33%, 75% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp4 {
+            25%, 75% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            16.66%, 33.33%, 66.66%, 83.33% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes ag6 {
-            41.66%, 58.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            33.33%, 50%, 66.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp5 {
+            33.33%, 66.66% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            25%, 41.66%, 58.33%, 75% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes ag7 {
-            50% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            41.66%, 58.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.5); }
+        @keyframes agp6 {
+            41.66%, 58.33% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            33.33%, 50%, 66.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
+        }
+        @keyframes agp7 {
+            50% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            41.66%, 58.33% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
 
-        .auto-glow-1 { animation: ag1 8s infinite ease-in-out; }
-        .auto-glow-2 { animation: ag2 8s infinite ease-in-out; }
-        .auto-glow-3 { animation: ag3 8s infinite ease-in-out; }
-        .auto-glow-4 { animation: ag4 8s infinite ease-in-out; }
-        .auto-glow-5 { animation: ag5 8s infinite ease-in-out; }
-        .auto-glow-6 { animation: ag6 8s infinite ease-in-out; }
-        .auto-glow-7 { animation: ag7 8s infinite ease-in-out; }
+        .auto-glow-1 { animation: agp1 8s infinite ease-in-out; }
+        .auto-glow-2 { animation: agp2 8s infinite ease-in-out; }
+        .auto-glow-3 { animation: agp3 8s infinite ease-in-out; }
+        .auto-glow-4 { animation: agp4 8s infinite ease-in-out; }
+        .auto-glow-5 { animation: agp5 8s infinite ease-in-out; }
+        .auto-glow-6 { animation: agp6 8s infinite ease-in-out; }
+        .auto-glow-7 { animation: agp7 8s infinite ease-in-out; }
 
-        @keyframes ray-move {
-            0%, 100% { background-position: 0% 50%; opacity: 0.3; }
-            50% { background-position: 100% 50%; opacity: 1; }
+        /* Connector rays — the travelling highlight is a ::before layer
+           animated with transform + opacity only (composited). The bar
+           itself keeps a faint static gradient, painted once. */
+        @keyframes ray-slide {
+            0% { transform: translate3d(-110%, 0, 0); opacity: 0; }
+            12%, 88% { opacity: 1; }
+            50% { transform: translate3d(310%, 0, 0); opacity: 1; }
+            100% { transform: translate3d(-110%, 0, 0); opacity: 0; }
         }
         .animated-ray {
-            background-size: 200% 100%;
-            animation: ray-move 8s infinite ease-in-out;
-            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.8) 50%, transparent 100%);
+            overflow: hidden;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.25) 50%, transparent 100%);
+        }
+        .animated-ray::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 33%;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.9) 50%, transparent 100%);
+            animation: ray-slide 8s infinite ease-in-out;
+            will-change: transform, opacity;
+            pointer-events: none;
         }
 
-        /* Builder Map ping-pong: cyan for all steps, GOLD for step 5 */
-        @keyframes bm1 {
-            0%, 100% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            8.33%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        /* Builder Map ping-pong: cyan pulse for all steps, GOLD base for step 5.
+           Same composited technique as auto-glow — static colors, the
+           sequence travels via opacity + scale phases. */
+        .bm-glow-1, .bm-glow-2, .bm-glow-3, .bm-glow-4,
+        .bm-glow-6, .bm-glow-7 {
+            background-color: rgba(23, 31, 51, 1);
+            border: 1px solid rgba(79, 172, 254, 0.4);
+            color: #dae2fd;
+            will-change: transform, opacity;
         }
-        @keyframes bm2 {
-            8.33%, 91.66% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            0%, 16.66%, 83.33%, 100% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        .bm-glow-5 {
+            background-color: rgba(234, 179, 8, 0.08);
+            border: 1px solid rgba(234, 179, 8, 0.5);
+            color: #fde047;
+            will-change: transform, opacity;
         }
-        @keyframes bm3 {
-            16.66%, 83.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            8.33%, 25%, 75%, 91.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        @keyframes bmp1 {
+            0%, 100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            8.33%, 91.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes bm4 {
-            25%, 75% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            16.66%, 33.33%, 66.66%, 83.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        @keyframes bmp2 {
+            8.33%, 91.66% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            0%, 16.66%, 83.33%, 100% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes bm5 {
-            33.33%, 66.66% { background-color: #eab308; color: #0b1326; box-shadow: 0 0 24px rgba(234, 179, 8, 0.7); border-color: #eab308; }
-            25%, 41.66%, 58.33%, 75% { background-color: rgba(234, 179, 8, 0.08); color: #fde047; box-shadow: 0 0 12px rgba(234, 179, 8, 0.3); border-color: rgba(234, 179, 8, 0.5); }
+        @keyframes bmp3 {
+            16.66%, 83.33% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            8.33%, 25%, 75%, 91.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes bm6 {
-            41.66%, 58.33% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            33.33%, 50%, 66.66% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        @keyframes bmp4 {
+            25%, 75% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            16.66%, 33.33%, 66.66%, 83.33% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
-        @keyframes bm7 {
-            50% { background-color: #4facfe; color: #0b1326; box-shadow: 0 0 20px rgba(79, 172, 254, 0.6); border-color: #4facfe; }
-            41.66%, 58.33% { background-color: rgba(23, 31, 51, 1); color: #dae2fd; box-shadow: 0 0 0 transparent; border-color: rgba(79, 172, 254, 0.4); }
+        @keyframes bmp5 {
+            33.33%, 66.66% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.22); }
+            25%, 41.66%, 58.33%, 75% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
+        }
+        @keyframes bmp6 {
+            41.66%, 58.33% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            33.33%, 50%, 66.66% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
+        }
+        @keyframes bmp7 {
+            50% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.18); }
+            41.66%, 58.33% { opacity: 0.4; transform: translate3d(0, 0, 0) scale(0.82); }
         }
 
-        .bm-glow-1 { animation: bm1 8s infinite ease-in-out; }
-        .bm-glow-2 { animation: bm2 8s infinite ease-in-out; }
-        .bm-glow-3 { animation: bm3 8s infinite ease-in-out; }
-        .bm-glow-4 { animation: bm4 8s infinite ease-in-out; }
-        .bm-glow-5 { animation: bm5 8s infinite ease-in-out; }
-        .bm-glow-6 { animation: bm6 8s infinite ease-in-out; }
-        .bm-glow-7 { animation: bm7 8s infinite ease-in-out; }
+        .bm-glow-1 { animation: bmp1 8s infinite ease-in-out; }
+        .bm-glow-2 { animation: bmp2 8s infinite ease-in-out; }
+        .bm-glow-3 { animation: bmp3 8s infinite ease-in-out; }
+        .bm-glow-4 { animation: bmp4 8s infinite ease-in-out; }
+        .bm-glow-5 { animation: bmp5 8s infinite ease-in-out; }
+        .bm-glow-6 { animation: bmp6 8s infinite ease-in-out; }
+        .bm-glow-7 { animation: bmp7 8s infinite ease-in-out; }
 
         .animated-ray-bm {
-            background-size: 200% 100%;
-            animation: ray-move 8s infinite ease-in-out;
-            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.6) 40%, rgba(234, 179, 8, 0.6) 50%, rgba(79, 172, 254, 0.6) 60%, transparent 100%);
+            overflow: hidden;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.2) 40%, rgba(234, 179, 8, 0.2) 50%, rgba(79, 172, 254, 0.2) 60%, transparent 100%);
+        }
+        .animated-ray-bm::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 33%;
+            background-image: linear-gradient(90deg, transparent 0%, rgba(79, 172, 254, 0.7) 40%, rgba(234, 179, 8, 0.9) 50%, rgba(79, 172, 254, 0.7) 60%, transparent 100%);
+            animation: ray-slide 8s infinite ease-in-out;
+            will-change: transform, opacity;
+            pointer-events: none;
         }
 
         .flow-icon-ping {
@@ -493,7 +566,7 @@
             background-color: var(--flow-idle-bg);
             border-color: var(--flow-idle-border);
             color: var(--flow-color);
-            will-change: background-color, box-shadow, color, border-color;
+            will-change: transform, opacity;
         }
 
         .flow-icon-ping .material-symbols-outlined {
@@ -535,54 +608,79 @@
             --flow-shadow: rgba(0, 241, 253, 0.65);
         }
 
-        @keyframes flow-ping-1 {
-            0%, 100% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
-            6%, 94% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
+        /* Voice-RMV pipeline ping (8 nodes, 36s) — idle colors stay static
+           on .flow-icon-ping; the travelling "lit" node is conveyed with
+           opacity + scale only, keeping all 8 icons on the compositor. */
+        @keyframes fp1 {
+            0%, 100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
+            6%, 94% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
         }
 
-        @keyframes flow-ping-2 {
-            0%, 2%, 13%, 87%, 98%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            7.14%, 92.86% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp2 {
+            0%, 2%, 13%, 87%, 98%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            7.14%, 92.86% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-3 {
-            0%, 9%, 20%, 80%, 91%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            14.28%, 85.72% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp3 {
+            0%, 9%, 20%, 80%, 91%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            14.28%, 85.72% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-4 {
-            0%, 16%, 27%, 73%, 84%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            21.42%, 78.58% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp4 {
+            0%, 16%, 27%, 73%, 84%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            21.42%, 78.58% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-5 {
-            0%, 23%, 34%, 66%, 77%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            28.56%, 71.44% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp5 {
+            0%, 23%, 34%, 66%, 77%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            28.56%, 71.44% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-6 {
-            0%, 30%, 41%, 59%, 70%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            35.7%, 64.3% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp6 {
+            0%, 30%, 41%, 59%, 70%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            35.7%, 64.3% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-7 {
-            0%, 37%, 48%, 52%, 63%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            42.84%, 57.16% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp7 {
+            0%, 37%, 48%, 52%, 63%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            42.84%, 57.16% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        @keyframes flow-ping-8 {
-            0%, 44%, 56%, 100% { background-color: var(--flow-idle-bg); color: var(--flow-color); box-shadow: 0 0 0 transparent; border-color: var(--flow-idle-border); filter: brightness(1); }
-            50% { background-color: var(--flow-color); color: #0b1326; box-shadow: 0 0 18px var(--flow-shadow); border-color: var(--flow-color); filter: brightness(1.08); }
+        @keyframes fp8 {
+            0%, 44%, 56%, 100% { opacity: 0.55; transform: translate3d(0, 0, 0) scale(0.94); }
+            50% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.15); }
         }
 
-        .flow-ping-1 { animation: flow-ping-1 36s infinite ease-in-out; }
-        .flow-ping-2 { animation: flow-ping-2 36s infinite ease-in-out; }
-        .flow-ping-3 { animation: flow-ping-3 36s infinite ease-in-out; }
-        .flow-ping-4 { animation: flow-ping-4 36s infinite ease-in-out; }
-        .flow-ping-5 { animation: flow-ping-5 36s infinite ease-in-out; }
-        .flow-ping-6 { animation: flow-ping-6 36s infinite ease-in-out; }
-        .flow-ping-7 { animation: flow-ping-7 36s infinite ease-in-out; }
-        .flow-ping-8 { animation: flow-ping-8 36s infinite ease-in-out; }
+        .flow-ping-1 { animation: fp1 36s infinite ease-in-out; }
+        .flow-ping-2 { animation: fp2 36s infinite ease-in-out; }
+        .flow-ping-3 { animation: fp3 36s infinite ease-in-out; }
+        .flow-ping-4 { animation: fp4 36s infinite ease-in-out; }
+        .flow-ping-5 { animation: fp5 36s infinite ease-in-out; }
+        .flow-ping-6 { animation: fp6 36s infinite ease-in-out; }
+        .flow-ping-7 { animation: fp7 36s infinite ease-in-out; }
+        .flow-ping-8 { animation: fp8 36s infinite ease-in-out; }
+
+        /* ============================================================
+           Perf: all infinite animations above run on compositor-only
+           props (opacity / transform / scale via translate3d). The
+           will-change hints on the small dots + rays promote each to
+           its own layer (~48px nodes: negligible mobile memory cost)
+           so the pulse sequences never invalidate surrounding layout.
+           Static glow colors are painted once — no per-frame paint.
+           ============================================================ */
+        .auto-glow-1, .auto-glow-2, .auto-glow-3, .auto-glow-4,
+        .auto-glow-5, .auto-glow-6, .auto-glow-7,
+        .bm-glow-1, .bm-glow-2, .bm-glow-3, .bm-glow-4,
+        .bm-glow-5, .bm-glow-6, .bm-glow-7,
+        .flow-ping-1, .flow-ping-2, .flow-ping-3, .flow-ping-4,
+        .flow-ping-5, .flow-ping-6, .flow-ping-7, .flow-ping-8 {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        .animate-float {
+            transform: translateZ(0);
+            will-change: transform;
+        }
 
 @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(20px); }
@@ -616,8 +714,6 @@
     overflow: hidden;
     white-space: nowrap;
     flex-shrink: 0;
-    /* font-display: block equivalent — hide ligature text until usable */
-    font-display: block;
 }
 /* While the icon font is not yet loaded, keep the box but hide text */
 html:not(.msym-loaded) .material-symbols-outlined {
@@ -640,7 +736,36 @@ html.msym-loaded .material-symbols-outlined {
     .bm-glow-5, .bm-glow-6, .bm-glow-7,
     .flow-ping-1, .flow-ping-2, .flow-ping-3, .flow-ping-4,
     .flow-ping-5, .flow-ping-6, .flow-ping-7, .flow-ping-8,
-    .animate-fade-in-up, .animate-fade-in, .animated-ray, .animated-ray-bm {
+    .animate-float, .animate-fade-in-up, .animate-fade-in,
+    .animated-ray::before, .animated-ray-bm::before {
         animation: none !important;
     }
+}
+
+/* ============================================================
+   2026-10-06 — Lighthouse CLS guards
+   1. Below-fold sections get layout+style containment so late
+      paints (fonts, badges, embeds) can't shift content above.
+   2. Metric value boxes reserve their line box before Outfit
+      loads, killing the hero/metrics layout shift.
+   3. Remote images without intrinsic dims keep a reserved box
+      via aspect-ratio on their fixed-size wrappers is already
+      set in markup; this rule is the backstop for any bare img.
+   ============================================================ */
+main > section:not(:first-of-type) {
+    contain: layout style;
+}
+.stat-value {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-metric {
+    min-height: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+img {
+    height: auto;
 }

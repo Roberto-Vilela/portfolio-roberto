@@ -1,5 +1,5 @@
 // Cache buster for tailwind.config.js
-const CACHE_VERSION = "v11";
+const CACHE_VERSION = "v12";
 const CACHE_BUSTER = `?v=${CACHE_VERSION}`;
 
 tailwind.config = {
@@ -74,14 +74,14 @@ tailwind.config = {
                 "margin-desktop": "80px"
             },
             "fontFamily": {
-                "display-lg": ["Outfit"],
-                "body-md": ["Inter"],
-                "headline-lg": ["Outfit"],
-                "label-md": ["Inter"],
-                "body-lg": ["Inter"],
-                "headline-md": ["Outfit"],
-                "headline-lg-mobile": ["Outfit"],
-                "code-sm": ["Inter"]
+                "display-lg": ["Outfit", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "body-md": ["Inter", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "headline-lg": ["Outfit", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "label-md": ["Inter", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "body-lg": ["Inter", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "headline-md": ["Outfit", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "headline-lg-mobile": ["Outfit", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+                "code-sm": ["Inter", "system-ui", "-apple-system", "Segoe UI", "sans-serif"]
             },
             "fontSize": {
                 "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
