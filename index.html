@@ -52,6 +52,7 @@ html:not(.msym-loaded) .material-symbols-outlined{color:transparent!important}
 <link rel="stylesheet" href="global.css?v=14" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="global.css?v=14"></noscript>
 <script src="tailwind.config.js?v=12"></script>
+
 </head>
 <body class="font-body-md text-on-surface">
 <!-- TopNavBar -->
@@ -64,6 +65,7 @@ html:not(.msym-loaded) .material-symbols-outlined{color:transparent!important}
 <div class="hidden lg:flex items-center space-x-8">
 <a class="text-body-md text-primary font-semibold" href="#what-i-do">What I Do</a>
 <a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#featured-work">Work</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#neural-lab-update">Lab Update</a>
 <a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#how-i-work">Process</a>
 <a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
 </div>
@@ -710,7 +712,7 @@ View Full Study
                 </span>
             </div>
         </a>
-<a href="neural-lab-ai.html" class="glass-card rounded-xl overflow-hidden group block focus:outline-none focus:ring-2 focus:ring-purple-500/40 md:col-span-2">
+<a id="neural-lab" href="neural-lab-ai.html" class="glass-card rounded-xl overflow-hidden group block focus:outline-none focus:ring-2 focus:ring-purple-500/40 md:col-span-2" style="scroll-margin-top:100px">
 <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
 <div class="aspect-video lg:aspect-auto min-h-[270px] bg-surface-bright overflow-hidden border-b lg:border-b-0 lg:border-r border-purple-500/10">
 <img alt="RMV Neural Lab AI operational dashboard" class="w-full h-full object-cover object-left group-hover:scale-[1.03] transition-transform duration-500 opacity-80" loading="lazy" decoding="async" src="assets/neural-lab/dashboard.png">
@@ -720,15 +722,31 @@ View Full Study
 <h3 class="font-headline-md text-headline-md mb-2">RMV Neural Lab AI</h3>
 <p class="text-on-surface-variant mb-6">Applied research project that transforms the complexity of local AI model operations into a structured, observable, and human-validated workflow. Demonstrates requirements translation, process design, AI-assisted implementation, testing, troubleshooting, and technical documentation.</p>
 <div class="flex flex-wrap gap-2 mb-5">
-<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Applied Research</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Workflow Design</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">Human-in-the-Loop</span>
-<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20 whitespace-nowrap">111 Tests</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">Applied Research</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">Workflow Design</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">Human-in-the-Loop</span>
+<span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">111 Tests</span>
 </div>
-<span class="inline-flex self-start items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-all duration-200">
-View Applied Research
-<span class="material-symbols-outlined text-sm">north_east</span>
-</span>
+<span class="inline-flex self-start items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-all duration-200">View Applied Research<span class="material-symbols-outlined text-sm" aria-hidden="true">north_east</span></span>
+</div>
+</div>
+</a>
+<a id="neural-lab-update" href="neural-lab-governance.html" class="glass-card rounded-xl overflow-hidden group block focus:outline-none focus:ring-2 focus:ring-purple-500/40 md:col-span-2" style="scroll-margin-top:100px">
+<div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
+<div class="p-8 md:p-10 bg-surface-container-low border-b lg:border-b-0 lg:border-r border-purple-500/10 flex flex-col justify-center gap-5">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">From AI suggestion to human acceptance</span>
+<div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">account_tree</span><div><p class="font-headline-md text-lg text-on-surface">AI recommends</p><p class="text-xs text-on-surface-variant">Model, auxiliary, and confidence</p></div></div>
+<span class="material-symbols-outlined text-primary ml-1" aria-hidden="true">south</span>
+<div class="flex items-center gap-4 p-4 rounded-xl border border-tertiary/40 bg-tertiary/5"><span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">verified_user</span><div><p class="font-headline-md text-lg text-tertiary">Roberto reviews and decides</p><p class="text-xs text-on-surface-variant">Requirements, risk, and approval</p></div></div>
+<span class="material-symbols-outlined text-primary ml-1" aria-hidden="true">south</span>
+<div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">fact_check</span><div><p class="font-headline-md text-lg text-on-surface">Evidence supports acceptance</p><p class="text-xs text-on-surface-variant">Varied inputs and visible model responses</p></div></div>
+</div>
+<div class="p-8 flex flex-col justify-center">
+<span class="inline-block self-start text-[10px] uppercase tracking-wider font-bold bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded mb-2">October 2026 Update · New Case Study</span>
+<h3 class="font-headline-md text-headline-md mb-2">RMV Neural Lab · Governance in Practice</h3>
+<p class="text-on-surface-variant mb-6">How I turned a vision failure into a human-reviewed workflow: challenged automatic auxiliary selection, questioned a hidden fixed-image test, and required varied inputs and visible evidence. Explore my business requirements, risk decisions, and acceptance criteria through the working session and an interactive test reconstruction.</p>
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">Business Requirements</span><span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">AI Governance</span><span class="text-[10px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">QA / UAT</span></div>
+<span class="inline-flex self-start items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold text-sm rounded-lg shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-all duration-200">Explore Governance in Practice<span class="material-symbols-outlined text-sm" aria-hidden="true">north_east</span></span>
 </div>
 </div>
 </a>
