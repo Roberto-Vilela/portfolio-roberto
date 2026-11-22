@@ -4,6 +4,8 @@
 > Data da auditoria: 2026-08-05
 > Método: navegação por todas as rotas, extração de texto real por página, checagens A–E.
 
+> **Nota de atualização (2026-11-21):** este documento é um registro histórico da auditoria de 2026-08-05 e foi mantido sem alteração. As métricas citadas abaixo (`80%`, `98%`, `15 → 3–4 dias úteis`, `200+ cases`) foram **substituídas** pela base factual vigente: `200+ engajamentos cumulativos de clientes` e `de até 15 dias para até 4 dias úteis`. Os números do Neural Lab passaram a ser `26 endpoints REST`, `112 testes de backend` e `35 testes de frontend` (147 no total), verificados na aplicação em 2026-11-21. Percentuais derivados e metas internas não são mais publicados.
+
 ---
 
 ## 1. Páginas visitadas (URL + título)

@@ -1,4 +1,4 @@
-AI Workflow Automation Specialist 🚀
+Customer Success Operations Lead | Workflow Implementation Specialist
 
 Hi there 👋
 
@@ -11,7 +11,7 @@ Hi there 👋
 My primary strength is bridging the gap between Business Needs → Process Design → Tech Implementation.
 
 
-Case Study Highlight: All For Visa Flow: I designed, operationalized, and scaled a full-cycle SaaS platform. This involved defining complex process logic, directing AI-assisted document validation, and structuring a robust Human-in-the-Loop (HITL) review system. Result: Reduced client case preparation time by up to 80%, from 15 days to 3–4 business days at peak efficiency.
+Case Study Highlight: All For Visa Flow: I defined the requirements and business rules, validated the outputs, and operate a document-preparation workflow for U.S. visa cases, specified against a React, FastAPI and PostgreSQL stack with AI-assisted implementation. The workflow covers structured intake, document collection, status tracking and verification checklists, with human-in-the-loop review at every handoff. Result: case preparation time reduced from up to 15 days to up to 4 business days in the pilot deployment.
 
 
 🌱 Expanding Capabilities (Continuous Learning):
