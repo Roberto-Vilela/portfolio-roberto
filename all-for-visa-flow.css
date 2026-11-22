@@ -1,0 +1,52 @@
+/* Local visual identity for the client-work case study. */
+.visa-case { --case-accent: #4ade80; --case-strong: #22c55e; --case-ink: #052e16; }
+.visa-case main [class*="text-case-accent"] { color: var(--case-accent); }
+.visa-case main [class*="text-case-accent/50"] { color: rgb(74 222 128 / .5); }
+.visa-case main [class*="bg-case-accent"] { background-color: var(--case-strong); }
+.visa-case main [class*="text-case-ink"] { color: var(--case-ink); }
+.visa-case main [class*="border-case-accent"] { border-color: rgb(74 222 128 / .35); }
+.visa-case main [class*="outline-case-accent"] { outline-color: var(--case-accent); }
+.case-hero { isolation: isolate; }
+.case-hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at 50% 15%, rgb(34 197 94 / .13), transparent 62%); pointer-events: none; }
+.case-hero > .hero-gradient { opacity: .35; }
+.case-hero > .relative { text-align: center; }
+.case-hero > .relative > p { margin-inline: auto; }
+.case-hero > .relative > .flex { justify-content: center; }
+.case-badge { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; padding: .65rem 1rem; border-radius: 999px; border: 1px solid rgb(74 222 128 / .25); background: rgb(19 27 46 / .85); max-width: 100%; font-size: .65rem; }
+.case-badge-icon { color: var(--case-accent); font-size: 20px; flex-shrink: 0; }
+.case-hero-emblem { display: flex; width: 68px; height: 68px; align-items: center; justify-content: center; margin: 0 auto 1.5rem; border: 1px solid rgb(74 222 128 / .35); border-radius: 20px; color: var(--case-accent); background: rgb(34 197 94 / .08); box-shadow: 0 0 60px rgb(34 197 94 / .12); font-size: 36px; }
+.case-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; color: var(--case-accent); border: 1px solid rgb(74 222 128 / .2); background: rgb(34 197 94 / .08); font-size: 25px; margin-bottom: 1.15rem; flex-shrink: 0; }
+.visa-case main .glass-card { border-color: rgb(74 222 128 / .16); background: linear-gradient(140deg, rgb(23 31 51 / .9), rgb(11 19 38 / .96)); }
+.case-section:nth-of-type(odd) { background: rgb(19 27 46 / .35); }
+.case-heading-icon { color: var(--case-accent); font-size: 26px; float: right; margin: .25rem 0 .5rem 1rem; }
+.case-button { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; box-shadow: 0 8px 32px rgb(34 197 94 / .09); }
+.case-button-icon { font-size: 19px; }
+.case-button:hover { box-shadow: 0 8px 32px rgb(34 197 94 / .2); }
+.case-metric { position: relative; text-align: left; overflow: hidden; }
+.case-metric::after { content: ""; position: absolute; inset: auto -25px -70px auto; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgb(34 197 94 / .1), transparent 70%); pointer-events: none; }
+.case-metric > .case-icon { position: absolute; inset: 24px 24px auto auto; }
+.case-metric h3 { padding-right: 50px; }
+.case-metric-value { display: block; color: var(--case-accent); font: 800 clamp(2.8rem, 5vw, 4rem)/1.1 Outfit, sans-serif; margin-bottom: .5rem; }
+.case-hero dl { text-align: left; box-shadow: 0 20px 60px rgb(0 0 0 / .15); }
+.case-meta-icon { float: left; color: var(--case-accent); font-size: 22px; margin: 0 .75rem 2.5rem 0; }
+.case-step { position: relative; }
+.case-step > .case-icon { float: right; margin-left: .75rem; }
+.visa-case main .case-human-gate { border-color: rgb(74 222 128 / .5); background: linear-gradient(135deg, rgb(34 197 94 / .1), rgb(19 27 46 / .9)); }
+.case-check { color: var(--case-accent); font-size: 22px; margin-top: 3px; }
+.case-table thead { color: var(--case-accent); background: rgb(34 197 94 / .07); }
+.case-table tbody tr:hover { background: rgb(34 197 94 / .035); }
+.case-evidence figcaption { background: rgb(19 27 46 / .75); }
+.case-evidence figcaption > .case-icon { float: left; margin: 0 1rem 0 0; }
+.visa-case main .case-cta { text-align: center; background: radial-gradient(ellipse at 50% 0, rgb(34 197 94 / .13), transparent 75%), #131b2e; }
+.case-cta-icon { display: block; color: var(--case-accent); font-size: 42px; margin-bottom: 1.5rem; }
+.visa-case main :is(a, button):focus-visible { outline: 2px solid var(--case-accent); outline-offset: 5px; }
+@media (prefers-reduced-motion: no-preference) {
+ .case-button, .case-step { transition: transform .2s ease; }
+ .case-button:hover, .case-step:hover { transform: translateY(-3px); }
+ .case-button:active { transform: translateY(0); }
+}
+@media (max-width: 480px) {
+ .case-badge { letter-spacing: .07em; font-size: .6rem; }
+ .case-metric > .case-icon { inset: 20px 20px auto auto; }
+ .case-hero-emblem { width: 56px; height: 56px; font-size: 28px; }
+}
