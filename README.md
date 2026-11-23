@@ -35,3 +35,10 @@ I treat every manual step as a potential point of failure or delay. My job is to
 📫 Let's Connect:
 
 If your business is struggling with visibility, manual handoffs, or scaling beyond current operational capacity, let's talk. I provide the blueprint and the execution plan.
+
+
+## Home and complete portfolio
+
+- `index.html`: recruiter-facing introduction, operating approach, selected case studies, skills, and contact. Styles: `home.css`.
+- `all-projects.html`: preserved previous homepage with the full project collection and a return link to Home.
+- Case-study portfolio return links point to `all-projects.html`.
