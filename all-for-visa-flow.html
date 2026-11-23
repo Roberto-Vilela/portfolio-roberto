@@ -39,22 +39,16 @@
   <meta content="All For Visa Flow | Operations Case Study" name="twitter:title"/>
   <meta content="Requirements, business rules, validation and human review applied to U.S. visa document preparation." name="twitter:description"/>
   <link href="all-for-visa-flow.css?v=1" rel="stylesheet"/>
- </head>
+ <link rel="stylesheet" href="site-navigation.css?v=1">
+</head>
  <body class="font-body-md text-on-surface visa-case">
   <a class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:p-4 focus:bg-surface focus:text-primary" href="#main-content">
    Skip to content
   </a>
   <!-- NavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
-   <div class="flex justify-between items-center gap-3 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
-    <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="all-projects.html">
-     <span class="material-symbols-outlined text-primary">
-      arrow_back
-     </span>
-     <span class="font-label-md text-xs sm:text-sm text-primary font-semibold tracking-wider uppercase">
-      Back to Portfolio
-     </span>
-    </a>
+  <nav aria-label="Portfolio navigation" class="portfolio-site-nav fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+   <div class="portfolio-site-row flex justify-between items-center gap-3 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+    <div class="portfolio-path"><a class="portfolio-home" href="index.html"><span aria-hidden="true">←</span> Home</a><a class="portfolio-all" href="all-projects.html">All Projects</a></div>
     <button class="bg-primary text-on-primary px-4 sm:px-6 py-2 rounded-lg font-label-md whitespace-nowrap shrink-0 hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer" onclick="document.getElementById('contact-modal').showModal()">
      Contact Me
     </button>

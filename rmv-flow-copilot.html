@@ -38,17 +38,15 @@
     <meta property="og:url" content="https://portfolio-roberto-nine.vercel.app/rmv-flow-copilot.html">
     <meta property="og:image" content="https://portfolio-roberto-nine.vercel.app/assets/profile/roberto-vilela-profile.png">
     <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="site-navigation.css?v=1">
 </head>
 
 <body class="font-body-md text-on-surface">
 
     <!-- NavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
-        <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
-            <a href="all-projects.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <span class="material-symbols-outlined text-primary">arrow_back</span>
-                <span class="font-label-md text-primary font-semibold tracking-wider uppercase">Back to Portfolio</span>
-            </a>
+    <nav aria-label="Portfolio navigation" class="portfolio-site-nav fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+        <div class="portfolio-site-row flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+            <div class="portfolio-path"><a class="portfolio-home" href="index.html"><span aria-hidden="true">←</span> Home</a><a class="portfolio-all" href="all-projects.html">All Projects</a></div>
             <button onclick="document.getElementById('contact-modal').showModal()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-ai-flow-start transition-all active:scale-95 inline-block cursor-pointer">
                 Contact Me
             </button>

@@ -1,0 +1,19 @@
+/* Shared routes to the positioning home and the complete project collection. */
+.portfolio-site-row{gap:1rem;min-width:0}
+.portfolio-path{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1.25rem;min-width:0;font:600 1rem/1.5 "Segoe UI",sans-serif}
+.portfolio-path a{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.375rem .25rem;text-decoration:none;border-bottom:2px solid transparent}
+.portfolio-path .portfolio-home{color:#79e5ba}
+.portfolio-path .portfolio-all{color:#dae2fd}
+.portfolio-path a:hover{border-bottom-color:currentColor}
+.portfolio-path a:focus-visible{outline:2px solid #79e5ba;outline-offset:4px;border-radius:3px}
+.portfolio-product-header{flex-wrap:wrap;gap:1rem}
+.portfolio-product-header .portfolio-home{color:#006d51}
+.portfolio-product-header .portfolio-all{color:#2e3040}
+.portfolio-product-header .portfolio-path a:focus-visible{outline-color:#006d51}
+@media(max-width:700px){
+ .portfolio-site-nav>.portfolio-site-row{padding-inline:1rem;gap:.75rem;flex-wrap:wrap;height:auto;min-height:80px;padding-block:.5rem}
+ .portfolio-path{gap:.5rem .75rem;font-size:.875rem}
+ .portfolio-site-row>button,.portfolio-site-row>a{padding-inline:.75rem;font-size:.875rem;flex-shrink:0}
+ .portfolio-site-nav .portfolio-site-row>button{white-space:normal}
+ .portfolio-product-header{padding-inline:1rem}
+}
