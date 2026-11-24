@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-roberto-nine.vercel.app/sitemap.xml
